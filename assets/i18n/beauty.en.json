@@ -1,364 +1,113 @@
 {
-  "announce": {
-    "text": "The at-home cryo-facial everyone's obsessing over — now 30% off",
-    "cta": "Shop the ritual",
-    "ship": "Free express shipping",
-    "timer_label": "Sale ends in",
-    "dismiss_aria": "Dismiss announcement"
+  "access": {
+    "skip": "Skip to content"
   },
   "nav": {
-    "benefits": "Benefits",
-    "how": "How it works",
-    "reviews": "Reviews",
-    "faq": "FAQ",
-    "cta": "Get yours",
-    "lang_label": "Language",
-    "menu_aria": "Open menu"
+    "aria": "Primary navigation",
+    "mobile_aria": "Mobile navigation",
+    "menu": "Open menu",
+    "ritual": "The ritual",
+    "product": "The product",
+    "faq": "Questions",
+    "cta": "Explore RX SUBZERO"
   },
   "hero": {
-    "eyebrow": "THE ICE FACIAL RITUAL",
-    "title": "The cryo-facial glow,",
-    "title_accent": "on tap at home",
-    "sub": "RX SUBZERO turns any morning into a spa ritual. Submerge, breathe, and rise with de-puffed, tighter, lit-from-within skin — no clinic, no appointment, no melting bag of ice.",
-    "cta_primary": "Start my ritual — $[PRICE]",
-    "cta_secondary": "See how it works",
-    "rating_value": "4.9",
-    "rating_label": "[N] five-star reviews",
-    "badge1": "Foldable & travel-ready",
-    "badge2": "Body-safe silicone",
-    "badge3": "Built-in breathing tube",
-    "img_alt": "RX SUBZERO Face Ice Bath basin in steel-blue silicone, filled with ice water",
-    "scroll": "Scroll to explore",
-    "img_ph": "Lifestyle: woman lifting her face from the ice basin, dewy glowing skin, 4:5"
+    "kicker": "Facial cold-water ritual",
+    "title_1": "Cold clarity.",
+    "title_2": "Natural radiance.",
+    "sub": "A refined facial bath for cold water, ice and steady breathing. Designed to sit naturally beside the rest of your morning beauty ritual.",
+    "cta_primary": "See the product",
+    "cta_secondary": "Discover the ritual",
+    "fact_1": "Collapsible format",
+    "fact_2": "Clear dual breathing tube",
+    "fact_3": "Purpose-built facial basin"
   },
-  "ticker": {
-    "items": [
-      "De-puffs in minutes",
-      "Tightens & refines pores",
-      "Snatches the jawline",
-      "Calms redness",
-      "Preps skin for makeup",
-      "Folds flat for travel"
-    ]
-  },
-  "problem": {
-    "eyebrow": "SOUND FAMILIAR?",
-    "title": "Puffy, dull, and tired of it by 8am",
-    "sub": "You wake up puffy, your pores look huge, and your skin reads flat before the day even starts. The old fixes just don't cut it.",
-    "pains": [
+  "context": {
+    "kicker": "A clean start",
+    "title": "Let the ritual feel as considered as the rest of your routine.",
+    "copy": "RX SUBZERO gives cold water and ice a dedicated place in your beauty ritual. Its restrained form keeps the experience composed, practical and easy to repeat.",
+    "img_alt": "RX SUBZERO prepared beside a simple morning skincare routine",
+    "points": [
       {
-        "icon": "depuff",
-        "title": "Morning puffiness",
-        "text": "You wake with swollen eyes and a soft, bloated face that takes hours to settle — if it settles at all."
+        "title": "Begin fresh",
+        "text": "Prepare the basin as part of a clean, unrushed morning setup."
       },
       {
-        "icon": "pore",
-        "title": "Pores on display",
-        "text": "Enlarged, shiny pores that no primer seems to blur and every camera seems to find."
+        "title": "Choose the temperature",
+        "text": "Start cool and add ice gradually according to your comfort."
       },
       {
-        "icon": "face",
-        "title": "Dull, flat skin",
-        "text": "That lit-from-within glow feels reserved for facials you don't have the time — or budget — to book."
+        "title": "Breathe steadily",
+        "text": "The integrated tube gives the breath a clear place in the ritual."
       },
       {
-        "icon": "timer",
-        "title": "Fixes that fizzle",
-        "text": "Ice cubes melt, spoons warm up, and DIY bowls make a freezing, dripping mess for barely a minute of cold."
-      }
-    ],
-    "bridge": "Real cold, done right, changes everything. That's the whole idea behind RX SUBZERO.",
-    "img_ph": "Close-up: tired, puffy morning face, muted tones, 4:5"
-  },
-  "transform": {
-    "eyebrow": "BEFORE / AFTER",
-    "title": "90 seconds is all it takes",
-    "before_label": "Without the ritual",
-    "after_label": "After a cold dip",
-    "before": [
-      "Puffy, heavy morning face",
-      "Redness and visible pores",
-      "Flat, sleepy complexion"
-    ],
-    "after": [
-      "De-puffed, sculpted contours",
-      "Calmed skin, refined pores",
-      "Cold-flushed, dewy glow"
-    ],
-    "note": "Results many users feel from the very first plunge. Individual results vary — cold is a ritual, not a miracle, and consistency is where the glow lives.",
-    "cta": "I want that glow",
-    "before_ph": "Before: puffy, heavy morning face, soft light",
-    "after_ph": "After: cold-flushed, sculpted glow, tight skin"
-  },
-  "benefits": {
-    "eyebrow": "WHY COLD WORKS",
-    "title": "Six reasons your skin will thank you",
-    "sub": "One basin. A full menu of cold-powered benefits, every single morning.",
-    "items": [
-      {
-        "icon": "depuff",
-        "title": "De-puffs instantly",
-        "text": "Cold constricts and drains, so under-eye bags and morning swelling visibly deflate in minutes."
-      },
-      {
-        "icon": "pore",
-        "title": "Refines pores",
-        "text": "A cold dip tightens the look of pores for a smoother, blurred, camera-ready surface."
-      },
-      {
-        "icon": "jaw",
-        "title": "Sculpts the jawline",
-        "text": "Cold firms the appearance of your contours for that snatched, lifted, defined look."
-      },
-      {
-        "icon": "glow",
-        "title": "Cold-flushed glow",
-        "text": "Blood rushes back warm and bright, leaving skin flushed, dewy and lit from within."
-      },
-      {
-        "icon": "calm",
-        "title": "Calms redness",
-        "text": "Soothes irritation, flushing and reactive skin for a more even, settled complexion."
-      },
-      {
-        "icon": "sparkle",
-        "title": "Primes for makeup",
-        "text": "Tighter, cooler skin grips product beautifully — foundation sits smoother and lasts longer."
+        "title": "Continue your routine",
+        "text": "Dry your face gently, then move into the skincare steps you already use."
       }
     ]
   },
-  "how": {
-    "eyebrow": "THE RITUAL",
-    "title": "Your cold-glow routine in three steps",
+  "ritual": {
+    "kicker": "A composed morning practice",
+    "title": "Simple preparation. A clear, sensory moment.",
+    "copy": "The product keeps the process visually calm: one basin, one breathing tube and a short ritual at your own pace.",
     "steps": [
       {
-        "title": "Fill & chill",
-        "text": "Unfold the basin, add cold water and a tray of ice. The insulated silicone keeps it icy far longer than a bowl."
+        "title": "Prepare the water",
+        "text": "Open the basin, add water and introduce ice gradually until the temperature feels right for you.",
+        "img_alt": "Ice being added to the RX SUBZERO face bath"
       },
       {
-        "title": "Dip & breathe",
-        "text": "Lower your face, relax, and breathe calmly through the built-in tube. Start with a few seconds and build up."
-      },
-      {
-        "title": "Rise & glow",
-        "text": "Pat dry and watch skin turn tight, bright and sculpted. Follow with serum while pores are primed to drink it in."
-      }
-    ],
-    "tube_title": "Breathe easy, stay under",
-    "tube_text": "The signature RX SUBZERO breathing tube lets you keep your face fully submerged while you breathe slowly and calmly — so you get the full cold benefit without coming up for air.",
-    "tube_badge": "Signature feature",
-    "img_ph": "Overhead: hands lowering a face into the RX SUBZERO basin"
-  },
-  "product": {
-    "eyebrow": "THE DESIGN",
-    "title": "Engineered for the ritual, made to disappear",
-    "sub": "A spa-grade cold basin that folds down to almost nothing when you're done.",
-    "features": [
-      {
-        "icon": "fold",
-        "title": "Folds flat",
-        "text": "Collapses to a slim disc that slides into a drawer, a shelf or a carry-on."
-      },
-      {
-        "icon": "silicone",
-        "title": "Body-safe silicone",
-        "text": "Soft, food-grade silicone in signature steel-blue — no hard edges against your skin."
-      },
-      {
-        "icon": "breathe",
-        "title": "Built-in breathing tube",
-        "text": "Stay submerged and calm with the integrated tube — the detail DIY bowls can't offer."
-      },
-      {
-        "icon": "drain",
-        "title": "Draining rack",
-        "text": "A lift-out rack keeps ice up and your face comfortable, then drains clean in seconds."
-      },
-      {
-        "icon": "portable",
-        "title": "Travel-ready",
-        "text": "Lightweight and leak-smart, so your glow ritual comes with you anywhere."
-      }
-    ],
-    "specs": [
-      { "label": "Material", "value": "Food-grade silicone" },
-      { "label": "Folded height", "value": "Under 2 in / 5 cm" },
-      { "label": "Basin depth", "value": "Face-and-jaw submersion" },
-      { "label": "Includes", "value": "Basin, rack, breathing tube" },
-      { "label": "Care", "value": "Rinse, wipe, air-dry" }
-    ],
-    "cta": "Add mine to cart",
-    "img_ph": "Product on a marble shelf, folded + unfolded, steel-blue silicone"
-  },
-  "proof": {
-    "eyebrow": "THE REVIEWS ARE IN",
-    "title": "Loved by [N] cold-glow devotees",
-    "rating_value": "4.9",
-    "rating_count": "[N]",
-    "reviews": [
-      {
-        "name": "Mia R.",
-        "handle": "@miaglows",
-        "title": "My puffiness is gone by 8am",
-        "text": "I was skeptical, but 60 seconds in the morning and my under-eyes are flat. My skin has never looked this tight and bright.",
-        "tag": "De-puffing"
-      },
-      {
-        "name": "Sofia L.",
-        "handle": "@sofiaskin",
-        "title": "My makeup sits so much better",
-        "text": "I dip before foundation and it's a different face — pores blurred, everything smooth. This replaced my $200 facials.",
-        "tag": "Makeup prep"
-      },
-      {
-        "name": "Elena V.",
-        "handle": "@elenacold",
-        "title": "The breathing tube is genius",
-        "text": "I can actually stay under and relax instead of gasping. My jawline looks snatched and my redness calmed right down.",
-        "tag": "Snatched jawline"
-      }
-    ],
-    "press_label": "As seen across your feed",
-    "ugc_label": "Real glow, real people",
-    "ugc_ph": "UGC grid: 6 selfies mid-ritual and glowing after"
-  },
-  "compare": {
-    "eyebrow": "HOW IT STACKS UP",
-    "title": "Why a bowl of ice can't compete",
-    "col_us": "RX SUBZERO",
-    "col_a": "Ice bowl / DIY",
-    "col_b": "Cryo clinic",
-    "rows": [
-      {
-        "feature": "Breathe while submerged",
-        "us": "Built-in tube",
-        "a": "Hold your breath",
-        "b": "Not offered"
-      },
-      {
-        "feature": "Stays cold",
-        "us": "Insulated silicone",
-        "a": "Melts fast",
-        "b": "Timed session"
-      },
-      {
-        "feature": "Cost per glow",
-        "us": "One-time $[PRICE]",
-        "a": "Endless ice runs",
-        "b": "$100+ each visit"
-      },
-      {
-        "feature": "On your schedule",
-        "us": "Anytime at home",
-        "a": "Anytime, but messy",
-        "b": "By appointment"
-      },
-      {
-        "feature": "Mess & cleanup",
-        "us": "Drains & folds away",
-        "a": "Drips everywhere",
-        "b": "None — you travel"
-      },
-      {
-        "feature": "Packs for travel",
-        "us": "Folds flat",
-        "a": "Not portable",
-        "b": "Stays in the clinic"
-      }
-    ],
-    "footnote": "Comparison shown for illustration. Clinic pricing varies by location."
-  },
-  "offer": {
-    "eyebrow": "LIMITED WINTER DROP",
-    "title": "Start your cold-glow ritual today",
-    "price": "$[PRICE]",
-    "price_compare": "$[WAS]",
-    "save_label": "You save",
-    "bundle_title": "Every kit includes",
-    "bundle_items": [
-      "Foldable Face Ice Bath basin",
-      "Lift-out draining rack",
-      "Signature breathing tube",
-      "Ritual quick-start guide"
-    ],
-    "urgency": "This winter batch is moving fast — once this drop sells out, the next restock is weeks away.",
-    "guarantee_title": "60-night glow guarantee",
-    "guarantee_text": "Try RX SUBZERO for 60 mornings. If your skin isn't happier, send it back for a full refund — the risk is all ours.",
-    "cta": "Claim my ritual — $[PRICE]",
-    "payment_note": "Secure checkout · Pay in 4 available",
-    "stock": "Only [N] kits left at this price"
-  },
-  "faq": {
-    "eyebrow": "GOOD TO KNOW",
-    "title": "Your questions, answered",
-    "items": [
-      {
-        "q": "Does the cold hurt?",
-        "a": "It's a bracing rush, not pain. Most users start with just a few seconds and build up as it quickly becomes the best part of their morning. Always ease in at your own pace."
-      },
-      {
-        "q": "How cold should the water be?",
-        "a": "Cold tap water plus a handful of ice is plenty for that de-puffing, pore-tightening effect. There's no need to make it painfully icy — comfortable and consistent wins."
-      },
-      {
-        "q": "How long do I stay under?",
-        "a": "Short is perfect. Many users dip for 10 to 30 seconds at a time, breathing calmly through the tube, then repeat a few rounds. Do what feels good and never force it."
-      },
-      {
-        "q": "How do I keep it clean?",
-        "a": "Empty it after each use, rinse with warm water and a little mild soap, wipe down and let it air-dry. The smooth silicone won't trap residue, and it folds away spotless."
-      },
-      {
-        "q": "Does it really fold flat?",
-        "a": "Yes — the whole basin collapses to a slim disc under two inches tall, so it tucks into a drawer or a carry-on and disappears until tomorrow's ritual."
-      },
-      {
-        "q": "Is it safe for my skin?",
-        "a": "For most people a brief cold dip is a gentle, refreshing ritual. If you have rosacea, cold urticaria, cardiovascular concerns, or any skin condition, check with your doctor first. Skip it if cold makes you feel unwell, and never dip alone if you feel faint."
-      },
-      {
-        "q": "What about shipping and returns?",
-        "a": "Orders ship free with express delivery and tracking. If it's not for you, you're covered by our 60-night guarantee — return it for a full refund, no drama."
+        "title": "Take the moment",
+        "text": "Position the tube comfortably, lower your face for a brief interval and return slowly when you are ready.",
+        "img_alt": "Woman using RX SUBZERO during her facial cold-water ritual"
       }
     ]
   },
-  "finalcta": {
-    "eyebrow": "YOUR GLOW IS WAITING",
-    "title": "Tomorrow's skin starts with tonight's order",
-    "sub": "Join thousands who trade puffy mornings for cold-flushed, sculpted, glass-skin glow — in 90 seconds a day.",
-    "cta": "Start my ritual — $[PRICE]",
-    "reassure": "Free express shipping · 60-night guarantee · Secure checkout"
+  "product": {
+    "kicker": "Made for the ritual",
+    "title": "A functional object with a calm presence.",
+    "copy": "The steel-blue basin, clear dual tube and integrated blue base form one recognizable system. It opens for use, folds for storage and keeps the cold-water setup in one place.",
+    "img_alt": "RX SUBZERO face ice bath presented with its clear breathing tube",
+    "features": [
+      "Collapsible steel-blue basin",
+      "Clear dual breathing tube",
+      "Integrated blue inner base",
+      "Side handles and compact storage"
+    ],
+    "cta": "Choose RX SUBZERO"
+  },
+  "faq": {
+    "kicker": "The essentials",
+    "title": "Questions before you begin.",
+    "copy": "A straightforward look at how the product fits into a beauty routine.",
+    "items": [
+      {
+        "q": "What does the product consist of?",
+        "a": "The product format shown includes the collapsible basin and its clear dual breathing tube with white mouthpiece."
+      },
+      {
+        "q": "Where does it fit in my routine?",
+        "a": "Use it on clean skin before the leave-on skincare products in your usual routine. Dry your face gently before continuing."
+      },
+      {
+        "q": "How do I care for it?",
+        "a": "Empty after use, rinse the basin and breathing tube with mild soap and water, then let both air-dry fully before storing."
+      },
+      {
+        "q": "Should I begin with ice water?",
+        "a": "No. Begin with cool water and brief intervals. Add ice gradually only if your skin and comfort level respond well."
+      }
+    ]
+  },
+  "offer": {
+    "kicker": "RX SUBZERO",
+    "title": "Give cold water a place in your ritual.",
+    "copy": "A dedicated facial bath designed to feel composed on the counter and practical in everyday use.",
+    "cta": "Review the product",
+    "note": "Use cold gradually and always at your own comfort level."
   },
   "footer": {
-    "tagline": "The cryo-facial ritual, reimagined for your bathroom shelf.",
-    "col1_title": "Shop",
-    "col1_links": [
-      "The Face Ice Bath",
-      "How it works",
-      "Reviews",
-      "Track my order"
-    ],
-    "col2_title": "Support",
-    "col2_links": [
-      "FAQ",
-      "Shipping & returns",
-      "Contact us",
-      "Care guide"
-    ],
-    "col3_title": "Company",
-    "col3_links": [
-      "Our story",
-      "Sustainability",
-      "Terms of service",
-      "Privacy policy"
-    ],
-    "disclaimer": "RX SUBZERO is a self-care wellness and beauty tool, not a medical device. Content is for general information and isn't a substitute for professional medical advice. Consult your doctor before starting any cold-therapy routine.",
-    "rights": "© RX SUBZERO. All rights reserved.",
-    "payment_label": "Secure payment"
-  },
-  "floatcta": {
-    "label": "RX SUBZERO Face Ice Bath",
-    "price": "$[PRICE]",
-    "cta": "Get yours"
+    "aria": "Footer navigation",
+    "tagline": "A more considered facial cold-water ritual."
   }
 }

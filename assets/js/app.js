@@ -766,7 +766,6 @@
       initHeroLoad();
       initReveals();
       initCounters();
-      initMagnetic();
       initHeader();
       initFloatCta();
       initFaq();

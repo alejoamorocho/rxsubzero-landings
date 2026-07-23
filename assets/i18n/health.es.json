@@ -1,379 +1,113 @@
 {
-  "announce": {
-    "text": "Oferta de lanzamiento: RX SUBZERO por $[PRICE] — envío gratis solo esta semana.",
-    "cta": "Comprar ahora",
-    "ship": "Envío gratis a todo el mundo",
-    "timer_label": "La oferta termina en",
-    "dismiss_aria": "Cerrar anuncio"
+  "access": {
+    "skip": "Ir al contenido"
   },
   "nav": {
-    "benefits": "Beneficios",
-    "how": "Cómo funciona",
-    "reviews": "Opiniones",
+    "aria": "Navegación principal",
+    "mobile_aria": "Navegación móvil",
+    "menu": "Abrir menú",
+    "ritual": "El ritual",
+    "product": "El producto",
     "faq": "Preguntas",
-    "cta": "Lo quiero",
-    "lang_label": "Idioma",
-    "menu_aria": "Abrir menú principal"
+    "cta": "Conoce RX SUBZERO"
   },
   "hero": {
-    "eyebrow": "TERAPIA DE FRÍO · RESPIRACIÓN",
-    "title": "Reprograma tu mañana con",
-    "title_accent": "frío deliberado",
-    "sub": "Sumerge el rostro, respira por el tubo e inunda tu cuerpo de energía tranquila y enfocada. RX SUBZERO convierte dos minutos de agua fría en un reinicio total — sin bañera de hielo, sin clínica, sin excusas.",
-    "cta_primary": "Empieza en frío — $[PRICE]",
-    "cta_secondary": "Ver cómo funciona",
-    "rating_value": "4.9",
-    "rating_label": "de [N] usuarios de terapia de frío",
-    "badge1": "Reinicio del nervio vago",
-    "badge2": "Tubo de respiración integrado",
-    "badge3": "Se pliega para viajar",
-    "img_alt": "Baño facial de hielo plegable RX SUBZERO con tubo de respiración, lleno de agua con hielo",
-    "scroll": "Desliza para explorar",
-    "img_ph": "RX SUBZERO Face Ice Bath — desplegado, con tubo de respiración, foto de estudio"
+    "kicker": "Ritual de agua fría en casa",
+    "title_1": "Encuentra el frío.",
+    "title_2": "Conserva la calma.",
+    "sub": "Un baño facial pensado para agua fría, hielo y respiración constante. Diseñado para que el ritual sea claro, contenido y fácil de repetir.",
+    "cta_primary": "Ver el producto",
+    "cta_secondary": "Descubrir el ritual",
+    "fact_1": "Formato plegable",
+    "fact_2": "Tubo transparente doble",
+    "fact_3": "Recipiente facial de uso dedicado"
   },
-  "ticker": {
-    "items": [
-      "Más enfoque",
-      "Impulso de dopamina",
-      "Menos estrés",
-      "Mejor recuperación",
-      "Respiración guiada",
-      "Resiliencia al frío"
-    ]
-  },
-  "problem": {
-    "eyebrow": "POR QUÉ IMPORTA",
-    "title": "Acelerado, agotado y a base de cortisol",
-    "sub": "La mayoría de las mañanas empiezan en modo lucha o huida — pantallas, cafeína y estrés antes de poner un pie en el suelo. Tu sistema nervioso nunca recibe un reinicio limpio.",
-    "pains": [
+  "context": {
+    "kicker": "Un comienzo más tranquilo",
+    "title": "Crea espacio para una pausa consciente.",
+    "copy": "RX SUBZERO reúne el agua, el hielo y la respiración en un solo objeto dedicado. Sin excesos, solo un ritual sencillo que puede integrarse al comienzo de tu día.",
+    "img_alt": "Baño facial RX SUBZERO preparado con agua fría y hielo",
+    "points": [
       {
-        "icon": "brain",
-        "title": "Mente nublada",
-        "text": "Arrancas el día a medias, buscando un tercer café solo para pensar con claridad."
+        "title": "Prepáralo fácilmente",
+        "text": "Abre el recipiente y agrega agua fría y hielo según tu preferencia."
       },
       {
-        "icon": "mood",
-        "title": "Ánimo plano",
-        "text": "La motivación cae y el día entero se siente pesado antes de empezar."
+        "title": "Marca tu ritmo",
+        "text": "Empieza con agua fresca e intervalos cortos mientras descubres qué se siente bien."
       },
       {
-        "icon": "heart-pulse",
-        "title": "Atrapado en el estrés",
-        "text": "Una mente acelerada y una respiración corta mantienen tu cuerpo en alerta máxima."
+        "title": "Mantén la respiración",
+        "text": "El tubo integrado acompaña una respiración constante mientras el rostro está en el agua."
       },
       {
-        "icon": "recovery",
-        "title": "Recuperación lenta",
-        "text": "Entrenamiento, viajes y noches cortas se acumulan sin nada que te ayude a recuperarte."
-      }
-    ],
-    "bridge": "La exposición deliberada al frío junto con una respiración lenta y controlada es una de las formas más simples de cambiar ese interruptor. RX SUBZERO pone ambas en tus manos.",
-    "img_ph": "Primer plano: hombre estresado y cansado a media mañana, tonos fríos, 4:5"
-  },
-  "transform": {
-    "eyebrow": "EL CAMBIO",
-    "title": "Dos minutos de frío. Horas de claridad tranquila.",
-    "before_label": "Sin el ritual",
-    "after_label": "Con RX SUBZERO",
-    "before": [
-      "Aturdido, ansioso y buscando cafeína",
-      "Enfoque disperso y poca paciencia",
-      "Una recuperación que se alarga días"
-    ],
-    "after": [
-      "Con la mente clara, alerta y centrado",
-      "Ánimo estable y una base tranquila",
-      "Recuperación más rápida y mejor sueño"
-    ],
-    "note": "Los resultados varían según la persona. La exposición al frío es una práctica — sus beneficios crecen con la constancia.",
-    "cta": "Crea tu ritual",
-    "before_ph": "Antes: tenso, mente nublada, sin energía por la mañana — tonos fríos, 4:5",
-    "after_ph": "Después: en calma, mente clara, con energía — tonos fríos, 4:5"
-  },
-  "benefits": {
-    "eyebrow": "LO QUE SIENTES",
-    "title": "El frío, trabajando para ti",
-    "sub": "Cada sesión suma pequeñas victorias que se convierten en resiliencia real — mente y cuerpo.",
-    "items": [
-      {
-        "icon": "focus",
-        "title": "Claridad al instante",
-        "text": "El agua fría en el rostro dispara un despertar limpio y nítido — muchos usuarios reportan un enfoque que dura horas."
-      },
-      {
-        "icon": "mood",
-        "title": "Ánimo y dopamina",
-        "text": "La exposición al frío se asocia con una mejora del ánimo y del impulso que perdura tras la sesión."
-      },
-      {
-        "icon": "calm",
-        "title": "Baja el estrés",
-        "text": "Las exhalaciones lentas por el tubo le indican seguridad a tu cuerpo y te sacan del modo lucha o huida."
-      },
-      {
-        "icon": "heart-pulse",
-        "title": "Tono del nervio vago",
-        "text": "El frío en el rostro y la respiración pausada estimulan con suavidad el nervio vago que rige tu calma."
-      },
-      {
-        "icon": "recovery",
-        "title": "Recupérate antes",
-        "text": "Un reinicio en frío tras entrenar o viajar te ayuda a sentirte renovado y listo más pronto."
-      },
-      {
-        "icon": "cold",
-        "title": "Resiliencia al frío",
-        "text": "Enfréntate al frío a propósito y el estrés cotidiano empieza a sentirse mucho más manejable."
+        "title": "Guárdalo con facilidad",
+        "text": "Enjuaga, deja secar al aire y pliega el recipiente cuando termines."
       }
     ]
   },
-  "how": {
-    "eyebrow": "LA PRÁCTICA",
-    "title": "Tres pasos para tu reinicio",
+  "ritual": {
+    "kicker": "Tu ritmo, tu práctica",
+    "title": "Un ritual frío con espacio para respirar.",
+    "copy": "La experiencia es intencionalmente sencilla: prepara el agua, estabiliza la respiración y acércate al frío de manera gradual.",
     "steps": [
       {
-        "title": "Llena y prepara",
-        "text": "Agrega agua fría y hielo a la cubeta de silicona. Se despliega en segundos sobre cualquier superficie — la rejilla de drenaje lo mantiene todo en orden."
+        "title": "Encuentra tu respiración",
+        "text": "Ubica el tubo cómodamente y establece un ritmo parejo antes de bajar el rostro.",
+        "img_alt": "Persona usando el tubo de respiración RX SUBZERO durante un ritual facial de agua fría"
       },
       {
-        "title": "Respira y sumérgete",
-        "text": "Respira lento por el tubo integrado, baja el rostro y deja que el frío haga su trabajo. Empieza con 20–30 segundos."
-      },
-      {
-        "title": "Sal y reinicia",
-        "text": "Sal, respira y siente la ola de energía tranquila y alerta. Repite de 2 a 3 rondas, luego drena y pliégalo."
-      }
-    ],
-    "tube_title": "El tubo de respiración lo cambia todo",
-    "tube_text": "Un tubo tipo snórkel de grado médico te permite mantener todo el rostro sumergido mientras respiras lento y constante — la clave para permanecer relajado en el frío en lugar de quedarte sin aire. Entrena tu respiración y tu tolerancia al frío al mismo tiempo.",
-    "tube_badge": "Respira bajo el agua",
-    "img_ph": "Cenital: manos bajando el rostro hacia la cubeta RX SUBZERO"
-  },
-  "product": {
-    "eyebrow": "EL PRODUCTO",
-    "title": "Diseñado para el hábito diario del frío",
-    "sub": "Terapia de frío de nivel estudio que se pliega en un cajón.",
-    "features": [
-      {
-        "icon": "fold",
-        "title": "Se pliega plano",
-        "text": "La cubeta de silicona plegable baja a pocos centímetros — guárdala donde sea, llévala a todas partes."
-      },
-      {
-        "icon": "breathe",
-        "title": "Tubo de respiración integrado",
-        "text": "Permanece sumergido y en calma con un tubo de aire desmontable y fácil de limpiar."
-      },
-      {
-        "icon": "silicone",
-        "title": "Silicona de grado alimenticio",
-        "text": "Suave, duradera y segura para la piel — sin bordes duros, sin fugas, sin olor a plástico."
-      },
-      {
-        "icon": "drain",
-        "title": "Rejilla y vertedor",
-        "text": "Una rejilla extraíble y un vertido limpio hacen que vaciar y secar sea muy fácil."
-      },
-      {
-        "icon": "portable",
-        "title": "Lista para viajar",
-        "text": "Ligera y resistente a fugas, para que tu ritual te acompañe en el camino."
-      }
-    ],
-    "specs": [
-      {
-        "label": "Material",
-        "value": "Silicona de grado alimenticio"
-      },
-      {
-        "label": "Altura plegada",
-        "value": "≈ 6 cm / 2.4 in"
-      },
-      {
-        "label": "Capacidad",
-        "value": "Rostro completo + tubo"
-      },
-      {
-        "label": "Incluye",
-        "value": "Cubeta · tubo · rejilla"
-      },
-      {
-        "label": "Cuidado",
-        "value": "Enjuaga, seca al aire, pliega"
-      }
-    ],
-    "cta": "Añadir al carrito — $[PRICE]",
-    "img_ph": "Producto en un estante, plegado y desplegado, silicona azul acero"
-  },
-  "proof": {
-    "eyebrow": "RESULTADOS REALES",
-    "title": "La eligen quienes buscan el frío",
-    "rating_value": "4.9",
-    "rating_count": "[N]",
-    "reviews": [
-      {
-        "name": "Marcus T.",
-        "handle": "@marcus.cold",
-        "title": "Mi mañana innegociable",
-        "text": "Dos rondas antes del trabajo y tengo la mente clara durante horas. Reemplazó por completo mi segundo café.",
-        "tag": "Enfoque"
-      },
-      {
-        "name": "Elena R.",
-        "handle": "@elena.breathes",
-        "title": "Por fin en calma en el frío",
-        "text": "El tubo de respiración es genial. De verdad puedo quedarme bajo el agua y respirar lento en vez de entrar en pánico.",
-        "tag": "Respiración"
-      },
-      {
-        "name": "Dev P.",
-        "handle": "@dev.recovers",
-        "title": "Cambió mi recuperación",
-        "text": "Después de entrenar hago un reinicio en frío y al día siguiente las piernas se sienten frescas. Además se pliega en mi mochila.",
-        "tag": "Recuperación"
-      }
-    ],
-    "press_label": "Presente en",
-    "ugc_label": "De la comunidad",
-    "ugc_ph": "Foto de cliente — ritual de frío y respiración, 1:1"
-  },
-  "compare": {
-    "eyebrow": "LA COMPARACIÓN",
-    "title": "¿Por qué no un simple bol con hielo?",
-    "col_us": "RX SUBZERO",
-    "col_a": "Bol de hielo / casero",
-    "col_b": "Clínica de crioterapia",
-    "rows": [
-      {
-        "feature": "Respirar bajo el agua",
-        "us": "Tubo integrado",
-        "a": "No — hay que salir a respirar",
-        "b": "No"
-      },
-      {
-        "feature": "Costo por sesión",
-        "us": "Pago único $[PRICE], reutilizable a diario",
-        "a": "Agua gratis, pero lío constante y sin tubo",
-        "b": "$50–90"
-      },
-      {
-        "feature": "Uso diario en casa",
-        "us": "Cuando quieras",
-        "a": "Aparatoso",
-        "b": "Con cita"
-      },
-      {
-        "feature": "Se lleva de viaje",
-        "us": "Se pliega plano",
-        "a": "No",
-        "b": "No"
-      },
-      {
-        "feature": "Frío en todo el rostro",
-        "us": "Sí",
-        "a": "Incómodo",
-        "b": "Solo cuerpo completo"
-      },
-      {
-        "feature": "Limpieza y guardado",
-        "us": "Rejilla, se pliega",
-        "a": "Limpieza salpicada",
-        "b": "N/D"
-      }
-    ],
-    "footnote": "Los precios de clínica son estimaciones típicas de EE. UU. y varían según la ubicación."
-  },
-  "offer": {
-    "eyebrow": "OFERTA DE LANZAMIENTO",
-    "title": "Empieza tu práctica de frío hoy",
-    "price": "$[PRICE]",
-    "price_compare": "$[WAS]",
-    "save_label": "Ahorras",
-    "bundle_title": "Cada kit incluye",
-    "bundle_items": [
-      "Baño facial de hielo plegable",
-      "Tubo de respiración desmontable",
-      "Rejilla de drenaje extraíble",
-      "Guía de respiración para empezar en frío"
-    ],
-    "urgency": "El precio de lanzamiento es limitado — los primeros lotes se agotan rápido.",
-    "guarantee_title": "Garantía de 60 noches",
-    "guarantee_text": "Prueba RX SUBZERO durante dos meses. Si no se gana un lugar en tu mañana, devuélvelo y te reembolsamos todo.",
-    "cta": "Reclamar mi RX SUBZERO",
-    "payment_note": "Pago seguro · Apple Pay, Google Pay y tarjetas",
-    "stock": "Solo quedan [N] kits a este precio"
-  },
-  "faq": {
-    "eyebrow": "BUENAS PREGUNTAS",
-    "title": "Todo lo que quieres saber",
-    "items": [
-      {
-        "q": "¿Duele el frío?",
-        "a": "Los primeros segundos son intensos y luego se calma. Respirar lento por el tubo te mantiene en calma y con control — empieza con inmersiones cortas de 20 a 30 segundos y ve subiendo."
-      },
-      {
-        "q": "¿Qué tan fría debe estar el agua?",
-        "a": "La mayoría busca entre 10 y 15 °C (50–59 °F) con unos puñados de hielo. Más frío no es mejor — la constancia importa mucho más que los extremos."
-      },
-      {
-        "q": "¿Cuánto debe durar una sesión?",
-        "a": "Gana lo corto y frecuente. Prueba de 2 a 3 rondas de 20 a 60 segundos. Nunca fuerces más allá de tu comodidad y termina siempre entrando en calor de forma natural."
-      },
-      {
-        "q": "¿Cómo funciona el tubo de respiración?",
-        "a": "El tubo desmontable tipo snórkel te permite mantener el rostro sumergido mientras respiras lento y constante por encima del agua — la clave para permanecer relajado en lugar de quedarte sin aire."
-      },
-      {
-        "q": "¿Es fácil de limpiar y guardar?",
-        "a": "Sí. Enjuaga la cubeta de silicona y el tubo, seca al aire y pliégalo hasta pocos centímetros. La rejilla extraíble facilita el drenaje."
-      },
-      {
-        "q": "¿Quién no debería usarlo?",
-        "a": "La exposición al frío no es para todos. Si tienes una afección cardíaca, presión arterial alta o baja, estás embarazada o tienes cualquier duda médica, consulta primero a tu médico. Nunca practiques la inmersión en frío a solas si eres principiante, ni de una forma que ponga en riesgo tu vía respiratoria."
-      },
-      {
-        "q": "¿Qué pasa con el envío y las devoluciones?",
-        "a": "Enviamos rápido y con seguimiento, y cada pedido cuenta con nuestra garantía de 60 noches. Si no es para ti, las devoluciones son sencillas y el reembolso es completo."
+        "title": "Enjuaga y reinicia",
+        "text": "Vacía el recipiente, enjuágalo junto con el tubo y deja que ambos sequen completamente al aire antes de guardarlos.",
+        "img_alt": "Recipiente RX SUBZERO y tubo de respiración secándose al aire después del uso"
       }
     ]
   },
-  "finalcta": {
-    "eyebrow": "TU REINICIO EMPIEZA YA",
-    "title": "Enfréntate al frío en tus términos",
-    "sub": "Mente más clara, ánimo más estable, mejor recuperación — dos minutos a la vez. Tu reinicio diario te espera.",
-    "cta": "Consigue RX SUBZERO — $[PRICE]",
-    "reassure": "Garantía de 60 noches · Envío gratis · Pago seguro"
+  "product": {
+    "kicker": "El objeto detrás del ritual",
+    "title": "Diseñado alrededor de la forma en que realmente lo usas.",
+    "copy": "El recipiente azul acero se abre para usarlo y se pliega para guardarlo. El tubo transparente doble y la base azul integrada mantienen todo en un formato dedicado.",
+    "img_alt": "Baño facial plegable RX SUBZERO con su tubo transparente de respiración",
+    "features": [
+      "Recipiente plegable azul acero",
+      "Tubo transparente doble",
+      "Base interior azul integrada",
+      "Asas laterales y almacenamiento compacto"
+    ],
+    "cta": "Elegir RX SUBZERO"
+  },
+  "faq": {
+    "kicker": "Lo esencial",
+    "title": "Preguntas antes de comenzar.",
+    "copy": "Una mirada directa a la preparación, el uso y el cuidado.",
+    "items": [
+      {
+        "q": "¿De qué se compone el producto?",
+        "a": "El formato mostrado incluye el recipiente plegable y su tubo transparente doble con boquilla blanca."
+      },
+      {
+        "q": "¿Cómo debería comenzar?",
+        "a": "Empieza con agua fresca, una temperatura cómoda e intervalos breves. Agrega hielo gradualmente solo si se siente apropiado para ti."
+      },
+      {
+        "q": "¿Cómo debo cuidarlo?",
+        "a": "Vacía después de usar, enjuaga el recipiente y el tubo con agua y jabón suave, y deja que ambos sequen completamente al aire antes de guardar."
+      },
+      {
+        "q": "¿La exposición al frío es adecuada para todos?",
+        "a": "La exposición al frío puede no ser apropiada para todas las personas. Si tienes una condición de salud, sensibilidad o inquietud, consulta primero con un profesional de salud calificado."
+      }
+    ]
+  },
+  "offer": {
+    "kicker": "RX SUBZERO",
+    "title": "Dale intención al frío.",
+    "copy": "Un formato dedicado para agua, hielo y respiración constante, diseñado para integrarse naturalmente a tu rutina.",
+    "cta": "Revisar el producto",
+    "note": "Usa el frío de forma gradual y siempre según tu nivel de comodidad."
   },
   "footer": {
-    "tagline": "Frío deliberado. Respiración entrenada. Reinicio diario.",
-    "col1_title": "Producto",
-    "col1_links": [
-      "Cómo funciona",
-      "Beneficios",
-      "Qué incluye",
-      "Opiniones"
-    ],
-    "col2_title": "Soporte",
-    "col2_links": [
-      "Preguntas frecuentes",
-      "Envíos y devoluciones",
-      "Guía para empezar",
-      "Contáctanos"
-    ],
-    "col3_title": "Empresa",
-    "col3_links": [
-      "Nuestra historia",
-      "Seguridad y cuidado",
-      "Política de privacidad",
-      "Términos del servicio"
-    ],
-    "disclaimer": "RX SUBZERO es un producto de bienestar, no un dispositivo médico. Nada de lo aquí expuesto es consejo médico ni un tratamiento para ninguna afección. La exposición al frío conlleva riesgos — consulta a un médico antes de empezar, sobre todo si tienes alguna condición de salud.",
-    "rights": "© RX SUBZERO. Todos los derechos reservados.",
-    "payment_label": "Pagos seguros"
-  },
-  "floatcta": {
-    "label": "Baño facial de hielo RX SUBZERO",
-    "price": "$[PRICE]",
-    "cta": "Comprar ya"
+    "aria": "Navegación del pie de página",
+    "tagline": "Un ritual de agua fría más consciente."
   }
 }
