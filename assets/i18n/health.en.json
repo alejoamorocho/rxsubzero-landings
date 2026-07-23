@@ -1,4 +1,8 @@
 {
+  "meta": {
+    "title": "RX SUBZERO | A deliberate cold-water ritual",
+    "description": "Meet RX SUBZERO, a collapsible facial basin with a clear dual breathing tube for a deliberate cold-water ritual at home."
+  },
   "access": {
     "skip": "Skip to content"
   },
@@ -128,6 +132,10 @@
       {
         "q": "Is cold exposure suitable for everyone?",
         "a": "Cold exposure may not be appropriate for everyone. If you have a health condition, sensitivity or concern, speak with a qualified healthcare professional first."
+      },
+      {
+        "q": "Where does it fit in a wellness or facial-care routine?",
+        "a": "Use it as a brief cold-water step at a comfortable point in your routine. On the face, use it on clean skin, pat dry gently, and continue with the products you already use."
       }
     ]
   },

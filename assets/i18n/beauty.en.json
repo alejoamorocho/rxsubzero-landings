@@ -1,4 +1,8 @@
 {
+  "meta": {
+    "title": "RX SUBZERO | A refined facial cold-water ritual",
+    "description": "Meet RX SUBZERO, a collapsible facial basin with a clear dual breathing tube for a refined cold-water beauty ritual at home."
+  },
   "access": {
     "skip": "Skip to content"
   },
@@ -128,6 +132,10 @@
       {
         "q": "Should I begin with ice water?",
         "a": "No. Begin with cool water and brief intervals. Add ice gradually only if your skin and comfort level respond well."
+      },
+      {
+        "q": "Is cold exposure suitable for everyone?",
+        "a": "Cold exposure may not be appropriate for everyone. If you have a health condition, sensitivity or concern, speak with a qualified healthcare professional first."
       }
     ]
   },

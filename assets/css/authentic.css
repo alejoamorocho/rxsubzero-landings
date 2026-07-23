@@ -103,6 +103,16 @@ body.rxsz h3{
 .rxsz-nav__links a::after{ display:none; }
 .rxsz-nav__links a:hover,
 .rxsz-nav__links a:focus-visible{ color:#fff; }
+.rxsz-nav__logo:focus-visible,
+.rxsz-nav__links a:focus-visible,
+.rxsz-langtoggle__opt:focus-visible,
+.rxsz-nav__toggle:focus-visible,
+.rxsz-nav__drawer-links a:focus-visible,
+.rxsz-auth-footer__links a:focus-visible{
+  outline:0;
+  box-shadow:0 0 0 3px #fff,0 0 0 6px #172233;
+  border-radius:4px;
+}
 .rxsz-nav__actions{ display:flex; align-items:center; gap:12px; }
 .rxsz-langtoggle{
   display:inline-flex;
@@ -204,8 +214,8 @@ body.rxsz h3{
 .rxsz-btn:hover,
 .rxsz-btn:active{ transform:none!important; box-shadow:none; }
 .rxsz-btn:focus-visible{
-  outline:2px solid var(--auth-blue);
-  outline-offset:3px;
+  outline:0;
+  box-shadow:0 0 0 3px #fff,0 0 0 6px #172233;
   border-radius:6px;
 }
 .rxsz-btn--primary{
@@ -414,8 +424,8 @@ body.rxsz h3{
 .rxsz-btn.is-disabled,
 .rxsz-btn[aria-disabled="true"]{
   border-color:#aab3be;
-  color:#fff;
-  background:#aab3be;
+  color:var(--auth-graphite);
+  background:var(--auth-frost);
   cursor:not-allowed;
 }
 .rxsz-auth-purchase{ text-align:center; }
@@ -461,7 +471,11 @@ body.rxsz h3{
   text-align:left;
   cursor:pointer;
 }
-.rxsz-faq__q:focus-visible{ outline:2px solid var(--auth-blue); outline-offset:2px; }
+.rxsz-faq__q:focus-visible{
+  outline:0;
+  box-shadow:0 0 0 3px #fff,0 0 0 6px #172233;
+  border-radius:4px;
+}
 .rxsz-faq__toggle{ width:28px; height:28px; display:grid; place-items:center; flex:0 0 auto; border:1px solid var(--auth-line); border-radius:50%; color:var(--auth-blue-deep); }
 .rxsz-faq__ico{ width:15px; height:15px; }
 .rxsz-faq__ico--minus{ display:none; }

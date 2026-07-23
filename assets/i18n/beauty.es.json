@@ -1,4 +1,8 @@
 {
+  "meta": {
+    "title": "RX SUBZERO | Un ritual facial refinado con agua fría",
+    "description": "Conoce RX SUBZERO, un recipiente facial plegable con tubo transparente doble para un ritual de belleza con agua fría en casa."
+  },
   "access": {
     "skip": "Ir al contenido"
   },
@@ -128,6 +132,10 @@
       {
         "q": "¿Debo comenzar con agua helada?",
         "a": "No. Empieza con agua fresca e intervalos breves. Agrega hielo gradualmente solo si tu piel y tu nivel de comodidad responden bien."
+      },
+      {
+        "q": "¿La exposición al frío es adecuada para todos?",
+        "a": "La exposición al frío puede no ser apropiada para todas las personas. Si tienes una condición de salud, sensibilidad o inquietud, consulta primero con un profesional de salud calificado."
       }
     ]
   },

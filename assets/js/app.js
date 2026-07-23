@@ -29,6 +29,16 @@
   var root = document.documentElement;
   var LANG_KEY = 'rxsz-lang';
   var DEFAULT_LANG = 'en';
+  var PURCHASE_FALLBACKS = {
+    en: {
+      buy: 'Buy RX SUBZERO',
+      coming_soon: 'Purchase available soon'
+    },
+    es: {
+      buy: 'Comprar RX SUBZERO',
+      coming_soon: 'Compra disponible próximamente'
+    }
+  };
 
   /* --- environment flags ------------------------------------------------- */
   var reduceMotion = false;
@@ -45,7 +55,7 @@
   /* internal state */
   var state = {
     page: (document.body && document.body.dataset && document.body.dataset.page) || '',
-    lang: DEFAULT_LANG,
+    lang: savedLang(),
     dict: null
   };
 
@@ -158,8 +168,12 @@
     if (!window.fetch) {
       console.warn('[RXSZ i18n] fetch unavailable — keeping fallback copy.');
       state.lang = lang;
+      state.dict = null;
       root.setAttribute('lang', lang);
       updateLangUI(lang);
+      try {
+        document.dispatchEvent(new CustomEvent('rxsz:langchange', { detail: { lang: lang } }));
+      } catch (e) { /* IE-less env */ }
       return Promise.resolve(null);
     }
 
@@ -184,9 +198,13 @@
         console.warn('[RXSZ i18n] failed to load', url, '-', err.message);
         // Still record intent + reflect UI so a retry/other lang works.
         state.lang = lang;
+        state.dict = null;
         root.setAttribute('lang', lang);
         try { localStorage.setItem(LANG_KEY, lang); } catch (e) {}
         updateLangUI(lang);
+        try {
+          document.dispatchEvent(new CustomEvent('rxsz:langchange', { detail: { lang: lang } }));
+        } catch (e) { /* IE-less env */ }
         return null;
       });
   }
@@ -690,7 +708,17 @@
     function close(restoreFocus) {
       toggle.setAttribute('aria-expanded', 'false');
       nav.classList.remove('is-open');
-      if (restoreFocus) { try { toggle.focus(); } catch (e) {} }
+      if (restoreFocus) {
+        var restore = function () {
+          try {
+            toggle.focus({ preventScroll: true });
+          } catch (e) {
+            try { toggle.focus(); } catch (focusError) {}
+          }
+        };
+        if (window.requestAnimationFrame) window.requestAnimationFrame(restore);
+        else window.setTimeout(restore, 0);
+      }
     }
 
     on(toggle, 'click', function (ev) {
@@ -702,7 +730,7 @@
     if (drawer) {
       on(drawer, 'click', function (ev) {
         var link = ev.target.closest ? ev.target.closest('a') : null;
-        if (link) close(false);
+        if (link) close(true);
       });
     }
 
@@ -733,6 +761,7 @@
 
   function applyPurchaseState() {
     var cfg = purchaseConfig();
+    var fallback = PURCHASE_FALLBACKS[state.lang] || PURCHASE_FALLBACKS.en;
     qsa("[data-reference-price]").forEach(function (el) {
       el.textContent = cfg.currency + " " + cfg.referencePrice;
     });
@@ -748,15 +777,16 @@
         el.removeAttribute("aria-disabled");
         el.removeAttribute("tabindex");
         el.classList.remove("is-disabled");
-        var ready = resolveKey(state.dict, "purchase.buy");
-        if (ready) label.textContent = ready;
+        var ready = resolveKey(state.dict, "purchase.buy") || fallback.buy;
+        label.textContent = ready;
       } else {
         el.removeAttribute("href");
         el.setAttribute("aria-disabled", "true");
         el.setAttribute("tabindex", "-1");
         el.classList.add("is-disabled");
-        var waiting = resolveKey(state.dict, "purchase.coming_soon");
-        if (waiting) label.textContent = waiting;
+        var waiting =
+          resolveKey(state.dict, "purchase.coming_soon") || fallback.coming_soon;
+        label.textContent = waiting;
       }
     });
   }
@@ -840,7 +870,6 @@
       initLiquid();
 
       // i18n last: fetch is async and must not block interaction setup.
-      state.lang = savedLang();
       loadLang(state.lang);
     } catch (err) {
       console.error('[RXSZ] init error:', err);

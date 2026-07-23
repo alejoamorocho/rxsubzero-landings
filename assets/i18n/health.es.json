@@ -1,4 +1,8 @@
 {
+  "meta": {
+    "title": "RX SUBZERO | Un ritual deliberado con agua fría",
+    "description": "Conoce RX SUBZERO, un recipiente facial plegable con tubo transparente doble para un ritual deliberado con agua fría en casa."
+  },
   "access": {
     "skip": "Ir al contenido"
   },
@@ -128,6 +132,10 @@
       {
         "q": "¿La exposición al frío es adecuada para todos?",
         "a": "La exposición al frío puede no ser apropiada para todas las personas. Si tienes una condición de salud, sensibilidad o inquietud, consulta primero con un profesional de salud calificado."
+      },
+      {
+        "q": "¿En qué momento de una rutina de bienestar o cuidado facial encaja?",
+        "a": "Úsalo como un paso breve con agua fría en un momento cómodo de tu rutina. En el rostro, úsalo sobre la piel limpia, seca suavemente y continúa con los productos que ya utilizas."
       }
     ]
   },
