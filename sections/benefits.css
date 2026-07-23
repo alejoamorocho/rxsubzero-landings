@@ -1,0 +1,181 @@
+/* ============================================================================
+   RX SUBZERO · SECTION 04 — benefits.css
+   Section-specific rules ONLY. Reuses core utilities/tokens (.rxsz-glass,
+   .rxsz-reveal, .rxsz-marker, .rxsz-eyebrow, .rxsz-ico, .rxsz-lead) and the
+   fx.css reveal engine. No token redefinition.
+   Layout: a bento grid — one 2x2 feature tile + five tiles filling a 3x3.
+   ========================================================================== */
+
+/* Contain the feature tile's oversized icon watermark within the section. */
+.rxsz-benefits{ overflow:hidden; }
+
+
+/* ----------------------------------------------------------------------------
+   HEADER  — editorial + asymmetric: big marker + eyebrow, title, offset sub
+   -------------------------------------------------------------------------- */
+.rxsz-benefits__head{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:var(--sp-2);
+  margin-bottom:clamp(2rem,4.5vw,3.5rem);
+}
+.rxsz-benefits__kicker{
+  display:flex; align-items:center;
+  gap:clamp(.85rem,2vw,1.35rem);
+  margin-bottom:clamp(.85rem,2vw,1.2rem);
+}
+/* Tame the marker in this context so it pairs with the small eyebrow. */
+.rxsz-benefits__head .rxsz-marker{ font-size:var(--step-2); }
+.rxsz-benefits__title{ font-size:var(--step-2); max-width:20ch; }
+.rxsz-benefits__sub{ max-width:52ch; }
+
+@media (min-width:960px){
+  .rxsz-benefits__head{
+    grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);
+    align-items:end;                       /* sub baseline sits with the title */
+    column-gap:clamp(2rem,5vw,4rem);
+  }
+  .rxsz-benefits__sub{ padding-bottom:.35rem; }
+}
+
+
+/* ----------------------------------------------------------------------------
+   GRID  — mobile stack → tablet 2-col → desktop 3x3 bento
+   -------------------------------------------------------------------------- */
+.rxsz-benefits__grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:clamp(.85rem,1.6vw,1.25rem);
+}
+
+/* Each grid child is a reveal wrapper; the glass card fills it fully so tiles
+   in a row match height and the feature fills its 2-row span. */
+.rxsz-benefits__cell{ display:flex; min-width:0; }
+.rxsz-benefits__card{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  gap:clamp(.85rem,1.6vw,1.1rem);
+  padding:clamp(1.25rem,2.4vw,1.75rem);
+  min-height:100%;
+  isolation:isolate;                       /* own stacking context for watermark */
+  overflow:hidden;
+  transition:transform .5s var(--ease-out),
+             box-shadow .5s var(--ease-out),
+             border-color .5s var(--ease-out);
+}
+.rxsz-benefits__card:hover{ transform:translateY(-4px); }
+
+/* Content sits above the watermark. */
+.rxsz-benefits__well,
+.rxsz-benefits__num,
+.rxsz-benefits__body,
+.rxsz-benefits__ct,
+.rxsz-benefits__cx{ position:relative; z-index:1; }
+
+/* Tablet: 2 columns, feature + last tile go full-width to avoid an orphan. */
+@media (min-width:640px){
+  .rxsz-benefits__grid{ grid-template-columns:repeat(2,1fr); }
+  .rxsz-benefits__cell--feature{ grid-column:1 / -1; }
+  .rxsz-benefits__cell:last-child{ grid-column:1 / -1; }
+}
+
+/* Desktop: explicit 3x3 bento — no auto-flow holes.
+   [ feature(2x2) ][ 2 ]
+   [ feature      ][ 3 ]
+   [   4  ][  5   ][ 6 ] */
+@media (min-width:960px){
+  .rxsz-benefits__grid{ grid-template-columns:repeat(3,1fr); }
+  .rxsz-benefits__cell--feature{ grid-column:1 / 3; grid-row:1 / 3; }
+  .rxsz-benefits__cell:nth-child(2){ grid-column:3; grid-row:1; }
+  .rxsz-benefits__cell:nth-child(3){ grid-column:3; grid-row:2; }
+  .rxsz-benefits__cell:nth-child(4){ grid-column:1; grid-row:3; }
+  .rxsz-benefits__cell:nth-child(5){ grid-column:2; grid-row:3; }
+  .rxsz-benefits__cell:nth-child(6){ grid-column:3; grid-row:3; }  /* wins over tablet last-child */
+  /* feature spreads its well to the top and copy to the bottom of the tall tile */
+  .rxsz-benefits__card--feature{ justify-content:space-between; }
+}
+
+
+/* ----------------------------------------------------------------------------
+   ICON WELL  — frosted rounded well with a per-audience cold glow
+   -------------------------------------------------------------------------- */
+.rxsz-benefits__well{
+  display:inline-grid; place-items:center;
+  width:clamp(46px,5vw,56px); aspect-ratio:1;
+  border-radius:16px;
+  color:var(--rxsz-glow);                  /* icon stroke inherits this accent */
+  background:
+    radial-gradient(120% 120% at 30% 20%,
+      color-mix(in srgb, var(--rxsz-glow) 20%, transparent), transparent 62%),
+    var(--glass-bg);
+  border:1px solid var(--glass-brd);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.12),
+             0 6px 18px -8px color-mix(in srgb, var(--rxsz-glow) 55%, transparent);
+  transition:transform .5s var(--ease-out),
+             box-shadow .5s var(--ease-out),
+             border-color .5s var(--ease-out);
+}
+.rxsz-benefits__well .rxsz-ico{ width:26px; height:26px; }
+
+/* Larger well for the feature tile */
+.rxsz-benefits__well--lg{ width:clamp(60px,7vw,76px); border-radius:20px; }
+.rxsz-benefits__well--lg .rxsz-ico{ width:34px; height:34px; }
+
+/* Well reacts to the card hover (lift + intensified cold glow) */
+.rxsz-benefits__card:hover .rxsz-benefits__well{
+  transform:translateY(-2px);
+  border-color:var(--glass-brd-lit);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.18),
+             0 10px 26px -8px color-mix(in srgb, var(--rxsz-glow) 78%, transparent);
+}
+
+
+/* ----------------------------------------------------------------------------
+   CARD TEXT + DECOR
+   -------------------------------------------------------------------------- */
+.rxsz-benefits__ct{ font-size:var(--step-1); color:var(--rxsz-white); }
+.rxsz-benefits__ct--lg{ font-size:var(--step-2); letter-spacing:-.02em; }
+.rxsz-benefits__cx{
+  color:var(--rxsz-ice);
+  font-size:var(--step-0);
+  line-height:1.6;
+  max-width:46ch;
+}
+
+/* Small condensed corner index (decorative) */
+.rxsz-benefits__num{
+  position:absolute;
+  top:clamp(1rem,2vw,1.35rem);
+  right:clamp(1rem,2vw,1.4rem);
+  font-family:var(--font-condensed);
+  font-weight:700; font-size:var(--step--1);
+  letter-spacing:.16em;
+  color:var(--rxsz-ice); opacity:.32;
+}
+
+/* Feature tile specifics */
+.rxsz-benefits__card--feature{ padding:clamp(1.5rem,3vw,2.4rem); }
+.rxsz-benefits__body{ display:flex; flex-direction:column; gap:clamp(.5rem,1.4vw,.85rem); }
+.rxsz-benefits__card--feature .rxsz-benefits__cx{ max-width:38ch; }
+
+/* Oversized, faint line-art watermark echoing the feature icon */
+.rxsz-benefits__watermark{
+  position:absolute; z-index:0;
+  right:-9%; bottom:-11%;
+  width:clamp(150px,22vw,240px); height:auto; aspect-ratio:1;
+  color:var(--rxsz-glow);
+  opacity:.10;
+  pointer-events:none;
+  filter:drop-shadow(0 0 30px color-mix(in srgb, var(--rxsz-glow) 40%, transparent));
+}
+
+
+/* ----------------------------------------------------------------------------
+   REDUCED MOTION — drop hover transforms (glow/opacity stay)
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce){
+  .rxsz-benefits__card{ transition:box-shadow .2s, border-color .2s; }
+  .rxsz-benefits__card:hover{ transform:none; }
+  .rxsz-benefits__card:hover .rxsz-benefits__well{ transform:none; }
+}

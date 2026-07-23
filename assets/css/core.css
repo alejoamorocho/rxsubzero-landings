@@ -1,0 +1,700 @@
+/* ============================================================================
+   RX SUBZERO · core.css  —  DESIGN SYSTEM (static, no animation)
+   Aesthetic: "FROZEN GLASS / LIQUID SUBZERO" — deep carbon, frosted glass,
+   steel-blue atmosphere, editorial gold accents.
+   This file defines EVERY shared token, utility and component used by the
+   section partials. Motion (keyframes, reveals, particles, marquee) lives in
+   fx.css; per-section rules live in each section partial.
+   Follows DESIGN-CONTRACT.md §2, §6, §7, §9 exactly.
+   ========================================================================== */
+
+/* ----------------------------------------------------------------------------
+   1. TOKENS  (contract §2 — do not alter brand values)
+   -------------------------------------------------------------------------- */
+:root{
+  /* Brand palette (manual) */
+  --rxsz-carbon:      #F8FAFC;  /* Ice White — new primary background */
+  --rxsz-carbon-deep: #E4EBF3;  /* Frost Gray — soft section wash */
+  --rxsz-steel:       #6E83AF;  /* Primary Blue */
+  --rxsz-steel-dark:  #4F668E;  /* Deep Blue */
+  --rxsz-steel-lit:   #9FB1CF;  /* quiet frost highlight */
+  --rxsz-ice:         #4D5864;  /* Graphite — secondary text */
+  --rxsz-white:       #FFFFFF;  /* logo, headings on dark */
+  --rxsz-gold:        #4F668E;  /* legacy token remapped: no gold per brand book */
+  --rxsz-gold-lit:    #6E83AF;
+
+  /* Derived reading tones (kept on-brand: near-white frost for body copy) */
+  --rxsz-ink:         #27313D;  /* primary copy on ice surfaces */
+
+  /* Glass system */
+  --glass-bg:      rgba(255,255,255,.74);
+  --glass-bg-blue: rgba(110,131,175,.12);
+  --glass-brd:     rgba(79,102,142,.16);
+  --glass-brd-lit: rgba(110,131,175,.30);
+  --glass-blur:    16px;
+  --glass-shadow:  0 18px 48px rgba(79,102,142,.14), inset 0 1px 0 rgba(255,255,255,.78);
+
+  /* Per-audience glow accent (overridden on <body> theme class — see §7) */
+  --rxsz-glow: var(--rxsz-steel-lit);
+
+  /* Typography */
+  --font-display:   'Manrope', system-ui, sans-serif;
+  --font-body:      'Inter', system-ui, sans-serif;
+  --font-condensed: 'Manrope', 'Inter', sans-serif;
+
+  /* Fluid type scale */
+  --step--1: clamp(.82rem,.78rem + .2vw,.9rem);
+  --step-0:  clamp(1rem,.95rem + .3vw,1.125rem);
+  --step-1:  clamp(1.3rem,1.15rem + .7vw,1.6rem);
+  --step-2:  clamp(1.75rem,1.4rem + 1.6vw,2.6rem);
+  --step-3:  clamp(2.4rem,1.8rem + 3vw,4rem);
+  --step-4:  clamp(3.2rem,2.2rem + 5vw,6.2rem);
+
+  /* Spacing / radius / layout */
+  --sp-1:.5rem; --sp-2:1rem; --sp-3:1.5rem; --sp-4:2.5rem; --sp-5:4rem; --sp-6:6.5rem;
+  --radius: 22px; --radius-sm: 14px; --radius-pill: 999px;
+  --wrap: 1200px; --wrap-narrow: 820px;
+  --ease: cubic-bezier(.22,.61,.36,1);
+  --ease-out: cubic-bezier(.16,1,.3,1);
+
+  /* ---- Inline-SVG assets (data URIs) used across the system ---------------- */
+
+  /* Fine fractal grain for the atmospheric overlay */
+  --rxsz-noise: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='160'%20height='160'%3E%3Cfilter%20id='n'%3E%3CfeTurbulence%20type='fractalNoise'%20baseFrequency='0.8'%20numOctaves='2'%20stitchTiles='stitch'/%3E%3C/filter%3E%3Crect%20width='100%25'%20height='100%25'%20filter='url(%23n)'/%3E%3C/svg%3E");
+
+  /* Divider silhouettes (mask shapes — solid at TOP, organic edge at bottom;
+     flipped via scaleY(-1) for bottom placement) */
+  --rxsz-wave:  url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201440%20100'%20preserveAspectRatio='none'%3E%3Cpath%20fill='black'%20d='M0,0%20L1440,0%20L1440,58%20C1180,14%20980,96%20720,54%20C470,14%20250,92%200,54%20Z'/%3E%3C/svg%3E");
+  --rxsz-frost: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201440%20100'%20preserveAspectRatio='none'%3E%3Cpath%20fill='black'%20d='M0,0%20L1440,0%20L1440,42%20L1380,72%20L1315,40%20L1250,78%20L1180,38%20L1108,70%20L1030,36%20L950,76%20L868,42%20L786,80%20L706,38%20L624,72%20L540,40%20L458,78%20L376,36%20L296,70%20L214,42%20L132,78%20L64,44%20L0,66%20Z'/%3E%3C/svg%3E");
+  --rxsz-divider-shape: var(--rxsz-wave);
+
+  /* Small marks used by eyebrow + placeholder (masked, so they take a color) */
+  --rxsz-snowflake: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='black'%20stroke-width='2'%20stroke-linecap='round'%3E%3Cpath%20d='M12%202V22M4%206L20%2018M20%206L4%2018M12%206L9%209M12%206L15%209M12%2018L9%2015M12%2018L15%2015'/%3E%3C/svg%3E");
+  --rxsz-ph-icon:   url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='black'%20stroke-width='1.6'%20stroke-linecap='round'%20stroke-linejoin='round'%3E%3Crect%20x='3'%20y='5'%20width='18'%20height='14'%20rx='2'/%3E%3Ccircle%20cx='8.5'%20cy='10'%20r='1.4'%20fill='black'%20stroke='none'/%3E%3Cpath%20d='M4%2018L9%2012L13%2016L16%2013L20%2017'/%3E%3C/svg%3E");
+}
+
+/* Per-audience glow accent (contract §7). Layout/type identical across pages. */
+.theme-beauty{ --rxsz-glow:#6E83AF; }
+.theme-health{ --rxsz-glow:#6E83AF; }
+
+
+/* ----------------------------------------------------------------------------
+   2. RESET + BASE
+   -------------------------------------------------------------------------- */
+*,*::before,*::after{ box-sizing:border-box; }
+*{ margin:0; }
+
+html{
+  -webkit-text-size-adjust:100%;
+  text-size-adjust:100%;
+  scroll-behavior:smooth;
+  color-scheme:dark;
+  -webkit-tap-highlight-color:transparent;
+}
+
+body{
+  min-height:100dvh;
+  font-family:var(--font-body);
+  font-size:var(--step-0);
+  font-weight:400;
+  line-height:1.65;
+  color:var(--rxsz-ink);
+  background-color:var(--rxsz-carbon);
+  /* Layered radial steel-blue gradients over carbon (static; fx.css adds the
+     drifting animated blobs on top of this always-on fallback). */
+  background-image:
+    radial-gradient(62vw 52vw at 12% -8%,  rgba(58,88,136,.34),  transparent 60%),
+    radial-gradient(52vw 52vw at 102% 6%,  rgba(108,140,192,.16), transparent 62%),
+    radial-gradient(72vw 60vw at 50% 116%, rgba(44,70,113,.36),  transparent 60%),
+    linear-gradient(180deg, var(--rxsz-carbon-deep), var(--rxsz-carbon) 26%,
+                            var(--rxsz-carbon) 72%, var(--rxsz-carbon-deep));
+  background-attachment:fixed;
+  background-repeat:no-repeat;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  text-rendering:optimizeLegibility;
+  overflow-x:hidden;
+}
+
+/* Grain overlay — fixed, subtle, behind content (negative z paints under
+   non-positioned flow content). */
+body::before{
+  content:"";
+  position:fixed; inset:0; z-index:-1;
+  pointer-events:none;
+  background-image:var(--rxsz-noise);
+  background-size:160px 160px;
+  opacity:.05;
+  mix-blend-mode:overlay;
+}
+/* Edge vignette — frosts the corners, focuses the eye on content. */
+body::after{
+  content:"";
+  position:fixed; inset:0; z-index:-1;
+  pointer-events:none;
+  background:radial-gradient(120% 90% at 50% 42%, transparent 52%, rgba(16,16,20,.72) 100%);
+}
+
+img,svg,video,canvas{ display:block; max-width:100%; }
+img{ height:auto; }
+
+a{
+  color:var(--rxsz-ice);
+  text-decoration:none;
+  text-underline-offset:3px;
+  transition:color .25s var(--ease);
+}
+a:hover{ color:var(--rxsz-white); }
+
+button,input,select,textarea{ font:inherit; color:inherit; }
+button{ background:none; border:0; cursor:pointer; }
+
+ul[class],ol[class]{ list-style:none; padding:0; }
+
+::selection{ background:var(--rxsz-gold); color:var(--rxsz-carbon); }
+
+/* Anchored sections clear the sticky header when jumped to. */
+section[id]{ scroll-margin-top:88px; }
+
+
+/* ----------------------------------------------------------------------------
+   3. TYPOGRAPHY DEFAULTS (contract §9)
+   -------------------------------------------------------------------------- */
+h1,h2,h3,h4,h5,h6{
+  font-family:var(--font-display);
+  font-weight:700;
+  line-height:1.1;
+  letter-spacing:-.02em;
+  color:var(--rxsz-white);
+  text-wrap:balance;
+}
+h1{ font-size:var(--step-3); font-weight:800; letter-spacing:-.03em; line-height:1.03; }
+h2{ font-size:var(--step-2); font-weight:800; letter-spacing:-.025em; line-height:1.06; }
+h3{ font-size:var(--step-1); }
+h4{ font-size:var(--step-0); font-weight:700; letter-spacing:-.01em; }
+
+p{ text-wrap:pretty; }
+strong,b{ font-weight:700; color:var(--rxsz-white); }
+small{ font-size:var(--step--1); }
+
+/* Oversized editorial display — hero headline opt-in. */
+.rxsz-display{ font-size:var(--step-4); font-weight:800; letter-spacing:-.035em; line-height:.98; }
+
+/* Body helpers (ice = frost secondary text on dark). */
+.rxsz-lead{ font-size:var(--step-1); line-height:1.5; color:var(--rxsz-ice); font-weight:400; }
+.rxsz-muted{ color:var(--rxsz-ice); }
+.rxsz-dim{ color:var(--rxsz-ice); opacity:.72; }
+.rxsz-gold{ color:var(--rxsz-gold); }         /* accent text — carbon/dark bg only */
+.rxsz-balance{ text-wrap:balance; }
+
+
+/* ----------------------------------------------------------------------------
+   4. LAYOUT CONTAINERS (contract §6)
+   -------------------------------------------------------------------------- */
+.rxsz-wrap{
+  width:100%;
+  max-width:var(--wrap);
+  margin-inline:auto;
+  padding-inline:clamp(1.15rem,4vw,2.5rem);
+}
+.rxsz-wrap--narrow{ max-width:var(--wrap-narrow); }
+
+/* Accessibility helpers */
+.rxsz-vh{
+  position:absolute !important;
+  width:1px; height:1px;
+  padding:0; margin:-1px;
+  overflow:hidden; clip:rect(0 0 0 0); clip-path:inset(50%);
+  white-space:nowrap; border:0;
+}
+.rxsz-skip{
+  position:fixed; top:.75rem; left:.75rem; z-index:200;
+  transform:translateY(-160%);
+  padding:.7rem 1.15rem;
+  border-radius:var(--radius-pill);
+  background:var(--rxsz-gold); color:var(--rxsz-carbon);
+  font-family:var(--font-display); font-weight:700;
+  transition:transform .25s var(--ease);
+}
+.rxsz-skip:focus{ transform:translateY(0); }
+
+/* Focus ring — visible, cold, respects rounded corners. */
+:focus-visible{
+  outline:2px solid var(--rxsz-glow);
+  outline-offset:3px;
+  border-radius:6px;
+}
+.rxsz-btn:focus-visible,.rxsz-chip:focus-visible{ border-radius:var(--radius-pill); }
+
+
+/* ----------------------------------------------------------------------------
+   5. SECTION SYSTEM + FROST/WAVE DIVIDERS (contract §6, §3)
+   -------------------------------------------------------------------------- */
+.rxsz-section{
+  position:relative;
+  padding-block:clamp(3.25rem,7vw,6.5rem);   /* ~ --sp-5 → --sp-6 */
+  isolation:isolate;
+}
+.rxsz-section > .rxsz-wrap{ position:relative; z-index:1; }
+
+/* Band backgrounds. --carbon is transparent so the body atmosphere shows. */
+.rxsz-section--carbon{ background:transparent; }
+.rxsz-section--steel{
+  background:
+    linear-gradient(180deg, rgba(44,70,113,.42), rgba(26,26,26,.10) 60%, transparent),
+    linear-gradient(0deg, var(--rxsz-steel-dark), transparent 70%);
+}
+.rxsz-section--glass{
+  background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(58,88,136,.06));
+  backdrop-filter:blur(6px);
+  -webkit-backdrop-filter:blur(6px);
+  border-block:1px solid var(--glass-brd);
+}
+
+/* Dividers — NEVER a straight cut. A masked strip filled with the neighbouring
+   band's colour, waving/frosting across the boundary. Sits inside the section
+   at its top or bottom edge; set --divider-fill to the adjacent band colour.
+   Use .rxsz-divider--frost for the crystalline edge. */
+.rxsz-divider{
+  position:absolute; left:-1px; right:-1px;
+  height:clamp(46px,6.5vw,104px);
+  z-index:2; pointer-events:none;
+  background:var(--divider-fill, var(--rxsz-carbon));
+  -webkit-mask:var(--rxsz-divider-shape) top center / 100% 100% no-repeat;
+          mask:var(--rxsz-divider-shape) top center / 100% 100% no-repeat;
+}
+.rxsz-divider--top{ top:0; }
+.rxsz-divider--bottom{ bottom:0; transform:scaleY(-1); }   /* flip: solid at bottom */
+.rxsz-divider--frost{ --rxsz-divider-shape:var(--rxsz-frost); }
+
+
+/* ----------------------------------------------------------------------------
+   6. GLASS PANEL (contract §3, §6)
+   -------------------------------------------------------------------------- */
+.rxsz-glass{
+  position:relative;
+  border-radius:var(--radius);
+  border:1px solid var(--glass-brd);
+  /* top inner highlight + frosted fill */
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.09), rgba(255,255,255,0) 42%),
+    var(--glass-bg);
+  backdrop-filter:blur(var(--glass-blur)) saturate(1.15);
+  -webkit-backdrop-filter:blur(var(--glass-blur)) saturate(1.15);
+  box-shadow:var(--glass-shadow);
+  transition:transform .5s var(--ease-out),
+             box-shadow .5s var(--ease-out),
+             border-color .5s var(--ease-out);
+}
+/* Cold outer glow on hover (uses the per-audience --rxsz-glow). */
+.rxsz-glass:hover{
+  border-color:var(--glass-brd-lit);
+  box-shadow:
+    var(--glass-shadow),
+    0 0 0 1px color-mix(in srgb, var(--rxsz-glow) 30%, transparent),
+    0 18px 60px -12px color-mix(in srgb, var(--rxsz-glow) 45%, transparent);
+}
+/* Bluer-tinted variant + a non-interactive (flat) variant. */
+.rxsz-glass--blue{ background:linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,0) 42%), var(--glass-bg-blue); }
+.rxsz-glass--flat{ transition:none; }
+.rxsz-glass--flat:hover{ transform:none; box-shadow:var(--glass-shadow); border-color:var(--glass-brd); }
+.rxsz-glass--pad{ padding:clamp(1.35rem,3vw,2.25rem); }
+
+
+/* ----------------------------------------------------------------------------
+   7. BUTTONS (contract §6)
+   -------------------------------------------------------------------------- */
+.rxsz-btn{
+  --rxsz-mx:0px; --rxsz-my:0px;                 /* magnetic hook (JS sets these) */
+  position:relative;
+  display:inline-flex; align-items:center; justify-content:center; gap:.6em;
+  padding:.95em 1.7em;
+  font-family:var(--font-display);
+  font-weight:700; font-size:var(--step-0);
+  letter-spacing:.01em; line-height:1;
+  text-align:center; white-space:nowrap;
+  border-radius:var(--radius-pill);
+  border:1.5px solid transparent;
+  overflow:hidden;                              /* clips the sheen */
+  isolation:isolate;
+  transform:translate(var(--rxsz-mx),var(--rxsz-my));
+  transition:transform .3s var(--ease-out),
+             box-shadow .3s var(--ease),
+             background-color .3s var(--ease),
+             border-color .3s var(--ease),
+             color .3s var(--ease);
+}
+.rxsz-btn:active{ transform:translate(var(--rxsz-mx),var(--rxsz-my)) scale(.975); }
+.rxsz-btn--lg{ padding:1.1em 2.1em; font-size:var(--step-1); }
+.rxsz-btn--block{ display:flex; width:100%; }
+.rxsz-btn .rxsz-ico{ width:1.15em; height:1.15em; }
+
+/* Primary — GOLD fill, dark ink, moving sheen on hover (contract §2 gold rule). */
+.rxsz-btn--primary{
+  background:linear-gradient(180deg, var(--rxsz-gold-lit), var(--rxsz-gold));
+  color:var(--rxsz-carbon);
+  box-shadow:0 8px 26px -8px rgba(201,162,39,.6), inset 0 1px 0 rgba(255,255,255,.4);
+}
+.rxsz-btn--primary::before{                     /* the sheen */
+  content:""; position:absolute; inset:0; z-index:-1;
+  background:linear-gradient(105deg, transparent 30%, rgba(255,255,255,.55) 50%, transparent 70%);
+  transform:translateX(-120%);
+  transition:transform .7s var(--ease-out);
+}
+.rxsz-btn--primary:hover{
+  background:linear-gradient(180deg, #F0D061, var(--rxsz-gold-lit));
+  box-shadow:0 12px 34px -8px rgba(201,162,39,.75), inset 0 1px 0 rgba(255,255,255,.5);
+}
+.rxsz-btn--primary:hover::before{ transform:translateX(120%); }
+
+/* Ghost — ice outline, fills subtly on hover. */
+.rxsz-btn--ghost{
+  background:rgba(255,255,255,.02);
+  color:var(--rxsz-ice);
+  border-color:var(--glass-brd-lit);
+  backdrop-filter:blur(6px);
+  -webkit-backdrop-filter:blur(6px);
+}
+.rxsz-btn--ghost:hover{
+  color:var(--rxsz-white);
+  border-color:var(--rxsz-ice);
+  background:rgba(255,255,255,.07);
+  box-shadow:0 0 30px -6px color-mix(in srgb, var(--rxsz-glow) 55%, transparent);
+}
+
+/* Magnetic hook — transform is driven by --rxsz-mx/--rxsz-my via app.js
+   (pointer:fine only). Class is a semantic marker; the base .rxsz-btn already
+   consumes the vars so the effect composes cleanly. */
+.rxsz-btn--magnetic{ will-change:transform; }
+
+
+/* ----------------------------------------------------------------------------
+   8. EYEBROW · MARKER · CHIP (contract §6)
+   -------------------------------------------------------------------------- */
+/* Eyebrow — condensed uppercase kicker with a leading snowflake + trailing hairline. */
+.rxsz-eyebrow{
+  display:inline-flex; align-items:center; gap:.7em;
+  font-family:var(--font-condensed);
+  font-weight:700; font-size:var(--step--1);
+  text-transform:uppercase; letter-spacing:.24em;
+  color:var(--rxsz-steel-lit);
+}
+.rxsz-eyebrow::before{                          /* snowflake mark (glows per theme) */
+  content:""; flex:0 0 auto;
+  width:1.15em; height:1.15em;
+  background:var(--rxsz-glow);
+  -webkit-mask:var(--rxsz-snowflake) center/contain no-repeat;
+          mask:var(--rxsz-snowflake) center/contain no-repeat;
+  filter:drop-shadow(0 0 6px color-mix(in srgb, var(--rxsz-glow) 60%, transparent));
+}
+.rxsz-eyebrow::after{                            /* hairline */
+  content:""; width:clamp(1.5rem,4vw,3rem); height:1px;
+  background:linear-gradient(90deg, currentColor, transparent);
+  opacity:.6;
+}
+.rxsz-eyebrow--bare::after{ content:none; }      /* opt out of the hairline */
+
+/* Marker — big 01 / 02 numbers, gold outline (contract §3). */
+.rxsz-marker{
+  display:inline-block;
+  font-family:var(--font-condensed);
+  font-weight:700; font-size:var(--step-3);
+  line-height:.9; letter-spacing:.02em;
+  color:transparent;
+  -webkit-text-stroke:1.5px var(--rxsz-gold);
+  text-stroke:1.5px var(--rxsz-gold);
+  /* graceful fallback where text-stroke is unsupported */
+  text-shadow:0 0 1px rgba(201,162,39,.35);
+}
+.rxsz-marker--fill{                              /* solid gold alternative */
+  color:var(--rxsz-gold);
+  -webkit-text-stroke:0; text-stroke:0;
+}
+
+/* Chip — small frosted tag/badge, optional icon. */
+.rxsz-chip{
+  display:inline-flex; align-items:center; gap:.5em;
+  padding:.4em .85em;
+  font-family:var(--font-condensed);
+  font-weight:600; font-size:var(--step--1);
+  text-transform:uppercase; letter-spacing:.12em;
+  color:var(--rxsz-ice);
+  background:var(--glass-bg);
+  border:1px solid var(--glass-brd);
+  border-radius:var(--radius-pill);
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+  transition:border-color .3s var(--ease), color .3s var(--ease);
+}
+.rxsz-chip .rxsz-ico{ width:1.05em; height:1.05em; color:var(--rxsz-glow); }
+.rxsz-chip--gold{ color:var(--rxsz-gold); border-color:color-mix(in srgb, var(--rxsz-gold) 45%, transparent); }
+a.rxsz-chip:hover,button.rxsz-chip:hover{ color:var(--rxsz-white); border-color:var(--glass-brd-lit); }
+
+
+/* ----------------------------------------------------------------------------
+   9. ICON HOOK  (SVGs injected by app.js from icons.js — contract §12)
+   -------------------------------------------------------------------------- */
+.rxsz-ico{
+  display:inline-flex;
+  width:24px; height:24px;
+  flex:0 0 auto;
+  color:currentColor;
+  vertical-align:middle;
+}
+.rxsz-ico svg{ width:100%; height:100%; display:block; stroke:currentColor; fill:none; }
+.rxsz-ico--glow{ color:var(--rxsz-glow); }
+.rxsz-ico--gold{ color:var(--rxsz-gold); }
+
+
+/* ----------------------------------------------------------------------------
+   10. PLACEHOLDER FIGURE (contract §9)
+   -------------------------------------------------------------------------- */
+.rxsz-ph{
+  position:relative;
+  display:block;
+  margin:0;
+  aspect-ratio:4 / 5;                 /* default; override with modifiers/inline */
+  overflow:hidden;
+  border-radius:var(--radius);
+  background:var(--rxsz-carbon-deep); /* holds space while image loads (no CLS) */
+}
+.rxsz-ph--wide{ aspect-ratio:16 / 9; }
+.rxsz-ph--square{ aspect-ratio:1 / 1; }
+.rxsz-ph--portrait{ aspect-ratio:4 / 5; }
+.rxsz-ph--tall{ aspect-ratio:3 / 4; }
+.rxsz-ph > img{
+  width:100%; height:100%;
+  object-fit:cover;
+}
+
+/* Empty state — frosted labelled box shown when the real image is missing
+   (img onerror adds .is-empty). Pseudo-elements become the grid children:
+   ::before = image icon, ::after = the data-ph label. */
+.rxsz-ph.is-empty{
+  display:grid;
+  place-content:center;
+  justify-items:center;
+  gap:.75rem;
+  padding:1.5rem;
+  text-align:center;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.05), rgba(58,88,136,.08)),
+    var(--rxsz-carbon-deep);
+  border:1px dashed var(--glass-brd-lit);
+  backdrop-filter:blur(4px);
+  -webkit-backdrop-filter:blur(4px);
+}
+.rxsz-ph.is-empty > img{ display:none; }
+.rxsz-ph.is-empty::before{
+  content:"";
+  width:clamp(34px,6vw,46px); aspect-ratio:1;
+  background:var(--rxsz-ice); opacity:.5;
+  -webkit-mask:var(--rxsz-ph-icon) center/contain no-repeat;
+          mask:var(--rxsz-ph-icon) center/contain no-repeat;
+}
+.rxsz-ph.is-empty::after{
+  content:attr(data-ph);
+  max-width:24ch;
+  font-family:var(--font-condensed);
+  font-weight:600; font-size:var(--step--1);
+  letter-spacing:.06em; line-height:1.4;
+  text-transform:uppercase;
+  color:var(--rxsz-ice); opacity:.85;
+}
+
+
+/* ----------------------------------------------------------------------------
+   11. SMALL SHARED UTILITIES
+   -------------------------------------------------------------------------- */
+/* Frost hairline rule. */
+.rxsz-rule{
+  height:1px; border:0; width:100%;
+  background:linear-gradient(90deg, transparent, var(--glass-brd-lit), transparent);
+}
+/* Star-rating colour hook (icons hydrated by app.js). */
+.rxsz-stars{ display:inline-flex; gap:.15em; color:var(--rxsz-gold); }
+.rxsz-stars .rxsz-ico{ width:1.1em; height:1.1em; }
+.rxsz-stars .rxsz-ico svg{ fill:currentColor; stroke:none; }
+
+
+/* ----------------------------------------------------------------------------
+   12. REDUCED MOTION (contract §11 — keep opacity, drop transforms/sheen)
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce){
+  html{ scroll-behavior:auto; }
+  .rxsz-btn{ transform:none; transition:background-color .2s, color .2s, border-color .2s; }
+  .rxsz-btn:active{ transform:scale(.99); }
+  .rxsz-btn--primary::before{ display:none; }
+  .rxsz-glass{ transition:border-color .2s, box-shadow .2s; }
+}
+
+/* ============================================================================
+   Brand Book 2026 refinement
+   Calmer, lighter, more clinical-spa: avoids gold/black dominance and reduces
+   urgency effects while preserving cold-therapy identity.
+   ========================================================================== */
+body{
+  color:var(--rxsz-ink);
+  background-color:var(--rxsz-carbon);
+  background-image:
+    radial-gradient(52vw 36vw at 82% 4%, rgba(110,131,175,.18), transparent 62%),
+    radial-gradient(42vw 30vw at 6% 18%, rgba(228,235,243,.72), transparent 70%),
+    linear-gradient(180deg, #FFFFFF 0%, var(--rxsz-carbon) 34%, #EEF3F8 100%);
+}
+body::before{ opacity:.026; mix-blend-mode:multiply; }
+body::after{
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.38), transparent 24%, rgba(228,235,243,.38) 100%),
+    radial-gradient(110% 85% at 50% 36%, transparent 60%, rgba(79,102,142,.10) 100%);
+}
+h1,h2,h3,h4,h5,h6,
+strong,b{ color:#1F2A36; letter-spacing:0; }
+.rxsz-display{ letter-spacing:0; }
+a{ color:var(--rxsz-steel-dark); }
+a:hover{ color:#27313D; }
+::selection{ background:#D9E3F1; color:#1F2A36; }
+
+.rxsz-section{ padding-block:clamp(3.75rem,7vw,7rem); }
+.rxsz-section--steel,
+.rxsz-section--glass{
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.72), rgba(228,235,243,.58)),
+    var(--rxsz-carbon-deep);
+  border-block:1px solid rgba(79,102,142,.12);
+}
+.rxsz-divider{ opacity:.18; height:clamp(28px,4vw,60px); }
+
+.rxsz-glass{
+  border-radius:14px;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.84), rgba(255,255,255,.62)),
+    var(--glass-bg);
+  box-shadow:var(--glass-shadow);
+}
+.rxsz-glass:hover{
+  border-color:rgba(110,131,175,.28);
+  box-shadow:0 20px 52px rgba(79,102,142,.16), inset 0 1px 0 rgba(255,255,255,.82);
+}
+.rxsz-glass--flat:hover{ box-shadow:var(--glass-shadow); border-color:var(--glass-brd); }
+.rxsz-glass--pad{ padding:clamp(1.15rem,2.6vw,1.85rem); }
+
+.rxsz-btn{
+  border-radius:12px;
+  letter-spacing:0;
+  box-shadow:none;
+}
+.rxsz-btn--primary{
+  color:#fff;
+  background:linear-gradient(180deg, var(--rxsz-steel), var(--rxsz-steel-dark));
+  box-shadow:0 14px 28px rgba(79,102,142,.20);
+}
+.rxsz-btn--primary:hover{
+  background:linear-gradient(180deg, #7D91B9, var(--rxsz-steel-dark));
+  box-shadow:0 18px 34px rgba(79,102,142,.24);
+}
+.rxsz-btn--ghost{
+  color:var(--rxsz-steel-dark);
+  background:rgba(255,255,255,.58);
+  border-color:rgba(79,102,142,.22);
+}
+.rxsz-btn--ghost:hover{
+  color:#27313D;
+  border-color:rgba(79,102,142,.34);
+  background:rgba(255,255,255,.86);
+  box-shadow:none;
+}
+.rxsz-eyebrow{
+  color:var(--rxsz-steel-dark);
+  letter-spacing:.12em;
+}
+.rxsz-eyebrow::before{
+  background:var(--rxsz-steel);
+  filter:none;
+  opacity:.68;
+}
+.rxsz-eyebrow::after{ opacity:.28; }
+.rxsz-marker{
+  color:rgba(79,102,142,.18);
+  -webkit-text-stroke:0;
+  text-stroke:0;
+  text-shadow:none;
+  font-weight:600;
+}
+.rxsz-chip{
+  color:var(--rxsz-steel-dark);
+  letter-spacing:.07em;
+  border-radius:10px;
+  background:rgba(255,255,255,.62);
+}
+.rxsz-gold{ color:var(--rxsz-steel-dark); }
+.rxsz-lead{ color:#526171; font-weight:400; }
+.rxsz-muted,.rxsz-dim{ color:#5F6D7A; }
+
+:root{ --rxsz-white:#1F2A36; }
+
+.rxsz-section--subzero{
+  --rxsz-white:#FFFFFF;
+  --rxsz-ink:#F8FAFC;
+  --rxsz-ice:#E4EBF3;
+  --rxsz-glow:#C7D4E8;
+  color:var(--rxsz-ink);
+  background:
+    radial-gradient(36vw 28vw at 84% 10%, rgba(159,177,207,.24), transparent 66%),
+    radial-gradient(30vw 24vw at 12% 72%, rgba(228,235,243,.14), transparent 68%),
+    linear-gradient(135deg, #4F668E 0%, #3F5477 50%, #334864 100%);
+  border-block:1px solid rgba(255,255,255,.14);
+}
+.rxsz-section--subzero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+  opacity:.18;
+  background-image:
+    radial-gradient(circle at 18px 18px, rgba(255,255,255,.72) 0 1px, transparent 1.5px),
+    linear-gradient(30deg, transparent 48%, rgba(255,255,255,.22) 49%, rgba(255,255,255,.22) 51%, transparent 52%),
+    linear-gradient(150deg, transparent 48%, rgba(255,255,255,.16) 49%, rgba(255,255,255,.16) 51%, transparent 52%);
+  background-size:72px 72px, 96px 96px, 96px 96px;
+}
+.rxsz-section--subzero h1,
+.rxsz-section--subzero h2,
+.rxsz-section--subzero h3,
+.rxsz-section--subzero h4,
+.rxsz-section--subzero strong,
+.rxsz-section--subzero b{ color:#FFFFFF; }
+.rxsz-section--subzero .rxsz-lead,
+.rxsz-section--subzero .rxsz-muted,
+.rxsz-section--subzero .rxsz-dim{ color:rgba(248,250,252,.78); }
+.rxsz-section--subzero .rxsz-eyebrow{ color:#E4EBF3; }
+.rxsz-section--subzero .rxsz-eyebrow::before{ background:#F8FAFC; opacity:.72; }
+.rxsz-section--subzero .rxsz-marker{ color:rgba(255,255,255,.20); }
+.rxsz-section--subzero .rxsz-glass{
+  color:var(--rxsz-ink);
+  border-color:rgba(255,255,255,.18);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.14), rgba(255,255,255,.075)),
+    rgba(255,255,255,.08);
+  box-shadow:0 18px 44px rgba(24,38,58,.22), inset 0 1px 0 rgba(255,255,255,.18);
+}
+.rxsz-section--subzero .rxsz-glass:hover{
+  border-color:rgba(255,255,255,.30);
+  box-shadow:0 22px 54px rgba(24,38,58,.28), inset 0 1px 0 rgba(255,255,255,.22);
+}
+.rxsz-section--subzero .rxsz-chip,
+.rxsz-section--subzero .rxsz-btn--ghost{
+  color:#F8FAFC;
+  border-color:rgba(255,255,255,.26);
+  background:rgba(255,255,255,.08);
+}
+.rxsz-section--subzero .rxsz-btn--primary{
+  color:#27313D;
+  background:linear-gradient(180deg, #FFFFFF, #E4EBF3);
+  box-shadow:0 16px 32px rgba(24,38,58,.22);
+}
+
+.rxsz-section--frost{
+  background:
+    radial-gradient(48vw 32vw at 8% 12%, rgba(255,255,255,.78), transparent 68%),
+    linear-gradient(180deg, #EEF3F8, #F8FAFC 54%, #E4EBF3);
+}

@@ -1,0 +1,256 @@
+/* ============================================================================
+   RX SUBZERO · SECTION 08 — COMPARE  (scoped: .rxsz-compare)
+   Section-specific rules only. Tokens, glass, buttons, marker, eyebrow, icons,
+   reveal + reduced-motion all come from core.css / fx.css — not redefined here.
+   Layout: an editorial 4-column comparison table with a highlighted gold
+   "RX SUBZERO" column, reflowing to stacked glass cards under 760px.
+   ========================================================================== */
+
+/* Local tints derived from brand tokens (kept on-brand, no new palette). */
+.rxsz-compare{
+  --cmp-gold-brd:  color-mix(in srgb, var(--rxsz-gold) 42%, transparent);
+  --cmp-gold-fill: color-mix(in srgb, var(--rxsz-gold) 11%, transparent);
+  --cmp-gold-fill2:color-mix(in srgb, var(--rxsz-gold) 4%, transparent);
+  --cmp-row-brd:   var(--glass-brd);
+}
+
+/* ----- header ------------------------------------------------------------- */
+.rxsz-compare__inner{ display:flex; flex-direction:column; gap:clamp(1.75rem,4vw,2.75rem); }
+
+.rxsz-compare__head{ max-width:var(--wrap-narrow); }
+.rxsz-compare__head .rxsz-marker{ display:block; margin-bottom:.35rem; }
+.rxsz-compare__head .rxsz-eyebrow{ margin-bottom:.9rem; }
+.rxsz-compare__title{ margin:0; }
+
+/* ----- table shell -------------------------------------------------------- */
+.rxsz-compare__tablewrap{ position:relative; }
+
+.rxsz-compare__table{
+  width:100%;
+  border-collapse:separate;   /* separate + spacing:0 lets the gold column
+                                 carry its own rounded border panel */
+  border-spacing:0;
+  font-family:var(--font-body);
+}
+
+/* Column widths */
+.rxsz-compare__col-feat{ width:30%; }
+.rxsz-compare__col-us{ width:24%; }
+.rxsz-compare__col{ width:23%; }
+
+/* Empty top-left corner cell */
+.rxsz-compare__corner{ background:transparent; border:0; }
+
+/* ----- column headers ----------------------------------------------------- */
+.rxsz-compare__h{
+  padding:1rem 1.15rem;
+  text-align:left;
+  vertical-align:bottom;
+  font-family:var(--font-condensed);
+  font-weight:700;
+  font-size:var(--step--1);
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--rxsz-ice);
+}
+
+/* Highlighted RX SUBZERO header — top cap of the gold panel */
+.rxsz-compare__h--us{
+  display:flex;
+  align-items:center;
+  gap:.5em;
+  color:var(--rxsz-white);
+  letter-spacing:.1em;
+  background:linear-gradient(180deg, var(--cmp-gold-fill), var(--cmp-gold-fill2));
+  border:1px solid var(--cmp-gold-brd);
+  border-bottom:0;
+  border-radius:var(--radius-sm) var(--radius-sm) 0 0;
+  box-shadow:0 -6px 30px -14px color-mix(in srgb, var(--rxsz-gold) 70%, transparent);
+}
+.rxsz-compare__crown{ width:1.15em; height:1.15em; }
+
+/* ----- body: feature + value cells --------------------------------------- */
+.rxsz-compare__feat{
+  padding:1.05rem 1.15rem;
+  text-align:left;
+  vertical-align:middle;
+  font-family:var(--font-display);
+  font-weight:700;
+  font-size:var(--step-0);
+  letter-spacing:-.01em;
+  color:var(--rxsz-white);
+  border-top:1px solid var(--cmp-row-brd);
+}
+
+.rxsz-compare__cell{
+  padding:1.05rem 1.15rem;
+  vertical-align:middle;
+  border-top:1px solid var(--cmp-row-brd);
+}
+
+/* Value = mark + text, kept together */
+.rxsz-compare__cv{
+  display:flex;
+  align-items:center;
+  gap:.7rem;
+}
+.rxsz-compare__v{
+  font-size:var(--step-0);
+  line-height:1.3;
+  color:var(--rxsz-ice);
+}
+.rxsz-compare__cell--us .rxsz-compare__v{ color:var(--rxsz-white); font-weight:600; }
+
+/* Gold column body cells — the panel sides */
+.rxsz-compare__cell--us{
+  background:linear-gradient(180deg, var(--cmp-gold-fill), var(--cmp-gold-fill2));
+  border-inline:1px solid var(--cmp-gold-brd);
+  border-top-color:color-mix(in srgb, var(--rxsz-gold) 22%, transparent);
+}
+.rxsz-compare__h--us{ border-inline:1px solid var(--cmp-gold-brd); }
+/* Close the panel on the last row */
+.rxsz-compare__table tbody tr:last-child .rxsz-compare__cell--us{
+  border-bottom:1px solid var(--cmp-gold-brd);
+  border-radius:0 0 var(--radius-sm) var(--radius-sm);
+  box-shadow:0 22px 40px -26px color-mix(in srgb, var(--rxsz-gold) 60%, transparent);
+}
+
+/* Gentle row hover (gold column keeps its own tint on top) */
+.rxsz-compare__table tbody tr{ transition:background-color .3s var(--ease); }
+.rxsz-compare__table tbody tr:hover{ background:rgba(255,255,255,.025); }
+
+/* ----- status marks ------------------------------------------------------- */
+.rxsz-compare__mark{
+  display:inline-grid;
+  place-items:center;
+  width:1.85rem; height:1.85rem;
+  flex:0 0 auto;
+  border-radius:50%;
+}
+.rxsz-compare__mark .rxsz-ico{ width:1.05rem; height:1.05rem; }
+
+/* Yes — gold disc, dark glyph (RX SUBZERO column) */
+.rxsz-compare__mark--yes{
+  color:var(--rxsz-carbon);
+  background:linear-gradient(180deg, var(--rxsz-gold-lit), var(--rxsz-gold));
+  box-shadow:0 2px 10px -2px color-mix(in srgb, var(--rxsz-gold) 65%, transparent),
+             inset 0 1px 0 rgba(255,255,255,.45);
+}
+
+/* No — hollow, dim ring (DIY column) */
+.rxsz-compare__mark--no{
+  color:var(--rxsz-ice);
+  border:1px solid var(--glass-brd-lit);
+  opacity:.55;
+}
+
+/* Partial — half-filled steel disc (clinic: a real but limited alternative) */
+.rxsz-compare__mark--partial{
+  color:var(--rxsz-white);
+  border:1px solid color-mix(in srgb, var(--rxsz-steel-lit) 55%, transparent);
+  background:linear-gradient(90deg,
+             color-mix(in srgb, var(--rxsz-steel-lit) 40%, transparent) 0 50%,
+             transparent 50% 100%);
+}
+
+/* ----- footnote ----------------------------------------------------------- */
+.rxsz-compare__footnote{
+  max-width:var(--wrap-narrow);
+  margin:0;
+  font-size:var(--step--1);
+  line-height:1.5;
+  color:var(--rxsz-ice);
+  opacity:.7;
+}
+
+/* ============================================================================
+   RESPONSIVE — reflow the table into stacked glass cards (< 760px).
+   thead is hidden; each cell reveals its column via the localised data-label.
+   ========================================================================== */
+@media (max-width:760px){
+
+  .rxsz-compare__table,
+  .rxsz-compare__table tbody,
+  .rxsz-compare__table tr,
+  .rxsz-compare__table th,
+  .rxsz-compare__table td{
+    display:block;
+    width:auto;
+  }
+
+  /* Hide the header row + colgroup widths in card mode */
+  .rxsz-compare__table thead{
+    position:absolute;
+    width:1px; height:1px;
+    overflow:hidden; clip:rect(0 0 0 0); clip-path:inset(50%);
+    white-space:nowrap;
+  }
+
+  /* Each feature row becomes a frosted glass card */
+  .rxsz-compare__table tbody tr{
+    margin-bottom:1rem;
+    padding:.35rem 1.1rem 1rem;
+    border:1px solid var(--glass-brd);
+    border-radius:var(--radius-sm);
+    background:
+      linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,0) 46%),
+      var(--glass-bg);
+    backdrop-filter:blur(var(--glass-blur));
+    -webkit-backdrop-filter:blur(var(--glass-blur));
+    box-shadow:var(--glass-shadow);
+  }
+  .rxsz-compare__table tbody tr:last-child{ margin-bottom:0; }
+  .rxsz-compare__table tbody tr:hover{ background:var(--glass-bg); }
+
+  /* Card title = the feature */
+  .rxsz-compare__feat{
+    padding:.9rem 0 .75rem;
+    margin-bottom:.35rem;
+    border-top:0;
+    border-bottom:1px solid var(--glass-brd);
+    font-size:var(--step-1);
+  }
+
+  /* Each option becomes: LABEL ........ [mark] value */
+  .rxsz-compare__cell{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:1rem;
+    padding:.6rem 0;
+    border-top:0;
+    background:none !important;    /* reset the desktop gold-panel tint */
+    border-inline:0 !important;
+    border-radius:0 !important;
+    box-shadow:none !important;
+  }
+  .rxsz-compare__cell::before{
+    content:attr(data-label);
+    flex:0 0 auto;
+    font-family:var(--font-condensed);
+    font-weight:600;
+    font-size:var(--step--1);
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--rxsz-ice);
+    opacity:.72;
+  }
+  .rxsz-compare__cv{ justify-content:flex-end; flex-wrap:wrap; text-align:right; }
+  .rxsz-compare__v{ order:-1; }   /* value before the mark on the right edge */
+
+  /* Keep the RX SUBZERO option visibly "won" inside each card */
+  .rxsz-compare__cell--us{
+    margin:.15rem -1.1rem 0;
+    padding:.6rem 1.1rem;
+    background:linear-gradient(90deg,
+               var(--cmp-gold-fill), var(--cmp-gold-fill2)) !important;
+    border-left:2px solid var(--rxsz-gold) !important;
+  }
+  .rxsz-compare__cell--us::before{ color:var(--rxsz-white); opacity:.9; }
+}
+
+/* Very small screens — let long values wrap under the mark cleanly */
+@media (max-width:380px){
+  .rxsz-compare__cv{ gap:.5rem; }
+  .rxsz-compare__v{ font-size:var(--step--1); }
+}

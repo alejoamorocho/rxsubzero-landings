@@ -1,0 +1,327 @@
+/* ============================================================================
+   RX SUBZERO · chrome-top.css
+   Section-only rules for: announcement bar (.rxsz-announce) + sticky header
+   (.rxsz-nav) + language toggle (.rxsz-langtoggle) + mobile glass drawer.
+   Reuses core.css utilities/tokens (.rxsz-wrap, .rxsz-glass, .rxsz-btn,
+   .rxsz-ico, glass + glow vars). Motion states (.is-scrolled, reveal) live in
+   fx.css; only chrome-specific layout/skins are defined here.
+   Mobile breakpoint: 900px.
+   ========================================================================== */
+
+/* ── Top offer announcement bar ───────────────────────────────────────────── */
+.rxsz-announce{
+  position: relative;
+  z-index: 90;
+  font-family: var(--font-condensed);
+  font-size: var(--step--1);
+  letter-spacing: .02em;
+  color: var(--rxsz-ice);
+  /* thin frosted strip with a cold steel wash + gold hairline underneath */
+  background:
+    linear-gradient(90deg,
+      rgba(44,70,113,.55) 0%,
+      rgba(16,16,20,.72)  50%,
+      rgba(44,70,113,.55) 100%);
+  border-bottom: 1px solid color-mix(in srgb, var(--rxsz-gold) 30%, var(--glass-brd));
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+}
+/* Dismissed state (app.js may add .is-dismissed or the hidden attribute) */
+.rxsz-announce.is-dismissed,
+.rxsz-announce[hidden]{ display: none; }
+
+.rxsz-announce__bar{
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  min-height: 42px;
+  padding-block: .4rem;
+}
+.rxsz-announce__inner{
+  flex: 1 1 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem clamp(1rem, 3.5vw, 2.4rem);
+  min-width: 0;
+}
+
+/* group base */
+.rxsz-announce__offer,
+.rxsz-announce__timer,
+.rxsz-announce__ship{
+  display: inline-flex;
+  align-items: center;
+  gap: .5em;
+  margin: 0;
+  line-height: 1.3;
+}
+.rxsz-announce__offer{ text-transform: none; letter-spacing: .01em; }
+.rxsz-announce .rxsz-ico{ width: 1.05em; height: 1.05em; }
+.rxsz-announce__spark{ filter: drop-shadow(0 0 6px color-mix(in srgb, var(--rxsz-gold) 55%, transparent)); }
+.rxsz-announce__timer-ico,
+.rxsz-announce__ship-ico{ color: var(--rxsz-steel-lit); }
+
+/* inline "shop" link — underline that lights up on hover */
+.rxsz-announce__link{
+  color: var(--rxsz-white);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--rxsz-gold) 60%, transparent);
+  text-underline-offset: 3px;
+  white-space: nowrap;
+}
+.rxsz-announce__link:hover{
+  color: var(--rxsz-gold-lit);
+  text-decoration-color: var(--rxsz-gold-lit);
+}
+
+/* countdown clock — tabular so digits don't jitter as they tick */
+.rxsz-announce__timer-label{ color: var(--rxsz-ice); }
+.rxsz-announce__clock{
+  display: inline-flex;
+  align-items: baseline;
+  gap: .1em;
+  font-weight: 700;
+  letter-spacing: .04em;
+  color: var(--rxsz-white);
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+}
+.rxsz-announce__seg{ min-width: 2ch; text-align: center; }
+.rxsz-announce__colon{ opacity: .55; transform: translateY(-.02em); }
+
+/* dismiss button (× = rotated plus icon) */
+.rxsz-announce__dismiss{
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px; height: 30px;
+  border-radius: var(--radius-pill);
+  color: var(--rxsz-ice);
+  transition: color .25s var(--ease), background-color .25s var(--ease);
+}
+.rxsz-announce__dismiss:hover{ color: var(--rxsz-white); background: rgba(255,255,255,.08); }
+.rxsz-announce__x{ width: 16px; height: 16px; transform: rotate(45deg); }
+
+/* announce responsive: shed the non-essential groups on smaller screens */
+@media (max-width: 760px){ .rxsz-announce__ship{ display: none; } }
+@media (max-width: 520px){
+  .rxsz-announce__timer{ display: none; }
+  .rxsz-announce__inner{ justify-content: flex-start; }
+  .rxsz-announce__offer{ font-size: .8rem; }
+}
+
+
+/* ── Sticky header ────────────────────────────────────────────────────────── */
+.rxsz-nav{
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding-block: clamp(.5rem, 1.4vw, .9rem);   /* shrinks via fx.css .is-scrolled */
+  background: linear-gradient(180deg, rgba(16,16,20,.74), rgba(16,16,20,.46));
+  border-bottom: 1px solid var(--glass-brd);
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(1.1);
+          backdrop-filter: blur(var(--glass-blur)) saturate(1.1);
+}
+.rxsz-nav.is-scrolled{ padding-block: .38rem; }
+
+.rxsz-nav__bar{
+  display: flex;
+  align-items: center;
+  gap: clamp(.9rem, 2.5vw, 2rem);
+}
+
+/* Logo — kept pristine (no filters/effects per brand rule). Fixed height
+   reserves space (minimal CLS); shrinks slightly when the header condenses. */
+.rxsz-nav__logo{ margin-right: auto; display: inline-flex; align-items: center; }
+.rxsz-nav__logo img{
+  height: clamp(30px, 4.4vw, 42px);
+  width: auto;
+  max-width: 168px;
+  transition: height .35s var(--ease);
+}
+.rxsz-nav.is-scrolled .rxsz-nav__logo img{ height: clamp(26px, 3.8vw, 34px); }
+
+/* Inline anchor nav with a cold glowing underline on hover/focus */
+.rxsz-nav__links{
+  display: flex;
+  align-items: center;
+  gap: clamp(1rem, 2vw, 1.9rem);
+}
+.rxsz-nav__links a{
+  position: relative;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--step--1);
+  letter-spacing: .01em;
+  color: var(--rxsz-ice);
+  padding-block: .4rem;
+}
+.rxsz-nav__links a:hover{ color: var(--rxsz-white); }
+.rxsz-nav__links a::after{
+  content: "";
+  position: absolute;
+  left: 0; right: 100%; bottom: .1rem;
+  height: 1.5px;
+  background: var(--rxsz-glow);
+  box-shadow: 0 0 8px color-mix(in srgb, var(--rxsz-glow) 70%, transparent);
+  transition: right .3s var(--ease);
+}
+.rxsz-nav__links a:hover::after,
+.rxsz-nav__links a:focus-visible::after{ right: 0; }
+
+.rxsz-nav__actions{
+  display: flex;
+  align-items: center;
+  gap: clamp(.55rem, 1.4vw, 1rem);
+}
+
+/* Compact CTA sizing inside the bar */
+.rxsz-nav__cta{ padding: .62em 1.2em; font-size: var(--step--1); }
+
+/* ── EN/ES language toggle ────────────────────────────────────────────────── */
+.rxsz-langtoggle{
+  display: inline-flex;
+  align-items: center;
+  gap: .2rem;
+  padding: .26rem .34rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--glass-brd);
+  background: var(--glass-bg);
+  -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px);
+}
+.rxsz-langtoggle__globe{
+  width: 1rem; height: 1rem;
+  margin-inline: .2rem .05rem;
+  color: var(--rxsz-steel-lit);
+}
+.rxsz-langtoggle__opt{
+  font-family: var(--font-condensed);
+  font-weight: 700;
+  font-size: .72rem;
+  letter-spacing: .08em;
+  line-height: 1;
+  padding: .32rem .5rem;
+  border-radius: var(--radius-pill);
+  color: var(--rxsz-ice);
+  opacity: .55;
+  transition: opacity .25s var(--ease), color .25s var(--ease), background-color .25s var(--ease);
+}
+.rxsz-langtoggle__opt:hover{ opacity: .85; }
+.rxsz-langtoggle__opt.is-active,
+.rxsz-langtoggle__opt[aria-pressed="true"]{
+  opacity: 1;
+  color: var(--rxsz-carbon);
+  background: var(--rxsz-ice);
+}
+
+/* ── Hamburger (CSS bars) ─────────────────────────────────────────────────── */
+.rxsz-nav__toggle{
+  display: none;                     /* shown < 900px */
+  align-items: center;
+  justify-content: center;
+  width: 44px; height: 44px;
+  border-radius: 12px;
+  border: 1px solid var(--glass-brd);
+  background: var(--glass-bg);
+  -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px);
+  transition: border-color .25s var(--ease), background-color .25s var(--ease);
+}
+.rxsz-nav__toggle:hover{ border-color: var(--glass-brd-lit); }
+.rxsz-nav__bars{ position: relative; display: block; width: 20px; height: 14px; }
+.rxsz-nav__bars span{
+  position: absolute; left: 0;
+  width: 100%; height: 2px;
+  border-radius: 2px;
+  background: var(--rxsz-ice);
+  transition: transform .3s var(--ease), opacity .2s var(--ease), top .3s var(--ease);
+}
+.rxsz-nav__bars span:nth-child(1){ top: 0; }
+.rxsz-nav__bars span:nth-child(2){ top: 6px; }
+.rxsz-nav__bars span:nth-child(3){ top: 12px; }
+/* morph to × when the drawer is open */
+.rxsz-nav__toggle[aria-expanded="true"] .rxsz-nav__bars span:nth-child(1){ top: 6px; transform: rotate(45deg); }
+.rxsz-nav__toggle[aria-expanded="true"] .rxsz-nav__bars span:nth-child(2){ opacity: 0; }
+.rxsz-nav__toggle[aria-expanded="true"] .rxsz-nav__bars span:nth-child(3){ top: 6px; transform: rotate(-45deg); }
+
+/* ── Mobile glass drawer ──────────────────────────────────────────────────── */
+.rxsz-nav__drawer{
+  position: absolute;
+  top: calc(100% + .4rem);
+  right: clamp(.9rem, 4vw, 2.5rem);
+  left: auto;
+  width: min(340px, calc(100vw - 1.8rem));
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  gap: .25rem;
+  padding: clamp(.85rem, 3vw, 1.25rem);
+  transform-origin: top right;
+  /* closed state (removed from tab order via visibility:hidden) */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px) scale(.99);
+  transition:
+    opacity .3s var(--ease),
+    transform .35s var(--ease-out),
+    visibility .3s linear;
+}
+/* open — driven purely by aria-expanded (:has) with an .is-open class fallback */
+.rxsz-nav.is-open .rxsz-nav__drawer,
+.rxsz-nav:has(.rxsz-nav__toggle[aria-expanded="true"]) .rxsz-nav__drawer{
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+.rxsz-nav__drawer-links{ display: flex; flex-direction: column; }
+.rxsz-nav__drawer-links a{
+  display: flex;
+  align-items: center;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--step-0);
+  color: var(--rxsz-ice);
+  padding: .8rem .35rem;
+  border-bottom: 1px solid var(--glass-brd);
+}
+.rxsz-nav__drawer-links a:hover{ color: var(--rxsz-white); }
+.rxsz-nav__drawer-cta{ margin-top: .85rem; }
+
+/* ── Responsive swap: inline nav ↔ hamburger ──────────────────────────────── */
+@media (max-width: 900px){
+  .rxsz-nav__links,
+  .rxsz-nav__cta{ display: none; }
+  .rxsz-nav__toggle{ display: inline-flex; }
+}
+@media (min-width: 901px){
+  .rxsz-nav__toggle,
+  .rxsz-nav__drawer{ display: none !important; }   /* drawer is mobile-only */
+}
+
+/* ── No-JS fallback: expose the drawer contents inline on mobile ──────────── */
+html.no-js .rxsz-nav__toggle{ display: none; }
+@media (max-width: 900px){
+  html.no-js .rxsz-nav__drawer{
+    position: static;
+    width: auto;
+    margin-top: .5rem;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+}
+
+/* ── Reduced motion: drop the chrome micro-transitions ────────────────────── */
+@media (prefers-reduced-motion: reduce){
+  .rxsz-nav__logo img,
+  .rxsz-nav__links a::after,
+  .rxsz-nav__bars span,
+  .rxsz-nav__drawer{ transition: none !important; }
+}

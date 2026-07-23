@@ -1,0 +1,200 @@
+<!-- ============================================================================
+     RX SUBZERO · SECTION 01 — HERO  (+ trust TICKER)
+     Fragment only: <section> elements, no <html>/<head>/<body>.
+     Bindings: data-i18n / data-i18n-attr use keys under hero.* and ticker.*
+     exactly as they exist in <page>.<lang>.json. Icons via <span class="rxsz-ico"
+     data-icon="NAME"> (real keys in icons.js). Markup is identical for both
+     audiences — all copy/imagery differences come from the i18n dictionary.
+     Reveal cascade (eyebrow -> title -> sub -> CTA -> proof -> product -> scroll)
+     is expressed by inline --i indices; app.js reveals hero children on load.
+     ============================================================================ -->
+<section id="hero"
+         class="rxsz-hero rxsz-section rxsz-section--carbon"
+         aria-labelledby="rxsz-hero-title">
+
+  <!-- Atmosphere layer. app.js mounts the drifting metaball <canvas class="rxsz-liquid">
+       as the first child of THIS element (its liquid-ripple mount target); the CSS
+       blobs + snow are the always-on, reduced-motion-safe fallback. Decorative. -->
+  <div class="rxsz-hero__bg" aria-hidden="true">
+    <div class="rxsz-liquid-bg">
+      <span class="rxsz-blob rxsz-blob--1"></span>
+      <span class="rxsz-blob rxsz-blob--2"></span>
+      <span class="rxsz-blob rxsz-blob--3"></span>
+    </div>
+    <div class="rxsz-particles"></div>
+  </div>
+
+  <div class="rxsz-wrap rxsz-hero__wrap">
+
+    <!-- ---------- LEFT: value proposition ---------- -->
+    <div class="rxsz-hero__content">
+
+      <!-- 01 marker + condensed eyebrow -->
+      <div class="rxsz-hero__kicker rxsz-reveal" style="--i:0">
+        <span class="rxsz-marker rxsz-hero__marker" aria-hidden="true">01</span>
+        <p class="rxsz-eyebrow" data-i18n="hero.eyebrow">THE ICE FACIAL RITUAL</p>
+      </div>
+
+      <!-- Display headline with gold-accented phrase -->
+      <h1 id="rxsz-hero-title" class="rxsz-hero__title rxsz-display rxsz-reveal" style="--i:1">
+        <span data-i18n="hero.title">The cryo-facial glow,</span>
+        <span class="rxsz-hero__accent rxsz-gold" data-i18n="hero.title_accent">on tap at home</span>
+      </h1>
+
+      <!-- Sub -->
+      <p class="rxsz-hero__sub rxsz-lead rxsz-reveal" style="--i:2" data-i18n="hero.sub">
+        RX SUBZERO turns any morning into a spa ritual. Submerge, breathe, and rise
+        with de-puffed, tighter, lit-from-within skin — no clinic, no appointment,
+        no melting bag of ice.
+      </p>
+
+      <!-- Dual CTA: primary gold (magnetic) to #offer, ghost secondary to #how -->
+      <div class="rxsz-hero__cta rxsz-reveal" style="--i:3">
+        <a class="rxsz-btn rxsz-btn--primary rxsz-btn--lg rxsz-btn--magnetic"
+           href="#offer" data-i18n="hero.cta_primary">Start my ritual — $[PRICE]</a>
+        <a class="rxsz-btn rxsz-btn--ghost rxsz-btn--lg" href="#how">
+          <span class="rxsz-ico" data-icon="play"></span>
+          <span data-i18n="hero.cta_secondary">See how it works</span>
+        </a>
+      </div>
+
+      <!-- Social proof: inline star rating + 3 trust badges, on a layered glass panel -->
+      <div class="rxsz-hero__proof rxsz-glass rxsz-glass--flat rxsz-glass--pad rxsz-reveal" style="--i:4">
+        <div class="rxsz-hero__rating">
+          <span class="rxsz-stars" aria-hidden="true">
+            <span class="rxsz-ico" data-icon="star"></span>
+            <span class="rxsz-ico" data-icon="star"></span>
+            <span class="rxsz-ico" data-icon="star"></span>
+            <span class="rxsz-ico" data-icon="star"></span>
+            <span class="rxsz-ico" data-icon="star"></span>
+          </span>
+          <span class="rxsz-hero__rating-txt">
+            <!-- Constant across languages -> animated counter, not an i18n node -->
+            <span class="rxsz-hero__score rxsz-gold"
+                  data-count="4.9" data-count-decimals="1">4.9</span>
+            <span class="rxsz-vh">out of 5 —</span>
+            <span class="rxsz-hero__rating-label" data-i18n="hero.rating_label">[N] five-star reviews</span>
+          </span>
+        </div>
+
+        <hr class="rxsz-rule rxsz-hero__proof-rule">
+
+        <ul class="rxsz-hero__badges">
+          <li class="rxsz-hero__badge">
+            <span class="rxsz-ico" data-icon="fold"></span>
+            <span data-i18n="hero.badge1">Foldable &amp; travel-ready</span>
+          </li>
+          <li class="rxsz-hero__badge">
+            <span class="rxsz-ico" data-icon="silicone"></span>
+            <span data-i18n="hero.badge2">Body-safe silicone</span>
+          </li>
+          <li class="rxsz-hero__badge">
+            <span class="rxsz-ico" data-icon="breathe"></span>
+            <span data-i18n="hero.badge3">Built-in breathing tube</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Scroll affordance -->
+      <a class="rxsz-hero__scroll rxsz-reveal" style="--i:6" href="#problem">
+        <span data-i18n="hero.scroll">Scroll to explore</span>
+        <span class="rxsz-ico rxsz-hero__scroll-chev" data-icon="chevron"></span>
+      </a>
+    </div>
+
+    <!-- ---------- RIGHT: floating product visual ---------- -->
+    <div class="rxsz-hero__visual rxsz-reveal rxsz-reveal--right" style="--i:5">
+      <div class="rxsz-hero__stage">
+        <!-- Cold pulsing halo (fx.css) -->
+        <span class="rxsz-hero__halo" aria-hidden="true"></span>
+        <!-- Concentric liquid ripple behind the product -->
+        <span class="rxsz-hero__ripple" aria-hidden="true"></span>
+        <!-- Glass pedestal grounding the floating product -->
+        <span class="rxsz-hero__slab" aria-hidden="true"></span>
+
+        <!-- Product floats (fx.css .rxsz-hero__float) with cold reflection below -->
+        <div class="rxsz-hero__float">
+          <img class="rxsz-hero__product"
+               src="assets/img/product-front.png"
+               width="1290" height="1867"
+               alt="RX SUBZERO Face Ice Bath basin in steel-blue silicone, filled with ice water"
+               data-i18n-attr="alt:hero.img_alt"
+               fetchpriority="high" decoding="async">
+          <span class="rxsz-hero__reflect" aria-hidden="true">
+            <img src="assets/img/product-front.png" alt="" width="1290" height="1867" loading="lazy">
+          </span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ============================================================================
+     TRUST TICKER — seamless marquee of benefit phrases (ticker.items.*)
+     Track = two identical groups (fx.css translates -50% for a seamless loop);
+     pauses on hover/focus, disabled under reduced-motion. First group carries the
+     accessible content; the duplicate is aria-hidden.
+     ============================================================================ -->
+<section id="ticker" class="rxsz-ticker" aria-label="Key benefits">
+  <div class="rxsz-ticker__track">
+
+    <!-- Group A (announced) -->
+    <div class="rxsz-ticker__group">
+      <span class="rxsz-ticker__item">
+        <span class="rxsz-ico" data-icon="snowflake"></span>
+        <span data-i18n="ticker.items.0">De-puffs in minutes</span>
+      </span>
+      <span class="rxsz-ticker__item">
+        <span class="rxsz-ico" data-icon="pore"></span>
+        <span data-i18n="ticker.items.1">Tightens &amp; refines pores</span>
+      </span>
+      <span class="rxsz-ticker__item">
+        <span class="rxsz-ico" data-icon="jaw"></span>
+        <span data-i18n="ticker.items.2">Snatches the jawline</span>
+      </span>
+      <span class="rxsz-ticker__item">
+        <span class="rxsz-ico" data-icon="calm"></span>
+        <span data-i18n="ticker.items.3">Calms redness</span>
+      </span>
+      <span class="rxsz-ticker__item">
+        <span class="rxsz-ico" data-icon="sparkle"></span>
+        <span data-i18n="ticker.items.4">Preps skin for makeup</span>
+      </span>
+      <span class="rxsz-ticker__item">
+        <span class="rxsz-ico" data-icon="fold"></span>
+        <span data-i18n="ticker.items.5">Folds flat for travel</span>
+      </span>
+    </div>
+
+    <!-- Group B (visual duplicate for the seamless loop) -->
+    <div class="rxsz-ticker__group" aria-hidden="true">
+      <span class="rxsz-ticker__item">
+        <span class="rxsz-ico" data-icon="snowflake"></span>
+        <span data-i18n="ticker.items.0">De-puffs in minutes</span>
+      </span>
+      <span class="rxsz-ticker__item">
+        <span class="rxsz-ico" data-icon="pore"></span>
+        <span data-i18n="ticker.items.1">Tightens &amp; refines pores</span>
+      </span>
+      <span class="rxsz-ticker__item">
+        <span class="rxsz-ico" data-icon="jaw"></span>
+        <span data-i18n="ticker.items.2">Snatches the jawline</span>
+      </span>
+      <span class="rxsz-ticker__item">
+        <span class="rxsz-ico" data-icon="calm"></span>
+        <span data-i18n="ticker.items.3">Calms redness</span>
+      </span>
+      <span class="rxsz-ticker__item">
+        <span class="rxsz-ico" data-icon="sparkle"></span>
+        <span data-i18n="ticker.items.4">Preps skin for makeup</span>
+      </span>
+      <span class="rxsz-ticker__item">
+        <span class="rxsz-ico" data-icon="fold"></span>
+        <span data-i18n="ticker.items.5">Folds flat for travel</span>
+      </span>
+    </div>
+
+  </div>
+</section>

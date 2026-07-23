@@ -1,0 +1,140 @@
+/* ==========================================================================
+   RX SUBZERO · SECTION 10 — faq.css
+   Section-specific rules ONLY, scoped under .rxsz-faq. Reuses core utilities
+   (.rxsz-glass, .rxsz-marker, .rxsz-eyebrow, .rxsz-reveal, .rxsz-ico) and the
+   fx.css accordion engine (.rxsz-faq__panel height transition, no-js/reduced
+   -motion handling). No token or component redefinition here.
+   ========================================================================== */
+
+/* ---- Editorial two-column grid: heading aside + accordion --------------- */
+.rxsz-faq__grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:clamp(1.75rem,4vw,3.5rem);
+  align-items:start;
+}
+@media (min-width:880px){
+  .rxsz-faq__grid{
+    grid-template-columns:minmax(0,340px) minmax(0,1fr);
+    gap:clamp(2.5rem,5vw,5rem);
+  }
+}
+
+/* Heading column — sticks alongside the scrolling list on wide screens. */
+@media (min-width:880px){
+  .rxsz-faq__aside{
+    position:sticky;
+    top:104px;                 /* clears the sticky header */
+  }
+}
+.rxsz-faq__head{ display:flex; flex-direction:column; align-items:flex-start; }
+
+/* Oversized outlined section number, then eyebrow, then title. */
+.rxsz-faq__marker{ margin-bottom:.35rem; }
+.rxsz-faq__head .rxsz-eyebrow{ margin-bottom:.9rem; }
+.rxsz-faq__title{ margin:0; }
+
+/* ---- Accordion list ----------------------------------------------------- */
+.rxsz-faq__list{
+  display:flex;
+  flex-direction:column;
+  gap:clamp(.7rem,1.6vw,1rem);
+}
+.rxsz-faq__item{
+  /* .rxsz-glass supplies the frosted panel + hover glow; keep corners crisp. */
+  overflow:hidden;
+}
+
+/* The <h3> only carries the button — strip its default display heading size. */
+.rxsz-faq__qh{
+  margin:0;
+  font-size:inherit;
+  font-weight:inherit;
+  letter-spacing:normal;
+  line-height:inherit;
+}
+
+/* ---- Trigger ------------------------------------------------------------ */
+.rxsz-faq__q{
+  display:flex;
+  align-items:center;
+  gap:clamp(.9rem,2.5vw,1.4rem);
+  width:100%;
+  padding:clamp(1.05rem,2.6vw,1.4rem) clamp(1.15rem,3vw,1.7rem);
+  text-align:left;
+  color:var(--rxsz-white);
+  font-family:var(--font-display);
+  font-weight:600;
+  font-size:clamp(1.02rem,.98rem + .35vw,1.2rem);
+  line-height:1.35;
+  letter-spacing:-.01em;
+}
+.rxsz-faq__qtext{ flex:1 1 auto; text-wrap:balance; }
+
+/* Frosted round +/- badge on the right. */
+.rxsz-faq__toggle{
+  flex:0 0 auto;
+  display:grid;
+  place-items:center;
+  width:2.15rem; height:2.15rem;
+  border-radius:var(--radius-pill);
+  border:1px solid var(--glass-brd);
+  background:var(--glass-bg);
+  color:var(--rxsz-glow);
+  transition:
+    color .3s var(--ease),
+    border-color .3s var(--ease),
+    background-color .3s var(--ease);
+}
+.rxsz-faq__ico{ width:1.15rem; height:1.15rem; }
+
+/* Plus when collapsed, minus when expanded (state driven by aria-expanded). */
+.rxsz-faq__ico--minus{ display:none; }
+.rxsz-faq__q[aria-expanded="true"] .rxsz-faq__ico--plus{ display:none; }
+.rxsz-faq__q[aria-expanded="true"] .rxsz-faq__ico--minus{ display:grid; }
+
+/* Open + hover/focus emphasis → editorial gold badge (contract §2 gold rule:
+   gold on dark/carbon surfaces only, here as icon + border, never as text). */
+.rxsz-faq__q[aria-expanded="true"] .rxsz-faq__toggle{
+  color:var(--rxsz-gold);
+  border-color:color-mix(in srgb, var(--rxsz-gold) 55%, transparent);
+  background:color-mix(in srgb, var(--rxsz-gold) 12%, transparent);
+}
+.rxsz-faq__q:hover .rxsz-faq__toggle,
+.rxsz-faq__q:focus-visible .rxsz-faq__toggle{
+  color:var(--rxsz-gold);
+  border-color:color-mix(in srgb, var(--rxsz-gold) 45%, transparent);
+}
+.rxsz-faq__q:hover .rxsz-faq__qtext{ color:var(--rxsz-white); }
+
+/* Keep the whole button as one focus target; core :focus-visible handles the
+   ring, so drop the default per-icon outline. */
+.rxsz-faq__q:focus{ outline:none; }
+.rxsz-faq__q:focus-visible{
+  outline:2px solid var(--rxsz-glow);
+  outline-offset:-3px;                 /* inset ring hugs the card corners */
+  border-radius:var(--radius);
+}
+
+/* ---- Answer panel ------------------------------------------------------- */
+/* Height animation + no-js/reduced-motion fallbacks live in fx.css. Padding
+   sits on the inner wrapper so the panel can collapse to a true 0 height. */
+.rxsz-faq__a{
+  padding:0 clamp(1.15rem,3vw,1.7rem) clamp(1.2rem,2.8vw,1.6rem);
+}
+.rxsz-faq__a::before{
+  /* inset hairline separating question from answer */
+  content:"";
+  display:block;
+  height:1px;
+  margin-bottom:clamp(.85rem,2vw,1.15rem);
+  background:linear-gradient(90deg,
+             transparent, var(--glass-brd-lit) 15%, var(--glass-brd-lit) 85%, transparent);
+}
+.rxsz-faq__a p{
+  margin:0;
+  max-width:62ch;
+  color:var(--rxsz-ice);
+  font-size:var(--step-0);
+  line-height:1.65;
+}

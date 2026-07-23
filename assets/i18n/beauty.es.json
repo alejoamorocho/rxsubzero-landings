@@ -1,0 +1,364 @@
+{
+  "announce": {
+    "text": "La rutina cryo-facial en casa que todas quieren — ahora con 30% de descuento",
+    "cta": "Comprar el ritual",
+    "ship": "Envío exprés gratis",
+    "timer_label": "La oferta termina en",
+    "dismiss_aria": "Cerrar anuncio"
+  },
+  "nav": {
+    "benefits": "Beneficios",
+    "how": "Cómo funciona",
+    "reviews": "Opiniones",
+    "faq": "Preguntas",
+    "cta": "Lo quiero",
+    "lang_label": "Idioma",
+    "menu_aria": "Abrir menú"
+  },
+  "hero": {
+    "eyebrow": "EL RITUAL DE HIELO FACIAL",
+    "title": "El brillo cryo-facial,",
+    "title_accent": "listo en casa",
+    "sub": "RX SUBZERO convierte cualquier mañana en un ritual de spa. Sumerge el rostro, respira y sal con la piel deshinchada, más firme e iluminada desde dentro — sin clínica, sin cita y sin bolsas de hielo que se derriten.",
+    "cta_primary": "Empezar mi ritual — $[PRICE]",
+    "cta_secondary": "Ver cómo funciona",
+    "rating_value": "4.9",
+    "rating_label": "[N] reseñas de cinco estrellas",
+    "badge1": "Plegable y de viaje",
+    "badge2": "Silicona apta para la piel",
+    "badge3": "Tubo de respiración integrado",
+    "img_alt": "Cuenco facial RX SUBZERO de silicona azul acero, lleno de agua con hielo",
+    "scroll": "Desliza para descubrir",
+    "img_ph": "Estilo de vida: mujer levantando el rostro del cuenco de hielo, piel radiante, 4:5"
+  },
+  "ticker": {
+    "items": [
+      "Deshincha en minutos",
+      "Afina y cierra los poros",
+      "Define el óvalo facial",
+      "Calma el enrojecimiento",
+      "Prepara la piel para el maquillaje",
+      "Se pliega para viajar"
+    ]
+  },
+  "problem": {
+    "eyebrow": "¿TE SUENA?",
+    "title": "Hinchada y apagada antes de las 8 de la mañana",
+    "sub": "Despiertas hinchada, los poros se ven enormes y tu piel luce apagada antes de empezar el día. Los trucos de siempre ya no funcionan.",
+    "pains": [
+      {
+        "icon": "depuff",
+        "title": "Hinchazón matinal",
+        "text": "Despiertas con los ojos hinchados y el rostro abotagado que tarda horas en desinflamarse, si es que lo hace."
+      },
+      {
+        "icon": "pore",
+        "title": "Poros a la vista",
+        "text": "Poros dilatados y brillantes que ninguna prebase difumina y que cada cámara encuentra."
+      },
+      {
+        "icon": "face",
+        "title": "Piel apagada y sin vida",
+        "text": "Ese brillo iluminado desde dentro parece reservado para faciales que no tienes tiempo — ni presupuesto — de reservar."
+      },
+      {
+        "icon": "timer",
+        "title": "Soluciones que no duran",
+        "text": "Los cubos se derriten, las cucharas se calientan y el bol casero es un desastre helado y goteante por apenas un minuto de frío."
+      }
+    ],
+    "bridge": "El frío real, bien hecho, lo cambia todo. Esa es toda la idea detrás de RX SUBZERO.",
+    "img_ph": "Primer plano: rostro cansado e hinchado al despertar, tonos apagados, 4:5"
+  },
+  "transform": {
+    "eyebrow": "ANTES / DESPUÉS",
+    "title": "Todo sucede en 90 segundos",
+    "before_label": "Sin el ritual",
+    "after_label": "Tras la inmersión en frío",
+    "before": [
+      "Rostro hinchado y pesado al despertar",
+      "Enrojecimiento y poros visibles",
+      "Piel apagada y adormecida"
+    ],
+    "after": [
+      "Contornos deshinchados y definidos",
+      "Piel calmada, poros afinados",
+      "Brillo fresco y jugoso"
+    ],
+    "note": "Resultados que muchas usuarias sienten desde la primera inmersión. Los resultados varían según cada persona — el frío es un ritual, no un milagro, y la constancia es donde vive el brillo.",
+    "cta": "Quiero ese brillo",
+    "before_ph": "Antes: rostro hinchado y pesado al despertar, luz suave",
+    "after_ph": "Después: brillo fresco y definido, piel firme"
+  },
+  "benefits": {
+    "eyebrow": "POR QUÉ FUNCIONA EL FRÍO",
+    "title": "Seis razones que tu piel agradecerá",
+    "sub": "Un solo cuenco. Un menú completo de beneficios del frío, cada mañana.",
+    "items": [
+      {
+        "icon": "depuff",
+        "title": "Deshincha al instante",
+        "text": "El frío contrae y drena, así que las bolsas y la hinchazón matinal se desinflan de forma visible en minutos."
+      },
+      {
+        "icon": "pore",
+        "title": "Afina los poros",
+        "text": "Una inmersión fría cierra el aspecto de los poros para una superficie más lisa, difuminada y lista para la cámara."
+      },
+      {
+        "icon": "jaw",
+        "title": "Define el óvalo facial",
+        "text": "El frío reafirma el aspecto de tus contornos para ese efecto marcado, elevado y definido."
+      },
+      {
+        "icon": "glow",
+        "title": "Brillo avivado por el frío",
+        "text": "La sangre regresa cálida y luminosa, dejando la piel fresca, jugosa e iluminada desde dentro."
+      },
+      {
+        "icon": "calm",
+        "title": "Calma el enrojecimiento",
+        "text": "Alivia la irritación, los sofocos y la piel reactiva para un tono más uniforme y sereno."
+      },
+      {
+        "icon": "sparkle",
+        "title": "Prepara para el maquillaje",
+        "text": "La piel más fría y firme agarra mejor el producto: la base se asienta más lisa y dura más."
+      }
+    ]
+  },
+  "how": {
+    "eyebrow": "EL RITUAL",
+    "title": "Tu rutina de brillo en frío en tres pasos",
+    "steps": [
+      {
+        "title": "Llena y enfría",
+        "text": "Despliega el cuenco, añade agua fría y una bandeja de hielo. La silicona aislante mantiene el frío mucho más que un bol."
+      },
+      {
+        "title": "Sumerge y respira",
+        "text": "Baja el rostro, relájate y respira con calma por el tubo integrado. Empieza con unos segundos y ve aumentando."
+      },
+      {
+        "title": "Sal y brilla",
+        "text": "Seca con toques y observa cómo la piel queda firme, luminosa y definida. Aplica tu sérum mientras los poros están listos para absorberlo."
+      }
+    ],
+    "tube_title": "Respira tranquila, sin salir del agua",
+    "tube_text": "El característico tubo de respiración de RX SUBZERO te permite mantener el rostro totalmente sumergido mientras respiras despacio y con calma — para aprovechar todo el beneficio del frío sin tener que salir a tomar aire.",
+    "tube_badge": "Detalle exclusivo",
+    "img_ph": "Cenital: manos bajando el rostro hacia el cuenco RX SUBZERO"
+  },
+  "product": {
+    "eyebrow": "EL DISEÑO",
+    "title": "Diseñado para el ritual, hecho para desaparecer",
+    "sub": "Un cuenco frío de nivel spa que se pliega hasta casi nada cuando terminas.",
+    "features": [
+      {
+        "icon": "fold",
+        "title": "Se pliega plano",
+        "text": "Se reduce a un disco fino que cabe en un cajón, una repisa o una maleta de mano."
+      },
+      {
+        "icon": "silicone",
+        "title": "Silicona apta para la piel",
+        "text": "Silicona suave de grado alimentario en el azul acero característico — sin bordes duros contra tu rostro."
+      },
+      {
+        "icon": "breathe",
+        "title": "Tubo de respiración integrado",
+        "text": "Permanece sumergida y en calma con el tubo integrado — el detalle que un bol casero no puede ofrecer."
+      },
+      {
+        "icon": "drain",
+        "title": "Rejilla de drenaje",
+        "text": "Una rejilla extraíble mantiene el hielo arriba y tu rostro cómodo, y drena limpio en segundos."
+      },
+      {
+        "icon": "portable",
+        "title": "Listo para viajar",
+        "text": "Ligero y a prueba de fugas, para que tu ritual de brillo te acompañe a cualquier lugar."
+      }
+    ],
+    "specs": [
+      { "label": "Material", "value": "Silicona de grado alimentario" },
+      { "label": "Altura plegado", "value": "Menos de 5 cm / 2 in" },
+      { "label": "Profundidad", "value": "Inmersión de rostro y mentón" },
+      { "label": "Incluye", "value": "Cuenco, rejilla y tubo" },
+      { "label": "Cuidado", "value": "Enjuaga, seca y airea" }
+    ],
+    "cta": "Añadir el mío al carrito",
+    "img_ph": "Producto sobre repisa de mármol, plegado y desplegado, silicona azul acero"
+  },
+  "proof": {
+    "eyebrow": "LAS OPINIONES HABLAN",
+    "title": "Adorado por [N] devotas del brillo en frío",
+    "rating_value": "4.9",
+    "rating_count": "[N]",
+    "reviews": [
+      {
+        "name": "Mía R.",
+        "handle": "@miaglows",
+        "title": "La hinchazón desaparece antes de las 8",
+        "text": "Era escéptica, pero 60 segundos por la mañana y mis ojeras quedan planas. Mi piel nunca se vio tan firme y luminosa.",
+        "tag": "Deshinchado"
+      },
+      {
+        "name": "Sofía L.",
+        "handle": "@sofiaskin",
+        "title": "El maquillaje se asienta mucho mejor",
+        "text": "Me sumerjo antes de la base y es otro rostro — poros difuminados, todo liso. Esto reemplazó mis faciales de $200.",
+        "tag": "Prebase perfecta"
+      },
+      {
+        "name": "Elena V.",
+        "handle": "@elenacold",
+        "title": "El tubo de respiración es genial",
+        "text": "De verdad puedo quedarme bajo el agua y relajarme en vez de jadear. Mi óvalo facial se ve marcado y mi enrojecimiento bajó muchísimo.",
+        "tag": "Óvalo definido"
+      }
+    ],
+    "press_label": "Visto por todo tu feed",
+    "ugc_label": "Brillo real, personas reales",
+    "ugc_ph": "Mosaico UGC: 6 selfies durante el ritual y radiantes después"
+  },
+  "compare": {
+    "eyebrow": "CÓMO SE COMPARA",
+    "title": "Por qué un bol de hielo no puede competir",
+    "col_us": "RX SUBZERO",
+    "col_a": "Bol de hielo / casero",
+    "col_b": "Clínica cryo",
+    "rows": [
+      {
+        "feature": "Respirar bajo el agua",
+        "us": "Tubo integrado",
+        "a": "Aguantar la respiración",
+        "b": "No disponible"
+      },
+      {
+        "feature": "Mantiene el frío",
+        "us": "Silicona aislante",
+        "a": "Se derrite rápido",
+        "b": "Sesión cronometrada"
+      },
+      {
+        "feature": "Coste por sesión de brillo",
+        "us": "Pago único de $[PRICE]",
+        "a": "Hielo sin fin",
+        "b": "$100+ por visita"
+      },
+      {
+        "feature": "A tu horario",
+        "us": "Cuando quieras, en casa",
+        "a": "Cuando quieras, con desorden",
+        "b": "Con cita previa"
+      },
+      {
+        "feature": "Desorden y limpieza",
+        "us": "Drena y se pliega",
+        "a": "Gotea por todas partes",
+        "b": "Ninguno — te desplazas tú"
+      },
+      {
+        "feature": "Cabe en la maleta",
+        "us": "Se pliega plano",
+        "a": "Nada portátil",
+        "b": "Se queda en la clínica"
+      }
+    ],
+    "footnote": "Comparación ilustrativa. El precio de las clínicas varía según la ubicación."
+  },
+  "offer": {
+    "eyebrow": "LANZAMIENTO DE INVIERNO LIMITADO",
+    "title": "Empieza hoy tu ritual de brillo en frío",
+    "price": "$[PRICE]",
+    "price_compare": "$[WAS]",
+    "save_label": "Ahorras",
+    "bundle_title": "Cada kit incluye",
+    "bundle_items": [
+      "Cuenco facial de hielo plegable",
+      "Rejilla de drenaje extraíble",
+      "Tubo de respiración exclusivo",
+      "Guía rápida del ritual"
+    ],
+    "urgency": "El lote de invierno vuela — cuando este lanzamiento se agote, la próxima reposición tardará semanas.",
+    "guarantee_title": "Garantía de brillo de 60 noches",
+    "guarantee_text": "Prueba RX SUBZERO durante 60 mañanas. Si tu piel no está más feliz, devuélvelo y te reembolsamos todo — el riesgo es nuestro.",
+    "cta": "Reservar mi ritual — $[PRICE]",
+    "payment_note": "Pago seguro · Paga en 4 disponible",
+    "stock": "Solo quedan [N] kits a este precio"
+  },
+  "faq": {
+    "eyebrow": "BUENO SABERLO",
+    "title": "Tus preguntas, respondidas",
+    "items": [
+      {
+        "q": "¿Duele el frío?",
+        "a": "Es un golpe vigorizante, no dolor. La mayoría empieza con solo unos segundos y va aumentando a medida que se convierte en lo mejor de su mañana. Entra siempre a tu propio ritmo."
+      },
+      {
+        "q": "¿Qué tan fría debe estar el agua?",
+        "a": "Agua fría del grifo con un puñado de hielo basta para ese efecto deshinchante y afinador de poros. No hace falta que esté dolorosamente helada — cómoda y constante es lo que gana."
+      },
+      {
+        "q": "¿Cuánto tiempo aguanto bajo el agua?",
+        "a": "Poco es perfecto. Muchas usuarias se sumergen de 10 a 30 segundos por vez, respirando con calma por el tubo, y repiten varias rondas. Haz lo que te siente bien y nunca lo fuerces."
+      },
+      {
+        "q": "¿Cómo lo mantengo limpio?",
+        "a": "Vacíalo tras cada uso, enjuaga con agua tibia y un poco de jabón suave, seca y déjalo airear. La silicona lisa no retiene residuos y se pliega impecable."
+      },
+      {
+        "q": "¿De verdad se pliega plano?",
+        "a": "Sí — todo el cuenco se colapsa en un disco fino de menos de cinco centímetros de alto, así que cabe en un cajón o una maleta de mano y desaparece hasta el ritual de mañana."
+      },
+      {
+        "q": "¿Es seguro para mi piel?",
+        "a": "Para la mayoría, una breve inmersión fría es un ritual suave y refrescante. Si tienes rosácea, urticaria por frío, problemas cardiovasculares o alguna afección de la piel, consulta antes con tu médico. Evítalo si el frío te sienta mal y nunca lo hagas a solas si te sientes mareada."
+      },
+      {
+        "q": "¿Y el envío y las devoluciones?",
+        "a": "Los pedidos se envían gratis con entrega exprés y seguimiento. Si no es para ti, te cubre nuestra garantía de 60 noches — devuélvelo y te reembolsamos todo, sin complicaciones."
+      }
+    ]
+  },
+  "finalcta": {
+    "eyebrow": "TU BRILLO TE ESPERA",
+    "title": "La piel de mañana empieza con el pedido de hoy",
+    "sub": "Únete a miles que cambian las mañanas hinchadas por un brillo fresco, definido y de piel de cristal — en 90 segundos al día.",
+    "cta": "Empezar mi ritual — $[PRICE]",
+    "reassure": "Envío exprés gratis · Garantía de 60 noches · Pago seguro"
+  },
+  "footer": {
+    "tagline": "El ritual cryo-facial, reinventado para la repisa de tu baño.",
+    "col1_title": "Tienda",
+    "col1_links": [
+      "El cuenco facial de hielo",
+      "Cómo funciona",
+      "Opiniones",
+      "Seguir mi pedido"
+    ],
+    "col2_title": "Ayuda",
+    "col2_links": [
+      "Preguntas frecuentes",
+      "Envíos y devoluciones",
+      "Contáctanos",
+      "Guía de cuidado"
+    ],
+    "col3_title": "Empresa",
+    "col3_links": [
+      "Nuestra historia",
+      "Sostenibilidad",
+      "Términos del servicio",
+      "Política de privacidad"
+    ],
+    "disclaimer": "RX SUBZERO es una herramienta de bienestar y belleza para el autocuidado, no un dispositivo médico. El contenido es informativo y no sustituye el consejo médico profesional. Consulta a tu médico antes de comenzar cualquier rutina de terapia de frío.",
+    "rights": "© RX SUBZERO. Todos los derechos reservados.",
+    "payment_label": "Pago seguro"
+  },
+  "floatcta": {
+    "label": "RX SUBZERO · Baño Facial de Hielo",
+    "price": "$[PRICE]",
+    "cta": "Lo quiero"
+  }
+}

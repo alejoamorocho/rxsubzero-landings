@@ -1,0 +1,220 @@
+<!-- ============================================================================
+     RX SUBZERO · SECTION 08 — COMPARE  (block: rxsz-compare · i18n ns: compare)
+     Comparison table: RX SUBZERO (highlighted gold column) vs Ice bowl / DIY
+     vs Cryo clinic. 6 feature rows. Semantic <table> that reflows to stacked
+     glass cards on mobile (column labels carried on each cell via data-label,
+     localised through data-i18n-attr so the card view stays translatable).
+     us cells = check mark; DIY = minus (absent); clinic = half/partial mark.
+     Markup is identical for beauty & health — all copy comes from i18n.
+     ========================================================================= -->
+<section id="compare" class="rxsz-section rxsz-section--carbon rxsz-compare">
+  <div class="rxsz-wrap rxsz-compare__inner">
+
+    <!-- Header: numbered marker 08 + eyebrow + title -->
+    <header class="rxsz-compare__head rxsz-reveal" style="--i:0">
+      <span class="rxsz-marker" aria-hidden="true">08</span>
+      <p class="rxsz-eyebrow" data-i18n="compare.eyebrow">HOW IT STACKS UP</p>
+      <h2 class="rxsz-compare__title" id="rxsz-compare-title"
+          data-i18n="compare.title">Why a bowl of ice can't compete</h2>
+    </header>
+
+    <!-- The comparison table. aria-labelledby ties it to the visible heading
+         (no duplicate caption). Reflows to cards under 760px. -->
+    <div class="rxsz-compare__tablewrap rxsz-reveal" style="--i:1">
+      <table class="rxsz-compare__table" aria-labelledby="rxsz-compare-title">
+        <colgroup>
+          <col class="rxsz-compare__col-feat">
+          <col class="rxsz-compare__col-us">
+          <col class="rxsz-compare__col">
+          <col class="rxsz-compare__col">
+        </colgroup>
+
+        <thead>
+          <tr>
+            <td class="rxsz-compare__corner"></td>
+            <th scope="col" class="rxsz-compare__h rxsz-compare__h--us">
+              <span class="rxsz-ico rxsz-ico--gold rxsz-compare__crown"
+                    data-icon="award" aria-hidden="true"></span>
+              <span data-i18n="compare.col_us">RX SUBZERO</span>
+            </th>
+            <th scope="col" class="rxsz-compare__h">
+              <span data-i18n="compare.col_a">Ice bowl / DIY</span>
+            </th>
+            <th scope="col" class="rxsz-compare__h">
+              <span data-i18n="compare.col_b">Cryo clinic</span>
+            </th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <!-- Row 0 -->
+          <tr>
+            <th scope="row" class="rxsz-compare__feat"
+                data-i18n="compare.rows.0.feature">Breathe while submerged</th>
+            <td class="rxsz-compare__cell rxsz-compare__cell--us"
+                data-label="RX SUBZERO" data-i18n-attr="data-label:compare.col_us">
+              <span class="rxsz-compare__cv">
+                <span class="rxsz-compare__mark rxsz-compare__mark--yes" aria-hidden="true"><span class="rxsz-ico" data-icon="check"></span></span>
+                <span class="rxsz-compare__v" data-i18n="compare.rows.0.us">Built-in tube</span>
+              </span>
+            </td>
+            <td class="rxsz-compare__cell rxsz-compare__cell--a"
+                data-label="Ice bowl / DIY" data-i18n-attr="data-label:compare.col_a">
+              <span class="rxsz-compare__cv">
+                <span class="rxsz-compare__mark rxsz-compare__mark--no" aria-hidden="true"><span class="rxsz-ico" data-icon="minus"></span></span>
+                <span class="rxsz-compare__v" data-i18n="compare.rows.0.a">Hold your breath</span>
+              </span>
+            </td>
+            <td class="rxsz-compare__cell rxsz-compare__cell--b"
+                data-label="Cryo clinic" data-i18n-attr="data-label:compare.col_b">
+              <span class="rxsz-compare__cv">
+                <span class="rxsz-compare__mark rxsz-compare__mark--partial" aria-hidden="true"><span class="rxsz-ico" data-icon="minus"></span></span>
+                <span class="rxsz-compare__v" data-i18n="compare.rows.0.b">Not offered</span>
+              </span>
+            </td>
+          </tr>
+
+          <!-- Row 1 -->
+          <tr>
+            <th scope="row" class="rxsz-compare__feat"
+                data-i18n="compare.rows.1.feature">Stays cold</th>
+            <td class="rxsz-compare__cell rxsz-compare__cell--us"
+                data-label="RX SUBZERO" data-i18n-attr="data-label:compare.col_us">
+              <span class="rxsz-compare__cv">
+                <span class="rxsz-compare__mark rxsz-compare__mark--yes" aria-hidden="true"><span class="rxsz-ico" data-icon="check"></span></span>
+                <span class="rxsz-compare__v" data-i18n="compare.rows.1.us">Insulated silicone</span>
+              </span>
+            </td>
+            <td class="rxsz-compare__cell rxsz-compare__cell--a"
+                data-label="Ice bowl / DIY" data-i18n-attr="data-label:compare.col_a">
+              <span class="rxsz-compare__cv">
+                <span class="rxsz-compare__mark rxsz-compare__mark--no" aria-hidden="true"><span class="rxsz-ico" data-icon="minus"></span></span>
+                <span class="rxsz-compare__v" data-i18n="compare.rows.1.a">Melts fast</span>
+              </span>
+            </td>
+            <td class="rxsz-compare__cell rxsz-compare__cell--b"
+                data-label="Cryo clinic" data-i18n-attr="data-label:compare.col_b">
+              <span class="rxsz-compare__cv">
+                <span class="rxsz-compare__mark rxsz-compare__mark--partial" aria-hidden="true"><span class="rxsz-ico" data-icon="minus"></span></span>
+                <span class="rxsz-compare__v" data-i18n="compare.rows.1.b">Timed session</span>
+              </span>
+            </td>
+          </tr>
+
+          <!-- Row 2 -->
+          <tr>
+            <th scope="row" class="rxsz-compare__feat"
+                data-i18n="compare.rows.2.feature">Cost per glow</th>
+            <td class="rxsz-compare__cell rxsz-compare__cell--us"
+                data-label="RX SUBZERO" data-i18n-attr="data-label:compare.col_us">
+              <span class="rxsz-compare__cv">
+                <span class="rxsz-compare__mark rxsz-compare__mark--yes" aria-hidden="true"><span class="rxsz-ico" data-icon="check"></span></span>
+                <span class="rxsz-compare__v" data-i18n="compare.rows.2.us">One-time $[PRICE]</span>
+              </span>
+            </td>
+            <td class="rxsz-compare__cell rxsz-compare__cell--a"
+                data-label="Ice bowl / DIY" data-i18n-attr="data-label:compare.col_a">
+              <span class="rxsz-compare__cv">
+                <span class="rxsz-compare__mark rxsz-compare__mark--no" aria-hidden="true"><span class="rxsz-ico" data-icon="minus"></span></span>
+                <span class="rxsz-compare__v" data-i18n="compare.rows.2.a">Endless ice runs</span>
+              </span>
+            </td>
+            <td class="rxsz-compare__cell rxsz-compare__cell--b"
+                data-label="Cryo clinic" data-i18n-attr="data-label:compare.col_b">
+              <span class="rxsz-compare__cv">
+                <span class="rxsz-compare__mark rxsz-compare__mark--partial" aria-hidden="true"><span class="rxsz-ico" data-icon="minus"></span></span>
+                <span class="rxsz-compare__v" data-i18n="compare.rows.2.b">$100+ each visit</span>
+              </span>
+            </td>
+          </tr>
+
+          <!-- Row 3 -->
+          <tr>
+            <th scope="row" class="rxsz-compare__feat"
+                data-i18n="compare.rows.3.feature">On your schedule</th>
+            <td class="rxsz-compare__cell rxsz-compare__cell--us"
+                data-label="RX SUBZERO" data-i18n-attr="data-label:compare.col_us">
+              <span class="rxsz-compare__cv">
+                <span class="rxsz-compare__mark rxsz-compare__mark--yes" aria-hidden="true"><span class="rxsz-ico" data-icon="check"></span></span>
+                <span class="rxsz-compare__v" data-i18n="compare.rows.3.us">Anytime at home</span>
+              </span>
+            </td>
+            <td class="rxsz-compare__cell rxsz-compare__cell--a"
+                data-label="Ice bowl / DIY" data-i18n-attr="data-label:compare.col_a">
+              <span class="rxsz-compare__cv">
+                <span class="rxsz-compare__mark rxsz-compare__mark--no" aria-hidden="true"><span class="rxsz-ico" data-icon="minus"></span></span>
+                <span class="rxsz-compare__v" data-i18n="compare.rows.3.a">Anytime, but messy</span>
+              </span>
+            </td>
+            <td class="rxsz-compare__cell rxsz-compare__cell--b"
+                data-label="Cryo clinic" data-i18n-attr="data-label:compare.col_b">
+              <span class="rxsz-compare__cv">
+                <span class="rxsz-compare__mark rxsz-compare__mark--partial" aria-hidden="true"><span class="rxsz-ico" data-icon="minus"></span></span>
+                <span class="rxsz-compare__v" data-i18n="compare.rows.3.b">By appointment</span>
+              </span>
+            </td>
+          </tr>
+
+          <!-- Row 4 -->
+          <tr>
+            <th scope="row" class="rxsz-compare__feat"
+                data-i18n="compare.rows.4.feature">Mess &amp; cleanup</th>
+            <td class="rxsz-compare__cell rxsz-compare__cell--us"
+                data-label="RX SUBZERO" data-i18n-attr="data-label:compare.col_us">
+              <span class="rxsz-compare__cv">
+                <span class="rxsz-compare__mark rxsz-compare__mark--yes" aria-hidden="true"><span class="rxsz-ico" data-icon="check"></span></span>
+                <span class="rxsz-compare__v" data-i18n="compare.rows.4.us">Drains &amp; folds away</span>
+              </span>
+            </td>
+            <td class="rxsz-compare__cell rxsz-compare__cell--a"
+                data-label="Ice bowl / DIY" data-i18n-attr="data-label:compare.col_a">
+              <span class="rxsz-compare__cv">
+                <span class="rxsz-compare__mark rxsz-compare__mark--no" aria-hidden="true"><span class="rxsz-ico" data-icon="minus"></span></span>
+                <span class="rxsz-compare__v" data-i18n="compare.rows.4.a">Drips everywhere</span>
+              </span>
+            </td>
+            <td class="rxsz-compare__cell rxsz-compare__cell--b"
+                data-label="Cryo clinic" data-i18n-attr="data-label:compare.col_b">
+              <span class="rxsz-compare__cv">
+                <span class="rxsz-compare__mark rxsz-compare__mark--partial" aria-hidden="true"><span class="rxsz-ico" data-icon="minus"></span></span>
+                <span class="rxsz-compare__v" data-i18n="compare.rows.4.b">None — you travel</span>
+              </span>
+            </td>
+          </tr>
+
+          <!-- Row 5 -->
+          <tr>
+            <th scope="row" class="rxsz-compare__feat"
+                data-i18n="compare.rows.5.feature">Packs for travel</th>
+            <td class="rxsz-compare__cell rxsz-compare__cell--us"
+                data-label="RX SUBZERO" data-i18n-attr="data-label:compare.col_us">
+              <span class="rxsz-compare__cv">
+                <span class="rxsz-compare__mark rxsz-compare__mark--yes" aria-hidden="true"><span class="rxsz-ico" data-icon="check"></span></span>
+                <span class="rxsz-compare__v" data-i18n="compare.rows.5.us">Folds flat</span>
+              </span>
+            </td>
+            <td class="rxsz-compare__cell rxsz-compare__cell--a"
+                data-label="Ice bowl / DIY" data-i18n-attr="data-label:compare.col_a">
+              <span class="rxsz-compare__cv">
+                <span class="rxsz-compare__mark rxsz-compare__mark--no" aria-hidden="true"><span class="rxsz-ico" data-icon="minus"></span></span>
+                <span class="rxsz-compare__v" data-i18n="compare.rows.5.a">Not portable</span>
+              </span>
+            </td>
+            <td class="rxsz-compare__cell rxsz-compare__cell--b"
+                data-label="Cryo clinic" data-i18n-attr="data-label:compare.col_b">
+              <span class="rxsz-compare__cv">
+                <span class="rxsz-compare__mark rxsz-compare__mark--partial" aria-hidden="true"><span class="rxsz-ico" data-icon="minus"></span></span>
+                <span class="rxsz-compare__v" data-i18n="compare.rows.5.b">Stays in the clinic</span>
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Legal / clarifying footnote -->
+    <p class="rxsz-compare__footnote rxsz-reveal" style="--i:2"
+       data-i18n="compare.footnote">Comparison shown for illustration. Clinic pricing varies by location.</p>
+
+  </div>
+</section>

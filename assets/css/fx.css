@@ -1,0 +1,396 @@
+/* ==========================================================================
+   RX SUBZERO — fx.css
+   Motion layer: keyframes, reveal states, liquid blobs, snow particles,
+   marquee ticker, sticky header, floating CTA, accordion, button sheen.
+   Loads AFTER core.css (core.css owns tokens/layout/components; this file
+   owns animation + interaction states and wins where they overlap).
+   All effects degrade under prefers-reduced-motion and the .no-js fallback.
+   Namespacing: rxsz- prefix. Relies on tokens from core.css :root with
+   inline fallbacks so this file is safe even if loaded standalone.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   0. Local easing fallbacks (mirror core.css :root)
+   -------------------------------------------------------------------------- */
+:root{
+  --marquee-dur: 34s;              /* ticker loop duration */
+  --reveal-dur: .72s;              /* scroll-reveal duration */
+  --reveal-stagger: 85ms;          /* per --i child delay */
+}
+
+/* ==========================================================================
+   1. SCROLL REVEAL  ( .rxsz-reveal -> .is-in )  + --i stagger
+   Hidden = opacity 0 + translateY (+ optional blur for a "frost focus" feel).
+   JS adds .is-in when the element scrolls into view; children stagger by --i
+   via transition-delay. Direction/scale variants are opt-in modifiers.
+   ========================================================================== */
+.rxsz-reveal{
+  opacity: 0;
+  transform: translateY(26px);
+  filter: blur(0);
+  transition:
+    opacity   var(--reveal-dur) var(--ease-out, cubic-bezier(.16,1,.3,1)),
+    transform var(--reveal-dur) var(--ease-out, cubic-bezier(.16,1,.3,1)),
+    filter    var(--reveal-dur) var(--ease-out, cubic-bezier(.16,1,.3,1));
+  transition-delay: calc(var(--i, 0) * var(--reveal-stagger));
+  will-change: opacity, transform;
+}
+.rxsz-reveal.is-in{
+  opacity: 1;
+  transform: none;
+  filter: blur(0);
+}
+
+/* Directional / character variants (add alongside .rxsz-reveal) */
+.rxsz-reveal--left  { transform: translateX(-34px); }
+.rxsz-reveal--right { transform: translateX(34px); }
+.rxsz-reveal--down  { transform: translateY(-26px); }
+.rxsz-reveal--scale { transform: translateY(20px) scale(.96); }
+.rxsz-reveal--frost { transform: translateY(20px); filter: blur(10px); } /* de-frosts into focus */
+.rxsz-reveal--fade  { transform: none; }
+.rxsz-reveal--left.is-in,
+.rxsz-reveal--right.is-in,
+.rxsz-reveal--down.is-in,
+.rxsz-reveal--scale.is-in,
+.rxsz-reveal--frost.is-in{ transform: none; filter: blur(0); }
+
+/* ==========================================================================
+   2. HERO LOAD  — one orchestrated entrance on page load.
+   JS adds .is-hero-in on <html> and .is-in on the hero's reveals immediately
+   (they are excluded from the scroll observer so they never wait for scroll).
+   The eyebrow -> title -> sub -> CTA -> product cascade is expressed by the
+   --i indices set in the hero markup. Product gets a continuous cold float
+   on an inner wrapper so it never fights the reveal transform.
+   ========================================================================== */
+.rxsz-hero__float{
+  animation: rxsz-float 7.5s ease-in-out infinite;
+  will-change: transform;
+}
+@keyframes rxsz-float{
+  0%,100%{ transform: translateY(0); }
+  50%    { transform: translateY(-12px); }
+}
+
+/* Cold halo behind the floating product (soft pulsing glow) */
+.rxsz-hero__halo{
+  position: absolute;
+  left: 50%; top: 50%;
+  width: 78%; aspect-ratio: 1;
+  transform: translate(-50%,-50%);
+  border-radius: 50%;
+  background: radial-gradient(circle,
+              var(--rxsz-glow, #8FD3E6) 0%,
+              rgba(108,140,192,.30) 34%,
+              transparent 68%);
+  filter: blur(26px);
+  opacity: .6;
+  pointer-events: none;
+  z-index: 0;
+  animation: rxsz-halo 6.5s ease-in-out infinite;
+}
+@keyframes rxsz-halo{
+  0%,100%{ opacity: .5;  transform: translate(-50%,-50%) scale(1); }
+  50%    { opacity: .85; transform: translate(-50%,-50%) scale(1.07); }
+}
+
+/* ==========================================================================
+   3. LIQUID GRADIENT BLOBS  (always-on CSS fallback for the atmosphere)
+   Drifting steel-blue metaball-ish blobs behind content. The optional JS
+   <canvas class="rxsz-liquid"> enriches this behind the hero on capable,
+   non-reduced-motion screens; this CSS layer is the always-on base.
+   Markup expected: <div class="rxsz-liquid-bg"><span class="rxsz-blob rxsz-blob--1">…
+   ========================================================================== */
+.rxsz-liquid-bg{
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+.rxsz-blob{
+  position: absolute;
+  width: 46vmax; height: 46vmax;
+  border-radius: 50%;
+  filter: blur(72px);
+  opacity: .42;
+  mix-blend-mode: screen;
+  will-change: transform;
+}
+.rxsz-blob--1{
+  top: -12%; left: -8%;
+  background: radial-gradient(circle at 32% 32%, var(--rxsz-steel-lit,#6C8CC0), transparent 62%);
+  animation: rxsz-drift-1 27s var(--ease, cubic-bezier(.22,.61,.36,1)) infinite alternate;
+}
+.rxsz-blob--2{
+  bottom: -16%; right: -10%;
+  background: radial-gradient(circle at 50% 50%, var(--rxsz-steel,#3A5888), transparent 64%);
+  animation: rxsz-drift-2 33s var(--ease, cubic-bezier(.22,.61,.36,1)) infinite alternate;
+}
+.rxsz-blob--3{
+  top: 26%; left: 38%;
+  width: 38vmax; height: 38vmax;
+  opacity: .3;
+  background: radial-gradient(circle at 50% 50%, var(--rxsz-glow,#8FD3E6), transparent 60%);
+  animation: rxsz-drift-3 39s var(--ease, cubic-bezier(.22,.61,.36,1)) infinite alternate;
+}
+@keyframes rxsz-drift-1{
+  0%  { transform: translate(0,0) scale(1); }
+  100%{ transform: translate(9vw,7vh) scale(1.14); }
+}
+@keyframes rxsz-drift-2{
+  0%  { transform: translate(0,0) scale(1.05); }
+  100%{ transform: translate(-8vw,-6vh) scale(.92); }
+}
+@keyframes rxsz-drift-3{
+  0%  { transform: translate(0,0) scale(.95); }
+  100%{ transform: translate(-6vw,9vh) scale(1.12); }
+}
+
+/* Injected JS metaball canvas — sits behind hero content */
+.rxsz-liquid{
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  opacity: .9;
+}
+
+/* ==========================================================================
+   4. SNOW PARTICLES  ( .rxsz-particles )
+   CSS-only drifting snow using two tiled dot layers translated by exactly one
+   tile height for a seamless loop (parallax via two speeds). Decorative only.
+   ========================================================================== */
+.rxsz-particles{
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+.rxsz-particles::before,
+.rxsz-particles::after{
+  content: "";
+  position: absolute;
+  left: 0; right: 0;
+  background-repeat: repeat;
+  will-change: transform;
+}
+/* Layer A — larger, brighter flakes, tile = 260px */
+.rxsz-particles::before{
+  top: -260px;
+  height: calc(100% + 520px);
+  background-image:
+    radial-gradient(2px 2px at 24px 30px,  rgba(255,255,255,.95), transparent),
+    radial-gradient(2px 2px at 150px 90px, rgba(201,218,224,.85), transparent),
+    radial-gradient(1.5px 1.5px at 90px 200px, rgba(255,255,255,.8), transparent),
+    radial-gradient(2px 2px at 210px 160px, rgba(201,218,224,.75), transparent),
+    radial-gradient(1.5px 1.5px at 40px 240px, rgba(255,255,255,.7), transparent),
+    radial-gradient(2px 2px at 190px 20px, rgba(255,255,255,.85), transparent);
+  background-size: 260px 260px;
+  opacity: .55;
+  animation: rxsz-snow-a 22s linear infinite;
+}
+/* Layer B — smaller, dimmer, faster, tile = 180px (parallax) */
+.rxsz-particles::after{
+  top: -180px;
+  height: calc(100% + 360px);
+  background-image:
+    radial-gradient(1.5px 1.5px at 30px 40px,  rgba(255,255,255,.7), transparent),
+    radial-gradient(1px 1px at 120px 120px, rgba(201,218,224,.6), transparent),
+    radial-gradient(1.5px 1.5px at 80px 160px, rgba(255,255,255,.55), transparent),
+    radial-gradient(1px 1px at 160px 60px, rgba(255,255,255,.6), transparent);
+  background-size: 180px 180px;
+  opacity: .4;
+  filter: blur(.4px);
+  animation: rxsz-snow-b 32s linear infinite;
+}
+@keyframes rxsz-snow-a{ from{ transform: translateY(0); } to{ transform: translateY(260px); } }
+@keyframes rxsz-snow-b{ from{ transform: translateY(0); } to{ transform: translateY(180px); } }
+
+/* ==========================================================================
+   5. MARQUEE TICKER  ( .rxsz-ticker )
+   Track = two identical groups; translateX 0 -> -50% loops one group width
+   seamlessly. Pauses on hover/focus-within. Content is duplicated in markup.
+   ========================================================================== */
+.rxsz-ticker{ overflow: hidden; }
+.rxsz-ticker__track{
+  display: flex;
+  width: max-content;
+  flex-wrap: nowrap;
+  animation: rxsz-marquee var(--marquee-dur) linear infinite;
+  will-change: transform;
+}
+.rxsz-ticker__group{
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+}
+.rxsz-ticker:hover .rxsz-ticker__track,
+.rxsz-ticker:focus-within .rxsz-ticker__track{ animation-play-state: paused; }
+@keyframes rxsz-marquee{ from{ transform: translateX(0); } to{ transform: translateX(-50%); } }
+
+/* ==========================================================================
+   6. STICKY HEADER  ( .rxsz-nav.is-scrolled )
+   JS toggles .is-scrolled past 40px. Core.css owns base look; here we only
+   transition the shrink + stronger glass so it stays smooth.
+   ========================================================================== */
+.rxsz-nav{
+  transition:
+    padding-block .35s var(--ease, cubic-bezier(.22,.61,.36,1)),
+    background-color .35s var(--ease, cubic-bezier(.22,.61,.36,1)),
+    box-shadow .35s var(--ease, cubic-bezier(.22,.61,.36,1)),
+    backdrop-filter .35s var(--ease, cubic-bezier(.22,.61,.36,1)),
+    border-color .35s var(--ease, cubic-bezier(.22,.61,.36,1));
+}
+.rxsz-nav.is-scrolled{
+  box-shadow: var(--glass-shadow, 0 10px 44px rgba(0,0,0,.46), inset 0 1px 0 rgba(255,255,255,.10));
+  backdrop-filter: blur(calc(var(--glass-blur, 18px) + 6px));
+  border-bottom-color: var(--glass-brd-lit, rgba(201,218,224,.28));
+}
+
+/* ==========================================================================
+   7. FLOATING CTA  ( .rxsz-floatcta.is-visible )
+   Hidden below the fold; slides up when the hero has scrolled past and hides
+   again near #offer / footer (visibility toggled by JS).
+   ========================================================================== */
+.rxsz-floatcta{
+  transform: translateY(165%);
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    transform .5s var(--ease-out, cubic-bezier(.16,1,.3,1)),
+    opacity .4s var(--ease, cubic-bezier(.22,.61,.36,1)),
+    visibility .4s linear;
+  will-change: transform, opacity;
+}
+.rxsz-floatcta.is-visible{
+  transform: none;
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ==========================================================================
+   8. ACCORDION (FAQ)  ( .rxsz-faq__panel )
+   Height is driven by JS (0 <-> scrollHeight <-> auto) and transitioned here.
+   ========================================================================== */
+.rxsz-faq__panel{
+  height: 0;
+  overflow: hidden;
+  transition: height .42s var(--ease, cubic-bezier(.22,.61,.36,1));
+}
+/* Chevron flip on the trigger */
+.rxsz-faq__q [data-icon="chevron"],
+.rxsz-faq__q .rxsz-faq__chev{
+  transition: transform .35s var(--ease, cubic-bezier(.22,.61,.36,1));
+}
+.rxsz-faq__q[aria-expanded="true"] [data-icon="chevron"],
+.rxsz-faq__q[aria-expanded="true"] .rxsz-faq__chev{ transform: rotate(180deg); }
+
+/* ==========================================================================
+   9. MAGNETIC BUTTONS  ( .rxsz-btn--magnetic )
+   JS sets an inline transform toward the cursor (pointer:fine only); the
+   transition below gives it the smooth "pulled" easing and a clean reset.
+   ========================================================================== */
+.rxsz-btn--magnetic{
+  transition: transform .35s var(--ease-out, cubic-bezier(.16,1,.3,1));
+  will-change: transform;
+}
+
+/* ==========================================================================
+   10. PRIMARY BUTTON SHEEN  ( .rxsz-btn--primary )
+   A cold light sweep glides across on hover/focus (and a slow ambient pass).
+   Core.css owns the gold fill; here we add the moving highlight only.
+   ========================================================================== */
+.rxsz-btn--primary{
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.rxsz-btn--primary::after{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 55%;
+  height: 100%;
+  background: linear-gradient(100deg,
+              transparent 0%,
+              rgba(255,255,255,.45) 50%,
+              transparent 100%);
+  transform: skewX(-18deg);
+  pointer-events: none;
+  z-index: 1;
+  opacity: .0;
+  animation: rxsz-sheen 6.5s var(--ease, cubic-bezier(.22,.61,.36,1)) infinite;
+  animation-delay: 2s;
+}
+.rxsz-btn--primary:hover::after,
+.rxsz-btn--primary:focus-visible::after{
+  animation: rxsz-sheen 1.1s var(--ease, cubic-bezier(.22,.61,.36,1));
+}
+@keyframes rxsz-sheen{
+  0%   { left: -75%;  opacity: 0; }
+  8%   { opacity: .9; }
+  40%  { left: 130%;  opacity: 0; }
+  100% { left: 130%;  opacity: 0; }
+}
+
+/* ==========================================================================
+   11. NO-JS FALLBACK
+   If JS never runs, <html> keeps its .no-js class: reveal everything, drop
+   JS-driven layers, and let FAQ panels sit open so content is fully readable.
+   ========================================================================== */
+html.no-js .rxsz-reveal{ opacity: 1; transform: none; filter: none; }
+html.no-js .rxsz-particles,
+html.no-js .rxsz-liquid{ display: none; }
+html.no-js .rxsz-faq__panel{ height: auto; }
+html.no-js .rxsz-floatcta{ display: none; }
+html.no-js .rxsz-hero__float{ animation: none; }
+
+/* ==========================================================================
+   12. REDUCED MOTION
+   Kill transforms, marquee, particles, canvas, drifting blobs and sheen.
+   Keep content fully visible (opacity:1). Reveals appear instantly, no motion.
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce){
+  .rxsz-reveal{
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
+  }
+  .rxsz-ticker__track{ animation: none !important; transform: none !important; }
+  .rxsz-particles,
+  .rxsz-liquid{ display: none !important; }
+  .rxsz-blob{ animation: none !important; }
+  .rxsz-hero__float{ animation: none !important; }
+  .rxsz-hero__halo{ animation: none !important; opacity: .55 !important; }
+  .rxsz-btn--primary::after{ display: none !important; }
+  .rxsz-btn--magnetic{ transition: none !important; transform: none !important; }
+  .rxsz-floatcta{ transition: opacity .2s linear !important; transform: none !important; }
+}
+
+/* Brand polish: one quiet cold atmosphere instead of competing effects. */
+.rxsz-hero__float{ animation-duration: 10s; }
+.rxsz-hero__halo{
+  opacity:.34;
+  filter:blur(34px);
+  animation-duration:12s;
+}
+.rxsz-liquid-bg .rxsz-blob{ opacity:.18; filter:blur(92px); }
+.rxsz-liquid-bg .rxsz-blob--1{ animation-duration:42s; }
+.rxsz-liquid-bg .rxsz-blob--2{ animation-duration:48s; }
+.rxsz-liquid-bg .rxsz-blob--3{ opacity:.12; animation-duration:56s; }
+.rxsz-particles::before{ opacity:.22; animation-duration:36s; }
+.rxsz-particles::after{ opacity:.14; animation-duration:48s; }
+.rxsz-btn--primary::after{ animation-duration:10s; opacity:0; }
+.rxsz-btn--primary:hover::after,
+.rxsz-btn--primary:focus-visible::after{ animation-duration:1.4s; }
+
+@media (prefers-reduced-motion: reduce){
+  .rxsz-hero__halo,
+  .rxsz-liquid-bg .rxsz-blob,
+  .rxsz-particles::before,
+  .rxsz-particles::after{ animation:none !important; }
+}

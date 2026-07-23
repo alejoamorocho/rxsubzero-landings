@@ -1,0 +1,355 @@
+/* ============================================================================
+   06 · PRODUCT · product.css
+   Section-specific rules only — all scoped under .rxsz-product.
+   Reuses core.css tokens/utilities (.rxsz-glass, .rxsz-chip, .rxsz-btn,
+   .rxsz-ph, .rxsz-marker, .rxsz-eyebrow) and fx.css reveals. No token redefs.
+
+   Note on imagery: the real product photos ship on a light studio backdrop,
+   so they are framed as floating "studio" cards with a cold halo + edge scrim
+   to seat them into the dark steel band (never a flat white box).
+   Colour discipline: --rxsz-glow is used ONLY for soft glows/halos/rings
+   (it resolves to gold on the beauty page, which the manual reserves for CTAs);
+   all icon strokes use cold steel tones instead.
+   ========================================================================== */
+
+/* ---- Section head ---------------------------------------------------------- */
+.rxsz-product__head{
+  max-width: 60ch;
+  margin-bottom: clamp(2.25rem, 5vw, 3.75rem);
+}
+.rxsz-product__marker{
+  display: block;
+  margin-bottom: .55rem;
+}
+.rxsz-product__title{
+  margin-top: .7rem;
+}
+.rxsz-product__sub{
+  margin-top: 1rem;
+  max-width: 52ch;
+}
+
+/* ---- Stage: visual | features --------------------------------------------- */
+.rxsz-product__stage{
+  display: grid;
+  grid-template-columns: minmax(0, 1.02fr) minmax(0, .98fr);
+  gap: clamp(1.75rem, 4.5vw, 3.75rem);
+  align-items: center;
+}
+
+/* ============================================================================
+   VISUAL COLLAGE
+   ========================================================================== */
+.rxsz-product__visual{
+  position: relative;                 /* anchor for glow + absolute insets */
+  padding: clamp(.75rem, 2.5vw, 1.75rem);
+}
+
+/* Soft cold halo behind the product (per-audience --rxsz-glow, soft glow only) */
+.rxsz-product__glow{
+  position: absolute;
+  z-index: 0;
+  left: 50%; top: 47%;
+  transform: translate(-50%, -50%);
+  width: 88%; aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle,
+              color-mix(in srgb, var(--rxsz-glow) 55%, transparent) 0%,
+              color-mix(in srgb, var(--rxsz-steel-lit) 32%, transparent) 42%,
+              transparent 70%);
+  filter: blur(32px);
+  opacity: .55;
+  pointer-events: none;
+}
+
+/* Main product shot — cropped to the lit product region (top ~50% of the
+   source PNG), edge-scrimmed so the studio backdrop melts into the band. */
+.rxsz-product__shot{
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  aspect-ratio: 4 / 3;                /* shows the product, hides the letterbox */
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--glass-brd-lit);
+  box-shadow: var(--glass-shadow);
+}
+.rxsz-product__shot > img{
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+/* Cold scrim: darkens edges + base to seat the light photo (and hide any
+   sliver of the source's black letterbox at the very bottom). */
+.rxsz-product__shot::after{
+  content: "";
+  position: absolute; inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg,
+      rgba(16,16,20,.10) 0%, transparent 20%,
+      transparent 60%, rgba(16,16,20,.58) 100%),
+    radial-gradient(125% 95% at 50% 38%, transparent 58%, rgba(26,42,70,.42) 100%);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.16);
+}
+
+/* ---- Floating hotspots ----------------------------------------------------- */
+.rxsz-product__hotspots{
+  position: absolute; inset: 0;
+  z-index: 4;                         /* above the scrim */
+  margin: 0;
+}
+.rxsz-product__hotspot{
+  position: absolute;
+  left: var(--hx); top: var(--hy);
+  transform: translate(-50%, -50%);
+}
+.rxsz-product__pin{
+  position: relative;
+  display: grid; place-items: center;
+  width: clamp(1.9rem, 4.6vw, 2.4rem);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  color: var(--rxsz-ice);
+  background: color-mix(in srgb, var(--rxsz-carbon-deep) 62%, transparent);
+  border: 1px solid var(--glass-brd-lit);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+  box-shadow:
+    0 6px 18px rgba(0,0,0,.45),
+    0 0 0 5px color-mix(in srgb, var(--rxsz-glow) 16%, transparent);
+}
+.rxsz-product__pin .rxsz-ico{
+  width: 58%; height: 58%;
+  color: var(--rxsz-steel-lit);
+}
+/* Pulsing "ping" ring (decorative; disabled under reduced motion). */
+.rxsz-product__pin::before{
+  content: "";
+  position: absolute; inset: -1px;
+  border-radius: 50%;
+  border: 1px solid color-mix(in srgb, var(--rxsz-glow) 55%, transparent);
+  animation: rxsz-product-ping 3.4s var(--ease-out) infinite;
+}
+@keyframes rxsz-product-ping{
+  0%   { transform: scale(1);   opacity: .8; }
+  70%  { transform: scale(1.9); opacity: 0; }
+  100% { transform: scale(1.9); opacity: 0; }
+}
+
+/* Hover/focus tooltip (sighted enhancement — overlay is aria-hidden). */
+.rxsz-product__tip{
+  position: absolute;
+  left: 50%; bottom: calc(100% + .5rem);
+  transform: translateX(-50%) translateY(4px);
+  white-space: nowrap;
+  padding: .38em .72em;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-condensed);
+  font-weight: 600; font-size: .68rem;
+  letter-spacing: .1em; text-transform: uppercase;
+  color: var(--rxsz-white);
+  background: color-mix(in srgb, var(--rxsz-carbon-deep) 84%, transparent);
+  border: 1px solid var(--glass-brd);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  box-shadow: 0 8px 22px rgba(0,0,0,.45);
+  opacity: 0; visibility: hidden;
+  transition: opacity .25s var(--ease), transform .25s var(--ease-out);
+  pointer-events: none;
+}
+.rxsz-product__hotspot:hover .rxsz-product__tip{
+  opacity: 1; visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ---- Overlapping insets ---------------------------------------------------- */
+.rxsz-product__insets{ display: contents; }   /* desktop: children float free */
+
+.rxsz-product__inset{
+  position: absolute;
+  z-index: 3;
+  margin: 0;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--glass-brd-lit);
+  box-shadow: var(--glass-shadow);
+  transition: transform .5s var(--ease-out), box-shadow .5s var(--ease-out);
+}
+.rxsz-product__inset > img{
+  width: 100%; height: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+}
+.rxsz-product__inset::after{        /* light cool scrim to match the main shot */
+  content: "";
+  position: absolute; inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, transparent 45%, rgba(16,16,20,.5));
+}
+.rxsz-product__inset--top{
+  top: 1%; right: -3%;
+  width: 30%; max-width: 168px;
+}
+.rxsz-product__inset:hover{ transform: translateY(-3px); }
+
+/* Collapsed-flat / portable story card (placeholder-aware) */
+.rxsz-product__fold{
+  position: absolute;
+  z-index: 3;
+  left: -3%; bottom: 2%;
+  width: 46%; max-width: 224px;
+  /* .rxsz-ph--wide already sets 16/9 + radius; add depth to overlap */
+  border: 1px solid var(--glass-brd-lit);
+  box-shadow: var(--glass-shadow);
+}
+
+/* Caption tags sitting on the insets */
+.rxsz-product__insetTag,
+.rxsz-product__foldTag{
+  position: absolute;
+  font-size: .6rem;
+  padding: .3em .6em;
+}
+.rxsz-product__insetTag{ left: .45rem; bottom: .45rem; }
+.rxsz-product__foldTag{ left: .5rem; top: .5rem; z-index: 2; }
+
+/* ============================================================================
+   FEATURE ROWS
+   ========================================================================== */
+.rxsz-product__features{
+  display: grid;
+  gap: clamp(.65rem, 1.6vw, .95rem);
+}
+.rxsz-product__feature{
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: clamp(.85rem, 2vw, 1.2rem);
+  align-items: start;
+  padding: clamp(.95rem, 2.2vw, 1.25rem) clamp(1.05rem, 2.6vw, 1.5rem);
+}
+.rxsz-product__fico{
+  display: grid; place-items: center;
+  width: 3rem; height: 3rem;
+  border-radius: 14px;
+  color: var(--rxsz-steel-lit);
+  background: var(--glass-bg-blue);
+  border: 1px solid var(--glass-brd);
+}
+.rxsz-product__fico .rxsz-ico{ width: 1.55rem; height: 1.55rem; }
+.rxsz-product__ftitle{
+  font-size: var(--step-0);
+  font-weight: 700;
+  color: var(--rxsz-white);
+  margin-bottom: .2rem;
+}
+.rxsz-product__ftext p{ font-size: var(--step--1); line-height: 1.55; }
+
+/* ============================================================================
+   SPEC LEDGER + CTA
+   ========================================================================== */
+.rxsz-product__ledger{
+  position: relative;
+  margin-top: clamp(2.25rem, 5vw, 3.5rem);
+  padding: clamp(1.4rem, 3.2vw, 2.4rem);
+  display: grid;
+  grid-template-columns: 1.35fr .95fr;
+  gap: clamp(1.4rem, 3.5vw, 2.75rem);
+  align-items: center;
+}
+/* Decorative spec-sheet mark (no text → aria-hidden in markup). */
+.rxsz-product__ledgerIco{
+  position: absolute;
+  top: clamp(1.1rem, 2.6vw, 1.7rem);
+  right: clamp(1.1rem, 2.6vw, 1.7rem);
+  color: var(--rxsz-steel-lit);
+  opacity: .45;
+}
+.rxsz-product__ledgerIco .rxsz-ico{ width: 1.6rem; height: 1.6rem; }
+
+.rxsz-product__specs{ display: grid; }
+.rxsz-product__spec{
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+  align-items: baseline;
+  padding-block: .85rem;
+  border-bottom: 1px solid var(--glass-brd);
+}
+.rxsz-product__spec:first-child{ padding-top: 0; }
+.rxsz-product__spec:last-child{ border-bottom: 0; padding-bottom: 0; }
+.rxsz-product__spec dt{
+  font-family: var(--font-condensed);
+  font-weight: 600; font-size: var(--step--1);
+  letter-spacing: .12em; text-transform: uppercase;
+  color: var(--rxsz-ice);
+}
+.rxsz-product__spec dd{
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--rxsz-white);
+  text-align: right;
+}
+
+/* Buy block */
+.rxsz-product__buy{
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding-left: clamp(1.4rem, 3.5vw, 2.75rem);
+  border-left: 1px solid var(--glass-brd);
+}
+.rxsz-product__chips{
+  display: flex; flex-wrap: wrap; gap: .5rem;
+}
+
+/* ============================================================================
+   RESPONSIVE
+   ========================================================================== */
+@media (max-width: 900px){
+  .rxsz-product__stage{
+    grid-template-columns: 1fr;
+    gap: clamp(2rem, 6vw, 2.75rem);
+  }
+  .rxsz-product__visual{ max-width: 560px; margin-inline: auto; width: 100%; }
+}
+
+@media (max-width: 760px){
+  .rxsz-product__ledger{ grid-template-columns: 1fr; }
+  .rxsz-product__buy{
+    padding-left: 0;
+    border-left: 0;
+    padding-top: 1.4rem;
+    border-top: 1px solid var(--glass-brd);
+  }
+}
+
+/* Small screens: unfloat the insets into a tidy static row below the shot so
+   nothing overhangs or covers the product on 360px. */
+@media (max-width: 560px){
+  .rxsz-product__insets{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: .75rem;
+    margin-top: 1rem;
+  }
+  .rxsz-product__inset,
+  .rxsz-product__fold{
+    position: static;
+    width: auto;
+    max-width: none;
+  }
+  .rxsz-product__inset > img{ aspect-ratio: 4 / 3; }
+  .rxsz-product__fold{ align-self: stretch; }
+}
+
+/* ============================================================================
+   REDUCED MOTION  (kill the decorative ping + hover translate; keep content)
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce){
+  .rxsz-product__pin::before{ animation: none !important; opacity: .5; }
+  .rxsz-product__inset{ transition: none !important; }
+  .rxsz-product__inset:hover{ transform: none !important; }
+  .rxsz-product__tip{ transition: opacity .2s linear !important; }
+}

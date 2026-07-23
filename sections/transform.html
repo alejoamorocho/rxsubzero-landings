@@ -1,0 +1,122 @@
+<!-- ==========================================================================
+     RX SUBZERO · SECTION 03 — TRANSFORM  (rxsz-transform)
+     Before -> After. Two glass columns (before/after) each with 3 bullets,
+     a directional arrow/gradient connector between them, a hover-reveal
+     before/after face visual (4:5 placeholder), plus a soft-claim note + CTA.
+     All varying text is i18n-bound (namespace: transform). Markup is identical
+     for beauty + health — only the JSON copy differs.
+     Requires: core.css (glass/eyebrow/marker/btn/ph/ico) + fx.css (reveal).
+     ========================================================================== -->
+<section id="transform" class="rxsz-section rxsz-section--carbon rxsz-transform">
+  <!-- crystalline frost edge into this band (decorative) -->
+  <div class="rxsz-divider rxsz-divider--top rxsz-divider--frost" aria-hidden="true"></div>
+
+  <div class="rxsz-wrap">
+
+    <!-- Section header: numbered marker + eyebrow + title ------------------- -->
+    <header class="rxsz-transform__head rxsz-reveal" style="--i:0">
+      <span class="rxsz-marker rxsz-transform__marker" aria-hidden="true">03</span>
+      <div class="rxsz-transform__heading">
+        <p class="rxsz-eyebrow" data-i18n="transform.eyebrow"></p>
+        <h2 class="rxsz-transform__title" data-i18n="transform.title"></h2>
+      </div>
+    </header>
+
+    <!-- Grid: [ before/after visual ]  |  [ columns + note + CTA ] --------- -->
+    <div class="rxsz-transform__grid">
+
+      <!-- Visual: before shot with after shot crossfading in on hover/focus.
+           Focusable (role=img) so keyboard + touch users can trigger the
+           reveal; inner images are decorative (labels carry the meaning). -->
+      <div class="rxsz-transform__compare rxsz-reveal rxsz-reveal--frost" style="--i:1"
+           tabindex="0" role="img" data-i18n-attr="aria-label:transform.eyebrow">
+
+        <figure class="rxsz-ph rxsz-transform__shot rxsz-transform__shot--before"
+                data-ph="Before: puffy, heavy morning face, soft light"
+                data-i18n-attr="data-ph:transform.before_ph">
+          <img src="assets/img/PLACEHOLDER-transform-before.jpg" alt="" loading="lazy"
+               onerror="this.closest('.rxsz-ph').classList.add('is-empty')">
+        </figure>
+
+        <figure class="rxsz-ph rxsz-transform__shot rxsz-transform__shot--after"
+                data-ph="After: cold-flushed, sculpted glow, tight skin"
+                data-i18n-attr="data-ph:transform.after_ph">
+          <img src="assets/img/PLACEHOLDER-transform-after.jpg" alt="" loading="lazy"
+               onerror="this.closest('.rxsz-ph').classList.add('is-empty')">
+        </figure>
+
+        <span class="rxsz-chip rxsz-transform__tag rxsz-transform__tag--before"
+              data-i18n="transform.before_label"></span>
+        <span class="rxsz-chip rxsz-chip--gold rxsz-transform__tag rxsz-transform__tag--after"
+              data-i18n="transform.after_label"></span>
+
+        <!-- swap affordance (decorative) -->
+        <span class="rxsz-transform__hint" aria-hidden="true">
+          <span class="rxsz-ico" data-icon="refresh"></span>
+        </span>
+      </div>
+
+      <!-- Content column ------------------------------------------------------ -->
+      <div class="rxsz-transform__body">
+
+        <div class="rxsz-transform__cols">
+
+          <!-- BEFORE column (de-emphasised, flat glass) -->
+          <article class="rxsz-transform__col rxsz-transform__col--before rxsz-glass rxsz-glass--flat rxsz-glass--pad rxsz-reveal rxsz-reveal--left" style="--i:2">
+            <h3 class="rxsz-transform__label" data-i18n="transform.before_label"></h3>
+            <ul class="rxsz-transform__list">
+              <li class="rxsz-transform__item">
+                <span class="rxsz-ico" data-icon="depuff"></span>
+                <span data-i18n="transform.before.0"></span>
+              </li>
+              <li class="rxsz-transform__item">
+                <span class="rxsz-ico" data-icon="pore"></span>
+                <span data-i18n="transform.before.1"></span>
+              </li>
+              <li class="rxsz-transform__item">
+                <span class="rxsz-ico" data-icon="face"></span>
+                <span data-i18n="transform.before.2"></span>
+              </li>
+            </ul>
+          </article>
+
+          <!-- Directional connector: gradient rail (steel -> gold) + node -->
+          <div class="rxsz-transform__arrow rxsz-reveal" style="--i:3" aria-hidden="true">
+            <span class="rxsz-transform__rail"></span>
+            <span class="rxsz-transform__node">
+              <span class="rxsz-ico" data-icon="chevron"></span>
+            </span>
+          </div>
+
+          <!-- AFTER column (aspirational, gold-tinted glass with hover glow) -->
+          <article class="rxsz-transform__col rxsz-transform__col--after rxsz-glass rxsz-glass--pad rxsz-reveal rxsz-reveal--right" style="--i:4">
+            <h3 class="rxsz-transform__label" data-i18n="transform.after_label"></h3>
+            <ul class="rxsz-transform__list">
+              <li class="rxsz-transform__item">
+                <span class="rxsz-ico" data-icon="jaw"></span>
+                <span data-i18n="transform.after.0"></span>
+              </li>
+              <li class="rxsz-transform__item">
+                <span class="rxsz-ico" data-icon="calm"></span>
+                <span data-i18n="transform.after.1"></span>
+              </li>
+              <li class="rxsz-transform__item">
+                <span class="rxsz-ico" data-icon="glow"></span>
+                <span data-i18n="transform.after.2"></span>
+              </li>
+            </ul>
+          </article>
+
+        </div><!-- /.rxsz-transform__cols -->
+
+        <div class="rxsz-transform__foot rxsz-reveal" style="--i:5">
+          <p class="rxsz-transform__note rxsz-dim" data-i18n="transform.note"></p>
+          <a class="rxsz-btn rxsz-btn--primary rxsz-btn--magnetic rxsz-transform__cta"
+             href="#offer" data-i18n="transform.cta"></a>
+        </div>
+
+      </div><!-- /.rxsz-transform__body -->
+    </div><!-- /.rxsz-transform__grid -->
+
+  </div><!-- /.rxsz-wrap -->
+</section>

@@ -1,0 +1,286 @@
+/* ============================================================================
+   RX SUBZERO · hero.css  —  SECTION 01 (hero) + trust ticker
+   Section-specific rules ONLY. Reuses core.css utilities (.rxsz-wrap, .rxsz-glass,
+   .rxsz-btn, .rxsz-eyebrow, .rxsz-marker, .rxsz-stars, .rxsz-rule) and fx.css
+   motion hooks (.rxsz-hero__float, .rxsz-hero__halo, .rxsz-liquid-bg, .rxsz-blob,
+   .rxsz-particles, .rxsz-ticker__*). No token/utility redefinition here.
+   ============================================================================ */
+
+/* ----------------------------------------------------------------------------
+   1. HERO SHELL + ATMOSPHERE
+   -------------------------------------------------------------------------- */
+.rxsz-hero{
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  min-height:min(94vh, 940px);
+  /* Extra top padding clears the sticky header; generous bottom breathing room. */
+  padding-block:clamp(6.5rem, 9vw, 8.75rem) clamp(3rem, 6vw, 5rem);
+}
+
+/* Full-bleed atmosphere layer — canvas mounts here (app.js); CSS blobs + snow
+   are the always-on fallback. Sits behind the content wrap (z-index:1 via core). */
+.rxsz-hero__bg{
+  position:absolute;
+  inset:0;
+  z-index:0;
+  overflow:hidden;
+  pointer-events:none;
+}
+
+/* Asymmetric two-column editorial grid (single column on small screens). */
+.rxsz-hero__wrap{
+  display:grid;
+  grid-template-columns:1fr;
+  align-items:center;
+  gap:clamp(2.25rem, 5vw, 4.5rem);
+  width:100%;
+}
+@media (min-width:900px){
+  .rxsz-hero__wrap{ grid-template-columns:minmax(0, 1.08fr) minmax(0, .92fr); }
+  /* Lift the product slightly for an off-axis, non-boxed composition. */
+  .rxsz-hero__visual{ margin-top:clamp(-2rem, -2vw, -.5rem); }
+}
+
+/* ----------------------------------------------------------------------------
+   2. CONTENT COLUMN
+   -------------------------------------------------------------------------- */
+.rxsz-hero__content{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:clamp(1.15rem, 2.4vw, 1.7rem);
+  max-width:42rem;
+}
+
+/* 01 marker + eyebrow row */
+.rxsz-hero__kicker{
+  display:flex;
+  align-items:center;
+  gap:clamp(.9rem, 2vw, 1.4rem);
+}
+.rxsz-hero__marker{
+  font-size:clamp(2rem, 5vw, 3rem);   /* scale the shared marker down for inline use */
+  line-height:.8;
+}
+
+/* Headline — gold accent phrase drops to its own line for a two-line editorial set. */
+.rxsz-hero__title{ margin:0; }
+.rxsz-hero__accent{
+  display:block;
+  /* gold color comes from .rxsz-gold; add a soft frozen glow only */
+  text-shadow:0 0 38px color-mix(in srgb, var(--rxsz-gold) 32%, transparent);
+}
+
+.rxsz-hero__sub{ margin:0; max-width:36rem; }
+
+/* Dual CTA */
+.rxsz-hero__cta{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:clamp(.75rem, 2vw, 1.1rem);
+}
+
+/* ----------------------------------------------------------------------------
+   3. PROOF PANEL (glass) — rating + trust badges
+   -------------------------------------------------------------------------- */
+.rxsz-hero__proof{
+  width:100%;
+  max-width:33rem;
+  display:flex;
+  flex-direction:column;
+  gap:clamp(.85rem, 2vw, 1.15rem);
+}
+.rxsz-hero__rating{
+  display:flex;
+  align-items:center;
+  gap:.85rem;
+  flex-wrap:wrap;
+}
+.rxsz-hero__rating-txt{
+  display:flex;
+  align-items:baseline;
+  gap:.5rem;
+  flex-wrap:wrap;
+}
+.rxsz-hero__score{
+  font-family:var(--font-condensed);
+  font-weight:700;
+  font-size:var(--step-2);
+  line-height:1;
+  letter-spacing:-.01em;
+}
+.rxsz-hero__rating-label{
+  color:var(--rxsz-ice);
+  font-size:var(--step--1);
+}
+.rxsz-hero__proof-rule{ opacity:.7; }
+
+.rxsz-hero__badges{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.6rem clamp(1rem, 3vw, 1.6rem);
+}
+.rxsz-hero__badge{
+  display:inline-flex;
+  align-items:center;
+  gap:.5em;
+  font-family:var(--font-condensed);
+  font-weight:600;
+  font-size:var(--step--1);
+  text-transform:uppercase;
+  letter-spacing:.06em;
+  color:var(--rxsz-ice);
+}
+.rxsz-hero__badge .rxsz-ico{
+  width:1.2em; height:1.2em;
+  color:var(--rxsz-glow);
+}
+
+/* Scroll affordance */
+.rxsz-hero__scroll{
+  display:inline-flex;
+  align-items:center;
+  gap:.6em;
+  margin-top:.15rem;
+  font-family:var(--font-condensed);
+  font-weight:700;
+  font-size:var(--step--1);
+  text-transform:uppercase;
+  letter-spacing:.2em;
+  color:var(--rxsz-ice);
+}
+.rxsz-hero__scroll:hover{ color:var(--rxsz-white); }
+.rxsz-hero__scroll-chev{ width:1.1em; height:1.1em; color:var(--rxsz-glow); }
+
+/* ----------------------------------------------------------------------------
+   4. PRODUCT VISUAL — floating, layered, reflected (not boxed)
+   -------------------------------------------------------------------------- */
+.rxsz-hero__visual{ position:relative; width:100%; }
+.rxsz-hero__stage{
+  position:relative;              /* positioning context for halo/ripple/slab/reflect */
+  width:100%;
+  max-width:30rem;
+  margin-inline:auto;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+/* Concentric liquid ripple rings, faded toward the edges. */
+.rxsz-hero__ripple{
+  position:absolute;
+  left:50%; top:46%;
+  transform:translate(-50%, -50%);
+  width:120%;
+  aspect-ratio:1;
+  border-radius:50%;
+  z-index:0;
+  pointer-events:none;
+  opacity:.45;
+  background:repeating-radial-gradient(circle at 50% 50%,
+              transparent 0 18px,
+              color-mix(in srgb, var(--rxsz-glow) 26%, transparent) 18px 19px);
+  -webkit-mask:radial-gradient(circle at 50% 50%, #000 12%, rgba(0,0,0,.5) 42%, transparent 72%);
+          mask:radial-gradient(circle at 50% 50%, #000 12%, rgba(0,0,0,.5) 42%, transparent 72%);
+}
+
+/* Glass pedestal grounding the floating product. */
+.rxsz-hero__slab{
+  position:absolute;
+  left:50%; bottom:3%;
+  transform:translateX(-50%);
+  width:80%; height:42%;
+  z-index:0;
+  pointer-events:none;
+  border-radius:var(--radius);
+  border:1px solid var(--glass-brd);
+  background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(58,88,136,.06));
+  backdrop-filter:blur(7px) saturate(1.1);
+  -webkit-backdrop-filter:blur(7px) saturate(1.1);
+  box-shadow:var(--glass-shadow);
+}
+
+.rxsz-hero__float{
+  position:relative;
+  z-index:2;
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+.rxsz-hero__product{
+  width:100%;
+  max-width:26rem;
+  height:auto;
+  /* Cold cast shadow + soft glow halo cast by the product itself. */
+  filter:
+    drop-shadow(0 30px 52px rgba(0,0,0,.55))
+    drop-shadow(0 0 42px color-mix(in srgb, var(--rxsz-glow) 26%, transparent));
+}
+
+/* Soft mirrored reflection beneath the product (tracks the float). */
+.rxsz-hero__reflect{
+  position:relative;
+  z-index:1;
+  width:74%;
+  margin-top:-4%;
+  opacity:.16;
+  filter:blur(1px);
+  pointer-events:none;
+  -webkit-mask:linear-gradient(180deg, rgba(0,0,0,.85), transparent 60%);
+          mask:linear-gradient(180deg, rgba(0,0,0,.85), transparent 60%);
+}
+.rxsz-hero__reflect img{
+  width:100%; height:auto;
+  transform:scaleY(-1);
+}
+
+/* ----------------------------------------------------------------------------
+   5. TRUST TICKER
+   -------------------------------------------------------------------------- */
+.rxsz-ticker{
+  position:relative;
+  overflow:hidden;
+  padding-block:clamp(.7rem, 1.7vw, 1.05rem);
+  background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(58,88,136,.08));
+  border-block:1px solid var(--glass-brd);
+  backdrop-filter:blur(6px);
+  -webkit-backdrop-filter:blur(6px);
+  /* Fade items in/out at the horizontal edges. */
+  -webkit-mask:linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+          mask:linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+}
+.rxsz-ticker__item{
+  display:inline-flex;
+  align-items:center;
+  gap:.65em;
+  padding-inline:clamp(1.1rem, 3.2vw, 2.4rem);
+  font-family:var(--font-condensed);
+  font-weight:700;
+  font-size:var(--step--1);
+  text-transform:uppercase;
+  letter-spacing:.16em;
+  color:var(--rxsz-ice);
+  white-space:nowrap;
+}
+.rxsz-ticker__item .rxsz-ico{
+  width:1.05em; height:1.05em;
+  flex:0 0 auto;
+  color:var(--rxsz-glow);
+}
+
+/* ----------------------------------------------------------------------------
+   6. RESPONSIVE — stack + shrink product on small screens
+   -------------------------------------------------------------------------- */
+@media (max-width:899px){
+  .rxsz-hero{ text-align:left; }
+  .rxsz-hero__stage{ max-width:22rem; }
+  .rxsz-hero__product{ max-width:20rem; }
+}
+@media (max-width:400px){
+  .rxsz-hero__marker{ font-size:1.8rem; }
+  .rxsz-hero__badges{ gap:.5rem 1rem; }
+}

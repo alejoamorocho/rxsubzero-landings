@@ -1,0 +1,228 @@
+<!-- ============================================================================
+     RX SUBZERO · SECTION 07 — PROOF  (id="proof", block .rxsz-proof)
+     Social proof: rating summary + 3 review cards + UGC gallery + press strip.
+     Editorial / trustworthy. Frozen-glass aesthetic.
+
+     Binding notes
+     - Every varying text node binds to keys that EXIST in beauty.en.json.
+       Section keys live under the `proof.*` namespace.
+     - The rating count needs the noun "reviews", which the `proof` namespace
+       does not define — so per the "closest existing key" rule we reuse
+       `nav.reviews` ("Reviews") for that single word only.
+     - Icons (quote / star / check) are hydrated by app.js from icons.js.
+     - Placeholders follow the contract §9 pattern: real <img> path + a labelled
+       frosted box shown via onerror -> .is-empty.
+     - Markup is audience-agnostic; beauty vs health differences come only from
+       the i18n JSON.
+     ========================================================================= -->
+<section id="proof" class="rxsz-section rxsz-section--carbon rxsz-proof" aria-labelledby="proof-title">
+  <div class="rxsz-wrap">
+
+    <!-- ---- Head: marker + eyebrow + title + rating summary ---------------- -->
+    <div class="rxsz-proof__head">
+
+      <div class="rxsz-proof__intro">
+        <div class="rxsz-proof__eyebrowrow rxsz-reveal" style="--i:0">
+          <span class="rxsz-marker" aria-hidden="true">07</span>
+          <p class="rxsz-eyebrow rxsz-eyebrow--bare" data-i18n="proof.eyebrow">The reviews are in</p>
+        </div>
+        <h2 id="proof-title" class="rxsz-proof__title rxsz-reveal" style="--i:1"
+            data-i18n="proof.title">Loved by [N] cold-glow devotees</h2>
+      </div>
+
+      <!-- Rating summary card -->
+      <aside class="rxsz-proof__rating rxsz-glass rxsz-glass--pad rxsz-reveal" style="--i:2">
+        <div class="rxsz-proof__ratingmain">
+          <span class="rxsz-proof__score" data-count="4.9"
+                data-i18n="proof.rating_value">4.9</span>
+          <span class="rxsz-proof__outof" aria-hidden="true">/5</span>
+        </div>
+        <!-- Decorative star row; the numeric score + count carry the meaning -->
+        <div class="rxsz-stars rxsz-proof__ratingstars" aria-hidden="true">
+          <span class="rxsz-ico" data-icon="star"></span>
+          <span class="rxsz-ico" data-icon="star"></span>
+          <span class="rxsz-ico" data-icon="star"></span>
+          <span class="rxsz-ico" data-icon="star"></span>
+          <span class="rxsz-ico" data-icon="star"></span>
+        </div>
+        <p class="rxsz-proof__ratingcount">
+          <strong data-i18n="proof.rating_count">[N]</strong>
+          <span data-i18n="nav.reviews">Reviews</span>
+        </p>
+      </aside>
+
+    </div>
+
+    <!-- ---- Review cards -------------------------------------------------- -->
+    <ul class="rxsz-proof__reviews">
+
+      <!-- Review 1 -->
+      <li class="rxsz-proof__card rxsz-glass rxsz-glass--pad rxsz-reveal" style="--i:0">
+        <div class="rxsz-proof__cardtop">
+          <span class="rxsz-ico rxsz-proof__quote" data-icon="quote"></span>
+          <div class="rxsz-stars" aria-hidden="true">
+            <span class="rxsz-ico" data-icon="star"></span>
+            <span class="rxsz-ico" data-icon="star"></span>
+            <span class="rxsz-ico" data-icon="star"></span>
+            <span class="rxsz-ico" data-icon="star"></span>
+            <span class="rxsz-ico" data-icon="star"></span>
+          </div>
+        </div>
+        <blockquote class="rxsz-proof__quotebody">
+          <h3 class="rxsz-proof__rtitle" data-i18n="proof.reviews.0.title">My puffiness is gone by 8am</h3>
+          <p class="rxsz-proof__rtext" data-i18n="proof.reviews.0.text">I was skeptical, but 60 seconds in the morning and my under-eyes are flat. My skin has never looked this tight and bright.</p>
+        </blockquote>
+        <span class="rxsz-chip rxsz-proof__tag" data-i18n="proof.reviews.0.tag">De-puffing</span>
+        <hr class="rxsz-rule rxsz-proof__cardrule">
+        <div class="rxsz-proof__author">
+          <figure class="rxsz-ph rxsz-ph--square rxsz-proof__avatar" data-ph="Reviewer avatar photo">
+            <img src="assets/img/PLACEHOLDER-review-avatar-1.jpg" alt="" loading="lazy"
+                 onerror="this.closest('.rxsz-ph').classList.add('is-empty')">
+          </figure>
+          <div class="rxsz-proof__meta">
+            <span class="rxsz-proof__name" data-i18n="proof.reviews.0.name">Mia R.</span>
+            <span class="rxsz-proof__handle" data-i18n="proof.reviews.0.handle">@miaglows</span>
+          </div>
+          <!-- Verified marker: icon-only (decorative); no `verified` i18n key exists -->
+          <span class="rxsz-proof__verified">
+            <span class="rxsz-ico" data-icon="check"></span>
+          </span>
+        </div>
+      </li>
+
+      <!-- Review 2 -->
+      <li class="rxsz-proof__card rxsz-glass rxsz-glass--pad rxsz-reveal" style="--i:1">
+        <div class="rxsz-proof__cardtop">
+          <span class="rxsz-ico rxsz-proof__quote" data-icon="quote"></span>
+          <div class="rxsz-stars" aria-hidden="true">
+            <span class="rxsz-ico" data-icon="star"></span>
+            <span class="rxsz-ico" data-icon="star"></span>
+            <span class="rxsz-ico" data-icon="star"></span>
+            <span class="rxsz-ico" data-icon="star"></span>
+            <span class="rxsz-ico" data-icon="star"></span>
+          </div>
+        </div>
+        <blockquote class="rxsz-proof__quotebody">
+          <h3 class="rxsz-proof__rtitle" data-i18n="proof.reviews.1.title">My makeup sits so much better</h3>
+          <p class="rxsz-proof__rtext" data-i18n="proof.reviews.1.text">I dip before foundation and it's a different face — pores blurred, everything smooth. This replaced my $200 facials.</p>
+        </blockquote>
+        <span class="rxsz-chip rxsz-proof__tag" data-i18n="proof.reviews.1.tag">Makeup prep</span>
+        <hr class="rxsz-rule rxsz-proof__cardrule">
+        <div class="rxsz-proof__author">
+          <figure class="rxsz-ph rxsz-ph--square rxsz-proof__avatar" data-ph="Reviewer avatar photo">
+            <img src="assets/img/PLACEHOLDER-review-avatar-2.jpg" alt="" loading="lazy"
+                 onerror="this.closest('.rxsz-ph').classList.add('is-empty')">
+          </figure>
+          <div class="rxsz-proof__meta">
+            <span class="rxsz-proof__name" data-i18n="proof.reviews.1.name">Sofia L.</span>
+            <span class="rxsz-proof__handle" data-i18n="proof.reviews.1.handle">@sofiaskin</span>
+          </div>
+          <span class="rxsz-proof__verified">
+            <span class="rxsz-ico" data-icon="check"></span>
+          </span>
+        </div>
+      </li>
+
+      <!-- Review 3 -->
+      <li class="rxsz-proof__card rxsz-glass rxsz-glass--pad rxsz-reveal" style="--i:2">
+        <div class="rxsz-proof__cardtop">
+          <span class="rxsz-ico rxsz-proof__quote" data-icon="quote"></span>
+          <div class="rxsz-stars" aria-hidden="true">
+            <span class="rxsz-ico" data-icon="star"></span>
+            <span class="rxsz-ico" data-icon="star"></span>
+            <span class="rxsz-ico" data-icon="star"></span>
+            <span class="rxsz-ico" data-icon="star"></span>
+            <span class="rxsz-ico" data-icon="star"></span>
+          </div>
+        </div>
+        <blockquote class="rxsz-proof__quotebody">
+          <h3 class="rxsz-proof__rtitle" data-i18n="proof.reviews.2.title">The breathing tube is genius</h3>
+          <p class="rxsz-proof__rtext" data-i18n="proof.reviews.2.text">I can actually stay under and relax instead of gasping. My jawline looks snatched and my redness calmed right down.</p>
+        </blockquote>
+        <span class="rxsz-chip rxsz-proof__tag" data-i18n="proof.reviews.2.tag">Snatched jawline</span>
+        <hr class="rxsz-rule rxsz-proof__cardrule">
+        <div class="rxsz-proof__author">
+          <figure class="rxsz-ph rxsz-ph--square rxsz-proof__avatar" data-ph="Reviewer avatar photo">
+            <img src="assets/img/PLACEHOLDER-review-avatar-3.jpg" alt="" loading="lazy"
+                 onerror="this.closest('.rxsz-ph').classList.add('is-empty')">
+          </figure>
+          <div class="rxsz-proof__meta">
+            <span class="rxsz-proof__name" data-i18n="proof.reviews.2.name">Elena V.</span>
+            <span class="rxsz-proof__handle" data-i18n="proof.reviews.2.handle">@elenacold</span>
+          </div>
+          <span class="rxsz-proof__verified">
+            <span class="rxsz-ico" data-icon="check"></span>
+          </span>
+        </div>
+      </li>
+
+    </ul>
+
+    <!-- ---- UGC gallery row ---------------------------------------------- -->
+    <div class="rxsz-proof__ugc">
+      <p class="rxsz-eyebrow rxsz-proof__blockhead rxsz-reveal" style="--i:0"
+         data-i18n="proof.ugc_label">Real glow, real people</p>
+      <ul class="rxsz-proof__ugcgrid">
+        <li class="rxsz-ph rxsz-ph--square rxsz-proof__tile rxsz-reveal" style="--i:1"
+            data-ph="UGC: mid-ritual selfie, face in the basin">
+          <img src="assets/img/PLACEHOLDER-ugc-1.jpg" alt="" loading="lazy"
+               onerror="this.closest('.rxsz-ph').classList.add('is-empty')">
+        </li>
+        <li class="rxsz-ph rxsz-ph--square rxsz-proof__tile rxsz-reveal" style="--i:2"
+            data-ph="UGC: glowing after, dewy skin">
+          <img src="assets/img/PLACEHOLDER-ugc-2.jpg" alt="" loading="lazy"
+               onerror="this.closest('.rxsz-ph').classList.add('is-empty')">
+        </li>
+        <li class="rxsz-ph rxsz-ph--square rxsz-proof__tile rxsz-reveal" style="--i:3"
+            data-ph="UGC: basin on bathroom shelf, styled">
+          <img src="assets/img/PLACEHOLDER-ugc-3.jpg" alt="" loading="lazy"
+               onerror="this.closest('.rxsz-ph').classList.add('is-empty')">
+        </li>
+        <li class="rxsz-ph rxsz-ph--square rxsz-proof__tile rxsz-reveal" style="--i:4"
+            data-ph="UGC: close-up de-puffed under-eyes">
+          <img src="assets/img/PLACEHOLDER-ugc-4.jpg" alt="" loading="lazy"
+               onerror="this.closest('.rxsz-ph').classList.add('is-empty')">
+        </li>
+        <li class="rxsz-ph rxsz-ph--square rxsz-proof__tile rxsz-reveal" style="--i:5"
+            data-ph="UGC: smiling with fresh glow, towel">
+          <img src="assets/img/PLACEHOLDER-ugc-5.jpg" alt="" loading="lazy"
+               onerror="this.closest('.rxsz-ph').classList.add('is-empty')">
+        </li>
+        <li class="rxsz-ph rxsz-ph--square rxsz-proof__tile rxsz-reveal" style="--i:6"
+            data-ph="UGC: folded basin held in one hand, travel">
+          <img src="assets/img/PLACEHOLDER-ugc-6.jpg" alt="" loading="lazy"
+               onerror="this.closest('.rxsz-ph').classList.add('is-empty')">
+        </li>
+      </ul>
+    </div>
+
+    <!-- ---- Press logo strip --------------------------------------------- -->
+    <div class="rxsz-proof__press">
+      <p class="rxsz-eyebrow rxsz-proof__blockhead rxsz-proof__blockhead--center rxsz-reveal" style="--i:0"
+         data-i18n="proof.press_label">As seen across your feed</p>
+      <ul class="rxsz-proof__logos">
+        <li class="rxsz-ph rxsz-proof__logo rxsz-reveal" style="--i:1" data-ph="Press logo 1">
+          <img src="assets/img/PLACEHOLDER-press-1.png" alt="" loading="lazy"
+               onerror="this.closest('.rxsz-ph').classList.add('is-empty')">
+        </li>
+        <li class="rxsz-ph rxsz-proof__logo rxsz-reveal" style="--i:2" data-ph="Press logo 2">
+          <img src="assets/img/PLACEHOLDER-press-2.png" alt="" loading="lazy"
+               onerror="this.closest('.rxsz-ph').classList.add('is-empty')">
+        </li>
+        <li class="rxsz-ph rxsz-proof__logo rxsz-reveal" style="--i:3" data-ph="Press logo 3">
+          <img src="assets/img/PLACEHOLDER-press-3.png" alt="" loading="lazy"
+               onerror="this.closest('.rxsz-ph').classList.add('is-empty')">
+        </li>
+        <li class="rxsz-ph rxsz-proof__logo rxsz-reveal" style="--i:4" data-ph="Press logo 4">
+          <img src="assets/img/PLACEHOLDER-press-4.png" alt="" loading="lazy"
+               onerror="this.closest('.rxsz-ph').classList.add('is-empty')">
+        </li>
+        <li class="rxsz-ph rxsz-proof__logo rxsz-reveal" style="--i:5" data-ph="Press logo 5">
+          <img src="assets/img/PLACEHOLDER-press-5.png" alt="" loading="lazy"
+               onerror="this.closest('.rxsz-ph').classList.add('is-empty')">
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</section>

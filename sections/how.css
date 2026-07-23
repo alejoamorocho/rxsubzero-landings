@@ -1,0 +1,221 @@
+/* ==========================================================================
+   RX SUBZERO · SECTION 05 — rxsz-how  (section-specific rules only)
+   Reuses core utilities (.rxsz-glass, .rxsz-chip, .rxsz-eyebrow, .rxsz-marker,
+   .rxsz-reveal, .rxsz-ico) and tokens from core.css — nothing is redefined here.
+   Everything is scoped under .rxsz-how. Motion/reveal is owned by fx.css.
+   ========================================================================== */
+
+/* ---- Intro -------------------------------------------------------------- */
+.rxsz-how__intro{
+  max-width: 48rem;
+  margin-bottom: clamp(2.25rem, 5vw, 3.5rem);
+}
+.rxsz-how__title-row{
+  display: flex;
+  align-items: flex-start;
+  gap: clamp(.85rem, 2.4vw, 1.5rem);
+  margin-top: var(--sp-2);
+}
+/* Section marker (05) — slightly smaller than the token default so it aligns
+   with the title cap-height instead of towering over it. */
+.rxsz-how__marker{
+  flex: 0 0 auto;
+  font-size: var(--step-2);
+  line-height: 1;
+  transform: translateY(-.06em);
+}
+.rxsz-how__title{ margin: 0; }
+
+/* ---- Protocol steps ----------------------------------------------------- */
+.rxsz-how__steps{
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1.25rem, 3vw, 2.5rem);
+  /* node geometry (used by the connecting line + ring math below) */
+  --node: 72px;
+}
+
+/* Connecting FROST LINE — runs through the node centres, capped so it never
+   pokes past the first/last node (centres sit at 1/6 and 5/6 of the track). */
+.rxsz-how__steps::before{
+  content: "";
+  position: absolute;
+  z-index: 0;
+  top: calc(var(--node) / 2);
+  left: calc(100% / 6);
+  right: calc(100% / 6);
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    var(--glass-brd-lit) 10%,
+    color-mix(in srgb, var(--rxsz-glow) 60%, var(--rxsz-ice)) 50%,
+    var(--glass-brd-lit) 90%,
+    transparent 100%);
+  box-shadow: 0 0 14px color-mix(in srgb, var(--rxsz-glow) 45%, transparent);
+}
+
+.rxsz-how__step{
+  position: relative;
+  z-index: 1;                     /* nodes/text sit above the frost line */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Numbered node — frosted glass disc with a carbon ring that "cuts" the line. */
+.rxsz-how__node{
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: var(--node);
+  height: var(--node);
+  margin-bottom: var(--sp-3);
+  border-radius: 50%;
+  border: 1px solid var(--glass-brd-lit);
+  background:
+    radial-gradient(circle at 50% 28%, rgba(255,255,255,.16), transparent 70%),
+    var(--glass-bg-blue);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  /* the 6px carbon ring masks the frost line as it passes behind the node */
+  box-shadow:
+    0 0 0 6px var(--rxsz-carbon),
+    var(--glass-shadow),
+    0 0 24px -6px color-mix(in srgb, var(--rxsz-glow) 60%, transparent);
+}
+/* Big outlined step number (echoes the gold marker, sized for the disc). */
+.rxsz-how__num{
+  font-family: var(--font-condensed);
+  font-weight: 700;
+  font-size: var(--step-2);
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1.4px var(--rxsz-gold);
+          text-stroke: 1.4px var(--rxsz-gold);
+  text-shadow: 0 0 1px rgba(201,162,39,.35);   /* fallback if text-stroke unsupported */
+}
+/* Small action icon badge clipped to the node's lower-right edge. */
+.rxsz-how .rxsz-how__badge{
+  position: absolute;
+  right: -4px;
+  bottom: -4px;
+  width: 34px;
+  height: 34px;
+  padding: 7px;
+  border-radius: 50%;
+  color: var(--rxsz-glow);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,0)),
+    var(--rxsz-carbon);
+  border: 1px solid var(--glass-brd-lit);
+  box-shadow: 0 4px 16px -6px color-mix(in srgb, var(--rxsz-glow) 70%, transparent);
+}
+
+.rxsz-how__step-title{
+  font-size: var(--step-1);
+  margin-bottom: .45rem;
+}
+.rxsz-how__step-text{
+  color: var(--rxsz-ice);
+  max-width: 32ch;
+  margin-inline: auto;
+}
+
+/* ---- Breathing-tube feature callout ------------------------------------- */
+.rxsz-how__tube{
+  margin-top: clamp(2.5rem, 6vw, 4.5rem);
+  display: grid;
+  grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
+  align-items: center;
+  gap: clamp(1.5rem, 4vw, 3.25rem);
+  overflow: hidden;               /* keep the halo bleed inside the panel */
+}
+
+.rxsz-how__tube-media{
+  position: relative;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1 / 1;
+}
+/* Cold halo behind the product, tinted by the per-audience glow. */
+.rxsz-how__tube-halo{
+  position: absolute;
+  inset: 8%;
+  border-radius: 50%;
+  background: radial-gradient(circle,
+    color-mix(in srgb, var(--rxsz-glow) 55%, transparent) 0%,
+    rgba(58,88,136,.28) 42%,
+    transparent 70%);
+  filter: blur(26px);
+  z-index: 0;
+  pointer-events: none;
+}
+.rxsz-how__tube-img{
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;            /* show the whole rack + tube, uncropped */
+  filter: drop-shadow(0 24px 40px rgba(0,0,0,.5));
+}
+
+.rxsz-how__tube-copy{ min-width: 0; }
+.rxsz-how__tube-badge{ margin-bottom: var(--sp-2); }
+.rxsz-how__tube-badge .rxsz-ico{ color: var(--rxsz-gold); }   /* match the gold chip */
+.rxsz-how__tube-title{
+  font-size: var(--step-2);
+  margin-bottom: var(--sp-2);
+}
+.rxsz-how__tube-text{
+  color: var(--rxsz-ice);
+  max-width: 46ch;
+}
+
+/* ==========================================================================
+   RESPONSIVE — collapse to a single-column timeline on narrow viewports.
+   ========================================================================== */
+@media (max-width: 760px){
+  .rxsz-how__steps{
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  /* Frost line rotates to a vertical rail down the node column. */
+  .rxsz-how__steps::before{
+    top: calc(var(--node) / 2);
+    bottom: calc(var(--node) / 2);
+    left: calc(var(--node) / 2);
+    right: auto;
+    width: 2px;
+    height: auto;
+    background: linear-gradient(180deg,
+      transparent 0%,
+      var(--glass-brd-lit) 10%,
+      color-mix(in srgb, var(--rxsz-glow) 60%, var(--rxsz-ice)) 50%,
+      var(--glass-brd-lit) 90%,
+      transparent 100%);
+  }
+  .rxsz-how__step{
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: left;
+    gap: var(--sp-3);
+    padding-block: clamp(.9rem, 4vw, 1.4rem);
+  }
+  .rxsz-how__node{ margin-bottom: 0; flex: 0 0 auto; }
+  .rxsz-how__step-text{ margin-inline: 0; max-width: 46ch; }
+}
+
+@media (max-width: 720px){
+  .rxsz-how__tube{
+    grid-template-columns: 1fr;
+    gap: clamp(1.25rem, 5vw, 2rem);
+  }
+  .rxsz-how__tube-media{
+    max-width: 420px;
+    margin-inline: auto;
+  }
+}

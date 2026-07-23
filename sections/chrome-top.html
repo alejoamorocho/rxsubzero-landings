@@ -1,0 +1,114 @@
+<!-- ============================================================================
+     RX SUBZERO · chrome-top partial
+     = skip-link + top offer announcement bar (rxsz-announce) + sticky header
+       (rxsz-nav: logo, inline anchors, EN/ES toggle, primary CTA, mobile drawer).
+     Identical for both audiences — all copy varies only through data-i18n keys.
+     Namespaces used: `announce.*`, `nav.*` (see beauty.en.json).
+     Icons are real keys from icons.js. The hamburger uses CSS bars (there is no
+     "menu" icon in the set); the dismiss reuses the `plus` icon rotated to an ×.
+     ========================================================================= -->
+
+<!-- Skip-link: first focusable element on the page → jumps to <main id="main">.
+     Text is a standard a11y control (no i18n key exists for it). -->
+<a class="rxsz-skip" href="#main">Skip to content</a>
+
+<!-- ── Top offer announcement bar — dismissible ─────────────────────────────── -->
+<div class="rxsz-announce" data-announce>
+  <div class="rxsz-wrap rxsz-announce__bar">
+
+    <div class="rxsz-announce__inner rxsz-reveal">
+      <!-- Offer line + inline shop link -->
+      <p class="rxsz-announce__offer">
+        <span class="rxsz-ico rxsz-ico--gold rxsz-announce__spark" data-icon="sparkle"></span>
+        <span data-i18n="announce.text">The at-home cryo-facial everyone's obsessing over — now 30% off</span>
+        <a class="rxsz-announce__link" href="#offer" data-i18n="announce.cta">Shop the ritual</a>
+      </p>
+
+      <!-- Tiny live countdown placeholder (hydrated by app.js via [data-countdown]) -->
+      <p class="rxsz-announce__timer">
+        <span class="rxsz-ico rxsz-announce__timer-ico" data-icon="timer"></span>
+        <span class="rxsz-announce__timer-label" data-i18n="announce.timer_label">Sale ends in</span>
+        <span class="rxsz-announce__clock" data-countdown>
+          <span class="rxsz-announce__seg" data-cd="hours">05</span>
+          <span class="rxsz-announce__colon" aria-hidden="true">:</span>
+          <span class="rxsz-announce__seg" data-cd="minutes">59</span>
+          <span class="rxsz-announce__colon" aria-hidden="true">:</span>
+          <span class="rxsz-announce__seg" data-cd="seconds">59</span>
+        </span>
+      </p>
+
+      <!-- Free shipping reassurance -->
+      <p class="rxsz-announce__ship">
+        <span class="rxsz-ico rxsz-announce__ship-ico" data-icon="truck"></span>
+        <span data-i18n="announce.ship">Free express shipping</span>
+      </p>
+    </div>
+
+    <!-- Dismiss (× = plus icon rotated 45°). No i18n key exists for the label. -->
+    <button class="rxsz-announce__dismiss" type="button" data-announce-dismiss
+            aria-label="Dismiss announcement">
+      <span class="rxsz-ico rxsz-announce__x" data-icon="plus"></span>
+    </button>
+
+  </div>
+</div>
+
+<!-- ── Sticky header ────────────────────────────────────────────────────────── -->
+<header class="rxsz-nav" data-nav>
+  <div class="rxsz-wrap rxsz-nav__bar">
+
+    <!-- Logo — white on dark, NEVER recoloured/rotated/effected. "#top" is the
+         reserved fragment that scrolls to the top of the document. -->
+    <a class="rxsz-nav__logo rxsz-reveal" style="--i:0" href="#top">
+      <svg class="rxsz-logo" style="display:block;height:44px;width:88px;flex:0 0 auto;color:#fff" viewBox="0 0 80 40" role="img" aria-label="RX SUBZERO" preserveAspectRatio="xMinYMid meet"><title>RX SUBZERO</title><g fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><g id="rxlk-n"><line x1="14" y1="15" x2="14" y2="3"/><line x1="14" y1="7.6" x2="10.2" y2="4.4"/><line x1="14" y1="7.6" x2="17.8" y2="4.4"/><line x1="14" y1="11.2" x2="11.2" y2="8.8"/><line x1="14" y1="11.2" x2="16.8" y2="8.8"/></g><use href="#rxlk-n" transform="rotate(60 14 15)"/><use href="#rxlk-n" transform="rotate(120 14 15)"/><use href="#rxlk-n" transform="rotate(180 14 15)"/><use href="#rxlk-n" transform="rotate(240 14 15)"/><use href="#rxlk-n" transform="rotate(300 14 15)"/></g><line x1="31" y1="6" x2="31" y2="25" stroke="currentColor" stroke-width="2.3" stroke-linecap="round"/><text x="37" y="25" fill="currentColor" font-family="Montserrat, sans-serif" font-weight="800" font-size="26" letter-spacing="-1">RX</text><text x="17" y="35.5" fill="currentColor" font-family="Archivo, Montserrat, sans-serif" font-weight="700" font-size="11" letter-spacing="0.5">SUBZERO</text></svg>
+    </a>
+
+    <!-- Desktop inline anchor nav. "Reviews" targets the proof section (#proof). -->
+    <nav class="rxsz-nav__links rxsz-reveal" style="--i:1" aria-label="Primary">
+      <a href="#benefits" data-i18n="nav.benefits">Benefits</a>
+      <a href="#how"      data-i18n="nav.how">How it works</a>
+      <a href="#proof"    data-i18n="nav.reviews">Reviews</a>
+      <a href="#faq"      data-i18n="nav.faq">FAQ</a>
+    </nav>
+
+    <!-- Right-side actions: EN/ES toggle · primary CTA · hamburger -->
+    <div class="rxsz-nav__actions rxsz-reveal" style="--i:2">
+
+      <!-- Accessible EN/ES language toggle (single instance; app.js flips state) -->
+      <div class="rxsz-langtoggle" data-lang-toggle role="group"
+           data-i18n-attr="aria-label:nav.lang_label">
+        <span class="rxsz-ico rxsz-langtoggle__globe" data-icon="globe"></span>
+        <button class="rxsz-langtoggle__opt is-active" type="button"
+                data-lang="en" aria-pressed="true">EN</button>
+        <button class="rxsz-langtoggle__opt" type="button"
+                data-lang="es" aria-pressed="false">ES</button>
+      </div>
+
+      <!-- Primary CTA → offer section -->
+      <a class="rxsz-btn rxsz-btn--primary rxsz-btn--magnetic rxsz-nav__cta"
+         href="#offer" data-i18n="nav.cta">Get yours</a>
+
+      <!-- Mobile hamburger → glass drawer (CSS bars morph to an ×) -->
+      <button class="rxsz-nav__toggle" type="button" data-nav-toggle
+              aria-expanded="false" aria-controls="rxsz-drawer"
+              data-i18n-attr="aria-label:nav.menu_aria">
+        <span class="rxsz-nav__bars" aria-hidden="true"><span></span><span></span><span></span></span>
+      </button>
+
+    </div>
+  </div>
+
+  <!-- Glass drawer (mobile). Visibility is driven off the toggle's
+       aria-expanded via :has() (plus an .is-open fallback), so app.js only has
+       to flip aria-expanded. Links + full-width CTA are duplicated here. -->
+  <div class="rxsz-nav__drawer rxsz-glass" id="rxsz-drawer" data-nav-drawer>
+    <nav class="rxsz-nav__drawer-links" aria-label="Mobile">
+      <a href="#benefits" data-i18n="nav.benefits">Benefits</a>
+      <a href="#how"      data-i18n="nav.how">How it works</a>
+      <a href="#proof"    data-i18n="nav.reviews">Reviews</a>
+      <a href="#faq"      data-i18n="nav.faq">FAQ</a>
+    </nav>
+    <a class="rxsz-btn rxsz-btn--primary rxsz-btn--block rxsz-nav__drawer-cta"
+       href="#offer" data-i18n="nav.cta">Get yours</a>
+  </div>
+</header>

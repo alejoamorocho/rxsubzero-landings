@@ -1,0 +1,93 @@
+<!-- ==========================================================================
+     RX SUBZERO · SECTION 05 — rxsz-how  (id="how")
+     "The ritual": 3 numbered protocol steps joined by a frost line, then a
+     highlighted breathing-tube feature callout beside the real product-top shot.
+     Markup is audience-agnostic: ALL copy comes from i18n (namespace `how`);
+     beauty/health differences live only in the JSON, never here.
+     Icons are static (same for both audiences) and are real keys in icons.js.
+     ========================================================================== -->
+<section class="rxsz-section rxsz-section--carbon rxsz-how" id="how" aria-labelledby="how-title">
+  <div class="rxsz-wrap">
+
+    <!-- Intro: eyebrow + section marker 05 + title -->
+    <header class="rxsz-how__intro">
+      <p class="rxsz-eyebrow rxsz-reveal" style="--i:0" data-i18n="how.eyebrow">The ritual</p>
+      <div class="rxsz-how__title-row rxsz-reveal" style="--i:1">
+        <span class="rxsz-marker rxsz-how__marker" aria-hidden="true">05</span>
+        <h2 class="rxsz-how__title" id="how-title" data-i18n="how.title">
+          Your cold-glow routine in three steps
+        </h2>
+      </div>
+    </header>
+
+    <!-- Protocol steps. <ol> carries the true order; the printed 01/02/03 and
+         the connecting frost line are decorative (aria-hidden). -->
+    <ol class="rxsz-how__steps">
+      <li class="rxsz-how__step rxsz-reveal" style="--i:0">
+        <div class="rxsz-how__node">
+          <span class="rxsz-how__num" aria-hidden="true">01</span>
+          <span class="rxsz-ico rxsz-how__badge" data-icon="drop" aria-hidden="true"></span>
+        </div>
+        <div class="rxsz-how__body">
+          <h3 class="rxsz-how__step-title" data-i18n="how.steps.0.title">Fill &amp; chill</h3>
+          <p class="rxsz-how__step-text" data-i18n="how.steps.0.text">
+            Unfold the basin, add cold water and a tray of ice.
+          </p>
+        </div>
+      </li>
+
+      <li class="rxsz-how__step rxsz-reveal" style="--i:1">
+        <div class="rxsz-how__node">
+          <span class="rxsz-how__num" aria-hidden="true">02</span>
+          <span class="rxsz-ico rxsz-how__badge" data-icon="breathe" aria-hidden="true"></span>
+        </div>
+        <div class="rxsz-how__body">
+          <h3 class="rxsz-how__step-title" data-i18n="how.steps.1.title">Dip &amp; breathe</h3>
+          <p class="rxsz-how__step-text" data-i18n="how.steps.1.text">
+            Lower your face, relax, and breathe calmly through the built-in tube.
+          </p>
+        </div>
+      </li>
+
+      <li class="rxsz-how__step rxsz-reveal" style="--i:2">
+        <div class="rxsz-how__node">
+          <span class="rxsz-how__num" aria-hidden="true">03</span>
+          <span class="rxsz-ico rxsz-how__badge" data-icon="refresh" aria-hidden="true"></span>
+        </div>
+        <div class="rxsz-how__body">
+          <h3 class="rxsz-how__step-title" data-i18n="how.steps.2.title">Rise &amp; glow</h3>
+          <p class="rxsz-how__step-text" data-i18n="how.steps.2.text">
+            Pat dry and watch skin turn tight, bright and sculpted.
+          </p>
+        </div>
+      </li>
+    </ol>
+
+    <!-- Signature breathing-tube callout: real product-top shot beside the copy. -->
+    <div class="rxsz-how__tube rxsz-glass rxsz-glass--blue rxsz-glass--pad rxsz-reveal" style="--i:0">
+      <figure class="rxsz-how__tube-media">
+        <span class="rxsz-how__tube-halo" aria-hidden="true"></span>
+        <!-- Real product image (rack + breathing tube, top view) — used directly, no placeholder. -->
+        <img class="rxsz-how__tube-img"
+             src="assets/img/product-top.png"
+             width="900" height="900"
+             loading="lazy" decoding="async"
+             data-i18n-attr="alt:how.img_ph"
+             alt="Overhead view of the RX SUBZERO basin, draining rack and breathing tube">
+      </figure>
+
+      <div class="rxsz-how__tube-copy">
+        <span class="rxsz-chip rxsz-chip--gold rxsz-how__tube-badge">
+          <span class="rxsz-ico" data-icon="breathe" aria-hidden="true"></span>
+          <span data-i18n="how.tube_badge">Signature feature</span>
+        </span>
+        <h3 class="rxsz-how__tube-title" data-i18n="how.tube_title">Breathe easy, stay under</h3>
+        <p class="rxsz-how__tube-text" data-i18n="how.tube_text">
+          The signature RX SUBZERO breathing tube lets you keep your face fully
+          submerged while you breathe slowly and calmly.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>

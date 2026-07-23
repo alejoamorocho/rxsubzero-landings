@@ -1,0 +1,379 @@
+{
+  "announce": {
+    "text": "Launch offer: RX SUBZERO for $[PRICE] — free shipping this week only.",
+    "cta": "Shop now",
+    "ship": "Free shipping worldwide",
+    "timer_label": "Offer ends in",
+    "dismiss_aria": "Dismiss announcement"
+  },
+  "nav": {
+    "benefits": "Benefits",
+    "how": "How it works",
+    "reviews": "Reviews",
+    "faq": "FAQ",
+    "cta": "Get yours",
+    "lang_label": "Language",
+    "menu_aria": "Open main menu"
+  },
+  "hero": {
+    "eyebrow": "COLD THERAPY · BREATHWORK",
+    "title": "Rewire your morning with",
+    "title_accent": "deliberate cold",
+    "sub": "Submerge your face, breathe through the tube, and flood your system with calm, focused energy. RX SUBZERO turns two minutes of cold water into a full-body reset — no ice bath, no clinic, no excuses.",
+    "cta_primary": "Start cold — $[PRICE]",
+    "cta_secondary": "See how it works",
+    "rating_value": "4.9",
+    "rating_label": "from [N] cold-therapy users",
+    "badge1": "Vagus-nerve reset",
+    "badge2": "Built-in breathing tube",
+    "badge3": "Folds flat to travel",
+    "img_alt": "RX SUBZERO collapsible face ice bath with breathing tube, filled with ice water",
+    "scroll": "Scroll to explore",
+    "img_ph": "RX SUBZERO Face Ice Bath — expanded, breathing tube attached, studio shot"
+  },
+  "ticker": {
+    "items": [
+      "Sharper focus",
+      "Dopamine lift",
+      "Lower stress",
+      "Faster recovery",
+      "Guided breathwork",
+      "Cold-adapted resilience"
+    ]
+  },
+  "problem": {
+    "eyebrow": "WHY IT MATTERS",
+    "title": "Wired, tired, and running on cortisol",
+    "sub": "Most mornings start in fight-or-flight — screens, caffeine, and stress before your feet hit the floor. Your nervous system never gets a clean reset.",
+    "pains": [
+      {
+        "icon": "brain",
+        "title": "Foggy focus",
+        "text": "You push through the morning half-awake, reaching for a third coffee just to think straight."
+      },
+      {
+        "icon": "mood",
+        "title": "Flat mood",
+        "text": "Motivation dips and the whole day feels heavy before it even begins."
+      },
+      {
+        "icon": "heart-pulse",
+        "title": "Stuck in stress",
+        "text": "A racing mind and shallow breathing keep your body locked in high alert."
+      },
+      {
+        "icon": "recovery",
+        "title": "Slow recovery",
+        "text": "Training, travel, and late nights pile up with nothing to help you bounce back."
+      }
+    ],
+    "bridge": "Deliberate cold exposure paired with slow, controlled breathing is one of the simplest ways to flip that switch. RX SUBZERO puts both in your hands.",
+    "img_ph": "Close-up: stressed, tired man mid-morning, cool tones, 4:5"
+  },
+  "transform": {
+    "eyebrow": "THE SHIFT",
+    "title": "Two minutes of cold. Hours of calm clarity.",
+    "before_label": "Without the ritual",
+    "after_label": "With RX SUBZERO",
+    "before": [
+      "Groggy, anxious, reaching for caffeine",
+      "Scattered focus and a short fuse",
+      "Recovery that drags on for days"
+    ],
+    "after": [
+      "Clear-headed, alert, and grounded",
+      "Steady mood and a calm baseline",
+      "Faster recovery and deeper sleep"
+    ],
+    "note": "Individual experiences vary. Cold exposure is a practice — the benefits build with consistency.",
+    "cta": "Build your ritual",
+    "before_ph": "Before: tense, foggy, low-energy morning — cool tones, 4:5",
+    "after_ph": "After: calm, clear-headed, energized — cool tones, 4:5"
+  },
+  "benefits": {
+    "eyebrow": "WHAT YOU FEEL",
+    "title": "The cold, working for you",
+    "sub": "Every session stacks small wins into real resilience — mind and body.",
+    "items": [
+      {
+        "icon": "focus",
+        "title": "Instant clarity",
+        "text": "Cold water on the face triggers a sharp, clean wake-up — many users report focus that lasts for hours."
+      },
+      {
+        "icon": "mood",
+        "title": "Mood & dopamine",
+        "text": "Cold exposure is linked with a lasting lift in mood and drive that outlasts the session itself."
+      },
+      {
+        "icon": "calm",
+        "title": "Down-regulate stress",
+        "text": "Slow exhales through the tube signal safety to your body, easing you out of fight-or-flight."
+      },
+      {
+        "icon": "heart-pulse",
+        "title": "Vagus-nerve tone",
+        "text": "Face-first cold and paced breathing gently stimulate the vagus nerve that governs your calm response."
+      },
+      {
+        "icon": "recovery",
+        "title": "Recover faster",
+        "text": "A cold reset after training or travel helps you feel refreshed and ready sooner."
+      },
+      {
+        "icon": "cold",
+        "title": "Cold-adapted resilience",
+        "text": "Meet the cold on purpose and everyday stress starts to feel a lot more manageable."
+      }
+    ]
+  },
+  "how": {
+    "eyebrow": "THE PRACTICE",
+    "title": "Three steps to your reset",
+    "steps": [
+      {
+        "title": "Fill & set up",
+        "text": "Add cold water and ice to the silicone basin. Unfold it in seconds on any counter — the drain rack keeps everything tidy."
+      },
+      {
+        "title": "Breathe & submerge",
+        "text": "Take slow breaths through the built-in tube, lower your face, and let the cold do the work. Start with 20–30 seconds."
+      },
+      {
+        "title": "Rise & reset",
+        "text": "Come up, breathe, and feel the wave of calm, alert energy. Repeat for 2–3 rounds, then drain and fold it flat."
+      }
+    ],
+    "tube_title": "The breathing tube changes everything",
+    "tube_text": "A medical-grade snorkel tube lets you keep your whole face submerged while you breathe slow and steady — the key to staying relaxed in the cold instead of gasping. Train your breath and your cold tolerance at the same time.",
+    "tube_badge": "Breathe while submerged",
+    "img_ph": "Overhead: hands lowering a face into the RX SUBZERO basin"
+  },
+  "product": {
+    "eyebrow": "THE HARDWARE",
+    "title": "Engineered for the daily cold habit",
+    "sub": "Studio-grade cold therapy that folds into a drawer.",
+    "features": [
+      {
+        "icon": "fold",
+        "title": "Folds flat",
+        "text": "The collapsible silicone basin drops to a few centimeters — store it anywhere, take it everywhere."
+      },
+      {
+        "icon": "breathe",
+        "title": "Integrated breathing tube",
+        "text": "Stay submerged and calm with a removable, easy-clean airway tube."
+      },
+      {
+        "icon": "silicone",
+        "title": "Food-grade silicone",
+        "text": "Soft, durable, and skin-safe — no hard edges, no leaks, no plastic smell."
+      },
+      {
+        "icon": "drain",
+        "title": "Drain rack & spout",
+        "text": "A lift-out rack and clean pour make emptying and drying effortless."
+      },
+      {
+        "icon": "portable",
+        "title": "Travel-ready",
+        "text": "Lightweight and leak-resistant, so your ritual comes with you on the road."
+      }
+    ],
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Food-grade silicone"
+      },
+      {
+        "label": "Folded height",
+        "value": "≈ 6 cm / 2.4 in"
+      },
+      {
+        "label": "Capacity",
+        "value": "Full face + breathing tube"
+      },
+      {
+        "label": "Includes",
+        "value": "Basin · tube · drain rack"
+      },
+      {
+        "label": "Care",
+        "value": "Rinse, air-dry, fold flat"
+      }
+    ],
+    "cta": "Add to cart — $[PRICE]",
+    "img_ph": "Product on a shelf, folded + unfolded, steel-blue silicone"
+  },
+  "proof": {
+    "eyebrow": "REAL RESULTS",
+    "title": "Trusted by people who chase the cold",
+    "rating_value": "4.9",
+    "rating_count": "[N]",
+    "reviews": [
+      {
+        "name": "Marcus T.",
+        "handle": "@marcus.cold",
+        "title": "My non-negotiable morning",
+        "text": "Two rounds before work and my head is clear for hours. It replaced my second coffee completely.",
+        "tag": "Focus"
+      },
+      {
+        "name": "Elena R.",
+        "handle": "@elena.breathes",
+        "title": "Finally calm in the cold",
+        "text": "The breathing tube is genius. I can actually stay under and slow my breath instead of panicking.",
+        "tag": "Breathwork"
+      },
+      {
+        "name": "Dev P.",
+        "handle": "@dev.recovers",
+        "title": "Recovery game-changer",
+        "text": "After training I do a cold reset and my legs feel fresh the next day. Folds flat in my gym bag, too.",
+        "tag": "Recovery"
+      }
+    ],
+    "press_label": "As featured in",
+    "ugc_label": "From the community",
+    "ugc_ph": "Customer photo — cold-therapy & breathwork ritual, 1:1"
+  },
+  "compare": {
+    "eyebrow": "THE COMPARISON",
+    "title": "Why not just a bowl of ice?",
+    "col_us": "RX SUBZERO",
+    "col_a": "Ice bowl / DIY",
+    "col_b": "Cryo clinic",
+    "rows": [
+      {
+        "feature": "Breathe while submerged",
+        "us": "Built-in tube",
+        "a": "No — come up for air",
+        "b": "No"
+      },
+      {
+        "feature": "Cost per session",
+        "us": "One-time $[PRICE], reusable daily",
+        "a": "Free water, but constant mess & no tube",
+        "b": "$50–90"
+      },
+      {
+        "feature": "Use at home, daily",
+        "us": "Anytime",
+        "a": "Messy",
+        "b": "By appointment"
+      },
+      {
+        "feature": "Packs for travel",
+        "us": "Folds flat",
+        "a": "No",
+        "b": "No"
+      },
+      {
+        "feature": "Full-face cold coverage",
+        "us": "Yes",
+        "a": "Awkward",
+        "b": "Whole-body only"
+      },
+      {
+        "feature": "Clean & store",
+        "us": "Drain rack, folds",
+        "a": "Splashy cleanup",
+        "b": "N/A"
+      }
+    ],
+    "footnote": "Clinic prices are typical U.S. estimates and vary by location."
+  },
+  "offer": {
+    "eyebrow": "LIMITED LAUNCH OFFER",
+    "title": "Start your cold practice today",
+    "price": "$[PRICE]",
+    "price_compare": "$[WAS]",
+    "save_label": "You save",
+    "bundle_title": "Every kit includes",
+    "bundle_items": [
+      "Collapsible face ice bath",
+      "Removable breathing tube",
+      "Lift-out drain rack",
+      "Cold-start breathwork guide"
+    ],
+    "urgency": "Launch pricing is limited — early batches sell out fast.",
+    "guarantee_title": "60-night cold-start guarantee",
+    "guarantee_text": "Try RX SUBZERO for two months. If it doesn't earn a place in your morning, send it back for a full refund.",
+    "cta": "Claim my RX SUBZERO",
+    "payment_note": "Secure checkout · Apple Pay, Google Pay & cards",
+    "stock": "Only [N] kits left at this price"
+  },
+  "faq": {
+    "eyebrow": "GOOD QUESTIONS",
+    "title": "Everything you want to know",
+    "items": [
+      {
+        "q": "Does the cold hurt?",
+        "a": "The first few seconds are intense, then it settles. Breathing slowly through the tube keeps you calm and in control — start with short 20–30 second dips and build from there."
+      },
+      {
+        "q": "How cold should the water be?",
+        "a": "Most people aim for roughly 10–15°C (50–59°F) with a few handfuls of ice. Colder is not better — consistency matters far more than extremes."
+      },
+      {
+        "q": "How long should a session be?",
+        "a": "Short and regular wins. Try 2–3 rounds of 20–60 seconds. Never push past comfort, and always finish by warming up naturally."
+      },
+      {
+        "q": "How does the breathing tube work?",
+        "a": "The removable snorkel-style tube lets you keep your face submerged while breathing slow and steady above the water — the key to staying relaxed instead of gasping."
+      },
+      {
+        "q": "Is it easy to clean and store?",
+        "a": "Yes. Rinse the silicone basin and tube, air-dry, and fold it flat to just a few centimeters. The lift-out rack makes draining simple."
+      },
+      {
+        "q": "Who should not use it?",
+        "a": "Cold exposure is not for everyone. If you have a heart condition, high or low blood pressure, are pregnant, or have any medical concern, please consult your doctor first. Never practice cold immersion alone if you're new to it, and never in a way that risks your airway."
+      },
+      {
+        "q": "What about shipping and returns?",
+        "a": "We ship fast with tracking, and every order is backed by our 60-night guarantee. If it's not for you, returns are simple and refunds are full."
+      }
+    ]
+  },
+  "finalcta": {
+    "eyebrow": "YOUR RESET STARTS NOW",
+    "title": "Meet the cold on your terms",
+    "sub": "Clearer mind, steadier mood, faster recovery — two minutes at a time. Your daily reset is waiting.",
+    "cta": "Get RX SUBZERO — $[PRICE]",
+    "reassure": "60-night guarantee · Free shipping · Secure checkout"
+  },
+  "footer": {
+    "tagline": "Deliberate cold. Trained breath. Daily reset.",
+    "col1_title": "Product",
+    "col1_links": [
+      "How it works",
+      "Benefits",
+      "What's included",
+      "Reviews"
+    ],
+    "col2_title": "Support",
+    "col2_links": [
+      "FAQ",
+      "Shipping & returns",
+      "Cold-start guide",
+      "Contact us"
+    ],
+    "col3_title": "Company",
+    "col3_links": [
+      "Our story",
+      "Safety & care",
+      "Privacy policy",
+      "Terms of service"
+    ],
+    "disclaimer": "RX SUBZERO is a wellness product, not a medical device. Nothing here is medical advice or a treatment for any condition. Cold exposure carries risks — consult a physician before starting, especially with any health condition.",
+    "rights": "© RX SUBZERO. All rights reserved.",
+    "payment_label": "Secure payments"
+  },
+  "floatcta": {
+    "label": "RX SUBZERO Face Ice Bath",
+    "price": "$[PRICE]",
+    "cta": "Buy now"
+  }
+}
