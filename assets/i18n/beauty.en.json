@@ -16,8 +16,8 @@
     "title_1": "Cold clarity.",
     "title_2": "Natural radiance.",
     "sub": "A refined facial bath for cold water, ice and steady breathing. Designed to sit naturally beside the rest of your morning beauty ritual.",
-    "cta_primary": "See the product",
-    "cta_secondary": "Discover the ritual",
+    "cta_primary": "I want my RX SUBZERO",
+    "cta_secondary": "See how the ritual works",
     "fact_1": "Collapsible format",
     "fact_2": "Clear dual breathing tube",
     "fact_3": "Purpose-built facial basin"
@@ -52,15 +52,47 @@
     "copy": "The product keeps the process visually calm: one basin, one breathing tube and a short ritual at your own pace.",
     "steps": [
       {
-        "title": "Prepare the water",
-        "text": "Open the basin, add water and introduce ice gradually until the temperature feels right for you.",
+        "title": "Prepare",
+        "text": "Open the basin, place it on a stable surface, and begin with cool water at a comfortable temperature.",
         "img_alt": "Ice being added to the RX SUBZERO face bath"
       },
       {
-        "title": "Take the moment",
-        "text": "Position the tube comfortably, lower your face for a brief interval and return slowly when you are ready.",
+        "title": "Breathe and approach gradually",
+        "text": "Position the mouthpiece, keep your breathing steady, and approach the water in brief, comfortable intervals.",
         "img_alt": "Woman using RX SUBZERO during her facial cold-water ritual"
+      },
+      {
+        "title": "Rinse and store",
+        "text": "Empty, rinse with mild soap and water, let every part air-dry fully, then collapse the basin for storage.",
+        "img_alt": "RX SUBZERO basin and breathing tube laid out to dry after use"
       }
+    ]
+  },
+  "pain": {
+    "kicker": "When your routine moves faster than you do",
+    "title": "Some mornings, your face tells the story of tiredness before you do.",
+    "copy": "Between the rush, the screen, and a routine on autopilot, caring for yourself can become one more task."
+  },
+  "aspiration": {
+    "kicker": "The moment you want back",
+    "title": "Feel fresh, cared for, and ready to begin.",
+    "copy": "RX SUBZERO turns cold water into a brief, deliberate facial pause before you continue with the products you already use.",
+    "image_alt": "RX SUBZERO ready for a morning facial ritual"
+  },
+  "story": {
+    "kicker": "Why RX SUBZERO exists",
+    "title": "Not a generic container. A dedicated facial cold-water system.",
+    "copy": "RX SUBZERO was created to turn a familiar practice into a simple, elegant experience designed around everyday wellbeing."
+  },
+  "benefits": {
+    "kicker": "What changes is the ritual",
+    "title": "Facial care that feels as considered as it looks.",
+    "copy": "A simple sensory experience, with an object designed to fit naturally into your routine.",
+    "items": [
+      { "title": "A fresh beginning", "text": "Contact with cold water creates a clear sensory moment at the start of your routine." },
+      { "title": "Care with intention", "text": "It invites you to reserve a few minutes for your face without adding a complicated routine." },
+      { "title": "Before your skincare", "text": "Pat dry gently and continue with the products already in your routine." },
+      { "title": "A premium presence", "text": "Its blue-and-white form keeps the ritual organized and visually calm." }
     ]
   },
   "product": {
@@ -100,11 +132,25 @@
     ]
   },
   "offer": {
-    "kicker": "RX SUBZERO",
-    "title": "Give cold water a place in your ritual.",
-    "copy": "A dedicated facial bath designed to feel composed on the counter and practical in everyday use.",
+    "kicker": "Your RX SUBZERO ritual",
+    "title": "Give cold water a place in your facial care.",
+    "copy": "A collapsible system with a clear dual breathing tube, created to make preparation and use feel more ordered.",
+    "image_alt": "Blue and white collapsible RX SUBZERO facial basin with clear breathing tube",
     "cta": "Review the product",
     "note": "Use cold gradually and always at your own comfort level."
+  },
+  "final": {
+    "kicker": "Make room for yourself",
+    "title": "You do not need another impossible routine. You need a moment you will want to repeat.",
+    "copy": "Begin with cool water, progress gradually, and turn a few minutes of your morning into a deliberate act of care."
+  },
+  "purchase": {
+    "intent": "I want my RX SUBZERO",
+    "buy": "Buy RX SUBZERO",
+    "coming_soon": "Purchase available soon",
+    "reference_label": "reference price",
+    "reference_short": "reference",
+    "bar_aria": "RX SUBZERO purchase"
   },
   "footer": {
     "aria": "Footer navigation",

@@ -720,7 +720,70 @@
   }
 
   /* ======================================================================
-     11. ANNOUNCEMENT BAR DISMISS  ( [data-announce-dismiss] )
+     11. PURCHASE STATE  (central commercial configuration)
+     ====================================================================== */
+  function purchaseConfig() {
+    var cfg = window.RXSZ_CONFIG || {};
+    return {
+      purchaseUrl: typeof cfg.purchaseUrl === "string" ? cfg.purchaseUrl.trim() : "",
+      referencePrice: typeof cfg.referencePrice === "string" ? cfg.referencePrice : "49.90",
+      currency: typeof cfg.currency === "string" ? cfg.currency : "USD"
+    };
+  }
+
+  function applyPurchaseState() {
+    var cfg = purchaseConfig();
+    qsa("[data-reference-price]").forEach(function (el) {
+      el.textContent = cfg.currency + " " + cfg.referencePrice;
+    });
+
+    qsa('[data-purchase-action="scroll"]').forEach(function (el) {
+      el.setAttribute("href", "#offer");
+    });
+
+    qsa('[data-purchase-action="checkout"]').forEach(function (el) {
+      var label = qs("[data-purchase-label]", el) || el;
+      if (cfg.purchaseUrl) {
+        el.setAttribute("href", cfg.purchaseUrl);
+        el.removeAttribute("aria-disabled");
+        el.removeAttribute("tabindex");
+        el.classList.remove("is-disabled");
+        var ready = resolveKey(state.dict, "purchase.buy");
+        if (ready) label.textContent = ready;
+      } else {
+        el.removeAttribute("href");
+        el.setAttribute("aria-disabled", "true");
+        el.setAttribute("tabindex", "-1");
+        el.classList.add("is-disabled");
+        var waiting = resolveKey(state.dict, "purchase.coming_soon");
+        if (waiting) label.textContent = waiting;
+      }
+    });
+  }
+
+  function initPurchase() {
+    applyPurchaseState();
+    on(document, "rxsz:langchange", applyPurchaseState);
+    on(document, "click", function (event) {
+      var disabled = event.target.closest
+        ? event.target.closest('[data-purchase-action="checkout"][aria-disabled="true"]')
+        : null;
+      if (disabled) event.preventDefault();
+    });
+  }
+
+  function initPurchaseBar() {
+    var bar = qs("[data-purchase-bar]");
+    var hero = qs(".rxsz-auth-hero");
+    if (!bar || !hero || !("IntersectionObserver" in window)) return;
+    var observer = new IntersectionObserver(function (entries) {
+      bar.classList.toggle("is-visible", !entries[0].isIntersecting);
+    }, { threshold: 0.08 });
+    observer.observe(hero);
+  }
+
+  /* ======================================================================
+     12. ANNOUNCEMENT BAR DISMISS  ( [data-announce-dismiss] )
      Hides the [data-announce] bar and remembers the choice for the session.
      ====================================================================== */
   var ANNOUNCE_KEY = 'rxsz-announce-dismissed';
@@ -770,6 +833,8 @@
       initFloatCta();
       initFaq();
       initNav();
+      initPurchase();
+      initPurchaseBar();
       initAnnounce();
       initLangToggle();
       initLiquid();

@@ -16,8 +16,8 @@
     "title_1": "Claridad fría.",
     "title_2": "Luz natural.",
     "sub": "Un baño facial refinado para agua fría, hielo y respiración constante. Diseñado para acompañar naturalmente el resto de tu ritual de belleza matutino.",
-    "cta_primary": "Ver el producto",
-    "cta_secondary": "Descubrir el ritual",
+    "cta_primary": "Quiero mi RX SUBZERO",
+    "cta_secondary": "Ver cómo funciona el ritual",
     "fact_1": "Formato plegable",
     "fact_2": "Tubo transparente doble",
     "fact_3": "Recipiente facial de uso dedicado"
@@ -52,15 +52,47 @@
     "copy": "El producto mantiene el proceso visualmente tranquilo: un recipiente, un tubo de respiración y un ritual breve a tu propio ritmo.",
     "steps": [
       {
-        "title": "Prepara el agua",
-        "text": "Abre el recipiente, agrega agua e incorpora hielo poco a poco hasta llegar a una temperatura adecuada para ti.",
+        "title": "Prepara",
+        "text": "Abre el recipiente, colócalo sobre una superficie estable y comienza con agua fresca a una temperatura cómoda.",
         "img_alt": "Hielo siendo agregado al baño facial RX SUBZERO"
       },
       {
-        "title": "Tómate el momento",
-        "text": "Ubica el tubo cómodamente, baja el rostro durante un intervalo breve y regresa lentamente cuando estés lista.",
+        "title": "Respira y acércate gradualmente",
+        "text": "Coloca la boquilla, mantén una respiración estable y acércate al agua en intervalos breves y cómodos.",
         "img_alt": "Mujer usando RX SUBZERO durante su ritual facial de agua fría"
+      },
+      {
+        "title": "Enjuaga y guarda",
+        "text": "Vacía, enjuaga con agua y jabón suave, deja que cada parte se seque por completo al aire y luego pliega el recipiente para guardarlo.",
+        "img_alt": "Recipiente y tubo de respiración RX SUBZERO dispuestos para secarse después del uso"
       }
+    ]
+  },
+  "pain": {
+    "kicker": "Cuando tu rutina corre más que tú",
+    "title": "Hay mañanas en las que tu rostro cuenta el cansancio antes que tú.",
+    "copy": "Entre el afán, la pantalla y una rutina hecha en automático, cuidarte puede convertirse en otro pendiente."
+  },
+  "aspiration": {
+    "kicker": "El momento que quieres recuperar",
+    "title": "Sentirte fresca, cuidada y lista para empezar.",
+    "copy": "RX SUBZERO convierte el agua fría en una pausa facial breve y deliberada antes de continuar con los productos que ya usas.",
+    "image_alt": "RX SUBZERO listo para un ritual facial de mañana"
+  },
+  "story": {
+    "kicker": "Por qué existe RX SUBZERO",
+    "title": "No es un recipiente genérico. Es un sistema dedicado al ritual facial con agua fría.",
+    "copy": "RX SUBZERO nace para transformar una práctica conocida en una experiencia simple, elegante y diseñada alrededor del bienestar diario."
+  },
+  "benefits": {
+    "kicker": "Lo que cambia es el ritual",
+    "title": "Cuidado facial que se siente tan bien como se ve.",
+    "copy": "Una experiencia sensorial simple, con un objeto creado para ocupar un lugar natural en tu rutina.",
+    "items": [
+      { "title": "Un comienzo fresco", "text": "El contacto con agua fría crea un momento sensorial claro al inicio de la rutina." },
+      { "title": "Cuidado con intención", "text": "Te invita a reservar unos minutos para tu rostro sin sumar una rutina complicada." },
+      { "title": "Antes de tu skincare", "text": "Seca suavemente y continúa con los productos que ya forman parte de tu cuidado." },
+      { "title": "Una presencia premium", "text": "Su forma azul y blanca mantiene el ritual ordenado y visualmente sereno." }
     ]
   },
   "product": {
@@ -100,11 +132,25 @@
     ]
   },
   "offer": {
-    "kicker": "RX SUBZERO",
-    "title": "Dale al agua fría un lugar en tu ritual.",
-    "copy": "Un baño facial dedicado, diseñado para verse sereno en el espacio y funcionar de manera práctica todos los días.",
+    "kicker": "Tu ritual RX SUBZERO",
+    "title": "Dale al agua fría un lugar en tu cuidado facial.",
+    "copy": "Un sistema plegable con tubo transparente doble, creado para hacer de la preparación y el uso una experiencia más ordenada.",
+    "image_alt": "Lavabo facial plegable RX SUBZERO azul y blanco con tubo transparente",
     "cta": "Revisar el producto",
     "note": "Usa el frío de forma gradual y siempre según tu nivel de comodidad."
+  },
+  "final": {
+    "kicker": "Haz espacio para ti",
+    "title": "No necesitas otra rutina imposible. Necesitas un momento que quieras repetir.",
+    "copy": "Empieza con agua fresca, avanza gradualmente y convierte unos minutos de tu mañana en un acto consciente de cuidado."
+  },
+  "purchase": {
+    "intent": "Quiero mi RX SUBZERO",
+    "buy": "Comprar RX SUBZERO",
+    "coming_soon": "Compra disponible próximamente",
+    "reference_label": "precio de referencia",
+    "reference_short": "referencia",
+    "bar_aria": "Compra de RX SUBZERO"
   },
   "footer": {
     "aria": "Navegación del pie de página",
