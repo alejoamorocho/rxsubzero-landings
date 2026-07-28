@@ -40,7 +40,7 @@ body.rxsz {
   max-width: 100%;
 }
 
-.rxsz a {
+.rxsz a:not(.rxsz-btn) {
   color: inherit;
   text-decoration: none;
 }
@@ -110,7 +110,7 @@ body.rxsz {
 
 .rxsz-nav__bar {
   display: flex;
-  min-height: 74px;
+  min-height: 72px;
   align-items: center;
   justify-content: space-between;
   gap: 30px;
@@ -118,14 +118,17 @@ body.rxsz {
 
 .rxsz-nav__logo {
   display: flex;
-  width: 148px;
-  height: 48px;
+  width: 132px;
+  height: 44px;
   align-items: center;
 }
 
 .rxsz-nav__logo img {
-  width: 142px;
-  height: auto;
+  display: block;
+  width: auto;
+  max-width: 132px;
+  height: 44px;
+  object-fit: contain;
 }
 
 .rxsz-nav__links,
@@ -185,6 +188,7 @@ body.rxsz {
 
 .rxsz-btn {
   display: inline-flex;
+  text-decoration: none;
   min-height: 48px;
   padding: 11px 20px;
   align-items: center;
@@ -915,6 +919,12 @@ body.rxsz {
   transform:translateY(0);
 }
 
+@media (min-width: 761px) {
+  .rxsz-purchase-bar {
+    display: none;
+  }
+}
+
 .rxsz-purchase-bar > div {
   display: flex;
   min-width: 0;
@@ -1059,12 +1069,14 @@ body.rxsz {
   }
 
   .rxsz-nav__logo {
-    width: 124px;
-    height: 42px;
+    width: 112px;
+    height: 38px;
   }
 
   .rxsz-nav__logo img {
-    width: 120px;
+    width: auto;
+    max-width: 112px;
+    height: 38px;
   }
 
   .rxsz-nav__actions {
@@ -1081,7 +1093,7 @@ body.rxsz {
   .rxsz-auth-hero {
     height: calc(100svh - 80px);
     min-height: 680px;
-    align-items: flex-end;
+    align-items: flex-start;
   }
 
   .rxsz-auth-hero__media img {
@@ -1089,12 +1101,12 @@ body.rxsz {
   }
 
   .rxsz-auth-hero__veil {
-    background: linear-gradient(0deg, rgba(16, 26, 40, .94) 0%, rgba(16, 26, 40, .72) 43%, rgba(16, 26, 40, .08) 78%);
+    background: linear-gradient(180deg, rgba(16, 26, 40, .96) 0%, rgba(16, 26, 40, .78) 46%, rgba(16, 26, 40, .16) 65%, rgba(16, 26, 40, .04) 100%);
   }
 
   .rxsz-auth-hero__content {
     width: 100%;
-    padding: 220px 0 40px;
+    padding: 44px 0 0;
   }
 
   .rxsz-auth-hero h1 {
@@ -1146,8 +1158,8 @@ body.rxsz {
   [data-editorial-side="right"] .rxsz-offer__layout {
     grid-template-columns: 1fr;
     grid-template-areas:
-      "media"
-      "content";
+      "content"
+      "media";
     gap: 38px;
   }
 
@@ -1193,8 +1205,8 @@ body.rxsz {
   .rxsz-auth-step[data-editorial-side="right"] {
     grid-template-columns: 1fr;
     grid-template-areas:
-      "step-media"
-      "step-copy";
+      "step-copy"
+      "step-media";
     gap: 28px;
   }
 
@@ -1258,7 +1270,7 @@ body.rxsz {
   }
 
   .rxsz-auth-hero__content {
-    padding-top: 190px;
+    padding-top: 38px;
   }
 
   .rxsz-langtoggle {
