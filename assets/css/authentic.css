@@ -365,6 +365,14 @@ body.rxsz {
   padding-block: 56px;
 }
 
+.theme-health .rxsz-auth-hero__veil {
+  background: linear-gradient(270deg, rgba(16, 26, 40, .9) 0%, rgba(16, 26, 40, .72) 37%, rgba(16, 26, 40, .18) 72%, rgba(16, 26, 40, .04) 100%);
+}
+
+.theme-health .rxsz-auth-hero__content {
+  margin-left: auto;
+}
+
 .rxsz-auth-kicker {
   margin-bottom: 18px;
   color: var(--auth-steel);
@@ -1106,6 +1114,7 @@ body.rxsz {
 
   .rxsz-auth-hero__content {
     width: 100%;
+    margin-left: 0;
     padding: 44px 0 0;
   }
 
