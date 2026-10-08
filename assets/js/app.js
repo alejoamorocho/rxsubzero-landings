@@ -883,8 +883,13 @@
      ====================================================================== */
   function purchaseConfig() {
     var cfg = window.RXSZ_CONFIG || {};
+    var purchaseUrl = typeof cfg.purchaseUrl === "string" ? cfg.purchaseUrl.trim() : "";
+    try {
+      var destination = new URL(purchaseUrl);
+      if (!/^https:\/\//i.test(purchaseUrl) || destination.protocol !== "https:" || !destination.hostname || destination.username || destination.password) purchaseUrl = "";
+    } catch (e) { purchaseUrl = ""; }
     return {
-      purchaseUrl: typeof cfg.purchaseUrl === "string" ? cfg.purchaseUrl.trim() : "",
+      purchaseUrl: purchaseUrl,
       referencePrice: typeof cfg.referencePrice === "string" ? cfg.referencePrice : "49.90",
       currency: typeof cfg.currency === "string" ? cfg.currency : "USD"
     };

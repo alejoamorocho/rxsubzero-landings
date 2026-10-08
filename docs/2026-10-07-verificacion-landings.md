@@ -1,6 +1,20 @@
 # Verificación de Beauty y Health
 
-7 de octubre de 2026. Cambios aplicados en el proyecto local; no se realizó publicación.
+7 de octubre de 2026. Registro de verificación local de las páginas de demostración publicadas en GitHub Pages.
+
+## Actualización: recorrido de venta
+
+Las entradas ahora invitan a adquirir RX SUBZERO y vivir el ritual: experiencia, beneficios prácticos, tres pasos, contenido del producto, oferta, preguntas y cierre de compra. Se retiraron dos secciones repetitivas; la oferta aparece antes de las preguntas y el cierre vuelve a ella. Los enlaces entre audiencias se mantienen en navegación y pie.
+
+Los cuatro diccionarios y el respaldo inglés del HTML están sincronizados. La oferta precisa que contiene **un recipiente y un tubo doble**; la foto muestra dos estados del mismo recipiente. El precio sigue identificado como referencia y la disponibilidad pendiente permanece explícita.
+
+Verificación: **31/31 pruebas funcionales**, **28 combinaciones de página/idioma/ancho**, **112 vistas del visor** y **3 configuraciones sin JavaScript**. Capturas revisadas en móvil y escritorio. La revisión independiente añadió comprobaciones a 320, 481, 981 y 1080 px.
+
+Se comprobaron fallos reales antes de corregirlos: destinos de compra inválidos que habilitaban el botón, etiquetas que cambiaban incorrectamente al volver a traducir la oferta y enlaces HTTPS incompletos que el navegador podía resolver dentro de GitHub Pages. Las regresiones verifican el rechazo de esos destinos, la conservación exacta de parámetros en enlaces HTTPS válidos y los recorridos hero/cierre/menú hacia la oferta en ambos idiomas. La suite completa volvió a pasar tras la corrección de la revisión independiente.
+
+Esta revisión comprueba presentación y funcionamiento; todavía no mide tasas de conversión. La compra real requiere el enlace del producto o carrito de Shopify proporcionado por el propietario. Configurarlo en `assets/js/config.js`, propiedad `purchaseUrl`, con una dirección completa `https://…`; no se agregan parámetros de idioma ni variantes automáticamente.
+
+[Diseño del recorrido](superpowers/specs/2026-10-07-sales-funnel.md) · [Plan ejecutado](superpowers/plans/2026-10-07-sales-funnel.md).
 
 ## Actualización: hero interactivo con personas
 
@@ -38,7 +52,7 @@ Capturas y reporte detallado: `output/qa/` (generados localmente, fuera del cont
 
 ## Pendiente externo
 
-Falta el enlace real de compra en `assets/js/config.js`, propiedad `purchaseUrl`. Mientras esté vacío se muestra “Próximamente”; no hay una compra operativa. El precio de referencia existente sigue siendo USD 49.90. No se publicaron cambios ni se añadieron afirmaciones de resultados médicos o condiciones de envío.
+Falta el enlace real de compra en `assets/js/config.js`, propiedad `purchaseUrl`. Mientras esté vacío o sea inválido se muestra “Próximamente”; no hay una compra operativa. El precio de referencia existente sigue siendo USD 49.90. Las páginas son una demostración pública; no se añadieron afirmaciones de resultados médicos ni condiciones de envío sin confirmar.
 
 ## Documentación relacionada
 

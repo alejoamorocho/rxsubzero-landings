@@ -217,6 +217,62 @@ test('configured checkout hides the unavailable notice and restores it when chec
   } finally { await context.close(); }
 });
 
+test('checkout rejects invalid destinations and keeps the pending state visible', async () => {
+  const { page, context } = await visit();
+  try {
+    for (const purchaseUrl of ['', '   ', 'not-a-url', '/products/rx', 'http://example.com/cart', 'javascript:void(0)', 'https://', 'https:shop.example.com/products/rx', 'https:/shop.example.com/products/rx', 'https://user:password@example.com/products/rx']) {
+      await page.evaluate(purchaseUrl => {
+        window.RXSZ_CONFIG = { purchaseUrl };
+        return RXSZ.setLang('es');
+      }, purchaseUrl);
+      const checkout = page.locator('[data-purchase-action="checkout"]');
+      assert.equal(await checkout.getAttribute('href'), null, purchaseUrl);
+      assert.equal(await checkout.getAttribute('aria-disabled'), 'true', purchaseUrl);
+      assert.equal(await page.locator('[data-purchase-availability]').isVisible(), true, purchaseUrl);
+    }
+  } finally { await context.close(); }
+});
+
+test('checkout preserves its exact destination and ready label after translation and hydration', async () => {
+  const { page, context } = await visit();
+  const purchaseUrl = 'https://shop.example.com/products/rx-subzero?variant=123&selling_plan=456';
+  try {
+    await page.evaluate(purchaseUrl => { window.RXSZ_CONFIG = { purchaseUrl }; }, purchaseUrl);
+    for (const lang of ['es', 'en']) {
+      await page.evaluate(lang => RXSZ.setLang(lang), lang);
+      await page.evaluate(() => RXSZ.hydrate(document.querySelector('#offer')));
+      assert.equal(await page.locator('[data-purchase-label]').textContent(), await page.evaluate(() => RXSZ.t('purchase.buy')));
+      assert.equal(await page.locator('[data-purchase-action="checkout"]').getAttribute('href'), purchaseUrl);
+    }
+    await page.route('https://shop.example.com/**', route => route.fulfill({ status: 200, contentType: 'text/html', body: '<h1>Shop destination</h1>' }));
+    await page.locator('[data-purchase-action="checkout"]').click();
+    await page.waitForURL(purchaseUrl);
+  } finally { await context.close(); }
+});
+
+for (const name of ['beauty', 'health']) {
+  test(`${name}: acquisition actions keep visitors in the purchase journey in both languages`, async () => {
+    const { page, context } = await visit(name, { reducedMotion: 'reduce' });
+    try {
+      for (const lang of ['es', 'en']) {
+        await page.evaluate(lang => RXSZ.setLang(lang), lang);
+        for (const selector of ['#top [data-purchase-action="scroll"]', '#final .rxsz-btn']) {
+          await page.locator(selector).click();
+          assert.equal(new URL(page.url()).hash, '#offer');
+          assert.equal(await page.evaluate(() => document.activeElement.id), 'offer');
+          assert.equal(new URL(page.url()).pathname, `/${name}.html`);
+          const position = await page.evaluate(() => ({ offer: document.querySelector('#offer').getBoundingClientRect().top, header: document.querySelector('[data-nav]').getBoundingClientRect().bottom }));
+          assert.ok(position.offer >= position.header, 'offer clears the fixed header');
+        }
+        await page.locator('[data-nav-toggle]').click();
+        await page.locator('[data-nav-drawer] .rxsz-btn').click();
+        assert.equal(await page.evaluate(() => document.activeElement.id), 'offer');
+        assert.equal(await page.locator('[data-nav-toggle]').getAttribute('aria-expanded'), 'false');
+      }
+    } finally { await context.close(); }
+  });
+}
+
 for (const name of ['beauty', 'health']) {
   test(`${name}: switching both languages updates every authored translation binding`, async () => {
     const { page, context } = await visit(name);
