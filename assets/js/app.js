@@ -55,9 +55,12 @@
   /* internal state */
   var state = {
     page: (document.body && document.body.dataset && document.body.dataset.page) || '',
-    lang: savedLang(),
+    // This is the language actually on screen, not an unfinished request.
+    lang: root.getAttribute('lang') === 'es' ? 'es' : DEFAULT_LANG,
     dict: null
   };
+  var languageRequest = 0;
+  var requestedLang = state.lang;
 
   /* --- tiny helpers ------------------------------------------------------ */
   function qs(sel, ctx) { return (ctx || document).querySelector(sel); }
@@ -150,61 +153,90 @@
     });
   }
 
-  /* Load + apply a language dictionary. Returns a Promise (resolves even on
-     failure so callers never break). Missing file -> keep authored fallback
-     copy already in the HTML. */
+  function languageStatus(message) {
+    var status = qs('[data-language-status]');
+    if (status) status.textContent = message || '';
+  }
+
+  function syncLanguageLinks(lang) {
+    try {
+      var current = new URL(window.location.href);
+      current.searchParams.set('lang', lang);
+      window.history.replaceState(window.history.state, '', current.href);
+      qsa('[data-page-link]').forEach(function (link) {
+        var destination = new URL(link.getAttribute('href'), current.href);
+        destination.searchParams.set('lang', lang);
+        link.setAttribute('href', destination.pathname + destination.search + destination.hash);
+      });
+    } catch (e) { /* URL/history can be restricted in embedded previews. */ }
+  }
+
+  // Validate before touching the DOM, so a partial response cannot mix languages.
+  function validateDictionary(dict) {
+    var keys = [];
+    qsa('[data-i18n], [data-i18n-html]').forEach(function (el) {
+      keys.push(el.getAttribute('data-i18n') || el.getAttribute('data-i18n-html'));
+    });
+    qsa('[data-i18n-attr]').forEach(function (el) {
+      el.getAttribute('data-i18n-attr').split(';').forEach(function (pair) {
+        var colon = pair.indexOf(':');
+        if (colon >= 0) keys.push(pair.slice(colon + 1).trim());
+      });
+    });
+    keys.forEach(function (key) {
+      if (typeof resolveKey(dict, key) !== 'string') {
+        throw new Error('Missing translation: ' + key);
+      }
+    });
+  }
+
+  /* Commit content, preference and URL together, and ignore obsolete responses.
+     Failed requests preserve the last fully applied language. */
   function loadLang(lang) {
     lang = (lang === 'es') ? 'es' : 'en';
+    var request = ++languageRequest;
+    requestedLang = lang;
+    languageStatus('');
     if (!state.page) {
       console.warn('[RXSZ i18n] body[data-page] not set — skipping i18n fetch.');
-      state.lang = lang;
-      root.setAttribute('lang', lang);
-      updateLangUI(lang);
+      updateLangUI(state.lang);
       return Promise.resolve(null);
     }
 
     var url = 'assets/i18n/' + state.page + '.' + lang + '.json';
-
-    if (!window.fetch) {
-      console.warn('[RXSZ i18n] fetch unavailable — keeping fallback copy.');
-      state.lang = lang;
-      state.dict = null;
-      root.setAttribute('lang', lang);
-      updateLangUI(lang);
-      try {
-        document.dispatchEvent(new CustomEvent('rxsz:langchange', { detail: { lang: lang } }));
-      } catch (e) { /* IE-less env */ }
-      return Promise.resolve(null);
-    }
-
-    return window.fetch(url, { cache: 'no-cache' })
+    return Promise.resolve().then(function () {
+        if (!window.fetch) throw new Error('Fetch unavailable');
+        return window.fetch(url, { cache: 'no-cache' });
+      })
       .then(function (res) {
         if (!res.ok) throw new Error('HTTP ' + res.status);
         return res.json();
       })
       .then(function (dict) {
+        if (request !== languageRequest) return null;
+        validateDictionary(dict);
         state.dict = dict;
         state.lang = lang;
         applyI18n();
         root.setAttribute('lang', lang);
         try { localStorage.setItem(LANG_KEY, lang); } catch (e) { /* private mode */ }
         updateLangUI(lang);
+        syncLanguageLinks(lang);
+        languageStatus('');
         try {
           document.dispatchEvent(new CustomEvent('rxsz:langchange', { detail: { lang: lang } }));
         } catch (e) { /* IE-less env */ }
         return dict;
       })
       .catch(function (err) {
+        if (request !== languageRequest) return null;
         console.warn('[RXSZ i18n] failed to load', url, '-', err.message);
-        // Still record intent + reflect UI so a retry/other lang works.
-        state.lang = lang;
-        state.dict = null;
-        root.setAttribute('lang', lang);
-        try { localStorage.setItem(LANG_KEY, lang); } catch (e) {}
-        updateLangUI(lang);
-        try {
-          document.dispatchEvent(new CustomEvent('rxsz:langchange', { detail: { lang: lang } }));
-        } catch (e) { /* IE-less env */ }
+        requestedLang = state.lang;
+        updateLangUI(state.lang);
+        languageStatus(resolveKey(state.dict, 'access.language_error') ||
+          (state.lang === 'es'
+            ? 'No se pudo cambiar el idioma. Inténtalo de nuevo.'
+            : 'The language could not be changed. Please try again.'));
         return null;
       });
   }
@@ -224,13 +256,21 @@
       var toggle = ev.target.closest ? ev.target.closest('[data-lang-toggle]') : null;
       if (toggle) {
         ev.preventDefault();
-        setLang(state.lang === 'en' ? 'es' : 'en');
+        setLang(requestedLang === 'en' ? 'es' : 'en');
       }
+    });
+    on(window, 'popstate', function () {
+      var lang = savedLang();
+      if (lang !== state.lang) setLang(lang);
     });
   }
 
   /* Read saved language (default en). */
   function savedLang() {
+    try {
+      var query = new URL(window.location.href).searchParams.get('lang');
+      if (query === 'en' || query === 'es') return query;
+    } catch (e) { /* no URL support */ }
     var stored = null;
     try { stored = localStorage.getItem(LANG_KEY); } catch (e) {}
     return stored === 'es' ? 'es' : DEFAULT_LANG;
@@ -490,39 +530,62 @@
   }
 
   function openPanel(btn, panel) {
+    if (panel.rxszCancelTransition) panel.rxszCancelTransition();
+    var start = panel.hidden ? 0 : panel.getBoundingClientRect().height;
     btn.setAttribute('aria-expanded', 'true');
     panel.hidden = false;
     panel.classList.add('is-open');
     if (reduceMotion) { panel.style.height = 'auto'; return; }
     var h = panel.scrollHeight;
-    panel.style.height = '0px';
+    panel.style.height = start + 'px';
     // force reflow so the transition runs from 0
     /* eslint-disable-next-line no-unused-expressions */
     panel.offsetHeight;
     panel.style.height = h + 'px';
-    var done = function (e) {
-      if (e && e.propertyName && e.propertyName !== 'height') return;
+    finishPanelTransition(panel, function () {
       panel.style.height = 'auto';
-      panel.removeEventListener('transitionend', done);
-    };
-    on(panel, 'transitionend', done);
+    });
   }
 
   function closePanel(btn, panel) {
+    if (panel.rxszCancelTransition) panel.rxszCancelTransition();
     btn.setAttribute('aria-expanded', 'false');
     panel.classList.remove('is-open');
     if (reduceMotion) { panel.style.height = ''; panel.hidden = true; return; }
-    var h = panel.scrollHeight;
+    var h = panel.getBoundingClientRect().height;
     panel.style.height = h + 'px';
     /* eslint-disable-next-line no-unused-expressions */
     panel.offsetHeight;
     panel.style.height = '0px';
-    var done = function (e) {
-      if (e && e.propertyName && e.propertyName !== 'height') return;
+    finishPanelTransition(panel, function () {
       panel.hidden = true;
+    });
+  }
+
+  function finishPanelTransition(panel, complete) {
+    var timer;
+    var cancel = function () {
+      window.clearTimeout(timer);
       panel.removeEventListener('transitionend', done);
+      panel.rxszCancelTransition = null;
     };
+    var done = function (event) {
+      if (event && (event.target !== panel || event.propertyName !== 'height')) return;
+      cancel();
+      complete();
+    };
+    panel.rxszCancelTransition = cancel;
     on(panel, 'transitionend', done);
+    // A zero-height change or a motion preference change may emit no event.
+    var duration = 0;
+    try {
+      var styles = window.getComputedStyle(panel);
+      function milliseconds(value) {
+        return parseFloat(value) * (value.indexOf('ms') >= 0 ? 1 : 1000) || 0;
+      }
+      duration = milliseconds(styles.transitionDuration) + milliseconds(styles.transitionDelay);
+    } catch (e) { duration = 300; }
+    timer = window.setTimeout(done, duration + 50);
   }
 
   function initFaq() {
@@ -561,6 +624,16 @@
           });
         }
         openPanel(btn, panel);
+      });
+    });
+    on(document, 'rxsz:langchange', function () {
+      triggers.forEach(function (btn) {
+        if (btn.getAttribute('aria-expanded') !== 'true') return;
+        var panel = panelFor(btn);
+        if (!panel) return;
+        if (panel.rxszCancelTransition) panel.rxszCancelTransition();
+        panel.hidden = false;
+        panel.style.height = 'auto';
       });
     });
   }
@@ -697,9 +770,23 @@
 
     function isOpen() { return toggle.getAttribute('aria-expanded') === 'true'; }
 
+    function sync() {
+      var expanded = isOpen();
+      var key = expanded ? 'nav.close_menu' : 'nav.menu';
+      var fallback = state.lang === 'es'
+        ? (expanded ? 'Cerrar menú' : 'Abrir menú')
+        : (expanded ? 'Close menu' : 'Open menu');
+      toggle.setAttribute('aria-label', resolveKey(state.dict, key) || fallback);
+      if (drawer) {
+        drawer.inert = !expanded;
+        drawer.setAttribute('aria-hidden', expanded ? 'false' : 'true');
+      }
+    }
+
     function open() {
       toggle.setAttribute('aria-expanded', 'true');
       nav.classList.add('is-open');
+      sync();
       // Move focus to the first actionable item in the drawer.
       var first = drawer && qs('a, button', drawer);
       if (first) { try { first.focus(); } catch (e) {} }
@@ -708,6 +795,7 @@
     function close(restoreFocus) {
       toggle.setAttribute('aria-expanded', 'false');
       nav.classList.remove('is-open');
+      sync();
       if (restoreFocus) {
         var restore = function () {
           try {
@@ -716,8 +804,7 @@
             try { toggle.focus(); } catch (focusError) {}
           }
         };
-        if (window.requestAnimationFrame) window.requestAnimationFrame(restore);
-        else window.setTimeout(restore, 0);
+        restore();
       }
     }
 
@@ -730,7 +817,7 @@
     if (drawer) {
       on(drawer, 'click', function (ev) {
         var link = ev.target.closest ? ev.target.closest('a') : null;
-        if (link) close(true);
+        if (link) close(false);
       });
     }
 
@@ -744,6 +831,50 @@
       if (!isOpen()) return;
       if (nav.contains(ev.target)) return;
       close(false);
+    });
+
+    on(nav, 'focusout', function () {
+      window.setTimeout(function () {
+        if (isOpen() && !nav.contains(document.activeElement)) close(false);
+      }, 0);
+    });
+    on(document, 'rxsz:langchange', sync);
+    if (window.matchMedia) {
+      var desktop = window.matchMedia('(min-width: 981px)');
+      var resize = function () {
+        if (!desktop.matches || !isOpen()) return;
+        var moveFocus = drawer && drawer.contains(document.activeElement);
+        close(false);
+        if (moveFocus) {
+          var first = qs('.rxsz-nav__links a', nav);
+          if (first) first.focus({ preventScroll: true });
+        }
+      };
+      if (desktop.addEventListener) desktop.addEventListener('change', resize);
+      else if (desktop.addListener) desktop.addListener(resize);
+    }
+    sync();
+  }
+
+  function initAnchorNavigation() {
+    on(document, 'click', function (event) {
+      if (event.defaultPrevented || event.button > 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      var link = event.target.closest ? event.target.closest('a[href^="#"]') : null;
+      if (!link || link.hasAttribute('download') || (link.target && link.target !== '_self')) return;
+      var hash = link.getAttribute('href');
+      var target;
+      try { target = document.getElementById(decodeURIComponent(hash.slice(1))); } catch (e) { return; }
+      if (!target) return;
+      event.preventDefault();
+      if (!target.hasAttribute('tabindex')) target.setAttribute('tabindex', '-1');
+      target.focus({ preventScroll: true });
+      try {
+        if (window.location.hash !== hash) window.history.pushState(window.history.state, '', hash);
+      } catch (e) { window.location.hash = hash; }
+      var header = qs('[data-nav]');
+      var offset = header ? header.getBoundingClientRect().height : 0;
+      var top = target.getBoundingClientRect().top + window.pageYOffset - offset - 16;
+      window.scrollTo({ top: Math.max(0, top), behavior: reduceMotion ? 'auto' : 'smooth' });
     });
   }
 
@@ -762,6 +893,9 @@
   function applyPurchaseState() {
     var cfg = purchaseConfig();
     var fallback = PURCHASE_FALLBACKS[state.lang] || PURCHASE_FALLBACKS.en;
+    qsa('[data-purchase-availability]').forEach(function (el) {
+      el.hidden = !!cfg.purchaseUrl;
+    });
     qsa("[data-reference-price]").forEach(function (el) {
       el.textContent = cfg.currency + " " + cfg.referencePrice;
     });
@@ -805,11 +939,49 @@
   function initPurchaseBar() {
     var bar = qs("[data-purchase-bar]");
     var hero = qs(".rxsz-auth-hero");
-    if (!bar || !hero || !("IntersectionObserver" in window)) return;
-    var observer = new IntersectionObserver(function (entries) {
-      bar.classList.toggle("is-visible", !entries[0].isIntersecting);
-    }, { threshold: 0.08 });
-    observer.observe(hero);
+    if (!bar || !hero) return;
+    var mobile = window.matchMedia ? window.matchMedia('(max-width: 760px)') : null;
+    var endSections = [qs('#offer'), qs('#final'), qs('footer')].filter(Boolean);
+    var heroVisible = true;
+    var endVisibility = endSections.map(function () { return false; });
+
+    function sync() {
+      var visible = (!mobile || mobile.matches) && !heroVisible && !endVisibility.some(Boolean);
+      bar.classList.toggle('is-visible', visible);
+      bar.inert = !visible;
+      bar.setAttribute('aria-hidden', visible ? 'false' : 'true');
+    }
+    sync();
+    if (mobile) {
+      if (mobile.addEventListener) mobile.addEventListener('change', sync);
+      else if (mobile.addListener) mobile.addListener(sync);
+    }
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (entries) {
+        heroVisible = entries[0].isIntersecting;
+        sync();
+      }, { threshold: 0 }).observe(hero);
+      var ends = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          endVisibility[endSections.indexOf(entry.target)] = entry.isIntersecting;
+        });
+        sync();
+      }, { threshold: 0 });
+      endSections.forEach(function (section) { ends.observe(section); });
+    } else {
+      function inView(element) {
+        var box = element.getBoundingClientRect();
+        return box.bottom > 0 && box.top < window.innerHeight;
+      }
+      var update = function () {
+        heroVisible = inView(hero);
+        endVisibility = endSections.map(inView);
+        sync();
+      };
+      on(window, 'scroll', update, { passive: true });
+      on(window, 'resize', update, { passive: true });
+      update();
+    }
   }
 
   /* ======================================================================
@@ -863,6 +1035,7 @@
       initFloatCta();
       initFaq();
       initNav();
+      initAnchorNavigation();
       initPurchase();
       initPurchaseBar();
       initAnnounce();
@@ -870,7 +1043,8 @@
       initLiquid();
 
       // i18n last: fetch is async and must not block interaction setup.
-      loadLang(state.lang);
+      updateLangUI(state.lang);
+      loadLang(savedLang());
     } catch (err) {
       console.error('[RXSZ] init error:', err);
       qsa('.rxsz-reveal').forEach(function (el) { el.classList.add('is-in'); });
