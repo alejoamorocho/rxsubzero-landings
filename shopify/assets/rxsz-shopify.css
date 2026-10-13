@@ -1,0 +1,7 @@
+/* Shopify native form and localization additions. */
+.rxsz-localization { margin:0; }
+.rxsz-native-purchase { display:grid; gap:.75rem; margin-block:1rem; }
+.rxsz-native-purchase__label { font-weight:600; }
+.rxsz-native-purchase__input { min-block-size:44px; max-inline-size:100%; padding:.65rem .9rem; border:1px solid var(--auth-line); border-radius:4px; color:var(--auth-ink); background:var(--auth-white); font:inherit; }
+.rxsz-native-purchase__input:focus-visible { outline:3px solid var(--auth-mist); outline-offset:3px; }
+.no-js .rxsz-purchase-enhanced { display:none; }

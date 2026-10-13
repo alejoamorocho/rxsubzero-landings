@@ -1,0 +1,14 @@
+{
+  "layout": "rxsz",
+  "sections": {
+    "main": {
+      "type": "rxsz-authentic-landing",
+      "settings": {
+        "audience": "beauty"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

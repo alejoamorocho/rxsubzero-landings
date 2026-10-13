@@ -159,6 +159,7 @@
   }
 
   function syncLanguageLinks(lang) {
+    if ((window.RXSZ_CONFIG || {}).nativeLocale) return;
     try {
       var current = new URL(window.location.href);
       current.searchParams.set('lang', lang);
@@ -203,7 +204,8 @@
       return Promise.resolve(null);
     }
 
-    var url = 'assets/i18n/' + state.page + '.' + lang + '.json';
+    var localeAssets = (window.RXSZ_CONFIG || {}).i18nUrls || {};
+    var url = (localeAssets[state.page] || {})[lang] || 'assets/i18n/' + state.page + '.' + lang + '.json';
     return Promise.resolve().then(function () {
         if (!window.fetch) throw new Error('Fetch unavailable');
         return window.fetch(url, { cache: 'no-cache' });
@@ -267,6 +269,7 @@
 
   /* Read saved language (default en). */
   function savedLang() {
+    if ((window.RXSZ_CONFIG || {}).nativeLocale) return state.lang;
     try {
       var query = new URL(window.location.href).searchParams.get('lang');
       if (query === 'en' || query === 'es') return query;
@@ -864,7 +867,8 @@
       var hash = link.getAttribute('href');
       var target;
       try { target = document.getElementById(decodeURIComponent(hash.slice(1))); } catch (e) { return; }
-      if (!target) return;
+      // Dialogs open through their component without moving the underlying page.
+      if (!target || target.tagName === 'DIALOG') return;
       event.preventDefault();
       if (!target.hasAttribute('tabindex')) target.setAttribute('tabindex', '-1');
       target.focus({ preventScroll: true });
@@ -897,12 +901,14 @@
 
   function applyPurchaseState() {
     var cfg = purchaseConfig();
+    var commerce = (window.RXSZ_CONFIG || {}).commerce || {};
+    var panelReady = typeof window.RXSZ_COMMERCE !== 'undefined' && window.RXSZ_COMMERCE.ready && window.RXSZ_COMMERCE.mode === commerce.mode;
     var fallback = PURCHASE_FALLBACKS[state.lang] || PURCHASE_FALLBACKS.en;
     qsa('[data-purchase-availability]').forEach(function (el) {
-      el.hidden = !!cfg.purchaseUrl;
+      el.hidden = !!cfg.purchaseUrl || (panelReady && commerce.mode === 'shopify');
     });
     qsa("[data-reference-price]").forEach(function (el) {
-      el.textContent = cfg.currency + " " + cfg.referencePrice;
+      if (commerce.mode !== 'shopify') el.textContent = cfg.currency + " " + cfg.referencePrice;
     });
 
     qsa('[data-purchase-action="scroll"]').forEach(function (el) {
@@ -911,12 +917,12 @@
 
     qsa('[data-purchase-action="checkout"]').forEach(function (el) {
       var label = qs("[data-purchase-label]", el) || el;
-      if (cfg.purchaseUrl) {
-        el.setAttribute("href", cfg.purchaseUrl);
+      if (panelReady || cfg.purchaseUrl) {
+        el.setAttribute("href", panelReady ? "#purchase" : cfg.purchaseUrl);
         el.removeAttribute("aria-disabled");
         el.removeAttribute("tabindex");
         el.classList.remove("is-disabled");
-        var ready = resolveKey(state.dict, "purchase.buy") || fallback.buy;
+        var ready = panelReady ? resolveKey(state.dict, 'commerce.choose') || 'Choose RX SUBZERO' : resolveKey(state.dict, "purchase.buy") || fallback.buy;
         label.textContent = ready;
       } else {
         el.removeAttribute("href");
@@ -933,6 +939,7 @@
   function initPurchase() {
     applyPurchaseState();
     on(document, "rxsz:langchange", applyPurchaseState);
+    on(document, "rxsz:commerce-ready", applyPurchaseState);
     on(document, "click", function (event) {
       var disabled = event.target.closest
         ? event.target.closest('[data-purchase-action="checkout"][aria-disabled="true"]')

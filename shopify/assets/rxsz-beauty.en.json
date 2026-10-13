@@ -1,0 +1,291 @@
+{
+  "meta": {
+    "title": "RX SUBZERO | Make the cold-water ritual yours",
+    "description": "Bring a fresh start to your skincare with RX SUBZERO. A collapsible facial basin and clear dual breathing tube for a cold-water ritual at home."
+  },
+  "access": {
+    "skip": "Skip to content",
+    "language_error": "The language could not be loaded. Your current language has been kept. Please try again."
+  },
+  "nav": {
+    "aria": "Primary navigation",
+    "mobile_aria": "Mobile navigation",
+    "menu": "Open menu",
+    "ritual": "How it works",
+    "product": "The product",
+    "faq": "Questions",
+    "cta": "Get mine",
+    "close_menu": "Close menu",
+    "language": "Language",
+    "beauty": "Beauty",
+    "health": "Wellness"
+  },
+  "hero": {
+    "kicker": "RX SUBZERO · Your facial ritual at home",
+    "title_1": "Meet your new ritual.",
+    "title_2": "Feel the freshness.",
+    "sub": "Give your skincare a cold-water beginning. RX SUBZERO pairs a collapsible facial basin with a clear dual breathing tube, giving that moment a place of its own at home.",
+    "cta_primary": "Get my RX SUBZERO",
+    "cta_secondary": "See how it works",
+    "fact_1": "Folds down for storage",
+    "fact_2": "Dual tube included",
+    "fact_3": "A ritual at home",
+    "image_alt": "Blue-and-white RX SUBZERO facial basin with a clear dual breathing tube on a bathroom vanity"
+  },
+  "context": {
+    "kicker": "Before your skincare",
+    "title": "A fresh place to begin.",
+    "copy": "Make a little room for cold water before the skincare products you already use.",
+    "img_alt": "RX SUBZERO facial basin beside skincare bottles and a towel",
+    "points": [
+      {
+        "title": "Set it up",
+        "text": "Open the basin on a stable surface."
+      },
+      {
+        "title": "Find your temperature",
+        "text": "Start with cool water and add ice gradually, according to your comfort."
+      },
+      {
+        "title": "Take your time",
+        "text": "Position the mouthpiece and keep your breathing steady."
+      },
+      {
+        "title": "Continue your routine",
+        "text": "Gently pat your face dry, then follow with your usual skincare."
+      }
+    ]
+  },
+  "ritual": {
+    "kicker": "Step into the experience",
+    "title": "Your new ritual starts here.",
+    "copy": "Prepare the water, find a comfortable temperature and take a moment for your face.",
+    "steps": [
+      {
+        "title": "Prepare the water",
+        "text": "Open the basin on a stable surface and begin with cool water at a comfortable temperature.",
+        "img_alt": "Water being poured into the RX SUBZERO basin while a hand adds ice"
+      },
+      {
+        "title": "Take it gradually",
+        "text": "Position the mouthpiece, breathe steadily and approach the water in brief, comfortable intervals.",
+        "img_alt": "Woman using the RX SUBZERO mouthpiece with her face above the water"
+      },
+      {
+        "title": "Rinse and store",
+        "text": "Empty and wash with mild soap and water. Let every part air-dry fully, then fold the basin.",
+        "img_alt": "Folded RX SUBZERO basin beside its detached clear dual breathing tube on a drying mat"
+      }
+    ]
+  },
+  "pain": {
+    "kicker": "Make a little room",
+    "title": "A morning with less rush.",
+    "copy": "Before the day gets busy, take a moment for your face."
+  },
+  "aspiration": {
+    "kicker": "Picture your morning",
+    "title": "Let your care start here.",
+    "copy": "Cool water. A soft towel. Your favourite products, ready for what comes next. RX SUBZERO gives that first moment of care a space of its own.",
+    "image_alt": "Woman drying her face with a towel beside the RX SUBZERO basin",
+    "cta": "Make this ritual mine"
+  },
+  "story": {
+    "kicker": "Meet RX SUBZERO",
+    "title": "Made for cold water.",
+    "copy": "A facial basin that opens for your ritual and folds down when you are done.",
+    "image_alt": "Hands holding the side handles of the expanded blue-and-white RX SUBZERO basin"
+  },
+  "benefits": {
+    "kicker": "Why make it part of your routine",
+    "title": "A ritual that fits your life.",
+    "copy": "Enjoy cold water at home with a product that makes sense from setup to storage.",
+    "items": [
+      {
+        "title": "Feel the freshness",
+        "text": "Begin with the feel of cool water against your face, at a temperature that is comfortable for you."
+      },
+      {
+        "title": "Follow with skincare",
+        "text": "Use on clean skin, pat dry gently and continue with the products already in your routine."
+      },
+      {
+        "title": "Set up your moment",
+        "text": "A dedicated facial basin with its clear dual breathing tube included."
+      },
+      {
+        "title": "Get your space back",
+        "text": "The basin folds down for storage after you clean it and let every part dry fully."
+      }
+    ]
+  },
+  "product": {
+    "kicker": "Know what you are choosing",
+    "title": "Open up your ritual. Fold it away.",
+    "copy": "A collapsible design makes room for cold water without taking up the same space all day. Open the basin to use it, then fold it down once it is clean and fully dry.",
+    "img_alt": "Expanded blue-and-white RX SUBZERO facial basin with its clear dual breathing tube",
+    "features": [
+      "Collapsible walls for storage",
+      "Detachable clear dual breathing tube",
+      "Integrated blue inner base",
+      "Side handles to hold the basin"
+    ],
+    "cta": "Get my RX SUBZERO",
+    "included_title": "Two pieces. One ritual.",
+    "includes": [
+      {
+        "title": "1 collapsible facial basin",
+        "text": "Blue and white, with side handles and an integrated inner base."
+      },
+      {
+        "title": "1 clear dual breathing tube",
+        "text": "With a blue mouthpiece; detaches from the basin for cleaning."
+      }
+    ]
+  },
+  "faq": {
+    "kicker": "Feel clear about your choice",
+    "title": "Your ritual, explained.",
+    "copy": "What to know before choosing RX SUBZERO and getting started at your own pace.",
+    "items": [
+      {
+        "q": "What is included with RX SUBZERO?",
+        "a": "One collapsible facial basin and one clear dual breathing tube with mouthpiece. The images show the same basin open and folded."
+      },
+      {
+        "q": "Where does it fit in my routine?",
+        "a": "Use it on clean skin before the leave-on skincare products in your usual routine. Dry your face gently before continuing."
+      },
+      {
+        "q": "How do I care for it?",
+        "a": "Empty after use, rinse the basin and breathing tube with mild soap and water, then let both air-dry fully before storing."
+      },
+      {
+        "q": "Should I begin with ice water?",
+        "a": "No. Begin with cool water and brief intervals. Add ice gradually only if your skin and comfort level respond well."
+      },
+      {
+        "q": "Is cold exposure suitable for everyone?",
+        "a": "Cold exposure may not be appropriate for everyone. If you have a health condition, sensitivity or concern, speak with a qualified healthcare professional first."
+      }
+    ]
+  },
+  "offer": {
+    "kicker": "Your RX SUBZERO",
+    "title": "Make it part of your skincare.",
+    "copy": "Bring home the facial basin and clear dual breathing tube. Choose your moment, prepare the water and make this new ritual yours.",
+    "image_alt": "RX SUBZERO basin shown expanded and folded, beside its clear dual breathing tube and box",
+    "cta": "Get my RX SUBZERO",
+    "note": "Use cold gradually and always at your own comfort level.",
+    "availability": "Online purchasing is not available yet.",
+    "image_caption": "One basin, shown open and folded.",
+    "includes_title": "Your product includes",
+    "includes": [
+      "1 collapsible facial basin",
+      "1 clear dual breathing tube with mouthpiece"
+    ]
+  },
+  "final": {
+    "kicker": "Your next moment of care",
+    "title": "Start with water. Make it yours.",
+    "copy": "A fresh sensation before your favourite products. A basin that folds down when you are done. Give your routine a new beginning with RX SUBZERO.",
+    "cta": "Get my RX SUBZERO",
+    "secondary": "See the ritual again"
+  },
+  "purchase": {
+    "intent": "Get mine",
+    "buy": "Buy RX SUBZERO",
+    "coming_soon": "Coming soon",
+    "reference_label": "reference price",
+    "reference_short": "reference",
+    "bar_aria": "Buy your RX SUBZERO",
+    "details": "Choose RX SUBZERO"
+  },
+  "footer": {
+    "aria": "Footer navigation",
+    "tagline": "Make the cold-water ritual yours.",
+    "copyright": "© RX SUBZERO"
+  },
+  "route": {
+    "kicker": "Another way to pause",
+    "title": "Make room for calm.",
+    "copy": "Explore RX SUBZERO as a quiet cold-water pause in our Wellness ritual.",
+    "cta": "Explore Wellness"
+  },
+  "explorer": {
+    "aria": "Explore RX SUBZERO",
+    "stage_aria": "Product photographs",
+    "previous": "Previous view",
+    "next": "Next view",
+    "zoom": "Enlarge image",
+    "close": "Close enlarged image",
+    "picker_aria": "Choose a product view",
+    "status": "{current} of {total}: {name}",
+    "load_error": "This image could not be loaded. Choose another view or try again.",
+    "hint": "Choose a view or swipe",
+    "views": [
+      {
+        "name": "Your routine",
+        "caption": "Cool water, a towel and the start of your skincare.",
+        "alt": "Woman holding a towel beside the blue-and-white RX SUBZERO basin in a naturally lit bathroom."
+      },
+      {
+        "name": "Product",
+        "caption": "A collapsible basin, clear dual breathing tube and integrated base.",
+        "alt": "Blue-and-white RX SUBZERO facial basin with a clear dual breathing tube on a bathroom vanity"
+      },
+      {
+        "name": "Inside",
+        "caption": "A closer look inside the basin and at the dual tube.",
+        "alt": "Water being poured into the RX SUBZERO basin while a hand adds ice"
+      },
+      {
+        "name": "Folded",
+        "caption": "Once clean and fully dry, it folds down for storage.",
+        "alt": "Folded RX SUBZERO basin beside its detached clear dual breathing tube on a drying mat"
+      }
+    ],
+    "zoom_error": "The higher-resolution image could not be loaded. You can still view the available version."
+  },
+  "commerce": {
+    "kicker": "Your RX SUBZERO",
+    "choose": "Choose my RX SUBZERO",
+    "close_product": "Close product",
+    "close_cart": "Close cart",
+    "gallery": "Product photographs",
+    "intro": "A collapsible facial basin and clear dual breathing tube. Your next ritual starts here.",
+    "demo": "Demonstration: try the product and cart. Payments are not active.",
+    "demo_checkout": "Checkout becomes available when installed in your Shopify store.",
+    "option": "Choose your option",
+    "quantity": "Quantity",
+    "decrease": "Decrease quantity",
+    "increase": "Increase quantity",
+    "add": "Add to cart",
+    "adding": "Adding…",
+    "sold_out": "This option is unavailable",
+    "view_cart": "View cart",
+    "cart_title": "Your cart",
+    "empty": "Your next ritual is still waiting.",
+    "discover": "Choose RX SUBZERO",
+    "subtotal": "Subtotal",
+    "discounts": "Discounts",
+    "checkout": "Continue to checkout",
+    "checkout_note": "Shipping and any applicable taxes are shown at checkout.",
+    "policies": "Store policies",
+    "continue": "Continue exploring",
+    "remove": "Remove",
+    "loading": "Updating your cart…",
+    "quantity_error": "Choose a valid quantity within the available limits.",
+    "add_error": "We could not complete this addition. Check your cart before trying again.",
+    "cart_error": "Your cart could not be loaded. Try opening it again.",
+    "change_error": "This change could not be completed. Your cart has been refreshed.",
+    "image_error": "This image could not be loaded. Choose another view.",
+    "image_product": "Product",
+    "image_inside": "Inside",
+    "image_folded": "Folded",
+    "image_routine": "Your routine",
+    "image_label": "Product image",
+    "added": "Added to your cart.",
+    "unavailable": "This product is not available for purchase yet."
+  }
+}

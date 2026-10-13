@@ -1,0 +1,103 @@
+{% comment %}Generated overlay section. Product data always comes from Shopify.{% endcomment %}
+{% liquid
+  assign rxsz_product = section.settings.product
+  assign rxsz_selected_variant = rxsz_product.selected_or_first_available_variant
+  assign rxsz_audience = section.settings.audience
+  if template.suffix == 'rxsz-health'
+    assign rxsz_audience = 'health'
+  elsif template.suffix == 'rxsz-beauty'
+    assign rxsz_audience = 'beauty'
+  endif
+  assign beauty_page = section.settings.beauty_page
+  assign health_page = section.settings.health_page
+  if rxsz_audience == 'beauty' and beauty_page == blank
+    assign beauty_page = page
+  endif
+  if rxsz_audience == 'health' and health_page == blank
+    assign health_page = page
+  endif
+%}
+{% capture rxsz_json_lt %}\u003c{% endcapture %}
+{% capture rxsz_json_gt %}\u003e{% endcapture %}
+{% capture rxsz_json_amp %}\u0026{% endcapture %}
+<script>
+  window.RXSZ_CONFIG = {
+    nativeLocale: true,
+    purchaseUrl: "",
+    referencePrice: "",
+    currency: {{ cart.currency.iso_code | json | replace: '<', rxsz_json_lt | replace: '>', rxsz_json_gt | replace: '&', rxsz_json_amp }},
+    i18nUrls: {
+      beauty: { en: {{ 'rxsz-beauty.en.json' | asset_url | json | replace: '<', rxsz_json_lt | replace: '>', rxsz_json_gt | replace: '&', rxsz_json_amp }}, es: {{ 'rxsz-beauty.es.json' | asset_url | json | replace: '<', rxsz_json_lt | replace: '>', rxsz_json_gt | replace: '&', rxsz_json_amp }} },
+      health: { en: {{ 'rxsz-health.en.json' | asset_url | json | replace: '<', rxsz_json_lt | replace: '>', rxsz_json_gt | replace: '&', rxsz_json_amp }}, es: {{ 'rxsz-health.es.json' | asset_url | json | replace: '<', rxsz_json_lt | replace: '>', rxsz_json_gt | replace: '&', rxsz_json_amp }} }
+    },
+    commerce: {
+      mode: "shopify",
+      root: {{ routes.root_url | append: '/' | replace: '//', '/' | json | replace: '<', rxsz_json_lt | replace: '>', rxsz_json_gt | replace: '&', rxsz_json_amp }},
+      cartUrl: {{ routes.cart_url | json | replace: '<', rxsz_json_lt | replace: '>', rxsz_json_gt | replace: '&', rxsz_json_amp }},
+      checkoutUrl: {{ routes.root_url | append: '/checkout' | replace: '//', '/' | json | replace: '<', rxsz_json_lt | replace: '>', rxsz_json_gt | replace: '&', rxsz_json_amp }},
+      currency: {{ cart.currency.iso_code | json | replace: '<', rxsz_json_lt | replace: '>', rxsz_json_gt | replace: '&', rxsz_json_amp }},
+      product: {% if rxsz_product != blank %}{
+        title: {{ rxsz_product.title | json | replace: '<', rxsz_json_lt | replace: '>', rxsz_json_gt | replace: '&', rxsz_json_amp }},
+        has_only_default_variant: {{ rxsz_product.has_only_default_variant | json }},
+        variants: [{% for variant in rxsz_product.variants limit: 250 %}
+          {id: {{ variant.id | json }}, title: {{ variant.title | json | replace: '<', rxsz_json_lt | replace: '>', rxsz_json_gt | replace: '&', rxsz_json_amp }}, price: {{ variant.price | json }}, compare_at_price: {{ variant.compare_at_price | json }}, available: {% if variant.available and variant.requires_selling_plan == false %}true{% else %}false{% endif %}, quantity_rule: {min: {{ variant.quantity_rule.min | default: 1 | json }}, max: {{ variant.quantity_rule.max | json }}, increment: {{ variant.quantity_rule.increment | default: 1 | json }}}, featured_image: {% if variant.featured_image != blank %}{"src": {{ variant.featured_image | image_url: width: 1600 | json | replace: '<', rxsz_json_lt | replace: '>', rxsz_json_gt | replace: '&', rxsz_json_amp }}, "alt": {{ variant.featured_image.alt | default: rxsz_product.title | json | replace: '<', rxsz_json_lt | replace: '>', rxsz_json_gt | replace: '&', rxsz_json_amp }}}{% else %}null{% endif %}}{% unless forloop.last %},{% endunless %}
+        {% endfor %}],
+        images: [{% for image in rxsz_product.images limit: 50 %}{"src": {{ image | image_url: width: 1600 | json | replace: '<', rxsz_json_lt | replace: '>', rxsz_json_gt | replace: '&', rxsz_json_amp }}, "alt": {{ image.alt | default: rxsz_product.title | json | replace: '<', rxsz_json_lt | replace: '>', rxsz_json_gt | replace: '&', rxsz_json_amp }}}{% unless forloop.last %},{% endunless %}{% endfor %}]
+      }{% else %}null{% endif %},
+      policies: [{% for policy in shop.policies %}{"title": {{ policy.title | json | replace: '<', rxsz_json_lt | replace: '>', rxsz_json_gt | replace: '&', rxsz_json_amp }}, "url": {{ policy.url | json | replace: '<', rxsz_json_lt | replace: '>', rxsz_json_gt | replace: '&', rxsz_json_amp }}}{% unless forloop.last %},{% endunless %}{% endfor %}]
+    }
+  };
+</script>
+{% if rxsz_audience == 'health' %}
+  {% render 'rxsz-health', rxsz_product: rxsz_product, rxsz_selected_variant: rxsz_selected_variant, beauty_page: beauty_page, health_page: health_page, section_id: section.id %}
+{% else %}
+  {% render 'rxsz-beauty', rxsz_product: rxsz_product, rxsz_selected_variant: rxsz_selected_variant, beauty_page: beauty_page, health_page: health_page, section_id: section.id %}
+{% endif %}
+{% if rxsz_product != blank %}
+  <script type="application/ld+json">{{ rxsz_product | structured_data | replace: '<', rxsz_json_lt }}</script>
+{% endif %}
+{% schema %}
+{
+  "name": "t:rxsz.section.name",
+  "tag": "div",
+  "class": "rxsz-shopify-landing",
+  "limit": 1,
+  "settings": [
+    {
+      "type": "select",
+      "id": "audience",
+      "label": "t:rxsz.section.audience",
+      "default": "beauty",
+      "options": [
+        {
+          "value": "beauty",
+          "label": "t:rxsz.section.beauty"
+        },
+        {
+          "value": "health",
+          "label": "t:rxsz.section.health"
+        }
+      ]
+    },
+    {
+      "type": "product",
+      "id": "product",
+      "label": "t:rxsz.section.product"
+    },
+    {
+      "type": "paragraph",
+      "content": "t:rxsz.section.product_info"
+    },
+    {
+      "type": "page",
+      "id": "beauty_page",
+      "label": "t:rxsz.section.beauty_page"
+    },
+    {
+      "type": "page",
+      "id": "health_page",
+      "label": "t:rxsz.section.health_page"
+    }
+  ]
+}
+{% endschema %}

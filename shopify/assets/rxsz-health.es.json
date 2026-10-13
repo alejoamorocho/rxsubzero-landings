@@ -1,0 +1,291 @@
+{
+  "meta": {
+    "title": "RX SUBZERO | Haz tuya la pausa con agua fría",
+    "description": "Dale a tu pausa un lugar en casa con RX SUBZERO: recipiente facial plegable y tubo doble transparente para disfrutar el agua fría a tu ritmo."
+  },
+  "access": {
+    "skip": "Ir al contenido",
+    "language_error": "No se pudo cargar el idioma. Se ha mantenido el idioma actual. Inténtalo de nuevo."
+  },
+  "nav": {
+    "aria": "Navegación principal",
+    "mobile_aria": "Navegación móvil",
+    "menu": "Abrir menú",
+    "ritual": "Cómo se usa",
+    "product": "El producto",
+    "faq": "Preguntas",
+    "cta": "Lo quiero",
+    "close_menu": "Cerrar menú",
+    "language": "Idioma",
+    "beauty": "Belleza",
+    "health": "Bienestar"
+  },
+  "hero": {
+    "kicker": "RX SUBZERO · Un momento para ti",
+    "title_1": "Haz tuya la pausa.",
+    "title_2": "Siente el agua fría.",
+    "sub": "Entre un pendiente y el siguiente, elige un momento para ti. Con su recipiente facial plegable y tubo doble transparente, RX SUBZERO le da a tu pausa un lugar en casa.",
+    "cta_primary": "Quiero mi RX SUBZERO",
+    "cta_secondary": "Así se usa",
+    "fact_1": "Se pliega para guardar",
+    "fact_2": "Tubo doble incluido",
+    "fact_3": "Un ritual en casa",
+    "image_alt": "Recipiente facial RX SUBZERO azul y blanco con tubo doble transparente sobre una encimera de pizarra oscura"
+  },
+  "context": {
+    "kicker": "Un comienzo tranquilo",
+    "title": "Dale espacio a una pausa.",
+    "copy": "Suma el agua fría a un ritual sencillo en casa, en el momento que elijas.",
+    "img_alt": "Recipiente facial RX SUBZERO con agua y hielo sobre una encimera oscura",
+    "points": [
+      {
+        "title": "Prepara el espacio",
+        "text": "Abre el recipiente sobre una superficie estable."
+      },
+      {
+        "title": "Marca tu ritmo",
+        "text": "Empieza con agua fresca e intervalos breves y cómodos."
+      },
+      {
+        "title": "Tómate tu tiempo",
+        "text": "Coloca la boquilla y mantén una respiración estable."
+      },
+      {
+        "title": "Guárdalo",
+        "text": "Enjuaga, deja secar por completo al aire y pliega al terminar."
+      }
+    ]
+  },
+  "ritual": {
+    "kicker": "Así se vive la experiencia",
+    "title": "De la preparación a tu pausa.",
+    "copy": "El ritual empieza al preparar el agua. Ve poco a poco y encuentra una temperatura cómoda para ti.",
+    "steps": [
+      {
+        "title": "Prepara el agua",
+        "text": "Abre el recipiente sobre una superficie estable y empieza con agua fresca a una temperatura cómoda.",
+        "img_alt": "Manos agregando hielo y colocando el tubo doble transparente en el recipiente RX SUBZERO"
+      },
+      {
+        "title": "Ve poco a poco",
+        "text": "Coloca la boquilla, respira de forma estable y acércate al agua en intervalos breves y cómodos.",
+        "img_alt": "Hombre usando la boquilla de RX SUBZERO con el rostro por encima del agua"
+      },
+      {
+        "title": "Enjuaga y guarda",
+        "text": "Vacía y lava con agua y jabón suave. Deja secar cada parte por completo al aire antes de plegar.",
+        "img_alt": "Manos sujetando el recipiente RX SUBZERO plegado junto a su tubo doble transparente separado"
+      }
+    ]
+  },
+  "pain": {
+    "kicker": "Antes de los pendientes",
+    "title": "Un momento entre las tareas.",
+    "copy": "Haz una pausa breve antes de las pantallas, los planes y el ruido cotidiano."
+  },
+  "aspiration": {
+    "kicker": "Imagínalo en tu día",
+    "title": "Deja el teléfono. Prepara el agua.",
+    "copy": "El sonido del agua. Una temperatura cómoda. Una toalla a mano. Haz de esos pequeños gestos una pausa que tú eliges, antes de volver a lo que sigue.",
+    "image_alt": "Mujer con una toalla junto al recipiente RX SUBZERO sobre una encimera oscura",
+    "cta": "Quiero hacer mía la pausa"
+  },
+  "story": {
+    "kicker": "Conoce RX SUBZERO",
+    "title": "Pensado para el agua fría.",
+    "copy": "Un recipiente facial que se abre para tu ritual y se pliega al terminar.",
+    "image_alt": "Manos sujetando las asas del recipiente RX SUBZERO azul y blanco, desplegado"
+  },
+  "benefits": {
+    "kicker": "Por qué elegir RX SUBZERO",
+    "title": "Dale a tu pausa su propio lugar.",
+    "copy": "Un recipiente para el agua fría y un formato práctico para volver a tu día cuando termines.",
+    "items": [
+      {
+        "title": "Un momento en casa",
+        "text": "Prepara el recipiente y reserva un espacio entre las tareas de tu día."
+      },
+      {
+        "title": "Una experiencia fresca",
+        "text": "Siente el agua en tu rostro, empezando con una temperatura cómoda para ti."
+      },
+      {
+        "title": "Tú marcas el ritmo",
+        "text": "Elige cuándo hacerlo y mantén los intervalos breves, sin forzar la experiencia."
+      },
+      {
+        "title": "Se guarda plegado",
+        "text": "Una vez limpio y completamente seco, el recipiente se pliega para ocupar menos espacio."
+      }
+    ]
+  },
+  "product": {
+    "kicker": "Diseñado para tu ritual en casa",
+    "title": "Espacio para el agua. Espacio para ti.",
+    "copy": "Abre el recipiente cuando quieras hacer una pausa con agua fría. Sus paredes plegables permiten guardarlo en un formato compacto después de limpiarlo y dejarlo secar.",
+    "img_alt": "Recipiente facial RX SUBZERO azul y blanco, desplegado con su tubo doble transparente",
+    "features": [
+      "Paredes plegables para guardar",
+      "Tubo doble transparente desmontable",
+      "Base interior azul integrada",
+      "Asas laterales para sujetar"
+    ],
+    "cta": "Quiero mi RX SUBZERO",
+    "included_title": "Dos piezas, un solo ritual",
+    "includes": [
+      {
+        "title": "1 recipiente facial plegable",
+        "text": "Azul y blanco, con asas laterales y base interior integrada."
+      },
+      {
+        "title": "1 tubo doble transparente",
+        "text": "Con boquilla azul; se separa del recipiente para la limpieza."
+      }
+    ]
+  },
+  "faq": {
+    "kicker": "Decide con todo claro",
+    "title": "Tu pausa, sin dudas.",
+    "copy": "Lo que necesitas saber para elegir RX SUBZERO y empezar a tu ritmo.",
+    "items": [
+      {
+        "q": "¿Qué incluye RX SUBZERO?",
+        "a": "Incluye un recipiente facial plegable y un tubo doble transparente con boquilla. En las imágenes puedes ver el mismo recipiente abierto y plegado."
+      },
+      {
+        "q": "¿Cómo debería comenzar?",
+        "a": "Empieza con agua fresca, una temperatura cómoda e intervalos breves. Agrega hielo gradualmente solo si se siente apropiado para ti."
+      },
+      {
+        "q": "¿Cómo debo cuidarlo?",
+        "a": "Vacía después de usar, enjuaga el recipiente y el tubo con agua y jabón suave, y deja que ambos sequen completamente al aire antes de guardar."
+      },
+      {
+        "q": "¿La exposición al frío es adecuada para todos?",
+        "a": "La exposición al frío puede no ser apropiada para todas las personas. Si tienes una condición de salud, sensibilidad o inquietud, consulta primero con un profesional de salud calificado."
+      },
+      {
+        "q": "¿En qué momento de mi rutina lo uso?",
+        "a": "Úsalo como un paso breve con agua fría en un momento cómodo de tu rutina. En el rostro, úsalo sobre la piel limpia, seca suavemente y continúa con los productos que ya utilizas."
+      }
+    ]
+  },
+  "offer": {
+    "kicker": "Tu RX SUBZERO",
+    "title": "Lleva la experiencia a casa.",
+    "copy": "El recipiente facial y su tubo doble transparente, para darle forma a ese momento que quieres reservarte. Haz espacio para tu próxima pausa.",
+    "image_alt": "Recipiente RX SUBZERO desplegado y plegado, junto a su tubo doble transparente y su caja",
+    "cta": "Quiero mi RX SUBZERO",
+    "note": "Usa el frío de forma gradual y siempre según tu nivel de comodidad.",
+    "availability": "La compra en línea todavía no está disponible.",
+    "image_caption": "Un mismo recipiente, mostrado abierto y plegado.",
+    "includes_title": "Tu producto incluye",
+    "includes": [
+      "1 recipiente facial plegable",
+      "1 tubo doble transparente con boquilla"
+    ]
+  },
+  "final": {
+    "kicker": "Elige tu próximo momento",
+    "title": "Tu día tiene espacio para ti.",
+    "copy": "Entre una tarea y la siguiente, vuelve a algo sencillo: agua fresca y un momento que tú eliges. Dale a esa pausa un lugar en casa con RX SUBZERO.",
+    "cta": "Quiero mi RX SUBZERO",
+    "secondary": "Volver a ver el ritual"
+  },
+  "purchase": {
+    "intent": "Lo quiero",
+    "buy": "Comprar RX SUBZERO",
+    "coming_soon": "Próximamente",
+    "reference_label": "precio de referencia",
+    "reference_short": "referencia",
+    "bar_aria": "Compra tu RX SUBZERO",
+    "details": "Elegir RX SUBZERO"
+  },
+  "footer": {
+    "aria": "Navegación del pie de página",
+    "tagline": "Haz tuya la pausa con agua fría.",
+    "copyright": "© RX SUBZERO"
+  },
+  "route": {
+    "kicker": "Otra forma de empezar",
+    "title": "Frescura para tu rostro.",
+    "copy": "Conoce el ritual de Belleza para sumar agua fría antes de tu cuidado facial habitual.",
+    "cta": "Explora Belleza"
+  },
+  "explorer": {
+    "aria": "Explora RX SUBZERO",
+    "stage_aria": "Fotografías del producto",
+    "previous": "Vista anterior",
+    "next": "Vista siguiente",
+    "zoom": "Ampliar imagen",
+    "close": "Cerrar imagen ampliada",
+    "picker_aria": "Elige una vista del producto",
+    "status": "{current} de {total}: {name}",
+    "load_error": "No se pudo cargar esta imagen. Elige otra vista o vuelve a intentarlo.",
+    "hint": "Elige una vista o desliza",
+    "views": [
+      {
+        "name": "En tu rutina",
+        "caption": "Tu próxima pausa con agua fría empieza en casa.",
+        "alt": "Hombre con una toalla junto al recipiente RX SUBZERO en una encimera de piedra oscura."
+      },
+      {
+        "name": "Producto",
+        "caption": "Recipiente plegable, tubo doble transparente y base integrada.",
+        "alt": "Recipiente facial RX SUBZERO azul y blanco con tubo doble transparente sobre una encimera de pizarra oscura"
+      },
+      {
+        "name": "Interior",
+        "caption": "Mira de cerca el interior y la disposición del tubo doble.",
+        "alt": "Manos agregando hielo y colocando el tubo doble transparente en el recipiente RX SUBZERO"
+      },
+      {
+        "name": "Plegado",
+        "caption": "Una vez limpio y seco, se pliega para guardarlo.",
+        "alt": "Manos sujetando el recipiente RX SUBZERO plegado junto a su tubo doble transparente separado"
+      }
+    ],
+    "zoom_error": "No se pudo cargar la imagen de mayor resolución. Puedes seguir viendo la versión disponible."
+  },
+  "commerce": {
+    "kicker": "Tu RX SUBZERO",
+    "choose": "Elegir mi RX SUBZERO",
+    "close_product": "Cerrar producto",
+    "close_cart": "Cerrar carrito",
+    "gallery": "Fotografías del producto",
+    "intro": "Un recipiente facial plegable y un tubo doble transparente. Tu próximo ritual empieza aquí.",
+    "demo": "Demostración: prueba el producto y el carrito. Los pagos aún no están activos.",
+    "demo_checkout": "El pago estará disponible al instalarlo en tu tienda Shopify.",
+    "option": "Elige tu opción",
+    "quantity": "Cantidad",
+    "decrease": "Reducir cantidad",
+    "increase": "Aumentar cantidad",
+    "add": "Añadir al carrito",
+    "adding": "Añadiendo…",
+    "sold_out": "Esta opción no está disponible",
+    "view_cart": "Ver carrito",
+    "cart_title": "Tu carrito",
+    "empty": "Tu próximo ritual aún te espera.",
+    "discover": "Elegir RX SUBZERO",
+    "subtotal": "Subtotal",
+    "discounts": "Descuentos",
+    "checkout": "Continuar al pago",
+    "checkout_note": "Los envíos y los impuestos aplicables se muestran al continuar al pago.",
+    "policies": "Políticas de la tienda",
+    "continue": "Seguir explorando",
+    "remove": "Eliminar",
+    "loading": "Actualizando tu carrito…",
+    "quantity_error": "Elige una cantidad válida dentro de los límites disponibles.",
+    "add_error": "No pudimos completar esta adición. Revisa tu carrito antes de intentarlo de nuevo.",
+    "cart_error": "No se pudo cargar tu carrito. Intenta abrirlo otra vez.",
+    "change_error": "No se pudo completar el cambio. Tu carrito se ha actualizado.",
+    "image_error": "No se pudo cargar esta imagen. Elige otra vista.",
+    "image_product": "Producto",
+    "image_inside": "Interior",
+    "image_folded": "Plegado",
+    "image_routine": "En tu rutina",
+    "image_label": "Imagen del producto",
+    "added": "Añadido a tu carrito.",
+    "unavailable": "Este producto todavía no está disponible para comprar."
+  }
+}

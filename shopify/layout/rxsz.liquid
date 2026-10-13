@@ -1,0 +1,54 @@
+{% liquid
+  assign rxsz_audience = 'beauty'
+  if template.suffix == 'rxsz-health'
+    assign rxsz_audience = 'health'
+  endif
+  assign rxsz_title_key = 'rxsz.' | append: rxsz_audience | append: '.meta_title'
+  assign rxsz_description_key = 'rxsz.' | append: rxsz_audience | append: '.meta_description'
+  assign rxsz_social_image = 'rxsz-' | append: rxsz_audience | append: '-hero-life-1200.webp'
+%}
+<!doctype html>
+<html lang="{{ request.locale.iso_code | escape }}" dir="{{ request.locale.direction | escape }}" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-i18n="meta.title">{{ rxsz_title_key | t | escape }}</title>
+  <meta name="description" content="{{ rxsz_description_key | t | escape }}" data-i18n-attr="content:meta.description">
+  <link rel="canonical" href="{{ canonical_url }}">
+  <meta property="og:title" content="{{ rxsz_title_key | t | escape }}">
+  <meta property="og:description" content="{{ rxsz_description_key | t | escape }}">
+  <meta property="og:url" content="{{ canonical_url }}">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="{{ shop.name | escape }}">
+  <meta property="og:image" content="{{ rxsz_social_image | asset_url }}">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="{{ 'rxsz-logo-official.png' | asset_url }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Manrope:wght@500;600;700;800&amp;display=swap" rel="stylesheet">
+  {{ 'rxsz-authentic.css' | asset_url | stylesheet_tag }}
+  {{ 'rxsz-explorer.css' | asset_url | stylesheet_tag }}
+  {{ 'rxsz-commerce.css' | asset_url | stylesheet_tag }}
+  {{ 'rxsz-shopify.css' | asset_url | stylesheet_tag }}
+  {{ content_for_header }}
+</head>
+<body class="rxsz theme-{{ rxsz_audience }}" data-page="{{ rxsz_audience }}">
+  {{ content_for_layout }}
+  <script src="{{ 'rxsz-icons.js' | asset_url }}" defer></script>
+  <script src="{{ 'rxsz-app.js' | asset_url }}" defer></script>
+  <script src="{{ 'rxsz-explorer.js' | asset_url }}" defer></script>
+  <script src="{{ 'rxsz-commerce.js' | asset_url }}" defer></script>
+  {% if request.design_mode %}
+    <script>
+      // Shopify re-renders sections in the editor. Refresh this standalone
+      // preview so its selected catalog product and script state stay in sync.
+      document.addEventListener('shopify:section:load', function (event) {
+        if (event.target.querySelector('.rxsz-nav') && !document.documentElement.hasAttribute('data-rxsz-editor-refresh')) {
+          document.documentElement.setAttribute('data-rxsz-editor-refresh', '');
+          window.location.reload();
+        }
+      });
+    </script>
+  {% endif %}
+</body>
+</html>

@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Manrope:wght@500;600;700;800&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/authentic.css">
   <link rel="stylesheet" href="assets/css/explorer.css">
+  <link rel="stylesheet" href="assets/css/commerce.css">
 </head>
 <body class="rxsz theme-health" data-page="health">
   <a class="rxsz-skip" href="#main" data-i18n="access.skip">Skip to content</a>
@@ -30,6 +31,7 @@
           <button class="rxsz-langtoggle__opt" type="button" data-lang="es" aria-pressed="false" aria-label="Español" lang="es">ES</button>
         </div><span class="rxsz-language-status" data-language-status="" role="status" aria-live="polite"></span>
         <a class="rxsz-btn rxsz-nav__cta" href="#offer" data-purchase-action="scroll" data-i18n="nav.cta">Get mine</a>
+        <button type="button" class="rxsz-nav__cart" data-cart-open hidden aria-label="View cart" data-i18n-attr="aria-label:commerce.view_cart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3h2l2 12h12l2-8H6M9 20h.01M18 20h.01"/></svg><span data-cart-count aria-hidden="true">0</span></button>
         <button class="rxsz-nav__toggle" type="button" data-nav-toggle="" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu" data-i18n-attr="aria-label:nav.menu">
           <span class="rxsz-nav__menuicon" aria-hidden="true"></span>
         </button>
@@ -314,6 +316,56 @@
     <a class="rxsz-btn rxsz-btn--primary" href="#offer" data-purchase-action="scroll" data-i18n="purchase.intent">Get mine</a>
   </aside>
 
+<dialog class="rxsz-buy" id="purchase" data-buy-dialog aria-labelledby="buy-title">
+  <header class="rxsz-commerce-head">
+    <p data-i18n="commerce.kicker">Your RX SUBZERO</p>
+    <button type="button" class="rxsz-commerce-close" data-buy-close aria-label="Close product" data-i18n-attr="aria-label:commerce.close_product">×</button>
+  </header>
+  <div class="rxsz-buy__layout">
+    <div class="rxsz-buy__gallery">
+      <figure><img src="assets/img/health-product-authentic.webp" data-buy-image width="1200" height="1000" alt="RX SUBZERO" decoding="async"><figcaption data-buy-image-caption></figcaption></figure>
+      <div class="rxsz-buy__thumbnails" data-buy-gallery role="group" aria-label="Product photographs" data-i18n-attr="aria-label:commerce.gallery"></div>
+      <p class="rxsz-commerce-status" data-buy-image-status role="status" aria-live="polite"></p>
+    </div>
+    <div class="rxsz-buy__content">
+      <h2 id="buy-title" data-buy-title>RX SUBZERO</h2>
+      <p class="rxsz-buy__intro" data-i18n="commerce.intro">A collapsible facial basin and clear dual breathing tube. Your next ritual starts here.</p>
+      <p class="rxsz-buy__price"><strong data-buy-price></strong><span data-commerce-reference data-i18n="purchase.reference_label">reference price</span></p>
+      <p class="rxsz-commerce-demo" data-commerce-demo data-i18n="commerce.demo">Demonstration: try the product and cart. Payments are not active.</p>
+      <div class="rxsz-buy__includes"><h3 data-i18n="offer.includes_title">Your product includes</h3><ul><li data-i18n="offer.includes.0">1 collapsible facial basin</li><li data-i18n="offer.includes.1">1 clear dual breathing tube with mouthpiece</li></ul></div>
+      <form data-buy-form>
+        <div data-buy-variant-field hidden><label for="buy-variant" data-i18n="commerce.option">Choose your option</label><select id="buy-variant" data-buy-variant name="id"></select></div>
+        <label for="buy-quantity" data-i18n="commerce.quantity">Quantity</label>
+        <div class="rxsz-quantity"><button type="button" data-buy-decrease aria-label="Decrease quantity" data-i18n-attr="aria-label:commerce.decrease">−</button><input id="buy-quantity" data-buy-quantity name="quantity" type="number" min="1" step="1" value="1" inputmode="numeric"><button type="button" data-buy-increase aria-label="Increase quantity" data-i18n-attr="aria-label:commerce.increase">+</button></div>
+        <p class="rxsz-commerce-status" data-buy-status role="alert"></p>
+        <button type="submit" class="rxsz-btn rxsz-btn--primary rxsz-buy__add" data-buy-add data-i18n="commerce.add">Add to cart</button>
+      </form>
+      <button class="rxsz-text-link" type="button" data-cart-open data-i18n="commerce.view_cart">View cart</button>
+      <p class="rxsz-buy__terms" data-i18n="commerce.checkout_note">Shipping and any applicable taxes are shown at checkout.</p>
+      <nav class="rxsz-commerce-policies" data-commerce-policies aria-label="Store policies" data-i18n-attr="aria-label:commerce.policies"></nav>
+    </div>
+  </div>
+</dialog>
+<dialog class="rxsz-cart" data-cart-dialog aria-labelledby="cart-title">
+  <header class="rxsz-commerce-head"><h2 id="cart-title" data-i18n="commerce.cart_title">Your cart</h2><button type="button" class="rxsz-commerce-close" data-cart-close aria-label="Close cart" data-i18n-attr="aria-label:commerce.close_cart">×</button></header>
+  <div class="rxsz-cart__body">
+    <p class="rxsz-commerce-demo" data-commerce-demo data-i18n="commerce.demo">Demonstration: try the product and cart. Payments are not active.</p>
+    <p class="rxsz-commerce-status" data-cart-status role="alert"></p>
+    <div class="rxsz-cart__empty" data-cart-empty><p data-i18n="commerce.empty">Your next ritual is still waiting.</p><button class="rxsz-btn rxsz-btn--primary" type="button" data-cart-shop data-i18n="commerce.discover">Choose RX SUBZERO</button></div>
+    <div class="rxsz-cart__items" data-cart-items></div>
+  </div>
+  <div class="rxsz-cart__footer" data-cart-summary hidden>
+    <p class="rxsz-cart__discount" data-cart-discount-row hidden><span data-i18n="commerce.discounts">Discounts</span><span data-cart-discount></span></p>
+    <p class="rxsz-cart__total"><span data-i18n="commerce.subtotal">Subtotal</span><strong data-cart-total></strong></p>
+    <p class="rxsz-buy__terms" data-i18n="commerce.checkout_note">Shipping and any applicable taxes are shown at checkout.</p>
+    <a class="rxsz-btn rxsz-btn--primary" data-cart-checkout aria-disabled="true" tabindex="-1" data-i18n="commerce.checkout">Continue to checkout</a>
+    <p class="rxsz-buy__terms" data-commerce-demo data-i18n="commerce.demo_checkout">Checkout becomes available when installed in your Shopify store.</p>
+    <nav class="rxsz-commerce-policies" data-commerce-policies aria-label="Store policies" data-i18n-attr="aria-label:commerce.policies"></nav>
+    <button class="rxsz-text-link" type="button" data-cart-close data-i18n="commerce.continue">Continue exploring</button>
+  </div>
+</dialog>
+
+
   <footer class="rxsz-auth-footer">
     <div class="rxsz-wrap rxsz-auth-footer__inner">
       <div>
@@ -332,5 +384,6 @@
   <script src="assets/js/config.js" defer=""></script>
   <script src="assets/js/app.js" defer=""></script>
   <script src="assets/js/explorer.js" defer></script>
+  <script src="assets/js/commerce.js" defer></script>
 
 </body></html>
