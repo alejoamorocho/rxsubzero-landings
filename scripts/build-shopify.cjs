@@ -301,15 +301,16 @@ ${JSON.stringify(schema, null, 2)}
 `;
 }
 
-function layoutLiquid(styles, scripts) {
+function layoutLiquid(styles, scripts, socialImages) {
   return `{% liquid
   assign rxsz_audience = 'beauty'
+  assign rxsz_social_image = '${assetName(socialImages.beauty)}'
   if template.suffix == 'rxsz-health'
     assign rxsz_audience = 'health'
+    assign rxsz_social_image = '${assetName(socialImages.health)}'
   endif
   assign rxsz_title_key = 'rxsz.' | append: rxsz_audience | append: '.meta_title'
   assign rxsz_description_key = 'rxsz.' | append: rxsz_audience | append: '.meta_description'
-  assign rxsz_social_image = 'rxsz-' | append: rxsz_audience | append: '-hero-life-1200-people.webp'
 %}
 <!doctype html>
 <html lang="{{ request.locale.iso_code | escape }}" dir="{{ request.locale.direction | escape }}" class="no-js">
@@ -356,7 +357,7 @@ ${scripts.map(value => `  <script src="${assetLiquid(value)}" defer></script>`).
 
 function buildFiles() {
   sourcePaths.clear();
-  const files = new Map(), usedAssets = new Set(), locales = {};
+  const files = new Map(), usedAssets = new Set(), locales = {}, socialImages = {};
   for (const lang of LANGUAGES) {
     locales[lang] = {rxsz: {shared: SHARED[lang]}};
     for (const audience of AUDIENCES) {
@@ -372,6 +373,10 @@ function buildFiles() {
   let styles, scripts;
   for (const audience of AUDIENCES) {
     const html = read(audience + '.html').toString();
+    const hero = html.match(new RegExp(`<figure\\b[^>]*\\bid="${audience}-view-0"[^>]*>([\\s\\S]*?)<\\/figure>`, 'i'))?.[1];
+    socialImages[audience] = hero?.match(/<img\b[^>]*\bsrc="(assets\/img\/[\w.-]+)"/i)?.[1];
+    if (!socialImages[audience]) throw new Error('Missing primary hero image: ' + audience);
+    usedAssets.add(socialImages[audience]);
     const pageStyles = Array.from(html.matchAll(/<link\b[^>]*href="(assets\/css\/[^"]+)"/g), value => value[1]);
     const pageScripts = Array.from(html.matchAll(/<script\b[^>]*src="(assets\/js\/[^"]+)"/g), value => value[1]).filter(value => !value.endsWith('/config.js'));
     if (styles && JSON.stringify(pageStyles) !== JSON.stringify(styles)) throw new Error('Pages must share their CSS dependency order.');
@@ -388,7 +393,7 @@ function buildFiles() {
     if (files.has(target) && !files.get(target).equals(content)) throw new Error('Conflicting flattened asset: ' + target);
     files.set(target, content);
   }
-  files.set('layout/rxsz.liquid', Buffer.from(layoutLiquid(styles, scripts)));
+  files.set('layout/rxsz.liquid', Buffer.from(layoutLiquid(styles, scripts, socialImages)));
   files.set('sections/rxsz-authentic-landing.liquid', Buffer.from(sectionLiquid()));
   files.set('assets/rxsz-shopify.css', Buffer.from(`/* Shopify native form and localization additions. */
 .rxsz-localization { margin:0; }

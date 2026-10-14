@@ -7,6 +7,24 @@ const sharp = require('sharp');
 const ROOT = path.resolve(__dirname, '..');
 const manifest = JSON.parse(fs.readFileSync(path.join(ROOT, 'source-assets/geometry/manifest.json'), 'utf8'));
 const replacements = new Map();
+const IMAGE_VERSION = /-(geometry|people|coherent)\.webp$/;
+function selectImages(images, args) {
+  if (args.includes('--only')) throw new Error('Use --only=page:slot,page:slot.');
+  const only = args.filter(value => value.startsWith('--only='));
+  if (only.length > 1) throw new Error('Provide --only once.');
+  if (only.length && args.includes('--people-only')) throw new Error('Use either --only or --people-only.');
+  if (!only.length) return args.includes('--people-only')
+    ? images.filter(item => ['hero-life', 'aspiration', 'ritual-breathe'].includes(item.slot))
+    : images;
+  const keys = only[0].slice('--only='.length).split(',');
+  if (keys.some(key => !/^[a-z]+:[a-z-]+$/.test(key))) throw new Error('Use --only=page:slot,page:slot.');
+  const requested = new Set(keys);
+  const selected = images.filter(item => requested.has(`${item.page}:${item.slot}`));
+  const matched = new Set(selected.map(item => `${item.page}:${item.slot}`));
+  const unmatched = [...requested].filter(key => !matched.has(key));
+  if (unmatched.length) throw new Error('Unknown image selection: ' + unmatched.join(', '));
+  return selected;
+}
 async function encode(master, name, width, height, quality = 88) {
   const source = path.join(ROOT, master);
   const metadata = await sharp(source).metadata();
@@ -16,12 +34,10 @@ async function encode(master, name, width, height, quality = 88) {
   return buffer;
 }
 async function main() {
-  const selected = process.argv.includes('--people-only')
-    ? manifest.images.filter(item => ['hero-life', 'aspiration', 'ritual-breathe'].includes(item.slot))
-    : manifest.images;
+  const selected = selectImages(manifest.images, process.argv.slice(2));
   for (const item of selected) {
     const portrait = item.slot === 'hero-editorial';
-    const version = item.output.match(/-(geometry|people)\.webp$/)?.[1];
+    const version = item.output.match(IMAGE_VERSION)?.[1];
     if (!version) throw new Error('Unknown image version: ' + item.output);
     const bytes = await encode(item.master, item.output, portrait ? 1120 : 1200, portrait ? 1400 : 1000);
     fs.writeFileSync(path.join(ROOT, 'assets/img', item.file), bytes);
@@ -51,7 +67,7 @@ async function main() {
       if (view === 3) fs.writeFileSync(path.join(ROOT, 'assets/img', `${item.page}-explorer-thumb-3.webp`), thumbBytes);
       replacements.set(thumb, nextThumb);
       for (const previous of item.previousOutputs || []) {
-        const previousVersion = previous.match(/-(geometry|people)\.webp$/)?.[1];
+        const previousVersion = previous.match(IMAGE_VERSION)?.[1];
         if (!previousVersion) continue;
         const previousThumb = `${item.page}-explorer-thumb-${view}-${previousVersion}.webp`;
         fs.writeFileSync(path.join(ROOT, 'assets/img', previousThumb), thumbBytes);
@@ -76,4 +92,5 @@ async function main() {
   }
   console.log(`Exported ${selected.length} reviewed primary photos and their responsive images/thumbnails; updated page consumers and legacy URLs.`);
 }
-main().catch(error => {console.error(error); process.exitCode = 1;});
+if (require.main === module) main().catch(error => {console.error(error); process.exitCode = 1;});
+module.exports = {selectImages};
