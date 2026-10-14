@@ -309,7 +309,7 @@ function layoutLiquid(styles, scripts) {
   endif
   assign rxsz_title_key = 'rxsz.' | append: rxsz_audience | append: '.meta_title'
   assign rxsz_description_key = 'rxsz.' | append: rxsz_audience | append: '.meta_description'
-  assign rxsz_social_image = 'rxsz-' | append: rxsz_audience | append: '-hero-life-1200.webp'
+  assign rxsz_social_image = 'rxsz-' | append: rxsz_audience | append: '-hero-life-1200-geometry.webp'
 %}
 <!doctype html>
 <html lang="{{ request.locale.iso_code | escape }}" dir="{{ request.locale.direction | escape }}" class="no-js">
