@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "RX SUBZERO | Make the cold-water pause yours",
-    "description": "Give your pause a place at home with RX SUBZERO: a collapsible facial basin and clear dual breathing tube for cold water at your own pace."
+    "description": "Give your pause a place at home with RX SUBZERO: a collapsible facial basin with a permanently attached clear dual tube for cold water at your own pace."
   },
   "access": {
     "skip": "Skip to content",
@@ -24,13 +24,13 @@
     "kicker": "RX SUBZERO · A moment for you",
     "title_1": "Make the pause yours.",
     "title_2": "Feel the cold water.",
-    "sub": "Between one task and the next, choose a moment for yourself. With a collapsible facial basin and clear dual breathing tube, RX SUBZERO gives your pause a place at home.",
+    "sub": "Between one task and the next, choose a moment for yourself. With a collapsible facial basin and a permanently attached clear dual tube, RX SUBZERO gives your pause a place at home.",
     "cta_primary": "Get my RX SUBZERO",
     "cta_secondary": "See how it works",
     "fact_1": "Folds down for storage",
-    "fact_2": "Dual tube included",
+    "fact_2": "Fixed dual tube",
     "fact_3": "A ritual at home",
-    "image_alt": "Blue-and-white RX SUBZERO facial basin with a clear dual breathing tube on a dark slate counter"
+    "image_alt": "Blue-and-white RX SUBZERO facial basin with a permanently attached clear dual breathing tube on a dark slate counter"
   },
   "context": {
     "kicker": "A quieter beginning",
@@ -48,7 +48,7 @@
       },
       {
         "title": "Take your time",
-        "text": "Position the mouthpiece and keep your breathing steady."
+        "text": "Use the mouthpiece and keep your breathing steady."
       },
       {
         "title": "Put it away",
@@ -64,17 +64,17 @@
       {
         "title": "Prepare the water",
         "text": "Open the basin on a stable surface and begin with cool water at a comfortable temperature.",
-        "img_alt": "Hands adding ice and positioning the clear dual tube in the RX SUBZERO basin"
+        "img_alt": "Hands adding ice to the RX SUBZERO basin with its clear dual breathing tube permanently attached"
       },
       {
         "title": "Take it gradually",
-        "text": "Position the mouthpiece, breathe steadily and approach the water in brief, comfortable intervals.",
+        "text": "Use the mouthpiece, breathe steadily and approach the water in brief, comfortable intervals.",
         "img_alt": "Man using the RX SUBZERO mouthpiece with his face above the water"
       },
       {
         "title": "Rinse and store",
-        "text": "Empty and wash with mild soap and water. Let every part air-dry fully, then fold the basin.",
-        "img_alt": "Hands holding the folded RX SUBZERO basin beside its detached clear dual breathing tube"
+        "text": "Empty and wash the unit with mild soap and water, keeping the tube attached to the basin. Let it air-dry fully before folding.",
+        "img_alt": "Folded RX SUBZERO basin with its clear dual breathing tube still attached held in two hands"
       }
     ]
   },
@@ -94,7 +94,7 @@
     "kicker": "Meet RX SUBZERO",
     "title": "Made for cold water.",
     "copy": "A facial basin that opens for your ritual and folds down when you are done.",
-    "image_alt": "Hands holding the side handles of the expanded blue-and-white RX SUBZERO basin"
+    "image_alt": "Expanded blue-and-white RX SUBZERO facial basin with its clear dual breathing tube permanently attached"
   },
   "benefits": {
     "kicker": "Why choose RX SUBZERO",
@@ -123,23 +123,23 @@
     "kicker": "Designed for your ritual at home",
     "title": "Room for the water. Room for you.",
     "copy": "Open the basin when you want a cold-water pause. Its collapsible walls let you store it in a compact shape once it is clean and fully dry.",
-    "img_alt": "Expanded blue-and-white RX SUBZERO facial basin with its clear dual breathing tube",
+    "img_alt": "Expanded blue-and-white RX SUBZERO facial basin with its clear dual breathing tube permanently attached",
     "features": [
       "Collapsible walls for storage",
-      "Detachable clear dual breathing tube",
+      "Permanently attached clear dual tube",
       "Integrated blue inner base",
       "Side handles to hold the basin"
     ],
     "cta": "Get my RX SUBZERO",
-    "included_title": "Two pieces. One ritual.",
+    "included_title": "One product. One ritual.",
     "includes": [
       {
-        "title": "1 collapsible facial basin",
+        "title": "Collapsible facial basin",
         "text": "Blue and white, with side handles and an integrated inner base."
       },
       {
-        "title": "1 clear dual breathing tube",
-        "text": "With a blue mouthpiece; detaches from the basin for cleaning."
+        "title": "Integrated dual breathing tube",
+        "text": "Clear, with a blue mouthpiece; permanently attached to the basin during use, cleaning and storage."
       }
     ]
   },
@@ -150,7 +150,7 @@
     "items": [
       {
         "q": "What is included with RX SUBZERO?",
-        "a": "One collapsible facial basin and one clear dual breathing tube with mouthpiece. The images show the same basin open and folded."
+        "a": "One collapsible facial basin with an integrated clear dual breathing tube and mouthpiece. The tube is permanently attached to the basin. The images show the same product open and folded."
       },
       {
         "q": "How should I start?",
@@ -158,7 +158,7 @@
       },
       {
         "q": "How do I care for it?",
-        "a": "Empty after use, rinse the basin and breathing tube with mild soap and water, then let both air-dry fully before storing."
+        "a": "Empty after use and clean the basin and its integrated tube with mild soap and water, keeping them attached. Let the whole unit air-dry fully before folding and storing."
       },
       {
         "q": "Is cold exposure suitable for everyone?",
@@ -173,16 +173,16 @@
   "offer": {
     "kicker": "Your RX SUBZERO",
     "title": "Bring the experience home.",
-    "copy": "The facial basin and clear dual breathing tube give shape to the moment you want to keep for yourself. Make room for your next pause.",
-    "image_alt": "RX SUBZERO basin shown expanded and folded, beside its clear dual breathing tube and box",
+    "copy": "A facial basin with a permanently attached clear dual tube gives shape to the moment you want to keep for yourself. Make room for your next pause.",
+    "image_alt": "Expanded blue-and-white RX SUBZERO basin with its permanently attached clear dual tube inside and a box beside it",
     "cta": "Get my RX SUBZERO",
     "note": "Use cold gradually and always at your own comfort level.",
     "availability": "Online purchasing is not available yet.",
-    "image_caption": "One basin, shown open and folded.",
-    "includes_title": "Your product includes",
+    "image_caption": "RX SUBZERO shown open, with its dual tube permanently attached.",
+    "includes_title": "All integrated in RX SUBZERO",
     "includes": [
-      "1 collapsible facial basin",
-      "1 clear dual breathing tube with mouthpiece"
+      "Collapsible facial basin",
+      "Permanently attached dual tube with mouthpiece"
     ]
   },
   "final": {
@@ -231,18 +231,18 @@
       },
       {
         "name": "Product",
-        "caption": "A collapsible basin, clear dual breathing tube and integrated base.",
-        "alt": "Blue-and-white RX SUBZERO facial basin with a clear dual breathing tube on a dark slate counter"
+        "caption": "A collapsible basin with a permanently attached dual tube and integrated base.",
+        "alt": "Blue-and-white RX SUBZERO facial basin with a permanently attached clear dual breathing tube on a dark slate counter"
       },
       {
         "name": "Inside",
-        "caption": "A closer look inside the basin and at the dual tube.",
-        "alt": "Hands adding ice and positioning the clear dual tube in the RX SUBZERO basin"
+        "caption": "A closer look inside the basin and at its integrated dual tube.",
+        "alt": "Hands adding ice to the RX SUBZERO basin with its clear dual breathing tube permanently attached"
       },
       {
         "name": "Folded",
-        "caption": "Once clean and fully dry, it folds down for storage.",
-        "alt": "Hands holding the folded RX SUBZERO basin beside its detached clear dual breathing tube"
+        "caption": "Once clean and fully dry, it folds down with the tube still attached.",
+        "alt": "Folded RX SUBZERO basin with its clear dual breathing tube still attached held in two hands"
       }
     ],
     "zoom_error": "The higher-resolution image could not be loaded. You can still view the available version."
@@ -253,7 +253,7 @@
     "close_product": "Close product",
     "close_cart": "Close cart",
     "gallery": "Product photographs",
-    "intro": "A collapsible facial basin and clear dual breathing tube. Your next ritual starts here.",
+    "intro": "A collapsible facial basin with a permanently attached clear dual breathing tube. Your next ritual starts here.",
     "demo": "Demonstration: try the product and cart. Payments are not active.",
     "demo_checkout": "Checkout becomes available when installed in your Shopify store.",
     "option": "Choose your option",

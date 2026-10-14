@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "RX SUBZERO | Haz tuya la pausa con agua fría",
-    "description": "Dale a tu pausa un lugar en casa con RX SUBZERO: recipiente facial plegable y tubo doble transparente para disfrutar el agua fría a tu ritmo."
+    "description": "Dale a tu pausa un lugar en casa con RX SUBZERO: recipiente facial plegable con tubo doble transparente fijo para disfrutar el agua fría a tu ritmo."
   },
   "access": {
     "skip": "Ir al contenido",
@@ -24,13 +24,13 @@
     "kicker": "RX SUBZERO · Un momento para ti",
     "title_1": "Haz tuya la pausa.",
     "title_2": "Siente el agua fría.",
-    "sub": "Entre un pendiente y el siguiente, elige un momento para ti. Con su recipiente facial plegable y tubo doble transparente, RX SUBZERO le da a tu pausa un lugar en casa.",
+    "sub": "Entre un pendiente y el siguiente, elige un momento para ti. Con su recipiente facial plegable y tubo doble transparente fijo, RX SUBZERO le da a tu pausa un lugar en casa.",
     "cta_primary": "Quiero mi RX SUBZERO",
     "cta_secondary": "Así se usa",
     "fact_1": "Se pliega para guardar",
-    "fact_2": "Tubo doble incluido",
+    "fact_2": "Tubo doble fijo",
     "fact_3": "Un ritual en casa",
-    "image_alt": "Recipiente facial RX SUBZERO azul y blanco con tubo doble transparente sobre una encimera de pizarra oscura"
+    "image_alt": "Recipiente facial RX SUBZERO azul y blanco con tubo doble transparente fijo sobre una encimera de pizarra oscura"
   },
   "context": {
     "kicker": "Un comienzo tranquilo",
@@ -48,7 +48,7 @@
       },
       {
         "title": "Tómate tu tiempo",
-        "text": "Coloca la boquilla y mantén una respiración estable."
+        "text": "Usa la boquilla y mantén una respiración estable."
       },
       {
         "title": "Guárdalo",
@@ -64,17 +64,17 @@
       {
         "title": "Prepara el agua",
         "text": "Abre el recipiente sobre una superficie estable y empieza con agua fresca a una temperatura cómoda.",
-        "img_alt": "Manos agregando hielo y colocando el tubo doble transparente en el recipiente RX SUBZERO"
+        "img_alt": "Manos agregando hielo al recipiente RX SUBZERO con su tubo doble transparente fijo"
       },
       {
         "title": "Ve poco a poco",
-        "text": "Coloca la boquilla, respira de forma estable y acércate al agua en intervalos breves y cómodos.",
+        "text": "Usa la boquilla, respira de forma estable y acércate al agua en intervalos breves y cómodos.",
         "img_alt": "Hombre usando la boquilla de RX SUBZERO con el rostro por encima del agua"
       },
       {
         "title": "Enjuaga y guarda",
-        "text": "Vacía y lava con agua y jabón suave. Deja secar cada parte por completo al aire antes de plegar.",
-        "img_alt": "Manos sujetando el recipiente RX SUBZERO plegado junto a su tubo doble transparente separado"
+        "text": "Vacía y lava el conjunto con agua y jabón suave, manteniendo el tubo unido al recipiente. Deja secar por completo al aire antes de plegar.",
+        "img_alt": "Recipiente RX SUBZERO plegado con su tubo doble transparente fijo sujeto por unas manos"
       }
     ]
   },
@@ -94,7 +94,7 @@
     "kicker": "Conoce RX SUBZERO",
     "title": "Pensado para el agua fría.",
     "copy": "Un recipiente facial que se abre para tu ritual y se pliega al terminar.",
-    "image_alt": "Manos sujetando las asas del recipiente RX SUBZERO azul y blanco, desplegado"
+    "image_alt": "Recipiente facial RX SUBZERO azul y blanco, desplegado con su tubo doble transparente fijo"
   },
   "benefits": {
     "kicker": "Por qué elegir RX SUBZERO",
@@ -123,23 +123,23 @@
     "kicker": "Diseñado para tu ritual en casa",
     "title": "Espacio para el agua. Espacio para ti.",
     "copy": "Abre el recipiente cuando quieras hacer una pausa con agua fría. Sus paredes plegables permiten guardarlo en un formato compacto después de limpiarlo y dejarlo secar.",
-    "img_alt": "Recipiente facial RX SUBZERO azul y blanco, desplegado con su tubo doble transparente",
+    "img_alt": "Recipiente facial RX SUBZERO azul y blanco, desplegado con su tubo doble transparente fijo",
     "features": [
       "Paredes plegables para guardar",
-      "Tubo doble transparente desmontable",
+      "Tubo doble transparente fijo",
       "Base interior azul integrada",
       "Asas laterales para sujetar"
     ],
     "cta": "Quiero mi RX SUBZERO",
-    "included_title": "Dos piezas, un solo ritual",
+    "included_title": "Un producto, un ritual",
     "includes": [
       {
-        "title": "1 recipiente facial plegable",
+        "title": "Recipiente facial plegable",
         "text": "Azul y blanco, con asas laterales y base interior integrada."
       },
       {
-        "title": "1 tubo doble transparente",
-        "text": "Con boquilla azul; se separa del recipiente para la limpieza."
+        "title": "Tubo doble integrado",
+        "text": "Transparente y con boquilla azul; permanece unido al recipiente durante el uso, la limpieza y al guardarlo."
       }
     ]
   },
@@ -150,7 +150,7 @@
     "items": [
       {
         "q": "¿Qué incluye RX SUBZERO?",
-        "a": "Incluye un recipiente facial plegable y un tubo doble transparente con boquilla. En las imágenes puedes ver el mismo recipiente abierto y plegado."
+        "a": "Un recipiente facial plegable con tubo doble transparente y boquilla integrados. El tubo es fijo y permanece unido al recipiente. Las imágenes muestran el mismo producto abierto y plegado."
       },
       {
         "q": "¿Cómo debería comenzar?",
@@ -158,7 +158,7 @@
       },
       {
         "q": "¿Cómo debo cuidarlo?",
-        "a": "Vacía después de usar, enjuaga el recipiente y el tubo con agua y jabón suave, y deja que ambos sequen completamente al aire antes de guardar."
+        "a": "Vacía después de usar y limpia el recipiente y su tubo integrado con agua y jabón suave, manteniéndolos unidos. Deja secar todo el conjunto completamente al aire antes de plegar y guardar."
       },
       {
         "q": "¿La exposición al frío es adecuada para todos?",
@@ -173,16 +173,16 @@
   "offer": {
     "kicker": "Tu RX SUBZERO",
     "title": "Lleva la experiencia a casa.",
-    "copy": "El recipiente facial y su tubo doble transparente, para darle forma a ese momento que quieres reservarte. Haz espacio para tu próxima pausa.",
-    "image_alt": "Recipiente RX SUBZERO desplegado y plegado, junto a su tubo doble transparente y su caja",
+    "copy": "Un recipiente facial con su tubo doble transparente fijo, para darle forma a ese momento que quieres reservarte. Haz espacio para tu próxima pausa.",
+    "image_alt": "Recipiente RX SUBZERO azul y blanco desplegado, con su tubo doble transparente fijo en el interior y una caja al lado",
     "cta": "Quiero mi RX SUBZERO",
     "note": "Usa el frío de forma gradual y siempre según tu nivel de comodidad.",
     "availability": "La compra en línea todavía no está disponible.",
-    "image_caption": "Un mismo recipiente, mostrado abierto y plegado.",
-    "includes_title": "Tu producto incluye",
+    "image_caption": "RX SUBZERO desplegado, con el tubo doble integrado y fijo.",
+    "includes_title": "Todo integrado en RX SUBZERO",
     "includes": [
-      "1 recipiente facial plegable",
-      "1 tubo doble transparente con boquilla"
+      "Recipiente facial plegable",
+      "Tubo doble fijo con boquilla"
     ]
   },
   "final": {
@@ -231,18 +231,18 @@
       },
       {
         "name": "Producto",
-        "caption": "Recipiente plegable, tubo doble transparente y base integrada.",
-        "alt": "Recipiente facial RX SUBZERO azul y blanco con tubo doble transparente sobre una encimera de pizarra oscura"
+        "caption": "Recipiente plegable con tubo doble fijo y base integrada.",
+        "alt": "Recipiente facial RX SUBZERO azul y blanco con tubo doble transparente fijo sobre una encimera de pizarra oscura"
       },
       {
         "name": "Interior",
-        "caption": "Mira de cerca el interior y la disposición del tubo doble.",
-        "alt": "Manos agregando hielo y colocando el tubo doble transparente en el recipiente RX SUBZERO"
+        "caption": "Mira de cerca el interior y el tubo doble integrado.",
+        "alt": "Manos agregando hielo al recipiente RX SUBZERO con su tubo doble transparente fijo"
       },
       {
         "name": "Plegado",
-        "caption": "Una vez limpio y seco, se pliega para guardarlo.",
-        "alt": "Manos sujetando el recipiente RX SUBZERO plegado junto a su tubo doble transparente separado"
+        "caption": "Una vez limpio y seco, se pliega con el tubo unido al recipiente.",
+        "alt": "Recipiente RX SUBZERO plegado con su tubo doble transparente fijo sujeto por unas manos"
       }
     ],
     "zoom_error": "No se pudo cargar la imagen de mayor resolución. Puedes seguir viendo la versión disponible."
@@ -253,7 +253,7 @@
     "close_product": "Cerrar producto",
     "close_cart": "Cerrar carrito",
     "gallery": "Fotografías del producto",
-    "intro": "Un recipiente facial plegable y un tubo doble transparente. Tu próximo ritual empieza aquí.",
+    "intro": "Un recipiente facial plegable con tubo doble transparente fijo. Tu próximo ritual empieza aquí.",
     "demo": "Demostración: prueba el producto y el carrito. Los pagos aún no están activos.",
     "demo_checkout": "El pago estará disponible al instalarlo en tu tienda Shopify.",
     "option": "Elige tu opción",
