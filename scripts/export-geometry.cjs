@@ -16,26 +16,47 @@ async function encode(master, name, width, height, quality = 88) {
   return buffer;
 }
 async function main() {
-  for (const item of manifest.images) {
+  const selected = process.argv.includes('--people-only')
+    ? manifest.images.filter(item => ['hero-life', 'aspiration', 'ritual-breathe'].includes(item.slot))
+    : manifest.images;
+  for (const item of selected) {
     const portrait = item.slot === 'hero-editorial';
+    const version = item.output.match(/-(geometry|people)\.webp$/)?.[1];
+    if (!version) throw new Error('Unknown image version: ' + item.output);
     const bytes = await encode(item.master, item.output, portrait ? 1120 : 1200, portrait ? 1400 : 1000);
     fs.writeFileSync(path.join(ROOT, 'assets/img', item.file), bytes);
     replacements.set(item.file, item.output);
+    for (const previous of item.previousOutputs || []) {
+      fs.writeFileSync(path.join(ROOT, 'assets/img', previous), bytes);
+      replacements.set(previous, item.output);
+    }
     if (item.slot === 'hero-life' || portrait) {
       const small = item.file.replace(/(?:1200|1120)\.webp$/, '600.webp');
-      const nextSmall = small.replace('.webp', '-geometry.webp');
+      const nextSmall = small.replace('.webp', `-${version}.webp`);
       const smallBytes = await encode(item.master, nextSmall, 600, portrait ? 750 : 500, 84);
       fs.writeFileSync(path.join(ROOT, 'assets/img', small), smallBytes);
       replacements.set(small, nextSmall);
+      for (const previous of item.previousOutputs || []) {
+        const previousSmall = previous.replace(/-(?:1200|1120)-/, '-600-');
+        fs.writeFileSync(path.join(ROOT, 'assets/img', previousSmall), smallBytes);
+        replacements.set(previousSmall, nextSmall);
+      }
     }
     const view = {'hero-life': 0, 'hero-editorial': 1, 'ritual-prepare': 2, 'ritual-store': 3}[item.slot];
     if (view !== undefined) {
       const thumb = `${item.page}-explorer-thumb-${view}${view === 3 ? '-integrated' : ''}.webp`;
-      const nextThumb = `${item.page}-explorer-thumb-${view}-geometry.webp`;
+      const nextThumb = `${item.page}-explorer-thumb-${view}-${version}.webp`;
       const thumbBytes = await encode(item.master, nextThumb, 160, portrait ? 200 : 133, 84);
       fs.writeFileSync(path.join(ROOT, 'assets/img', thumb), thumbBytes);
       if (view === 3) fs.writeFileSync(path.join(ROOT, 'assets/img', `${item.page}-explorer-thumb-3.webp`), thumbBytes);
       replacements.set(thumb, nextThumb);
+      for (const previous of item.previousOutputs || []) {
+        const previousVersion = previous.match(/-(geometry|people)\.webp$/)?.[1];
+        if (!previousVersion) continue;
+        const previousThumb = `${item.page}-explorer-thumb-${view}-${previousVersion}.webp`;
+        fs.writeFileSync(path.join(ROOT, 'assets/img', previousThumb), thumbBytes);
+        replacements.set(previousThumb, nextThumb);
+      }
     }
     // Keep old public URLs consistent and prevent reuse of the old mold.
     if (item.slot === 'offer' || item.slot === 'ritual-store') {
@@ -53,6 +74,6 @@ async function main() {
     for (const [oldName, nextName] of replacements) content = content.replaceAll('assets/img/' + oldName, 'assets/img/' + nextName);
     fs.writeFileSync(file, content);
   }
-  console.log(`Exported ${manifest.images.length} primary photos, 4 responsive images and 8 thumbnails; updated page consumers and legacy URLs.`);
+  console.log(`Exported ${selected.length} reviewed primary photos and their responsive images/thumbnails; updated page consumers and legacy URLs.`);
 }
 main().catch(error => {console.error(error); process.exitCode = 1;});

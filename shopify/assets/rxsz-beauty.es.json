@@ -47,8 +47,8 @@
         "text": "Empieza con agua fresca y agrega hielo gradualmente según tu comodidad."
       },
       {
-        "title": "Tómate tu tiempo",
-        "text": "Usa la boquilla y mantén una respiración estable."
+        "title": "Respira con la boquilla",
+        "text": "El tubo integrado sirve para respirar mientras sumerges el rostro en el agua."
       },
       {
         "title": "Sigue tu rutina",
@@ -63,13 +63,13 @@
     "steps": [
       {
         "title": "Prepara el agua",
-        "text": "Abre el recipiente sobre una superficie estable y empieza con agua fresca a una temperatura cómoda.",
+        "text": "Despliega el recipiente sobre una superficie estable y añade agua y hielo.",
         "img_alt": "Agua vertiéndose en el recipiente RX SUBZERO mientras una mano agrega hielo"
       },
       {
-        "title": "Ve poco a poco",
-        "text": "Usa la boquilla, respira de forma estable y acércate al agua en intervalos breves y cómodos.",
-        "img_alt": "Mujer usando la boquilla de RX SUBZERO con el rostro por encima del agua"
+        "title": "Sumerge el rostro",
+        "text": "Coloca la boquilla en la boca y sumerge el rostro en el agua con hielo. El tubo integrado te permite respirar durante la inmersión.",
+        "img_alt": "Mujer con el rostro sumergido en el agua con hielo de RX SUBZERO, usando la boquilla del tubo integrado."
       },
       {
         "title": "Enjuaga y guarda",
@@ -87,7 +87,7 @@
     "kicker": "Imagínalo en tu mañana",
     "title": "Que cuidarte empiece aquí.",
     "copy": "El agua fresca. Una toalla suave. Tus productos favoritos, listos para después. RX SUBZERO le da su propio espacio a ese primer momento de cuidado.",
-    "image_alt": "Mujer secándose el rostro con una toalla junto al recipiente RX SUBZERO",
+    "image_alt": "Mujer secándose el rostro húmedo con una toalla junto al recipiente RX SUBZERO.",
     "cta": "Quiero vivir el ritual"
   },
   "story": {
@@ -139,7 +139,7 @@
       },
       {
         "title": "Tubo doble integrado",
-        "text": "Transparente y con boquilla azul; permanece unido al recipiente durante el uso, la limpieza y al guardarlo."
+        "text": "Tubo doble transparente con boquilla azul para respirar con el rostro sumergido; permanece unido durante el uso, la limpieza y al guardarlo."
       }
     ]
   },
@@ -226,8 +226,8 @@
     "views": [
       {
         "name": "En tu rutina",
-        "caption": "Agua fresca, una toalla y el comienzo de tu cuidado.",
-        "alt": "Mujer con una toalla junto al recipiente RX SUBZERO azul y blanco en un baño con luz natural."
+        "caption": "Prepara agua y hielo para comenzar tu ritual facial.",
+        "alt": "Mujer preparando agua y hielo en el recipiente RX SUBZERO azul y blanco sobre una encimera de baño."
       },
       {
         "name": "Producto",

@@ -47,8 +47,8 @@
         "text": "Start with cool water and add ice gradually, according to your comfort."
       },
       {
-        "title": "Take your time",
-        "text": "Use the mouthpiece and keep your breathing steady."
+        "title": "Breathe through the mouthpiece",
+        "text": "The integrated tube is for breathing while your face is immersed in the water."
       },
       {
         "title": "Continue your routine",
@@ -63,13 +63,13 @@
     "steps": [
       {
         "title": "Prepare the water",
-        "text": "Open the basin on a stable surface and begin with cool water at a comfortable temperature.",
+        "text": "Open the basin on a stable surface and add water and ice.",
         "img_alt": "Water being poured into the RX SUBZERO basin while a hand adds ice"
       },
       {
-        "title": "Take it gradually",
-        "text": "Use the mouthpiece, breathe steadily and approach the water in brief, comfortable intervals.",
-        "img_alt": "Woman using the RX SUBZERO mouthpiece with her face above the water"
+        "title": "Immerse your face",
+        "text": "Place the mouthpiece in your mouth and immerse your face in the ice water. The integrated tube lets you breathe during immersion.",
+        "img_alt": "Woman with her face immersed in the RX SUBZERO ice water, using the integrated tube’s mouthpiece."
       },
       {
         "title": "Rinse and store",
@@ -87,7 +87,7 @@
     "kicker": "Picture your morning",
     "title": "Let your care start here.",
     "copy": "Cool water. A soft towel. Your favourite products, ready for what comes next. RX SUBZERO gives that first moment of care a space of its own.",
-    "image_alt": "Woman drying her face with a towel beside the RX SUBZERO basin",
+    "image_alt": "Woman patting her damp face dry with a towel beside the RX SUBZERO basin.",
     "cta": "Make this ritual mine"
   },
   "story": {
@@ -139,7 +139,7 @@
       },
       {
         "title": "Integrated dual breathing tube",
-        "text": "Clear, with a blue mouthpiece; permanently attached to the basin during use, cleaning and storage."
+        "text": "Clear dual tube with a blue mouthpiece for breathing while your face is immersed; permanently attached during use, cleaning and storage."
       }
     ]
   },
@@ -226,8 +226,8 @@
     "views": [
       {
         "name": "Your routine",
-        "caption": "Cool water, a towel and the start of your skincare.",
-        "alt": "Woman holding a towel beside the blue-and-white RX SUBZERO basin in a naturally lit bathroom."
+        "caption": "Prepare water and ice to begin your facial ritual.",
+        "alt": "Woman preparing water and ice in the blue-and-white RX SUBZERO basin on a bathroom vanity."
       },
       {
         "name": "Product",

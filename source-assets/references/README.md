@@ -8,4 +8,6 @@ Invariantes visibles: recipiente rectangular alargado con esquinas redondeadas; 
 
 El propietario confirma que el tubo permanece unido. Estas fotos históricas llevan boquilla blanca. Las páginas actuales conservan la boquilla azul introducida en julio; los JPEG originales de esa actualización no se recuperaron. Las fotografías históricas definen el recipiente, no prueban el diseño exacto del tubo actualizado. No inventar piezas, uniones, tapas, pestillos ni medidas físicas.
 
+El propietario aclaró el uso el 14 de octubre de 2026: agua con hielo, inmersión del rostro y boquilla del tubo integrado para respirar. Las escenas de uso deben representar ese gesto, con un solo conjunto de dos tubos y una boquilla. No sustituirlo por una persona bebiendo o simplemente acercándose al recipiente. La imagen editorial no demuestra por sí sola el recorrido interno del aire; no inventar entradas, válvulas ni accesorios para explicarlo.
+
 Prompts y exportaciones revisadas: `../geometry/manifest.json`. La imagen maestra del recipiente es una edición generada con ImageGen integrado, basada en estas dos fotos, conservando el tubo azul de la versión anterior de las páginas.
