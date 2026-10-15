@@ -4,6 +4,8 @@
 
 Para cualquier imagen nueva del producto, comparar las dos fotografías y la imagen maestra `../geometry/product-master.png`. Las imágenes de las páginas son escenas generadas y no sustituyen estos originales como prueba del molde.
 
+Referencia numérica confirmada por el propietario el **15 de octubre de 2026**: **30 cm de largo × 20 cm de ancho × 13 cm de alto**, con el recipiente desplegado. La fuente constante para futuras escenas es [`product-spec.json`](product-spec.json). El largo recorre el eje de adelante hacia atrás; la planta es un rectángulo moderado **3:2** y la altura equivale a **0,65 veces el ancho**. Mantener el mismo tamaño físico respecto a manos, rostro y mesón. La perspectiva cambia la proyección visible: no estirar una imagen por ejes para forzar una caja de píxeles 3:2. No se ha proporcionado altura plegada ni capacidad.
+
 Invariantes visibles: recipiente rectangular alargado con esquinas redondeadas; eje largo de adelante hacia atrás; asas en ambos lados largos; rebajes en los bordes cortos; dos bandas blancas plegables; base y rejilla integradas azules con nervadura central alargada. Al plegarlo cambia la altura, no la huella ni la ubicación de las asas. Una vista frontal puede comprimir visualmente la profundidad; no convertir por eso el molde en un cuadrado.
 
 El propietario confirma que el tubo permanece unido. Estas fotos históricas llevan boquilla blanca. Las páginas actuales conservan la boquilla azul introducida en julio; los JPEG originales de esa actualización no se recuperaron. Las fotografías históricas definen el recipiente, no prueban el diseño exacto del tubo actualizado. No inventar piezas, uniones, tapas, pestillos ni medidas físicas.

@@ -17,19 +17,19 @@
     },
     {
       "path": "assets/i18n/beauty.en.json",
-      "sha256": "db854d02066b63aa244ce29e206dee9be409459311d592ad3f53ab6c67a6d2ee"
+      "sha256": "d033639d543b39c24480df0a585dee3e60f4a30e98587babb8fd011ed102a794"
     },
     {
       "path": "assets/i18n/beauty.es.json",
-      "sha256": "eab16039eff66c00011f0f1acc33e0c4581c7e9734a040e1d70d444af2fd7530"
+      "sha256": "e3c12613fcd17ae2b001d46806e21a4234decf297c3ca7f6f011f235f760dbfd"
     },
     {
       "path": "assets/i18n/health.en.json",
-      "sha256": "5983cbacb44b786a23d90efaa7208a7326f3380aba66de8aca4a073ea8509802"
+      "sha256": "2972b2777344e8a68f17ded9068af14c9de022dfe66f63bbb4d796ea11e01ecf"
     },
     {
       "path": "assets/i18n/health.es.json",
-      "sha256": "97aa02624001743348068aa77127d83762c7fa89fa594c92d55c2b6b85ab8a0a"
+      "sha256": "5b21d4b0b015b1907f4dedc1dae659a0d720ebf9cd76c99e0f11a606653de4df"
     },
     {
       "path": "assets/img/beauty-aspiration-people.webp",
@@ -165,11 +165,11 @@
     },
     {
       "path": "beauty.html",
-      "sha256": "b6e162178a33030644d6b559d5fa96f1319b12f30b6c2d26177e9d52243fb5b8"
+      "sha256": "485d4cdda4e000c31629dd35999424b899af16e1854c267ded4308cf23ddb6ad"
     },
     {
       "path": "health.html",
-      "sha256": "7fe737474272942f810c3e5323b99a3ac2ff19537d2cce8cbeae77bd1cf93808"
+      "sha256": "8e7cd08fd584805a88f90dd7a5fcc2fff0e65048e2a2493a69d45ca8e8aabe0b"
     }
   ],
   "files": [
@@ -255,13 +255,13 @@
     },
     {
       "path": "assets/rxsz-beauty.en.json",
-      "sha256": "db854d02066b63aa244ce29e206dee9be409459311d592ad3f53ab6c67a6d2ee",
-      "bytes": 12701
+      "sha256": "d033639d543b39c24480df0a585dee3e60f4a30e98587babb8fd011ed102a794",
+      "bytes": 12772
     },
     {
       "path": "assets/rxsz-beauty.es.json",
-      "sha256": "eab16039eff66c00011f0f1acc33e0c4581c7e9734a040e1d70d444af2fd7530",
-      "bytes": 13071
+      "sha256": "e3c12613fcd17ae2b001d46806e21a4234decf297c3ca7f6f011f235f760dbfd",
+      "bytes": 13155
     },
     {
       "path": "assets/rxsz-commerce.css",
@@ -355,13 +355,13 @@
     },
     {
       "path": "assets/rxsz-health.en.json",
-      "sha256": "5983cbacb44b786a23d90efaa7208a7326f3380aba66de8aca4a073ea8509802",
-      "bytes": 12757
+      "sha256": "2972b2777344e8a68f17ded9068af14c9de022dfe66f63bbb4d796ea11e01ecf",
+      "bytes": 12828
     },
     {
       "path": "assets/rxsz-health.es.json",
-      "sha256": "97aa02624001743348068aa77127d83762c7fa89fa594c92d55c2b6b85ab8a0a",
-      "bytes": 13056
+      "sha256": "5b21d4b0b015b1907f4dedc1dae659a0d720ebf9cd76c99e0f11a606653de4df",
+      "bytes": 13140
     },
     {
       "path": "assets/rxsz-icons.js",
@@ -385,8 +385,8 @@
     },
     {
       "path": "locales/en.default.json",
-      "sha256": "045f78c1ea8c99c41d9af967f338818fc0d7b4e92594eba0034de11b03910761",
-      "bytes": 28324
+      "sha256": "15e6db26d9f720f4bbe39aa3add57e56315af2aac416bde7cac9b2629daa5852",
+      "bytes": 28486
     },
     {
       "path": "locales/en.default.schema.json",
@@ -395,8 +395,8 @@
     },
     {
       "path": "locales/es.json",
-      "sha256": "68144183d85b58fab121d2aeecc0593136412c5a87af7de15aeebae094cee063",
-      "bytes": 29024
+      "sha256": "0c870abb8b874b3384f2e59f34a908950f78727bc68fa0605542f55802b0dbe5",
+      "bytes": 29212
     },
     {
       "path": "locales/es.schema.json",
@@ -410,13 +410,13 @@
     },
     {
       "path": "snippets/rxsz-beauty.liquid",
-      "sha256": "d5a4e17068bd739e1e47bf326501605f121d0c43367d0f9dfb1d4ff3eaa87bf1",
-      "bytes": 39487
+      "sha256": "87644b35a1af7a0f59b8122baf94773d8874aa46ec40a5b6bb28678f51a60761",
+      "bytes": 39730
     },
     {
       "path": "snippets/rxsz-health.liquid",
-      "sha256": "8ad0feb57bb884a6e119ee2127e8136193a7978cf4b46cf1fcaa50d73fd22a4a",
-      "bytes": 39479
+      "sha256": "8fd6734f1286e24677932bf2becba98eab9833162f297d6577e69d1a8ae6bee9",
+      "bytes": 39722
     },
     {
       "path": "templates/page.rxsz-beauty.json",

@@ -1,0 +1,28 @@
+{
+  "product": "RX SUBZERO",
+  "confirmedBy": "Product owner in this project conversation",
+  "confirmedOn": "2026-10-15",
+  "state": "expanded",
+  "unit": "cm",
+  "dimensions": {
+    "length": 30,
+    "width": 20,
+    "height": 13
+  },
+  "axes": {
+    "length": "Front short rim to rear short rim",
+    "width": "Across the two long sidewalls",
+    "height": "Base to upper rim when expanded"
+  },
+  "proportions": {
+    "lengthToWidth": 1.5,
+    "heightToWidth": 0.65
+  },
+  "imageConstraints": [
+    "Use the same 30 × 20 × 13 cm expanded basin in every scene, together with the real front/top camera references and the approved current tube reference.",
+    "Keep a moderately rectangular rounded 3:2 footprint. Screen pixel ratios vary with camera perspective; do not stretch one image axis to force a 3:2 screen bounding box.",
+    "Show a compact facial basin at believable scale against hands, head and counter. Avoid foreground perspective that makes it look like a large tub.",
+    "Keep both long-side handles, short-rim dips, two white folding bands, integrated blue base/grid and the permanently attached current twin tube with blue mouthpiece.",
+    "When collapsed, preserve footprint and mold; collapsed height has not been supplied. Do not infer capacity or new measurements from the expanded bounding box."
+  ]
+}

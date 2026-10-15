@@ -243,5 +243,7 @@
     }
   ],
   "humanScenesNote": "2026-10-14: six human scenes revised with water and ice, preparation / facial immersion using integrated tube / drying. Generated editorial people, not real customer testimonials.",
-  "scaleNote": "2026-10-14: ice-bowl support and both immersion views corrected. Visual proportions compared with original mold and human scale; no verified factory dimensions were supplied."
+  "scaleNote": "2026-10-15: owner confirmed expanded dimensions of 30 cm long × 20 cm wide × 13 cm high. Front-to-back length, moderate 3:2 footprint, height/width 0.65. Preserve one physical scale across scenes; projected pixel ratios depend on perspective. Prior generation prompts below are historical provenance and predate these confirmed dimensions.",
+  "productSpecReference": "source-assets/references/product-spec.json",
+  "futureImageInstructions": "Read productSpecReference before every new generation or edit. Include its confirmed 30 × 20 × 13 cm expanded dimensions and image constraints with the original camera references and the current approved tube reference. Do not derive collapsed height or water capacity. Never stretch image axes to simulate dimensions."
 }

@@ -190,6 +190,7 @@
           <p class="rxsz-auth-kicker" data-i18n="product.kicker">{{ 'rxsz.beauty.product_kicker' | t | escape }}</p>
           <h2 class="rxsz-auth-title" data-i18n="product.title">{{ 'rxsz.beauty.product_title' | t | escape }}</h2>
           <p class="rxsz-auth-copy" data-i18n="product.copy">{{ 'rxsz.beauty.product_copy' | t | escape }}</p>
+          <p class="rxsz-auth-copy" data-i18n="product.dimensions">{{ 'rxsz.beauty.product_dimensions' | t | escape }}</p>
           <div class="rxsz-product-includes">
             <h3 data-i18n="product.included_title">{{ 'rxsz.beauty.product_included_title' | t | escape }}</h3>
             <ul>
@@ -352,6 +353,7 @@
     <div class="rxsz-buy__content">
       <h2 id="buy-title" data-buy-title>{% if rxsz_product != blank %}{{ rxsz_product.title | escape }}{% else %}RX SUBZERO{% endif %}</h2>
       <p class="rxsz-buy__intro" data-i18n="commerce.intro">{{ 'rxsz.beauty.commerce_intro' | t | escape }}</p>
+      <p class="rxsz-buy__intro" data-i18n="product.dimensions">{{ 'rxsz.beauty.product_dimensions' | t | escape }}</p>
       <p class="rxsz-buy__price"><strong data-buy-price>{% if rxsz_product != blank %}{{ rxsz_selected_variant.price | money_with_currency }}{% endif %}</strong><span data-commerce-reference hidden=""></span></p>
       <p class="rxsz-commerce-demo" data-commerce-demo data-i18n="commerce.demo" hidden="">{{ 'rxsz.beauty.commerce_demo' | t | escape }}</p>
       <div class="rxsz-buy__includes"><h3 data-i18n="offer.includes_title">{{ 'rxsz.beauty.offer_includes_title' | t | escape }}</h3><ul><li data-i18n="offer.includes.0">{{ 'rxsz.beauty.offer_includes_0' | t | escape }}</li><li data-i18n="offer.includes.1">{{ 'rxsz.beauty.offer_includes_1' | t | escape }}</li></ul></div>

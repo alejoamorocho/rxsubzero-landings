@@ -10,6 +10,8 @@ Se conservaron las fotos reales `source-assets/references/product-front.png` y `
 
 No se inventaron centímetros ni se afirma una validación de medidas de fábrica. La revisión comprueba proporciones visuales contra las fotos disponibles y el tamaño relativo de cabeza, manos y torso. Las dimensiones físicas exactas siguen pendientes de confirmación del propietario. Se conservó el mecanismo aprobado sin añadir entradas de aire, válvulas ni conexiones imaginadas.
 
+Actualización del 15 de octubre de 2026: el propietario confirmó **30 × 20 × 13 cm (largo × ancho × alto)**. La referencia vigente está en [`product-spec.json`](../source-assets/references/product-spec.json); la indicación anterior de dimensiones pendientes describe el estado del 14 de octubre.
+
 ## Método y archivos
 
 Se usó **ImageGen integrado**, en modo `precise-object-edit`. Sharp solo recorta, reduce y codifica las imágenes finales.
