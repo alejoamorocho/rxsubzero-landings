@@ -7,7 +7,7 @@ const sharp = require('sharp');
 const ROOT = path.resolve(__dirname, '..');
 const manifest = JSON.parse(fs.readFileSync(path.join(ROOT, 'source-assets/geometry/manifest.json'), 'utf8'));
 const replacements = new Map();
-const IMAGE_VERSION = /-(geometry|people|coherent)\.webp$/;
+const IMAGE_VERSION = /-(geometry|people|coherent|scaled)\.webp$/;
 function selectImages(images, args) {
   if (args.includes('--only')) throw new Error('Use --only=page:slot,page:slot.');
   const only = args.filter(value => value.startsWith('--only='));

@@ -32,12 +32,12 @@
       "sha256": "c732034f829e44641e6e1ffe05686559b0d0f393dc465b0da3d33965b8324553"
     },
     {
-      "path": "assets/img/beauty-aspiration-people.webp",
-      "sha256": "c65fa433d118f76aa0cd1ae7222f33b171ad163a9b045cc06f3f4cd4b1fc7b9b"
+      "path": "assets/img/beauty-aspiration-scaled.webp",
+      "sha256": "7e40fc2edb942325ebb6db4cb6e88d1e3578f5d211c6321c455b3d9ab98c6267"
     },
     {
-      "path": "assets/img/beauty-explorer-thumb-0-coherent.webp",
-      "sha256": "b1e78e66d5fd9a58b42dc7b45affe86eff9fd3b06ffca5aaa77e065c644bacf0"
+      "path": "assets/img/beauty-explorer-thumb-0-scaled.webp",
+      "sha256": "ab5bd1f7c0f42b7e864064dbaa2583688b95d2d55d12bcb97362d670dcdb2e3a"
     },
     {
       "path": "assets/img/beauty-explorer-thumb-1-geometry.webp",
@@ -60,12 +60,12 @@
       "sha256": "7f2e89246af30aa3cc04deb1ebde0bb02b9e6d7c15f823a91f642e3f917c9fd1"
     },
     {
-      "path": "assets/img/beauty-hero-life-1200-coherent.webp",
-      "sha256": "7e0b16b51fa190788ef1e9ed767f3e8d7c46f1a9ef8b2747edfe07b9d42b94c5"
+      "path": "assets/img/beauty-hero-life-1200-scaled.webp",
+      "sha256": "24c12bcf459d06a71f1d6b52b91daaeb8a390da9f05b79f4a1b2431245e8385e"
     },
     {
-      "path": "assets/img/beauty-hero-life-600-coherent.webp",
-      "sha256": "73f063baf6874fd50de32fc144ada90e3a9b4f1031fa5ca09d2669949e975970"
+      "path": "assets/img/beauty-hero-life-600-scaled.webp",
+      "sha256": "688f1ea4beddd39ee072d637b9e5afdc8e5999c52629ad8e17afae6f57b04541"
     },
     {
       "path": "assets/img/beauty-offer-integrated-geometry.webp",
@@ -88,20 +88,20 @@
       "sha256": "e43cb881c8aa552cc58b4cebbe280510bab886ea81fe178dda04cda04a257131"
     },
     {
-      "path": "assets/img/health-aspiration-people.webp",
-      "sha256": "4edc547b6ca87097b2d3d8566513e7bbd24497048d43fe85ab9ee2981fe1a898"
+      "path": "assets/img/health-aspiration-scaled.webp",
+      "sha256": "abfbf7a75b71d6b4c70355576bff972ad833c1e8eaf452962cb040746c7e8ace"
     },
     {
-      "path": "assets/img/health-explorer-thumb-0-people.webp",
-      "sha256": "3be56bb168d586c5f327722d1749365b0345eded29402fdd1e8facfeefdfebef"
+      "path": "assets/img/health-explorer-thumb-0-scaled.webp",
+      "sha256": "5bbde9a8ee5b76c5c35f005ea356bd6c324d7b5c87129900c55a7c475a62cba5"
     },
     {
       "path": "assets/img/health-explorer-thumb-1-geometry.webp",
       "sha256": "eb89ad34efb7f0f964c54f1e38edb36a6ee08f8e4ff878f1d96097bc6e112195"
     },
     {
-      "path": "assets/img/health-explorer-thumb-2-geometry.webp",
-      "sha256": "6bd5ca6923fa6eb22f95e86b2a0c05fd4b9608405b65088796021bb8d3c1f819"
+      "path": "assets/img/health-explorer-thumb-2-scaled.webp",
+      "sha256": "9dff7ad00c0ac1d1a705d14458032047a58b7ff61348b4a173ba4d46d1d065f0"
     },
     {
       "path": "assets/img/health-explorer-thumb-3-geometry.webp",
@@ -116,12 +116,12 @@
       "sha256": "703b05b487489908f0734a0b7d4b0c043053199d3cff6694a60377bc612c2a18"
     },
     {
-      "path": "assets/img/health-hero-life-1200-people.webp",
-      "sha256": "2169fb2affbd5ad8f1aeb62eb9b4701ab583eae3f86d81db3b16f3976ddfacf1"
+      "path": "assets/img/health-hero-life-1200-scaled.webp",
+      "sha256": "100da25d390da4c94fd71fd2153bb2e549407920bd78867ceac8a115e2f087d7"
     },
     {
-      "path": "assets/img/health-hero-life-600-people.webp",
-      "sha256": "6f40de8ca68c67d86c3ad88757ac846237efaeed12661be85ff1eb1b5c6806e9"
+      "path": "assets/img/health-hero-life-600-scaled.webp",
+      "sha256": "ead69ba6bc6437830a25a8ff9a28d89c4aada80a4c136710beb4c68626b7682a"
     },
     {
       "path": "assets/img/health-offer-integrated-geometry.webp",
@@ -136,8 +136,8 @@
       "sha256": "75c817878fc96b59bd3a490a24013dc42184864eae4eb95e04f1212c11bc8a5f"
     },
     {
-      "path": "assets/img/health-ritual-prepare-authentic-geometry.webp",
-      "sha256": "98b5061f1c07566c3ed7f875d585c26fe2a24e5922adc0c8fae1ee458370f1d8"
+      "path": "assets/img/health-ritual-prepare-authentic-scaled.webp",
+      "sha256": "9601b561a3dff3df75af78910daf9ed7c86aef192ada31a475775cddf6e76e96"
     },
     {
       "path": "assets/img/health-ritual-store-integrated-geometry.webp",
@@ -165,11 +165,11 @@
     },
     {
       "path": "beauty.html",
-      "sha256": "f5d4264f008cc6b05c9ac45beed740458023a62753595c5193fb3d23a07794d9"
+      "sha256": "d11def33e4443241ad4552312da852f250574b1f387e3299c036d44e84204838"
     },
     {
       "path": "health.html",
-      "sha256": "2d020ac3377de580c274ec7ee10a69c6beead7e92a0dac01ac0bb4c7ed2e5406"
+      "sha256": "7c4f908fc8fe5d563a7e24cc98d2899663a0e15d911e319ce49386e664fd95da"
     }
   ],
   "files": [
@@ -184,14 +184,14 @@
       "bytes": 21555
     },
     {
-      "path": "assets/rxsz-beauty-aspiration-people.webp",
-      "sha256": "c65fa433d118f76aa0cd1ae7222f33b171ad163a9b045cc06f3f4cd4b1fc7b9b",
-      "bytes": 139174
+      "path": "assets/rxsz-beauty-aspiration-scaled.webp",
+      "sha256": "7e40fc2edb942325ebb6db4cb6e88d1e3578f5d211c6321c455b3d9ab98c6267",
+      "bytes": 144828
     },
     {
-      "path": "assets/rxsz-beauty-explorer-thumb-0-coherent.webp",
-      "sha256": "b1e78e66d5fd9a58b42dc7b45affe86eff9fd3b06ffca5aaa77e065c644bacf0",
-      "bytes": 5786
+      "path": "assets/rxsz-beauty-explorer-thumb-0-scaled.webp",
+      "sha256": "ab5bd1f7c0f42b7e864064dbaa2583688b95d2d55d12bcb97362d670dcdb2e3a",
+      "bytes": 5730
     },
     {
       "path": "assets/rxsz-beauty-explorer-thumb-1-geometry.webp",
@@ -219,14 +219,14 @@
       "bytes": 49956
     },
     {
-      "path": "assets/rxsz-beauty-hero-life-1200-coherent.webp",
-      "sha256": "7e0b16b51fa190788ef1e9ed767f3e8d7c46f1a9ef8b2747edfe07b9d42b94c5",
-      "bytes": 119798
+      "path": "assets/rxsz-beauty-hero-life-1200-scaled.webp",
+      "sha256": "24c12bcf459d06a71f1d6b52b91daaeb8a390da9f05b79f4a1b2431245e8385e",
+      "bytes": 138876
     },
     {
-      "path": "assets/rxsz-beauty-hero-life-600-coherent.webp",
-      "sha256": "73f063baf6874fd50de32fc144ada90e3a9b4f1031fa5ca09d2669949e975970",
-      "bytes": 40362
+      "path": "assets/rxsz-beauty-hero-life-600-scaled.webp",
+      "sha256": "688f1ea4beddd39ee072d637b9e5afdc8e5999c52629ad8e17afae6f57b04541",
+      "bytes": 43860
     },
     {
       "path": "assets/rxsz-beauty-offer-integrated-geometry.webp",
@@ -284,14 +284,14 @@
       "bytes": 13264
     },
     {
-      "path": "assets/rxsz-health-aspiration-people.webp",
-      "sha256": "4edc547b6ca87097b2d3d8566513e7bbd24497048d43fe85ab9ee2981fe1a898",
-      "bytes": 148650
+      "path": "assets/rxsz-health-aspiration-scaled.webp",
+      "sha256": "abfbf7a75b71d6b4c70355576bff972ad833c1e8eaf452962cb040746c7e8ace",
+      "bytes": 155464
     },
     {
-      "path": "assets/rxsz-health-explorer-thumb-0-people.webp",
-      "sha256": "3be56bb168d586c5f327722d1749365b0345eded29402fdd1e8facfeefdfebef",
-      "bytes": 5598
+      "path": "assets/rxsz-health-explorer-thumb-0-scaled.webp",
+      "sha256": "5bbde9a8ee5b76c5c35f005ea356bd6c324d7b5c87129900c55a7c475a62cba5",
+      "bytes": 5650
     },
     {
       "path": "assets/rxsz-health-explorer-thumb-1-geometry.webp",
@@ -299,9 +299,9 @@
       "bytes": 6424
     },
     {
-      "path": "assets/rxsz-health-explorer-thumb-2-geometry.webp",
-      "sha256": "6bd5ca6923fa6eb22f95e86b2a0c05fd4b9608405b65088796021bb8d3c1f819",
-      "bytes": 4802
+      "path": "assets/rxsz-health-explorer-thumb-2-scaled.webp",
+      "sha256": "9dff7ad00c0ac1d1a705d14458032047a58b7ff61348b4a173ba4d46d1d065f0",
+      "bytes": 4544
     },
     {
       "path": "assets/rxsz-health-explorer-thumb-3-geometry.webp",
@@ -319,14 +319,14 @@
       "bytes": 49912
     },
     {
-      "path": "assets/rxsz-health-hero-life-1200-people.webp",
-      "sha256": "2169fb2affbd5ad8f1aeb62eb9b4701ab583eae3f86d81db3b16f3976ddfacf1",
-      "bytes": 122024
+      "path": "assets/rxsz-health-hero-life-1200-scaled.webp",
+      "sha256": "100da25d390da4c94fd71fd2153bb2e549407920bd78867ceac8a115e2f087d7",
+      "bytes": 131646
     },
     {
-      "path": "assets/rxsz-health-hero-life-600-people.webp",
-      "sha256": "6f40de8ca68c67d86c3ad88757ac846237efaeed12661be85ff1eb1b5c6806e9",
-      "bytes": 40418
+      "path": "assets/rxsz-health-hero-life-600-scaled.webp",
+      "sha256": "ead69ba6bc6437830a25a8ff9a28d89c4aada80a4c136710beb4c68626b7682a",
+      "bytes": 42958
     },
     {
       "path": "assets/rxsz-health-offer-integrated-geometry.webp",
@@ -344,9 +344,9 @@
       "bytes": 195600
     },
     {
-      "path": "assets/rxsz-health-ritual-prepare-authentic-geometry.webp",
-      "sha256": "98b5061f1c07566c3ed7f875d585c26fe2a24e5922adc0c8fae1ee458370f1d8",
-      "bytes": 149878
+      "path": "assets/rxsz-health-ritual-prepare-authentic-scaled.webp",
+      "sha256": "9601b561a3dff3df75af78910daf9ed7c86aef192ada31a475775cddf6e76e96",
+      "bytes": 159516
     },
     {
       "path": "assets/rxsz-health-ritual-store-integrated-geometry.webp",
@@ -380,8 +380,8 @@
     },
     {
       "path": "layout/rxsz.liquid",
-      "sha256": "fc57d35698e4905a8888cda7ab8a24b689ebb4205b2422c55ef111381275fd17",
-      "bytes": 2968
+      "sha256": "b0e126d952a55a5d97368267e01bbbaa7cb65d1c00f3e98189e25bd1bbdb4d7a",
+      "bytes": 2966
     },
     {
       "path": "locales/en.default.json",
@@ -410,13 +410,13 @@
     },
     {
       "path": "snippets/rxsz-beauty.liquid",
-      "sha256": "87644b35a1af7a0f59b8122baf94773d8874aa46ec40a5b6bb28678f51a60761",
-      "bytes": 39730
+      "sha256": "787f479727c61574de9eb115ee32dc1fcaa9bfbcefc32885914522b10b4c6337",
+      "bytes": 39722
     },
     {
       "path": "snippets/rxsz-health.liquid",
-      "sha256": "8fd6734f1286e24677932bf2becba98eab9833162f297d6577e69d1a8ae6bee9",
-      "bytes": 39722
+      "sha256": "5b4e9c3273be8ed231337dcaf613249bbd2ac2eeff908cba87b1f8746722ea7d",
+      "bytes": 39716
     },
     {
       "path": "templates/page.rxsz-beauty.json",

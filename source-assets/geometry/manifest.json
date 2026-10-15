@@ -1,6 +1,6 @@
 {
   "method": "Built-in ImageGen precise-object-edit",
-  "date": "2026-10-14",
+  "date": "2026-10-15",
   "referenceCommit": "59044e6",
   "references": [
     "source-assets/references/product-front.png",
@@ -97,80 +97,181 @@
       "file": "beauty-hero-life-1200.webp",
       "page": "beauty",
       "slot": "hero-life",
-      "spec": "Same woman and approved product preparing water and ice; small ice bowl fully supported on the foreground stone counter, visible base and contact shadow. Preserve product geometry and camera.",
-      "prompt": "Use case: precise-object-edit. Image1 is the TARGET photograph. Fix ONLY the floating small beige ice bowl to the left of the woman's waist. MOVE that SAME bowl down onto the PALE STONE COUNTER in the left foreground, fully IN FRONT of the rear counter edge, beside and to the left of the main blue basin. The whole bowl's bottom must visibly TOUCH the horizontal stone surface with a short natural dark contact shadow directly below its foot; no gap or floating bowl, no hidden support, no hand holding it. Place it far enough forward that the counter is clearly visible around its entire base. Keep its realistic small kitchen-bowl size, same ice, same material; do not enlarge it or obscure the basin. Preserve EVERYTHING ELSE pixel-faithfully as possible: woman identity/face/hair/outfit, hands and single ice cube above basin, water and ice, exact approved basin shape/size/position, same attached twin tubes and blue mouthpiece, its long front-to-back rectangular footprint and side handles,2 white bands, counter/window/plant/towels, lighting and entire frame. One small supported bowl, not a second new container. Do not change the main product, human scale, pose or camera. Landscape6:5, realistic photographic object relocation with consistent tabletop perspective and contact shadows.",
-      "master": "output/qa-scale/masters/beauty-hero-life.png",
-      "output": "beauty-hero-life-1200-coherent.webp",
-      "generationFile": "exec-21750c2b-ed0b-405d-ad8d-e4f10713f525.png",
+      "spec": "Compact 30 × 20 × 13 cm expanded basin at coherent adult head/hand scale; preserve mold and current fixed twin tube, natural people, complete counter support and contact shadow.",
+      "prompt": "Use case: precise-object-edit. This is a localized correction of physical PRODUCT SCALE in a real-looking editorial website photograph. Image1 is the EDIT TARGET. Image2 is the approved current basin/twin-tube PRODUCT MASTER. Images3 and4 are REAL historical overhead and front basin photographs, authoritative for BASIN MOLD only (ignore their older white mouthpiece). Image5 is the approved same-person IMMERSION photo showing the compact basin-to-head/hand scale to match. Product dimensions now confirmed by owner: expanded length30cm FRONT-TO-BACK, width20cm across long sidewalls, height13cm. A moderate rounded rectangular3:2 footprint, not square, not a long narrow trough. The current target basin looks physically too large. Make the entire basin including rim, base, interior, water, tubes and ice uniformly about28–30% smaller in the scene, keeping the person's adult head/body/hands the SAME natural size. Preserve the same actual30×20×13proportions; never compress height alone or stretch footprint axes. Use natural moderately compressed perspective, no wide-angle foreground exaggeration. Same basin mold as Image2/3/4: two white folding bands, blue rim and blue molded base with front relief/two small holes, integrated blue grid with long central rib, shallow dips in front/rear short rims, integral handles ONLY on two long sidewalls. One small BLUE mouthpiece and exactly TWO transparent tubes permanently attached inside basin as Image2; no detached accessory, new valve/socket/air inlet or invented mechanism. Keep original room, stone, window, towel, plant, person's identity, clothes, natural adult anatomy and real skin texture. Preserve honest soft daylight and color. Basin fully rests on stone with complete base contact and a coherent contact shadow; nearby objects must rest on stone or be held. Basin rim remains at modest scale against hand over rear edge, clearly narrower than shoulder span and visually consistent with compact immersion reference. Keep adequate clear counter all around. Refine the person's ice hand position only as needed to drop a small real ice cube above resized basin, keep natural fingers. Water has a few irregular natural ice pieces at believable size, no decorative fake glass cubes, mist or CGI. Preserve all text-free6:5landscape framing. Do not make the person smaller to accommodate basin, do not crop away evidence of scale. Beauty target: keep beige ice bowl fully supported on left-foreground counter with contact shadow as it is, no floating bowl. Preserve woman in white tank and her right hand on counter, move only ice hand if needed. Blue basin remains in front of her but smaller and closer to her working space.",
+      "master": "output/qa-physical-scale/masters/beauty-hero-life.png",
+      "output": "beauty-hero-life-1200-scaled.webp",
+      "generationFile": "exec-fff67cf4-43b3-4013-a0f9-ab85a85b8c48.png",
       "previousOutputs": [
         "beauty-hero-life-1200-geometry.webp",
-        "beauty-hero-life-1200-people.webp"
+        "beauty-hero-life-1200-people.webp",
+        "beauty-hero-life-1200-coherent.webp"
       ],
-      "sourceCommit": "e9f85990c8db1fccf235c0f01994a19cc15fad18",
+      "sourceCommit": "a3291371199b897765741f113b9841eb19e52d7b",
       "method": "Built-in ImageGen precise-object-edit",
       "references": [
-        "Original target scene at sourceCommit"
+        "assets/img/beauty-hero-life-1200-coherent.webp",
+        "source-assets/geometry/product-master.png",
+        "source-assets/references/product-top.png",
+        "source-assets/references/product-front.png",
+        "assets/img/beauty-ritual-breathe-coherent.webp"
+      ],
+      "previousRevisions": [
+        {
+          "file": "beauty-hero-life-1200.webp",
+          "page": "beauty",
+          "slot": "hero-life",
+          "spec": "Same woman and approved product preparing water and ice; small ice bowl fully supported on the foreground stone counter, visible base and contact shadow. Preserve product geometry and camera.",
+          "prompt": "Use case: precise-object-edit. Image1 is the TARGET photograph. Fix ONLY the floating small beige ice bowl to the left of the woman's waist. MOVE that SAME bowl down onto the PALE STONE COUNTER in the left foreground, fully IN FRONT of the rear counter edge, beside and to the left of the main blue basin. The whole bowl's bottom must visibly TOUCH the horizontal stone surface with a short natural dark contact shadow directly below its foot; no gap or floating bowl, no hidden support, no hand holding it. Place it far enough forward that the counter is clearly visible around its entire base. Keep its realistic small kitchen-bowl size, same ice, same material; do not enlarge it or obscure the basin. Preserve EVERYTHING ELSE pixel-faithfully as possible: woman identity/face/hair/outfit, hands and single ice cube above basin, water and ice, exact approved basin shape/size/position, same attached twin tubes and blue mouthpiece, its long front-to-back rectangular footprint and side handles,2 white bands, counter/window/plant/towels, lighting and entire frame. One small supported bowl, not a second new container. Do not change the main product, human scale, pose or camera. Landscape6:5, realistic photographic object relocation with consistent tabletop perspective and contact shadows.",
+          "master": "output/qa-scale/masters/beauty-hero-life.png",
+          "output": "beauty-hero-life-1200-coherent.webp",
+          "generationFile": "exec-21750c2b-ed0b-405d-ad8d-e4f10713f525.png",
+          "previousOutputs": [
+            "beauty-hero-life-1200-geometry.webp",
+            "beauty-hero-life-1200-people.webp"
+          ],
+          "sourceCommit": "e9f85990c8db1fccf235c0f01994a19cc15fad18",
+          "method": "Built-in ImageGen precise-object-edit",
+          "references": [
+            "Original target scene at sourceCommit"
+          ]
+        }
       ]
     },
     {
       "file": "health-hero-life-1200.webp",
       "page": "health",
       "slot": "hero-life",
-      "spec": "Fully expanded basin in the same location on the counter next to the same person. Preserve natural human identity and skin, every body/hand/face pose and the entire original room, towels and lighting. Basin scale remains plausible household facial basin. Orient its front-to-back long dimension honestly so rectangular shape can be read; its silhouette must match the product master without growing or losing side handles. Retain all original human content safely in frame. Landscape6:5.",
-      "prompt": "Use case: precise-object-edit. Asset: RX SUBZERO landing hero, landscape 6:5, at least 1200x1000. Image 1 is the target scene and current person identity. Image 2 is the APPROVED product master; images 3 and 4 are original camera mold references (ignore their old white mouthpiece). Replace the posed advertising mood with one unretouched candid photograph of this same adult man about 40, short dark hair with a few grey strands, light stubble and a faded charcoal cotton T-shirt actively preparing the basin with WATER AND ICE. The person looks DOWN at the actual task, not toward camera or window. One hand casually adds a few irregular clear ice cubes from a small plain bowl, other hand rests naturally on the counter; anatomically correct relaxed hands, five fingers, no floating fingers. Natural pores, small asymmetries, fine lines, slight uneven skin tone and normal under-eye texture; individual hairs, fabric weave and believable arms. No beauty retouching, wax/plastic skin, airbrushed cheeks, perfect model grin, sharpened eyelashes or sculpted fitness anatomy. Preserve the exact basin size, elongated front-to-back rectangular footprint, blue rim with short-edge dips, small blue handles on LONG sides, two white bellows bands, blue base/grid and exact permanently attached CLEAR TWIN TUBES with BLUE mouthpiece. Exterior mold and tube must match Image2, no redesign, no extra vent or detachable part. Add clear cold water inside to a believable depth below rim, with a few irregular floating ice cubes and realistic reflections/refraction; no fog or artificial frost. Basin rests flat on the same counter in lower foreground, person behind it. Same modest dark slate bathroom with diffuse side-window light, grey towel and real everyday surfaces. Slightly off-center, spontaneous documentary framing, entire head/hair and whole basin with generous safe margins, no person/product overlap across critical edges. Honest 35mm/50mm still photography, balanced depth of field, natural exposure and restrained contrast, faint realistic photographic grain, no cinematic grading or showroom rendering. No text, logos or testimonial graphics. Keep the scene composition useful for a sales landing but make it look like a moment during an actual home routine.",
-      "master": "output/qa-people/masters/health-hero-life.png",
-      "output": "health-hero-life-1200-people.webp",
-      "generationFile": "exec-d2acf9b7-2af5-4844-8f02-064f75c554db.png",
+      "spec": "Compact 30 × 20 × 13 cm expanded basin at coherent adult head/hand scale; preserve mold and current fixed twin tube, natural people, complete counter support and contact shadow.",
+      "prompt": "Use case: precise-object-edit. This is a localized correction of physical PRODUCT SCALE in a real-looking editorial website photograph. Image1 is the EDIT TARGET. Image2 is the approved current basin/twin-tube PRODUCT MASTER. Images3 and4 are REAL historical overhead and front basin photographs, authoritative for BASIN MOLD only (ignore their older white mouthpiece). Image5 is the approved same-person IMMERSION photo showing the compact basin-to-head/hand scale to match. Product dimensions now confirmed by owner: expanded length30cm FRONT-TO-BACK, width20cm across long sidewalls, height13cm. A moderate rounded rectangular3:2 footprint, not square, not a long narrow trough. The current target basin looks physically too large. Make the entire basin including rim, base, interior, water, tubes and ice uniformly about28–30% smaller in the scene, keeping the person's adult head/body/hands the SAME natural size. Preserve the same actual30×20×13proportions; never compress height alone or stretch footprint axes. Use natural moderately compressed perspective, no wide-angle foreground exaggeration. Same basin mold as Image2/3/4: two white folding bands, blue rim and blue molded base with front relief/two small holes, integrated blue grid with long central rib, shallow dips in front/rear short rims, integral handles ONLY on two long sidewalls. One small BLUE mouthpiece and exactly TWO transparent tubes permanently attached inside basin as Image2; no detached accessory, new valve/socket/air inlet or invented mechanism. Keep original room, stone, window, towel, plant, person's identity, clothes, natural adult anatomy and real skin texture. Preserve honest soft daylight and color. Basin fully rests on stone with complete base contact and a coherent contact shadow; nearby objects must rest on stone or be held. Basin rim remains at modest scale against hand over rear edge, clearly narrower than shoulder span and visually consistent with compact immersion reference. Keep adequate clear counter all around. Refine the person's ice hand position only as needed to drop a small real ice cube above resized basin, keep natural fingers. Water has a few irregular natural ice pieces at believable size, no decorative fake glass cubes, mist or CGI. Preserve all text-free6:5landscape framing. Do not make the person smaller to accommodate basin, do not crop away evidence of scale. Health target: preserve man in charcoal shirt, his left hand holding beige ice bowl and his right hand dropping an ice cube. Keep dark stone vanity and softer window light. Basin stays on the existing counter working area with complete grounded blue base, not at extreme foreground.",
+      "master": "output/qa-physical-scale/masters/health-hero-life.png",
+      "output": "health-hero-life-1200-scaled.webp",
+      "generationFile": "exec-251090ff-6985-401c-8921-4de83af4141a.png",
       "previousOutputs": [
-        "health-hero-life-1200-geometry.webp"
+        "health-hero-life-1200-geometry.webp",
+        "health-hero-life-1200-people.webp"
       ],
-      "sourceCommit": "e053a9c6f43cd4aaed8770bb8fd038b4b3196776",
+      "sourceCommit": "a3291371199b897765741f113b9841eb19e52d7b",
       "method": "Built-in ImageGen edit",
       "references": [
-        "Original target scene at sourceCommit",
+        "assets/img/health-hero-life-1200-people.webp",
         "source-assets/geometry/product-master.png",
+        "source-assets/references/product-top.png",
         "source-assets/references/product-front.png",
-        "source-assets/references/product-top.png"
+        "assets/img/health-ritual-breathe-coherent.webp"
+      ],
+      "previousRevisions": [
+        {
+          "file": "health-hero-life-1200.webp",
+          "page": "health",
+          "slot": "hero-life",
+          "spec": "Fully expanded basin in the same location on the counter next to the same person. Preserve natural human identity and skin, every body/hand/face pose and the entire original room, towels and lighting. Basin scale remains plausible household facial basin. Orient its front-to-back long dimension honestly so rectangular shape can be read; its silhouette must match the product master without growing or losing side handles. Retain all original human content safely in frame. Landscape6:5.",
+          "prompt": "Use case: precise-object-edit. Asset: RX SUBZERO landing hero, landscape 6:5, at least 1200x1000. Image 1 is the target scene and current person identity. Image 2 is the APPROVED product master; images 3 and 4 are original camera mold references (ignore their old white mouthpiece). Replace the posed advertising mood with one unretouched candid photograph of this same adult man about 40, short dark hair with a few grey strands, light stubble and a faded charcoal cotton T-shirt actively preparing the basin with WATER AND ICE. The person looks DOWN at the actual task, not toward camera or window. One hand casually adds a few irregular clear ice cubes from a small plain bowl, other hand rests naturally on the counter; anatomically correct relaxed hands, five fingers, no floating fingers. Natural pores, small asymmetries, fine lines, slight uneven skin tone and normal under-eye texture; individual hairs, fabric weave and believable arms. No beauty retouching, wax/plastic skin, airbrushed cheeks, perfect model grin, sharpened eyelashes or sculpted fitness anatomy. Preserve the exact basin size, elongated front-to-back rectangular footprint, blue rim with short-edge dips, small blue handles on LONG sides, two white bellows bands, blue base/grid and exact permanently attached CLEAR TWIN TUBES with BLUE mouthpiece. Exterior mold and tube must match Image2, no redesign, no extra vent or detachable part. Add clear cold water inside to a believable depth below rim, with a few irregular floating ice cubes and realistic reflections/refraction; no fog or artificial frost. Basin rests flat on the same counter in lower foreground, person behind it. Same modest dark slate bathroom with diffuse side-window light, grey towel and real everyday surfaces. Slightly off-center, spontaneous documentary framing, entire head/hair and whole basin with generous safe margins, no person/product overlap across critical edges. Honest 35mm/50mm still photography, balanced depth of field, natural exposure and restrained contrast, faint realistic photographic grain, no cinematic grading or showroom rendering. No text, logos or testimonial graphics. Keep the scene composition useful for a sales landing but make it look like a moment during an actual home routine.",
+          "master": "output/qa-people/masters/health-hero-life.png",
+          "output": "health-hero-life-1200-people.webp",
+          "generationFile": "exec-d2acf9b7-2af5-4844-8f02-064f75c554db.png",
+          "previousOutputs": [
+            "health-hero-life-1200-geometry.webp"
+          ],
+          "sourceCommit": "e053a9c6f43cd4aaed8770bb8fd038b4b3196776",
+          "method": "Built-in ImageGen edit",
+          "references": [
+            "Original target scene at sourceCommit",
+            "source-assets/geometry/product-master.png",
+            "source-assets/references/product-front.png",
+            "source-assets/references/product-top.png"
+          ]
+        }
       ]
     },
     {
       "file": "beauty-aspiration-authentic.webp",
       "page": "beauty",
       "slot": "aspiration",
-      "spec": "Fully expanded basin in the same location on the counter next to the same person. Preserve natural human identity and skin, every body/hand/face pose and the entire original room, towels and lighting. Basin scale remains plausible household facial basin. Orient its front-to-back long dimension honestly so rectangular shape can be read; its silhouette must match the product master without growing or losing side handles. Retain all original human content safely in frame. Landscape6:5.",
-      "prompt": "Use case: identity-preserve and precise-object-edit. Image 1 is the old target scene after the routine, Image 2 is the approved NEW PREPARATION photograph defining the EXACT SAME ADULT PERSON and outfit, Image3 is the approved product master. Replace the posed person in Image1 with the same curly dark-haired woman with loose tied hair and white cotton tank from Image2 at the END of the same routine. A spontaneous candid moment: slightly damp face and a few damp wisps of hair, casually patting one cheek with a white cotton towel; looking down toward the basin, not posed toward a window or camera. Real normal face anatomy and hand supporting towel, five relaxed fingers. Skin has natural pores, subtle uneven color, fine lines and ordinary moisture, not a glossy smooth beauty filter or oversized droplets. Natural relaxed expression without ad smile. Preserve the exact approved RX SUBZERO basin mold, elongated rectangular front-to-back footprint, blue-and-white2fold bands, small LONG SIDE handles, front rim dip and two front baseholes, interior grid and permanently attached clear twin tubes and small BLUE mouthpiece; geometry and scale must stay exactly asImage3. On the same pale bathroom vanity, the used basin still contains clear water and a few irregular floating ice cubes, realistic waterline/refraction. Keep product fully framed and readable with person naturally beside it, generous safe margin at all edges. Same everyday room and natural imperfect soft daylight asImage2. Honest unretouched35mm/50mm documentary photograph, not stock-model portrait or CGI. Landscape6:5, no invented parts, detached tube, fog, glow, text or medical/testimonial claims.",
-      "master": "output/qa-people/masters/beauty-aspiration.png",
-      "output": "beauty-aspiration-people.webp",
-      "generationFile": "exec-fa1653f8-15e1-4537-9981-beac6a05ccdf.png",
+      "spec": "Compact 30 × 20 × 13 cm expanded basin at coherent adult head/hand scale; preserve mold and current fixed twin tube, natural people, complete counter support and contact shadow.",
+      "prompt": "Use case: precise-object-edit. Image1 is the EDIT TARGET after-use/drying scene. Its basin is too big. Image2 is the newly corrected same-person PREPARATION scene and is authoritative for compact BASIN SIZE, camera scale, realistic human proportions and natural room treatment. Image3 is the approved current PRODUCT MASTER for exact mold and fixed tube. Image4 is the REAL historical top basin photograph for MOLD only (ignore old white mouthpiece). Image5 is the approved same-person immersion photo as extra human-scale check. Correct ONLY the target basin's excessive size and its immediate contact/shadow so the same physical30cmfront-to-back×20cmwide×13cmhigh expanded product appears in Image1 as inImage2. Reduce its entire linear apparent size about25–30% compared with old target, but MATCH Image2 rather than making an arbitrary miniature. Keep moderate rounded rectangular3:2 physical footprint and13cmwall height, no independent axis squeezing or thin tray. This is one compact facial basin; same blue rim/base, two white folding bands, front twoholes/relief, small handles onlylongsides, dips inshort rims, blue grid/central longrib. Exactlyone smallBLUE mouthpiece andTWO clear tubes permanently attached inside the same basin, no loose accessory/newvalve/connector/air inlet. Preserve original target adult person's identity, head/body/hands at same natural size, exact drying face with towel gesture, realistic skin/hair, clothes and anatomy. Preserve existing room, counter, window, plant, towel and soap. Use a modest natural photographic perspective without oversized foreground; keep full supported base/contactshadow and adequate stone aroundbasin. Water/ice remain inside basin with natural small irregularfloatingice, no CGIshine/fog/artificial perfection. Do not alter body tojustify productscale, no newobjects, logos or text. Landscape6:5, natural editorial photo. Bowl must be fully supported or clearlyheld. Woman drying cheek with white towel: match resized Beauty preparation scene2 basin scale and position. Keep her free hand naturally resting on counter and beige bowl visibly supported on stone at left, no floating bowl.",
+      "master": "output/qa-physical-scale/masters/beauty-aspiration.png",
+      "output": "beauty-aspiration-scaled.webp",
+      "generationFile": "exec-9a54406a-1115-4cd0-8b65-2dfa0d9d7eea.png",
       "previousOutputs": [
-        "beauty-aspiration-authentic-geometry.webp"
+        "beauty-aspiration-authentic-geometry.webp",
+        "beauty-aspiration-people.webp"
       ],
-      "sourceCommit": "e053a9c6f43cd4aaed8770bb8fd038b4b3196776",
+      "sourceCommit": "a3291371199b897765741f113b9841eb19e52d7b",
       "method": "Built-in ImageGen edit",
       "references": [
-        "Original target scene at sourceCommit",
-        "output/qa-people/masters/beauty-hero-life.png",
-        "source-assets/geometry/product-master.png"
+        "assets/img/beauty-aspiration-people.webp",
+        "output/qa-physical-scale/masters/beauty-hero-life.png",
+        "source-assets/geometry/product-master.png",
+        "source-assets/references/product-top.png",
+        "assets/img/beauty-ritual-breathe-coherent.webp"
+      ],
+      "previousRevisions": [
+        {
+          "file": "beauty-aspiration-authentic.webp",
+          "page": "beauty",
+          "slot": "aspiration",
+          "spec": "Fully expanded basin in the same location on the counter next to the same person. Preserve natural human identity and skin, every body/hand/face pose and the entire original room, towels and lighting. Basin scale remains plausible household facial basin. Orient its front-to-back long dimension honestly so rectangular shape can be read; its silhouette must match the product master without growing or losing side handles. Retain all original human content safely in frame. Landscape6:5.",
+          "prompt": "Use case: identity-preserve and precise-object-edit. Image 1 is the old target scene after the routine, Image 2 is the approved NEW PREPARATION photograph defining the EXACT SAME ADULT PERSON and outfit, Image3 is the approved product master. Replace the posed person in Image1 with the same curly dark-haired woman with loose tied hair and white cotton tank from Image2 at the END of the same routine. A spontaneous candid moment: slightly damp face and a few damp wisps of hair, casually patting one cheek with a white cotton towel; looking down toward the basin, not posed toward a window or camera. Real normal face anatomy and hand supporting towel, five relaxed fingers. Skin has natural pores, subtle uneven color, fine lines and ordinary moisture, not a glossy smooth beauty filter or oversized droplets. Natural relaxed expression without ad smile. Preserve the exact approved RX SUBZERO basin mold, elongated rectangular front-to-back footprint, blue-and-white2fold bands, small LONG SIDE handles, front rim dip and two front baseholes, interior grid and permanently attached clear twin tubes and small BLUE mouthpiece; geometry and scale must stay exactly asImage3. On the same pale bathroom vanity, the used basin still contains clear water and a few irregular floating ice cubes, realistic waterline/refraction. Keep product fully framed and readable with person naturally beside it, generous safe margin at all edges. Same everyday room and natural imperfect soft daylight asImage2. Honest unretouched35mm/50mm documentary photograph, not stock-model portrait or CGI. Landscape6:5, no invented parts, detached tube, fog, glow, text or medical/testimonial claims.",
+          "master": "output/qa-people/masters/beauty-aspiration.png",
+          "output": "beauty-aspiration-people.webp",
+          "generationFile": "exec-fa1653f8-15e1-4537-9981-beac6a05ccdf.png",
+          "previousOutputs": [
+            "beauty-aspiration-authentic-geometry.webp"
+          ],
+          "sourceCommit": "e053a9c6f43cd4aaed8770bb8fd038b4b3196776",
+          "method": "Built-in ImageGen edit",
+          "references": [
+            "Original target scene at sourceCommit",
+            "output/qa-people/masters/beauty-hero-life.png",
+            "source-assets/geometry/product-master.png"
+          ]
+        }
       ]
     },
     {
       "file": "health-aspiration-authentic.webp",
       "page": "health",
       "slot": "aspiration",
-      "spec": "Fully expanded basin in the same location on the counter next to the same person. Preserve natural human identity and skin, every body/hand/face pose and the entire original room, towels and lighting. Basin scale remains plausible household facial basin. Orient its front-to-back long dimension honestly so rectangular shape can be read; its silhouette must match the product master without growing or losing side handles. Retain all original human content safely in frame. Landscape6:5.",
-      "prompt": "Use case: identity-preserve and precise-object-edit. Image 1 is the old target scene after the routine, Image 2 is the approved NEW PREPARATION photograph defining the EXACT SAME ADULT PERSON and outfit, Image3 is the approved product master. Replace the posed person in Image1 with the same 40-year-old short dark-haired man with light stubble and faded charcoal T-shirt from Image2 at the END of the same routine. A spontaneous candid moment: slightly damp face and a few damp wisps of hair, casually patting one cheek with a grey cotton towel; looking down toward the basin, not posed toward a window or camera. Real normal face anatomy and hand supporting towel, five relaxed fingers. Skin has natural pores, subtle uneven color, fine lines and ordinary moisture, not a glossy smooth beauty filter or oversized droplets. Natural relaxed expression without ad smile. Preserve the exact approved RX SUBZERO basin mold, elongated rectangular front-to-back footprint, blue-and-white2fold bands, small LONG SIDE handles, front rim dip and two front baseholes, interior grid and permanently attached clear twin tubes and small BLUE mouthpiece; geometry and scale must stay exactly asImage3. On the same dark slate bathroom counter, the used basin still contains clear water and a few irregular floating ice cubes, realistic waterline/refraction. Keep product fully framed and readable with person naturally beside it, generous safe margin at all edges. Same everyday room and natural imperfect diffuse window sidelight asImage2. Honest unretouched35mm/50mm documentary photograph, not stock-model portrait or CGI. Landscape6:5, no invented parts, detached tube, fog, glow, text or medical/testimonial claims.",
-      "master": "output/qa-people/masters/health-aspiration.png",
-      "output": "health-aspiration-people.webp",
-      "generationFile": "exec-9e542038-7048-40f3-830e-326b571ce668.png",
+      "spec": "Compact 30 × 20 × 13 cm expanded basin at coherent adult head/hand scale; preserve mold and current fixed twin tube, natural people, complete counter support and contact shadow.",
+      "prompt": "Use case: precise-object-edit. Image1 is the EDIT TARGET after-use/drying scene. Its basin is too big. Image2 is the newly corrected same-person PREPARATION scene and is authoritative for compact BASIN SIZE, camera scale, realistic human proportions and natural room treatment. Image3 is the approved current PRODUCT MASTER for exact mold and fixed tube. Image4 is the REAL historical top basin photograph for MOLD only (ignore old white mouthpiece). Image5 is the approved same-person immersion photo as extra human-scale check. Correct ONLY the target basin's excessive size and its immediate contact/shadow so the same physical30cmfront-to-back×20cmwide×13cmhigh expanded product appears in Image1 as inImage2. Reduce its entire linear apparent size about25–30% compared with old target, but MATCH Image2 rather than making an arbitrary miniature. Keep moderate rounded rectangular3:2 physical footprint and13cmwall height, no independent axis squeezing or thin tray. This is one compact facial basin; same blue rim/base, two white folding bands, front twoholes/relief, small handles onlylongsides, dips inshort rims, blue grid/central longrib. Exactlyone smallBLUE mouthpiece andTWO clear tubes permanently attached inside the same basin, no loose accessory/newvalve/connector/air inlet. Preserve original target adult person's identity, head/body/hands at same natural size, exact drying face with towel gesture, realistic skin/hair, clothes and anatomy. Preserve existing room, counter, window, plant, towel and soap. Use a modest natural photographic perspective without oversized foreground; keep full supported base/contactshadow and adequate stone aroundbasin. Water/ice remain inside basin with natural small irregularfloatingice, no CGIshine/fog/artificial perfection. Do not alter body tojustify productscale, no newobjects, logos or text. Landscape6:5, natural editorial photo. Bowl must be fully supported or clearlyheld. Man drying cheek with charcoal grey towel: match resized Health preparation scene2 basin physical scale. Preserve his hand resting on counter, the naturally quiet pose and dark stone room. Do not add the held ice bowl fromImage2 into the drying scene.",
+      "master": "output/qa-physical-scale/masters/health-aspiration.png",
+      "output": "health-aspiration-scaled.webp",
+      "generationFile": "exec-59bf5a9a-c795-448f-9ce7-fbb039c25d8b.png",
       "previousOutputs": [
-        "health-aspiration-authentic-geometry.webp"
+        "health-aspiration-authentic-geometry.webp",
+        "health-aspiration-people.webp"
       ],
-      "sourceCommit": "e053a9c6f43cd4aaed8770bb8fd038b4b3196776",
+      "sourceCommit": "a3291371199b897765741f113b9841eb19e52d7b",
       "method": "Built-in ImageGen edit",
       "references": [
-        "Original target scene at sourceCommit",
-        "output/qa-people/masters/health-hero-life.png",
-        "source-assets/geometry/product-master.png"
+        "assets/img/health-aspiration-people.webp",
+        "output/qa-physical-scale/masters/health-hero-life.png",
+        "source-assets/geometry/product-master.png",
+        "source-assets/references/product-top.png",
+        "assets/img/health-ritual-breathe-coherent.webp"
+      ],
+      "previousRevisions": [
+        {
+          "file": "health-aspiration-authentic.webp",
+          "page": "health",
+          "slot": "aspiration",
+          "spec": "Fully expanded basin in the same location on the counter next to the same person. Preserve natural human identity and skin, every body/hand/face pose and the entire original room, towels and lighting. Basin scale remains plausible household facial basin. Orient its front-to-back long dimension honestly so rectangular shape can be read; its silhouette must match the product master without growing or losing side handles. Retain all original human content safely in frame. Landscape6:5.",
+          "prompt": "Use case: identity-preserve and precise-object-edit. Image 1 is the old target scene after the routine, Image 2 is the approved NEW PREPARATION photograph defining the EXACT SAME ADULT PERSON and outfit, Image3 is the approved product master. Replace the posed person in Image1 with the same 40-year-old short dark-haired man with light stubble and faded charcoal T-shirt from Image2 at the END of the same routine. A spontaneous candid moment: slightly damp face and a few damp wisps of hair, casually patting one cheek with a grey cotton towel; looking down toward the basin, not posed toward a window or camera. Real normal face anatomy and hand supporting towel, five relaxed fingers. Skin has natural pores, subtle uneven color, fine lines and ordinary moisture, not a glossy smooth beauty filter or oversized droplets. Natural relaxed expression without ad smile. Preserve the exact approved RX SUBZERO basin mold, elongated rectangular front-to-back footprint, blue-and-white2fold bands, small LONG SIDE handles, front rim dip and two front baseholes, interior grid and permanently attached clear twin tubes and small BLUE mouthpiece; geometry and scale must stay exactly asImage3. On the same dark slate bathroom counter, the used basin still contains clear water and a few irregular floating ice cubes, realistic waterline/refraction. Keep product fully framed and readable with person naturally beside it, generous safe margin at all edges. Same everyday room and natural imperfect diffuse window sidelight asImage2. Honest unretouched35mm/50mm documentary photograph, not stock-model portrait or CGI. Landscape6:5, no invented parts, detached tube, fog, glow, text or medical/testimonial claims.",
+          "master": "output/qa-people/masters/health-aspiration.png",
+          "output": "health-aspiration-people.webp",
+          "generationFile": "exec-9e542038-7048-40f3-830e-326b571ce668.png",
+          "previousOutputs": [
+            "health-aspiration-authentic-geometry.webp"
+          ],
+          "sourceCommit": "e053a9c6f43cd4aaed8770bb8fd038b4b3196776",
+          "method": "Built-in ImageGen edit",
+          "references": [
+            "Original target scene at sourceCommit",
+            "output/qa-people/masters/health-hero-life.png",
+            "source-assets/geometry/product-master.png"
+          ]
+        }
       ]
     },
     {
@@ -187,11 +288,33 @@
       "file": "health-ritual-prepare-authentic.webp",
       "page": "health",
       "slot": "ritual-prepare",
-      "spec": "Retain the overhead preparation scene, real hands, jug/ice, watch if present, counter and small amount of water. Footprint exactly matches the real overhead photo: long front-to-back rounded rectangle with both small handles on long sides, real integrated grid and two white folds. Keep current blue fixed dual tube and natural transparent water. Do not float the tube or disconnect it. Landscape6:5.",
-      "prompt": "Use case: precise-object-edit. Image 1 is the EDIT TARGET scene. Image 2 is the corrected PRODUCT MASTER, Images 3 and 4 are REAL camera front and top basin references. Correct ONLY the basin in Image 1 to the SAME physical basin as Image 2 and the real mold in Images 3/4. Its rounded rectangular footprint is longer from front short edge to rear short edge, not a wide shallow tray and not a square. Small broad blue handles are on the two LONG sides; front SHORT edge has a shallow central dip. Match exact blue rim/base, two distinct white folding bands, integrated blue interior grid with central oblong and cross ribs; never add latches, a lid or a base tab. Preserve Image 2's current twin transparent tubes and small BLUE mouthpiece, permanently connected within the same basin. Do not use the old WHITE mouthpiece from camera references3/4. Tube cannot separate. No detached accessory, spare basin or fabricated fitting. Retain target environment, every person's identity, natural skin, clothes, pose, hands and all background details; integrate corrected basin with accurate contact shadows and plausible original scale. Adapt perspective honestly to the scene so the longer front-to-back footprint remains recognizable; do not deform the physical mold to fit old shape. Never transplant the white master background into target. Natural editorial photography, realistic matte materials, no CGI/glow/mist, no text added. Entire basin and all meaningful content safely within frame. Retain the overhead preparation scene, real hands, jug/ice, watch if present, counter and small amount of water. Footprint exactly matches the real overhead photo: long front-to-back rounded rectangle with both small handles on long sides, real integrated grid and two white folds. Keep current blue fixed dual tube and natural transparent water. Do not float the tube or disconnect it. Landscape6:5.",
-      "master": "output/qa-geometry/masters/health-ritual-prepare-authentic.png",
-      "output": "health-ritual-prepare-authentic-geometry.webp",
-      "generationFile": "exec-0a73a1a7-4b03-4aac-984d-ed661b3a97b3.png"
+      "spec": "Localized correction of the BLUE molded lower base and front holes; preserve expanded 30 × 20 × 13 cm basin geometry, two white folding bands, attached twin tube and preparation scene.",
+      "prompt": "Use case: precise-object-edit. Image1 is TARGET overhead/three-quarter preparation photo on dark stone. Image2 is the approved current product MASTER; Images3/4 are REAL historical front/top mold refs (ignore old white mouthpiece). Correct ONLY the wrong WHITE lower exterior base and corner feet in Image1: the actual molded bottom is BLUE, matching Image2 and the original front photo3, with shallow front relief and two small front holes where visible. Do NOT turn a white folding band into the base. Retain TWO white collapsible bands and blue rim/base. Preserve Image1's current overall basin size, moderately rectangular footprint, pose, perspective, hands, fingers, ice cube, water pour, nearby bowl/towel, grid and fixed current twin transparent tube with single smallBLUE mouthpiece. Confirmed expanded physical dimensions30cmfront-to-back×20cmwide×13cmhigh; do not redesign or resize this already plausible scene. No extra feet, latches, detached tube or new parts. Localized blue base correction, naturally grounded contact shadow, same matte materials and natural light. Preserve landscape6:5framing and all existing environment. No text.",
+      "master": "output/qa-physical-scale/masters/health-ritual-prepare.png",
+      "output": "health-ritual-prepare-authentic-scaled.webp",
+      "generationFile": "exec-1f2d826c-32d6-4395-8776-54e4813ebc1b.png",
+      "previousRevisions": [
+        {
+          "file": "health-ritual-prepare-authentic.webp",
+          "page": "health",
+          "slot": "ritual-prepare",
+          "spec": "Retain the overhead preparation scene, real hands, jug/ice, watch if present, counter and small amount of water. Footprint exactly matches the real overhead photo: long front-to-back rounded rectangle with both small handles on long sides, real integrated grid and two white folds. Keep current blue fixed dual tube and natural transparent water. Do not float the tube or disconnect it. Landscape6:5.",
+          "prompt": "Use case: precise-object-edit. Image 1 is the EDIT TARGET scene. Image 2 is the corrected PRODUCT MASTER, Images 3 and 4 are REAL camera front and top basin references. Correct ONLY the basin in Image 1 to the SAME physical basin as Image 2 and the real mold in Images 3/4. Its rounded rectangular footprint is longer from front short edge to rear short edge, not a wide shallow tray and not a square. Small broad blue handles are on the two LONG sides; front SHORT edge has a shallow central dip. Match exact blue rim/base, two distinct white folding bands, integrated blue interior grid with central oblong and cross ribs; never add latches, a lid or a base tab. Preserve Image 2's current twin transparent tubes and small BLUE mouthpiece, permanently connected within the same basin. Do not use the old WHITE mouthpiece from camera references3/4. Tube cannot separate. No detached accessory, spare basin or fabricated fitting. Retain target environment, every person's identity, natural skin, clothes, pose, hands and all background details; integrate corrected basin with accurate contact shadows and plausible original scale. Adapt perspective honestly to the scene so the longer front-to-back footprint remains recognizable; do not deform the physical mold to fit old shape. Never transplant the white master background into target. Natural editorial photography, realistic matte materials, no CGI/glow/mist, no text added. Entire basin and all meaningful content safely within frame. Retain the overhead preparation scene, real hands, jug/ice, watch if present, counter and small amount of water. Footprint exactly matches the real overhead photo: long front-to-back rounded rectangle with both small handles on long sides, real integrated grid and two white folds. Keep current blue fixed dual tube and natural transparent water. Do not float the tube or disconnect it. Landscape6:5.",
+          "master": "output/qa-geometry/masters/health-ritual-prepare-authentic.png",
+          "output": "health-ritual-prepare-authentic-geometry.webp",
+          "generationFile": "exec-0a73a1a7-4b03-4aac-984d-ed661b3a97b3.png"
+        }
+      ],
+      "previousOutputs": [
+        "health-ritual-prepare-authentic-geometry.webp"
+      ],
+      "sourceCommit": "a3291371199b897765741f113b9841eb19e52d7b",
+      "references": [
+        "assets/img/health-ritual-prepare-authentic-geometry.webp",
+        "source-assets/geometry/product-master.png",
+        "source-assets/references/product-front.png",
+        "source-assets/references/product-top.png"
+      ]
     },
     {
       "file": "beauty-ritual-breathe-authentic.webp",
@@ -243,7 +366,7 @@
     }
   ],
   "humanScenesNote": "2026-10-14: six human scenes revised with water and ice, preparation / facial immersion using integrated tube / drying. Generated editorial people, not real customer testimonials.",
-  "scaleNote": "2026-10-15: owner confirmed expanded dimensions of 30 cm long × 20 cm wide × 13 cm high, followed by a collapsed height of 5 cm. Both states retain the same 30 × 20 cm front-to-back rectangular footprint (3:2); expanded height/width is 0.65 and collapsed height/width is 0.25. Preserve one physical scale across scenes; projected pixel ratios depend on perspective. Prior generation prompts are historical provenance and predate these confirmed dimensions.",
+  "scaleNote": "2026-10-15: owner confirmed 30 × 20 × 13 cm expanded and 30 × 20 × 5 cm collapsed. A stricter visual audit identified four oversized human preparation/drying scenes; these were edited using the confirmed dimensions, current master, original camera mold references and compact immersion scenes. Health preparation lower base corrected to blue. Other eleven primary photos retained. This is a visual coherence review, not calibrated photogrammetry; previousRevisions preserve earlier prompts and outputs.",
   "productSpecReference": "source-assets/references/product-spec.json",
   "futureImageInstructions": "Read productSpecReference before every new generation or edit. Include its confirmed 30 × 20 × 13 cm expanded or 30 × 20 × 5 cm collapsed dimensions, as appropriate, and image constraints with the original camera references and the current approved tube reference. Preserve the 30 × 20 cm footprint in both states. Do not derive water capacity or other unconfirmed measurements. Never stretch image axes to simulate dimensions."
 }

@@ -13,3 +13,5 @@ Las instrucciones persistentes del proyecto y el manifiesto de imágenes remiten
 Verificación registrada para la actualización inicial de medidas desplegadas: 56 pruebas existentes aprobadas; comprobación en navegador de las dos páginas, los dos idiomas y anchos de 320/1440 px (8 combinaciones), incluyendo medidas en producto y compra, cambio de idioma con el panel abierto y ausencia de desbordamiento. El paquete Shopify actualizado coincide con su manifiesto y sus sumas de verificación. Las imágenes existentes no cambiaron.
 
 Verificación de la altura plegada: se comprobaron ambas páginas y ambos idiomas a 320 px, incluyendo ficha, compra, cambio de idioma con el panel abierto y ajuste del texto. El paquete Shopify se regeneró y coincide con su manifiesto. No se modificaron imágenes.
+
+Revisión posterior: la [verificación visual más exigente](2026-10-15-verificacion-visual.md) identificó cuatro escenas humanas todavía grandes en primer plano y una base blanca incorrecta. Esas cinco escenas se corrigieron usando las medidas confirmadas como parte explícita de las instrucciones; el informe anterior de imágenes conservadas corresponde a la revisión inicial.
