@@ -16,13 +16,20 @@
   },
   "proportions": {
     "lengthToWidth": 1.5,
-    "heightToWidth": 0.65
+    "heightToWidth": 0.65,
+    "collapsedHeightToWidth": 0.25
   },
   "imageConstraints": [
-    "Use the same 30 × 20 × 13 cm expanded basin in every scene, together with the real front/top camera references and the approved current tube reference.",
+    "Use the same physical basin in every scene: 30 × 20 × 13 cm when expanded and 30 × 20 × 5 cm when collapsed, together with the real front/top camera references and the approved current tube reference.",
     "Keep a moderately rectangular rounded 3:2 footprint. Screen pixel ratios vary with camera perspective; do not stretch one image axis to force a 3:2 screen bounding box.",
     "Show a compact facial basin at believable scale against hands, head and counter. Avoid foreground perspective that makes it look like a large tub.",
     "Keep both long-side handles, short-rim dips, two white folding bands, integrated blue base/grid and the permanently attached current twin tube with blue mouthpiece.",
-    "When collapsed, preserve footprint and mold; collapsed height has not been supplied. Do not infer capacity or new measurements from the expanded bounding box."
-  ]
+    "When collapsed, use the confirmed 30 × 20 cm footprint and 5 cm height; preserve the same mold, handles and permanently attached twin tube. Do not infer capacity or other measurements from either bounding box."
+  ],
+  "stateNote": "The dimensions field describes the expanded state; collapsedDimensions describes the collapsed state. Both states were confirmed by the product owner on 2026-10-15.",
+  "collapsedDimensions": {
+    "length": 30,
+    "width": 20,
+    "height": 5
+  }
 }

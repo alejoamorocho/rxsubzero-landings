@@ -243,7 +243,7 @@
     }
   ],
   "humanScenesNote": "2026-10-14: six human scenes revised with water and ice, preparation / facial immersion using integrated tube / drying. Generated editorial people, not real customer testimonials.",
-  "scaleNote": "2026-10-15: owner confirmed expanded dimensions of 30 cm long × 20 cm wide × 13 cm high. Front-to-back length, moderate 3:2 footprint, height/width 0.65. Preserve one physical scale across scenes; projected pixel ratios depend on perspective. Prior generation prompts below are historical provenance and predate these confirmed dimensions.",
+  "scaleNote": "2026-10-15: owner confirmed expanded dimensions of 30 cm long × 20 cm wide × 13 cm high, followed by a collapsed height of 5 cm. Both states retain the same 30 × 20 cm front-to-back rectangular footprint (3:2); expanded height/width is 0.65 and collapsed height/width is 0.25. Preserve one physical scale across scenes; projected pixel ratios depend on perspective. Prior generation prompts are historical provenance and predate these confirmed dimensions.",
   "productSpecReference": "source-assets/references/product-spec.json",
-  "futureImageInstructions": "Read productSpecReference before every new generation or edit. Include its confirmed 30 × 20 × 13 cm expanded dimensions and image constraints with the original camera references and the current approved tube reference. Do not derive collapsed height or water capacity. Never stretch image axes to simulate dimensions."
+  "futureImageInstructions": "Read productSpecReference before every new generation or edit. Include its confirmed 30 × 20 × 13 cm expanded or 30 × 20 × 5 cm collapsed dimensions, as appropriate, and image constraints with the original camera references and the current approved tube reference. Preserve the 30 × 20 cm footprint in both states. Do not derive water capacity or other unconfirmed measurements. Never stretch image axes to simulate dimensions."
 }

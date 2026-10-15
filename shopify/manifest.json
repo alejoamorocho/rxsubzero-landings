@@ -17,19 +17,19 @@
     },
     {
       "path": "assets/i18n/beauty.en.json",
-      "sha256": "d033639d543b39c24480df0a585dee3e60f4a30e98587babb8fd011ed102a794"
+      "sha256": "5c07d2367cafeafee97357a3760c78a5565cf18586648b6a0fedb4a497d7dbc0"
     },
     {
       "path": "assets/i18n/beauty.es.json",
-      "sha256": "e3c12613fcd17ae2b001d46806e21a4234decf297c3ca7f6f011f235f760dbfd"
+      "sha256": "40ccd7338cdfcd813dc6946cd704224d157283a993af954f6ba782552f893375"
     },
     {
       "path": "assets/i18n/health.en.json",
-      "sha256": "2972b2777344e8a68f17ded9068af14c9de022dfe66f63bbb4d796ea11e01ecf"
+      "sha256": "8d698e227f9ed87f69ec0604a531a1acc541f3e03849f47ad711faf1c1809af6"
     },
     {
       "path": "assets/i18n/health.es.json",
-      "sha256": "5b21d4b0b015b1907f4dedc1dae659a0d720ebf9cd76c99e0f11a606653de4df"
+      "sha256": "c732034f829e44641e6e1ffe05686559b0d0f393dc465b0da3d33965b8324553"
     },
     {
       "path": "assets/img/beauty-aspiration-people.webp",
@@ -165,11 +165,11 @@
     },
     {
       "path": "beauty.html",
-      "sha256": "485d4cdda4e000c31629dd35999424b899af16e1854c267ded4308cf23ddb6ad"
+      "sha256": "f5d4264f008cc6b05c9ac45beed740458023a62753595c5193fb3d23a07794d9"
     },
     {
       "path": "health.html",
-      "sha256": "8e7cd08fd584805a88f90dd7a5fcc2fff0e65048e2a2493a69d45ca8e8aabe0b"
+      "sha256": "2d020ac3377de580c274ec7ee10a69c6beead7e92a0dac01ac0bb4c7ed2e5406"
     }
   ],
   "files": [
@@ -255,13 +255,13 @@
     },
     {
       "path": "assets/rxsz-beauty.en.json",
-      "sha256": "d033639d543b39c24480df0a585dee3e60f4a30e98587babb8fd011ed102a794",
-      "bytes": 12772
+      "sha256": "5c07d2367cafeafee97357a3760c78a5565cf18586648b6a0fedb4a497d7dbc0",
+      "bytes": 12791
     },
     {
       "path": "assets/rxsz-beauty.es.json",
-      "sha256": "e3c12613fcd17ae2b001d46806e21a4234decf297c3ca7f6f011f235f760dbfd",
-      "bytes": 13155
+      "sha256": "40ccd7338cdfcd813dc6946cd704224d157283a993af954f6ba782552f893375",
+      "bytes": 13178
     },
     {
       "path": "assets/rxsz-commerce.css",
@@ -355,13 +355,13 @@
     },
     {
       "path": "assets/rxsz-health.en.json",
-      "sha256": "2972b2777344e8a68f17ded9068af14c9de022dfe66f63bbb4d796ea11e01ecf",
-      "bytes": 12828
+      "sha256": "8d698e227f9ed87f69ec0604a531a1acc541f3e03849f47ad711faf1c1809af6",
+      "bytes": 12847
     },
     {
       "path": "assets/rxsz-health.es.json",
-      "sha256": "5b21d4b0b015b1907f4dedc1dae659a0d720ebf9cd76c99e0f11a606653de4df",
-      "bytes": 13140
+      "sha256": "c732034f829e44641e6e1ffe05686559b0d0f393dc465b0da3d33965b8324553",
+      "bytes": 13163
     },
     {
       "path": "assets/rxsz-icons.js",
@@ -385,8 +385,8 @@
     },
     {
       "path": "locales/en.default.json",
-      "sha256": "15e6db26d9f720f4bbe39aa3add57e56315af2aac416bde7cac9b2629daa5852",
-      "bytes": 28486
+      "sha256": "fc89247b55ccb08e8a20ca130c7d85ae3e5a3c83e5c53a33ef930fc2839f8b59",
+      "bytes": 28524
     },
     {
       "path": "locales/en.default.schema.json",
@@ -395,8 +395,8 @@
     },
     {
       "path": "locales/es.json",
-      "sha256": "0c870abb8b874b3384f2e59f34a908950f78727bc68fa0605542f55802b0dbe5",
-      "bytes": 29212
+      "sha256": "6c3280da915d8583dbd9b091b8bb4a0003103f09cb31828ed4ec80cdc438263c",
+      "bytes": 29258
     },
     {
       "path": "locales/es.schema.json",
